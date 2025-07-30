@@ -1,0 +1,107 @@
+Traceback (most recent call last):
+  File "/home/runner/.local/lib/python3.10/site-packages/jupyter_core/utils/__init__.py", line 154, in wrapped
+    asyncio.get_running_loop()
+RuntimeError: no running event loop
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/.local/lib/python3.10/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/home/runner/.local/lib/python3.10/site-packages/nbclient/client.py", line 1319, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/home/runner/.local/lib/python3.10/site-packages/jupyter_core/utils/__init__.py", line 158, in wrapped
+    return loop.run_until_complete(inner)
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 649, in run_until_complete
+    return future.result()
+  File "/home/runner/.local/lib/python3.10/site-packages/nbclient/client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "/home/runner/.local/lib/python3.10/site-packages/nbclient/client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/home/runner/.local/lib/python3.10/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+%%writefile ./FSLNets/estimate_network.py
+
+import matplotlib.pyplot as plt
+from fsl import nets
+import numpy as np
+import pickle
+
+# Load the ICA time series
+ts = nets.load('./fsl_course_data/rest/Nets/groupICA100.dr',
+               tr=0.72,
+               varnorm=0,
+               thumbnaildir='./fsl_course_data/rest/Nets/groupICA100.sum')
+
+print("📘 Help on ts.ts:")
+help(ts.ts)
+
+with open('./FSLNets/ts_cleaned.pkl', 'wb') as f:
+    pickle.dump(ts, f)
+
+# Plot original spectra
+nets.plot_spectra(ts)
+plt.savefig('./FSLNets/temporal_spectra_of_RSNs.png')
+plt.close()
+
+# Clean the time series using selected nodes
+goodnodes = [0, 1, 2, 4, 5, 6, 7, 8, 10, 11,
+             12, 16, 17, 18, 19, 20, 21, 22, 24, 25,
+             26, 27, 28, 29, 30, 31, 32, 33, 34, 35,
+             36, 37, 39, 41, 42, 46, 47, 48, 49, 51,
+             52, 54, 55, 56, 57, 58, 60, 61, 63, 64,
+             65, 69, 70, 71, 72, 73, 76, 79, 80, 85,
+             86, 92, 96]
+
+nets.clean(ts, goodnodes, aggressive=True) # aggressive cleanup
+
+with open('./FSLNets/ts_cleaned.pkl', 'wb') as f:
+    pickle.dump(ts, f)
+
+# Plot cleaned spectra
+nets.plot_spectra(ts)
+plt.savefig('./FSLNets/cleaned_spectra.png')
+plt.close()
+
+# Compute full and partial correlation matrices
+Fnetmats = nets.netmats(ts, method='corr', True)
+Pnetmats = nets.netmats(ts, method='ridgep', True, 0.1)
+
+# Save netmats as NumPy arrays for inspection
+np.save('./FSLNets/Fnetmats.npy', Fnetmats)
+np.save('./FSLNets/Pnetmats.npy', Pnetmats)
+
+print("Fnetmats shape:", Fnetmats.shape) # number of rows is equal to the number of subjects
+print("Pnetmats shape:", Pnetmats.shape)
+
+print("✅ Finished computing and saving results.")
+------------------
+
+----- stdout -----
+Writing ./FSLNets/estimate_network.py
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mFileNotFoundError[0m                         Traceback (most recent call last)
+Cell [0;32mIn[7], line 1[0m
+[0;32m----> 1[0m [43mget_ipython[49m[43m([49m[43m)[49m[38;5;241;43m.[39;49m[43mrun_cell_magic[49m[43m([49m[38;5;124;43m'[39;49m[38;5;124;43mwritefile[39;49m[38;5;124;43m'[39;49m[43m,[49m[43m [49m[38;5;124;43m'[39;49m[38;5;124;43m./FSLNets/estimate_network.py[39;49m[38;5;124;43m'[39;49m[43m,[49m[43m [49m[38;5;124;43m'[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43mimport matplotlib.pyplot as plt[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43mfrom fsl import nets[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43mimport numpy as np[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43mimport pickle[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;130;43;01m\n[39;49;00m[38;5;124;43m# Load the ICA time series[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43mts = nets.load([39;49m[38;5;130;43;01m\'[39;49;00m[38;5;124;43m./fsl_course_data/rest/Nets/groupICA100.dr[39;49m[38;5;130;43;01m\'[39;49;00m[38;5;124;43m,[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43m               tr=0.72,[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43m               varnorm=0,[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43m               thumbnaildir=[39;49m[38;5;130;43;01m\'[39;49;00m[38;5;124;43m./fsl_course_data/rest/Nets/groupICA100.sum[39;49m[38;5;130;43;01m\'[39;49;00m[38;5;124;43m)[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;130;43;01m\n[39;49;00m[38;5;124;43mprint([39;49m[38;5;124;43m"[39;49m[38;5;124;43m📘 Help on ts.ts:[39;49m[38;5;124;43m"[39;49m[38;5;124;43m)[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43mhelp(ts.ts)[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;130;43;01m\n[39;49;00m[38;5;124;43mwith open([39;49m[38;5;130;43;01m\'[39;49;00m[38;5;124;43m./FSLNets/ts_cleaned.pkl[39;49m[38;5;130;43;01m\'[39;49;00m[38;5;124;43m, [39;49m[38;5;130;43;01m\'[39;49;00m[38;5;124;43mwb[39;49m[38;5;130;43;01m\'[39;49;00m[38;5;124;43m) as f:[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43m    pickle.dump(ts, f)[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;130;43;01m\n[39;49;00m[38;5;124;43m# Plot original spectra[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43mnets.plot_spectra(ts)[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43mplt.savefig([39;49m[38;5;130;43;01m\'[39;49;00m[38;5;124;43m./FSLNets/temporal_spectra_of_RSNs.png[39;49m[38;5;130;43;01m\'[39;49;00m[38;5;124;43m)[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43mplt.close()[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;130;43;01m\n[39;49;00m[38;5;124;43m# Clean the time series using selected nodes[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43mgoodnodes = [0, 1, 2, 4, 5, 6, 7, 8, 10, 11,[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43m             12, 16, 17, 18, 19, 20, 21, 22, 24, 25,[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43m             26, 27, 28, 29, 30, 31, 32, 33, 34, 35,[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43m             36, 37, 39, 41, 42, 46, 47, 48, 49, 51,[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43m             52, 54, 55, 56, 57, 58, 60, 61, 63, 64,[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43m             65, 69, 70, 71, 72, 73, 76, 79, 80, 85,[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43m             86, 92, 96][39;49m[38;5;130;43;01m\n[39;49;00m[38;5;130;43;01m\n[39;49;00m[38;5;124;43mnets.clean(ts, goodnodes, aggressive=True) # aggressive cleanup[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;130;43;01m\n[39;49;00m[38;5;124;43mwith open([39;49m[38;5;130;43;01m\'[39;49;00m[38;5;124;43m./FSLNets/ts_cleaned.pkl[39;49m[38;5;130;43;01m\'[39;49;00m[38;5;124;43m, [39;49m[38;5;130;43;01m\'[39;49;00m[38;5;124;43mwb[39;49m[38;5;130;43;01m\'[39;49;00m[38;5;124;43m) as f:[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43m    pickle.dump(ts, f)[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;130;43;01m\n[39;49;00m[38;5;124;43m# Plot cleaned spectra[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43mnets.plot_spectra(ts)[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43mplt.savefig([39;49m[38;5;130;43;01m\'[39;49;00m[38;5;124;43m./FSLNets/cleaned_spectra.png[39;49m[38;5;130;43;01m\'[39;49;00m[38;5;124;43m)[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43mplt.close()[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;130;43;01m\n[39;49;00m[38;5;124;43m# Compute full and partial correlation matrices[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43mFnetmats = nets.netmats(ts, method=[39;49m[38;5;130;43;01m\'[39;49;00m[38;5;124;43mcorr[39;49m[38;5;130;43;01m\'[39;49;00m[38;5;124;43m, True)[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43mPnetmats = nets.netmats(ts, method=[39;49m[38;5;130;43;01m\'[39;49;00m[38;5;124;43mridgep[39;49m[38;5;130;43;01m\'[39;49;00m[38;5;124;43m, True, 0.1)[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;130;43;01m\n[39;49;00m[38;5;124;43m# Save netmats as NumPy arrays for inspection[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43mnp.save([39;49m[38;5;130;43;01m\'[39;49;00m[38;5;124;43m./FSLNets/Fnetmats.npy[39;49m[38;5;130;43;01m\'[39;49;00m[38;5;124;43m, Fnetmats)[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43mnp.save([39;49m[38;5;130;43;01m\'[39;49;00m[38;5;124;43m./FSLNets/Pnetmats.npy[39;49m[38;5;130;43;01m\'[39;49;00m[38;5;124;43m, Pnetmats)[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;130;43;01m\n[39;49;00m[38;5;124;43mprint([39;49m[38;5;124;43m"[39;49m[38;5;124;43mFnetmats shape:[39;49m[38;5;124;43m"[39;49m[38;5;124;43m, Fnetmats.shape) # number of rows is equal to the number of subjects[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43mprint([39;49m[38;5;124;43m"[39;49m[38;5;124;43mPnetmats shape:[39;49m[38;5;124;43m"[39;49m[38;5;124;43m, Pnetmats.shape)[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;130;43;01m\n[39;49;00m[38;5;124;43mprint([39;49m[38;5;124;43m"[39;49m[38;5;124;43m✅ Finished computing and saving results.[39;49m[38;5;124;43m"[39;49m[38;5;124;43m)[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43m'[39;49m[43m)[49m
+
+File [0;32m~/.local/lib/python3.10/site-packages/IPython/core/interactiveshell.py:2543[0m, in [0;36mInteractiveShell.run_cell_magic[0;34m(self, magic_name, line, cell)[0m
+[1;32m   2541[0m [38;5;28;01mwith[39;00m [38;5;28mself[39m[38;5;241m.[39mbuiltin_trap:
+[1;32m   2542[0m     args [38;5;241m=[39m (magic_arg_s, cell)
+[0;32m-> 2543[0m     result [38;5;241m=[39m [43mfn[49m[43m([49m[38;5;241;43m*[39;49m[43margs[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs[49m[43m)[49m
+[1;32m   2545[0m [38;5;66;03m# The code below prevents the output from being displayed[39;00m
+[1;32m   2546[0m [38;5;66;03m# when using magics with decorator @output_can_be_silenced[39;00m
+[1;32m   2547[0m [38;5;66;03m# when the last Python token in the expression is a ';'.[39;00m
+[1;32m   2548[0m [38;5;28;01mif[39;00m [38;5;28mgetattr[39m(fn, magic[38;5;241m.[39mMAGIC_OUTPUT_CAN_BE_SILENCED, [38;5;28;01mFalse[39;00m):
+
+File [0;32m~/.local/lib/python3.10/site-packages/IPython/core/magics/osm.py:854[0m, in [0;36mOSMagics.writefile[0;34m(self, line, cell)[0m
+[1;32m    851[0m     [38;5;28mprint[39m([38;5;124m"[39m[38;5;124mWriting [39m[38;5;132;01m%s[39;00m[38;5;124m"[39m [38;5;241m%[39m filename)
+[1;32m    853[0m mode [38;5;241m=[39m [38;5;124m'[39m[38;5;124ma[39m[38;5;124m'[39m [38;5;28;01mif[39;00m args[38;5;241m.[39mappend [38;5;28;01melse[39;00m [38;5;124m'[39m[38;5;124mw[39m[38;5;124m'[39m
+[0;32m--> 854[0m [38;5;28;01mwith[39;00m [43mio[49m[38;5;241;43m.[39;49m[43mopen[49m[43m([49m[43mfilename[49m[43m,[49m[43m [49m[43mmode[49m[43m,[49m[43m [49m[43mencoding[49m[38;5;241;43m=[39;49m[38;5;124;43m'[39;49m[38;5;124;43mutf-8[39;49m[38;5;124;43m'[39;49m[43m)[49m [38;5;28;01mas[39;00m f:
+[1;32m    855[0m     f[38;5;241m.[39mwrite(cell)
+
+[0;31mFileNotFoundError[0m: [Errno 2] No such file or directory: './FSLNets/estimate_network.py'
+
