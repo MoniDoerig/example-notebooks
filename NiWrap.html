@@ -502,7 +502,7 @@ document.write(`
 </div>
 <ul class="simple">
 <li><p><a class="github reference external" href="https://github.com/styx-api/niwrap">styx-api/niwrap</a></p></li>
-<li><p><a class="reference external" href="https://styx-api.github.io/niwrap/niwrap.html">Documentation</a></p></li>
+<li><p><a class="reference external" href="https://styx-api.github.io/styxbook/">Documentation</a></p></li>
 </ul>
 <p><strong>Connectome Workbench:</strong></p>
 <ul class="simple">
@@ -547,37 +547,22 @@ model name	: AMD EPYC 7763 64-Core Processor
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Lmod&#39;,
- &#39;Warning:&#39;,
- &#39;The&#39;,
- &#39;environment&#39;,
- &#39;MODULEPATH&#39;,
- &#39;has&#39;,
- &#39;been&#39;,
- &#39;changed&#39;,
- &#39;in&#39;,
- &#39;unexpected&#39;,
- &#39;ways.&#39;,
- &#39;Lmod&#39;,
- &#39;is&#39;,
- &#39;unable&#39;,
- &#39;to&#39;,
- &#39;use&#39;,
- &#39;given&#39;,
- &#39;MODULEPATH.&#39;,
- &#39;It&#39;,
- &#39;is&#39;,
- &#39;using:&#39;,
- &#39;&quot;/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/functional_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/rodent_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/image_registration:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/structural_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/image_segmentation:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/quantitative_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/workflows:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/hippocampus:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/image_reconstruction:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/data_organisation:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/electrophysiology:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/phase_processing:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/programming:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/machine_learning:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/diffusion_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/body:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/visualization:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/spectroscopy:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/quality_control:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/statistics:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/shape_analysis:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/spine:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/molecular_biology:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/bids_apps:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/cryo_EM:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/other::&quot;.&#39;,
- &#39;Please&#39;,
- &#39;use&#39;,
- &#39;&quot;module&#39;,
- &#39;use&#39;,
- &#39;to&#39;,
- &#39;change&#39;,
- &#39;MODULEPATH&#39;,
- &#39;instead.&#39;,
- &#39;connectomeworkbench/1.5.0&#39;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Lmod Warning: MODULEPATH is undefined.
+
+
+
+Lmod has detected the following error: The following module(s) are unknown:
+&quot;connectomeworkbench/1.5.0&quot;
+
+Please check the spelling or version number. Also try &quot;module spider ...&quot;
+It is also possible your cache file is out-of-date; it may help to try:
+  $ module --ignore_cache load &quot;connectomeworkbench/1.5.0&quot;
+
+Also make sure that all modulefiles written in TCL start with the string
+#%Module
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
 </pre></div>
 </div>
 </div>
@@ -605,58 +590,6 @@ model name	: AMD EPYC 7763 64-Core Processor
 <span class="kn">from</span><span class="w"> </span><span class="nn">nilearn</span><span class="w"> </span><span class="kn">import</span> <span class="n">plotting</span><span class="p">,</span> <span class="n">surface</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">nibabel</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">nib</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">6</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span><span class="w"> </span><span class="nn">os</span> 
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
-<span class="ne">----&gt; </span><span class="mi">6</span> <span class="kn">from</span><span class="w"> </span><span class="nn">niwrap_workbench.workbench</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span><span class="n">cifti_math</span><span class="p">,</span> <span class="n">cifti_math_var_params</span><span class="p">,</span> <span class="n">cifti_separate</span><span class="p">,</span> <span class="n">cifti_separate_metric_params</span><span class="p">,</span> 
-<span class="g g-Whitespace">      </span><span class="mi">7</span>                                         <span class="n">cifti_stats</span><span class="p">,</span> <span class="n">metric_smoothing</span><span class="p">,</span> <span class="n">cifti_create_dense_scalar</span><span class="p">,</span> <span class="n">cifti_create_dense_scalar_left_metric_params</span><span class="p">,</span> <span class="n">cifti_create_dense_scalar_right_metric_params</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span>                                         <span class="n">cifti_parcellate</span><span class="p">,</span> <span class="n">file_information</span><span class="p">,</span> <span class="n">cifti_label_export_table</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
-
-<span class="n">File</span> <span class="o">~/.</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.10</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">niwrap_workbench</span><span class="o">/</span><span class="n">workbench</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">17</span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="c1"># This file was auto generated by Styx.</span>
-<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="c1"># Do not edit this file directly.</span>
-<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="kn">from</span><span class="w"> </span><span class="nn">.add_to_spec_file</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
-<span class="ne">---&gt; </span><span class="mi">17</span> <span class="kn">from</span><span class="w"> </span><span class="nn">.annotation_resample</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
-<span class="g g-Whitespace">     </span><span class="mi">18</span> <span class="kn">from</span><span class="w"> </span><span class="nn">.backend_average_dense_roi</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
-<span class="g g-Whitespace">     </span><span class="mi">19</span> <span class="kn">from</span><span class="w"> </span><span class="nn">.backend_average_roi_correlation</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
-
-<span class="n">File</span> <span class="o">~/.</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.10</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">niwrap_workbench</span><span class="o">/</span><span class="n">workbench</span><span class="o">/</span><span class="n">annotation_resample</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">27</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="n">ANNOTATION_RESAMPLE_METADATA</span> <span class="o">=</span> <span class="n">Metadata</span><span class="p">(</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span>     <span class="nb">id</span><span class="o">=</span><span class="s2">&quot;2c6cadad264ac128829e478e77f82b0c84d405b7.boutiques&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span>     <span class="n">name</span><span class="o">=</span><span class="s2">&quot;annotation-resample&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span>     <span class="n">package</span><span class="o">=</span><span class="s2">&quot;workbench&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">12</span>     <span class="n">container_image_tag</span><span class="o">=</span><span class="s2">&quot;brainlife/connectome_workbench:1.5.0-freesurfer-update&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="n">AnnotationResampleSurfacePairParameters</span> <span class="o">=</span> <span class="n">typing</span><span class="o">.</span><span class="n">TypedDict</span><span class="p">(</span><span class="s1">&#39;AnnotationResampleSurfacePairParameters&#39;</span><span class="p">,</span> <span class="p">{</span>
-<span class="g g-Whitespace">     </span><span class="mi">17</span>     <span class="s2">&quot;__STYX_TYPE__&quot;</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Literal</span><span class="p">[</span><span class="s2">&quot;surface_pair&quot;</span><span class="p">],</span>
-<span class="g g-Whitespace">     </span><span class="mi">18</span>     <span class="s2">&quot;source_surface&quot;</span><span class="p">:</span> <span class="n">InputPathType</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">19</span>     <span class="s2">&quot;target_surface&quot;</span><span class="p">:</span> <span class="n">InputPathType</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">20</span> <span class="p">})</span>
-<span class="g g-Whitespace">     </span><span class="mi">23</span> <span class="n">AnnotationResampleParameters</span> <span class="o">=</span> <span class="n">typing</span><span class="o">.</span><span class="n">TypedDict</span><span class="p">(</span><span class="s1">&#39;AnnotationResampleParameters&#39;</span><span class="p">,</span> <span class="p">{</span>
-<span class="g g-Whitespace">     </span><span class="mi">24</span>     <span class="s2">&quot;__STYX_TYPE__&quot;</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Literal</span><span class="p">[</span><span class="s2">&quot;annotation-resample&quot;</span><span class="p">],</span>
-<span class="g g-Whitespace">     </span><span class="mi">25</span>     <span class="s2">&quot;annotation_in&quot;</span><span class="p">:</span> <span class="n">InputPathType</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">26</span>     <span class="s2">&quot;annotation_out&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
-<span class="ne">---&gt; </span><span class="mi">27</span>     <span class="s2">&quot;surface_pair&quot;</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">NotRequired</span><span class="p">[</span><span class="nb">list</span><span class="p">[</span><span class="n">AnnotationResampleSurfacePairParameters</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span><span class="p">],</span>
-<span class="g g-Whitespace">     </span><span class="mi">28</span> <span class="p">})</span>
-<span class="g g-Whitespace">     </span><span class="mi">31</span> <span class="k">def</span><span class="w"> </span><span class="nf">dyn_cargs</span><span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">32</span>     <span class="n">t</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">33</span> <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">Any</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">34</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">35</span><span class="sd">     Get build cargs function by command type.</span>
-<span class="g g-Whitespace">     </span><span class="mi">36</span><span class="sd">     </span>
-<span class="sd">   (...)</span>
-<span class="g g-Whitespace">     </span><span class="mi">40</span><span class="sd">         Build cargs function.</span>
-<span class="g g-Whitespace">     </span><span class="mi">41</span><span class="sd">     &quot;&quot;&quot;</span>
-
-<span class="ne">AttributeError</span>: module &#39;typing&#39; has no attribute &#39;NotRequired&#39;
 </pre></div>
 </div>
 </div>
@@ -700,45 +633,65 @@ echo &quot;Datalad download complete for ds004496.&quot;
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>install(ok): /home/jovyan/Git_repositories/example-notebooks/books/functional_imaging/ds004496 (dataset)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>install(error): /tmp/tmphx558hy3/ds004496 (dataset) [CommandError: &#39;git -c diff.ignoreSubmodules=non
+e -c core.quotepath=false annex init -c annex.dotfiles=true&#39; failed with exitcode 1 under /tmp/tmphx
+558hy3/ds004496] [CommandError: &#39;git -c diff.ignoreSubmodules=none -c core.quotepath=false annex ini
+t -c annex.dotfiles=true&#39; failed with exitcode 1 under /tmp/tmphx558hy3/ds004496]
 Downloading Ciftify derivative files for sub-01 from ds004496...
-get(ok): derivatives/ciftify/sub-01/results/ses-floc_task-floc/ses-floc_task-floc_beta.dscalar.nii (file)
-get(ok): derivatives/ciftify/sub-01/standard_fsLR_surface/sub-01.ArealDistortion_FS.32k_fs_LR.dscalar.nii (file)
-get(ok): derivatives/ciftify/sub-01/standard_fsLR_surface/sub-01.ArealDistortion_MSMSulc.32k_fs_LR.dscalar.nii (file)
-get(ok): derivatives/ciftify/sub-01/standard_fsLR_surface/sub-01.BA_exvivo.32k_fs_LR.dlabel.nii (file)
-get(ok): derivatives/ciftify/sub-01/standard_fsLR_surface/sub-01.EdgeDistortion_MSMSulc.32k_fs_LR.dscalar.nii (file)
-get(ok): derivatives/ciftify/sub-01/standard_fsLR_surface/sub-01.L.inflated.32k_fs_LR.surf.gii (file)
-get(ok): derivatives/ciftify/sub-01/standard_fsLR_surface/sub-01.L.midthickness.32k_fs_LR.surf.gii (file)
-get(ok): derivatives/ciftify/sub-01/standard_fsLR_surface/sub-01.L.pial.32k_fs_LR.surf.gii (file)
-get(ok): derivatives/ciftify/sub-01/standard_fsLR_surface/sub-01.L.very_inflated.32k_fs_LR.surf.gii (file)
-get(ok): derivatives/ciftify/sub-01/standard_fsLR_surface/sub-01.L.white.32k_fs_LR.surf.gii (file)
-get(ok): derivatives/ciftify/sub-01/standard_fsLR_surface/sub-01.R.inflated.32k_fs_LR.surf.gii (file)
-get(ok): derivatives/ciftify/sub-01/standard_fsLR_surface/sub-01.R.midthickness.32k_fs_LR.surf.gii (file)
-get(ok): derivatives/ciftify/sub-01/standard_fsLR_surface/sub-01.R.pial.32k_fs_LR.surf.gii (file)
-get(ok): derivatives/ciftify/sub-01/standard_fsLR_surface/sub-01.R.very_inflated.32k_fs_LR.surf.gii (file)
-get(ok): derivatives/ciftify/sub-01/standard_fsLR_surface/sub-01.R.white.32k_fs_LR.surf.gii (file)
-get(ok): derivatives/ciftify/sub-01/standard_fsLR_surface/sub-01.aparc.32k_fs_LR.dlabel.nii (file)
-get(ok): derivatives/ciftify/sub-01/standard_fsLR_surface/sub-01.aparc.DKTatlas.32k_fs_LR.dlabel.nii (file)
-get(ok): derivatives/ciftify/sub-01/standard_fsLR_surface/sub-01.aparc.a2009s.32k_fs_LR.dlabel.nii (file)
-get(ok): derivatives/ciftify/sub-01/standard_fsLR_surface/sub-01.curvature.32k_fs_LR.dscalar.nii (file)
-get(ok): derivatives/ciftify/sub-01/standard_fsLR_surface/sub-01.sulc.32k_fs_LR.dscalar.nii (file)
-get(ok): derivatives/ciftify/sub-01/standard_fsLR_surface/sub-01.thickness.32k_fs_LR.dscalar.nii (file)
-get(ok): derivatives/ciftify/sub-01/standard_fsLR_surface (directory)
-action summary:
-  get (ok: 21)
 Datalad download complete for ds004496.
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] Attempting a clone into /home/jovyan/Git_repositories/example-notebooks/books/functional_imaging/ds004496 
-[INFO] Attempting to clone from https://github.com/OpenNeuroDatasets/ds004496.git to /home/jovyan/Git_repositories/example-notebooks/books/functional_imaging/ds004496 
-[INFO] Start enumerating objects 
-[INFO] Start counting objects 
-[INFO] Start compressing objects 
-[INFO] Start receiving objects 
-[INFO] Start resolving deltas 
-[INFO] Completed clone attempts for Dataset(/home/jovyan/Git_repositories/example-notebooks/books/functional_imaging/ds004496) 
-[INFO] scanning for unlocked files (this may take some time) 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>It is highly recommended to configure Git before using DataLad. Set both &#39;user.name&#39; and &#39;user.email
+&#39; configuration variables.
+[INFO] Attempting a clone into /tmp/tmphx558hy3/ds004496
+[INFO] Attempting to clone from https://github.com/OpenNeuroDatasets/ds004496.git to /tmp/tmphx558hy
+3/ds004496
+[INFO] Start enumerating objects
+[INFO] Start counting objects
+[INFO] Start compressing objects
+[INFO] Start receiving objects
+[INFO] Start resolving deltas
+[INFO] Completed clone attempts for Dataset(/tmp/tmphx558hy3/ds004496)
 [INFO] Remote origin not usable by git-annex; setting annex-ignore
+[INFO] https://github.com/OpenNeuroDatasets/ds004496.git/config download failed: Not Found
+[INFO] Author identity unknown
+| 
+| *** Please tell me who you are.
+| 
+| Run
+| 
+|   git config --glo
+bal user.email &quot;you@example.com&quot;
+|   git config --global user.name &quot;Your Name&quot;
+| 
+| to set your acco
+unt&#39;s default identity.
+| Omit --global to set the identity only in this repository.
+[INFO] fatal: unable to auto-detect email address (got &#39;root@7203d7ebdb3c.(none)&#39;)
+[INFO] git-annex: user error (git [&quot;--git-dir=.git&quot;,&quot;--work-tree=.&quot;,&quot;--literal-pathspecs&quot;,&quot;-c&quot;,&quot;anne
+x.dotfiles=true&quot;,&quot;commit-tree&quot;,&quot;11cb3a217a937735e341801a73141c0aca7ed8de&quot;,&quot;--no-gpg-sign&quot;,&quot;-p&quot;,&quot;refs
+/heads/git-annex&quot;] exited 128)
+bash: line 13: cd: ds004496: No such file or directory
+It is highly recommended to configure Git before using DataLad. Set both &#39;user.name&#39; and &#39;user.email
+&#39; configuration variables.
+[ERROR] NoDatasetFound(No dataset found at &#39;/tmp/tmphx558hy3&#39; for the purpose &quot;get content of &lt;&lt;[&#39;de
+rivatives/++75 chars++ii&#39;]&gt;&gt;&quot;.  Specify a dataset to work with by providing its path via the `datase
+t` option, or change the current working directory to be in a dataset.) (NoDatasetFound)
+usage: datalad get [-h] [-s LABEL] [-d PATH] [-r] [-R LEVELS] [-n]
+                   [-D DESCRIPTIO
+N] [--reckless [auto|ephemeral|shared-...]]
+                   [-J NJOBS] [--version]
+     [PATH ...]
+It is highly recommended to configure Git before using DataLad. Set both &#39;user.name&#39; and &#39;user.email
+&#39; configuration variables.
+[ERROR] NoDatasetFound(No dataset found at &#39;/tmp/tmphx558hy3&#39; for the purpose &quot;get content of &lt;&lt;[&#39;de
+rivatives/++34 chars++ce&#39;]&gt;&gt;&quot;.  Specify a dataset to work with by providing its path via the `datase
+t` option, or change the current working directory to be in a dataset.) (NoDatasetFound)
+usage: datalad get [-h] [-s LABEL] [-d PATH] [-r] [-R LEVELS] [-n]
+                   [-D DESCRIPTIO
+N] [--reckless [auto|ephemeral|shared-...]]
+                   [-J NJOBS] [--version]
+     [PATH ...]
 </pre></div>
 </div>
 </div>
@@ -781,7 +734,16 @@ Datalad download complete for ds004496.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>✅ All necessary files found. Ready for analysis.
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AssertionError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">27</span>
+<span class="g g-Whitespace">     </span><span class="mi">23</span> <span class="n">sulcal_depth_path</span> <span class="o">=</span> <span class="n">surface_dir</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">SUBJECT_ID</span><span class="si">}</span><span class="s2">.sulc.32k_fs_LR.dscalar.nii&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">26</span> <span class="c1"># --- Verify files exist before we start ---</span>
+<span class="ne">---&gt; </span><span class="mi">27</span> <span class="k">assert</span> <span class="n">left_surf_path</span><span class="o">.</span><span class="n">exists</span><span class="p">(),</span> <span class="sa">f</span><span class="s2">&quot;Left mid-surface not found: </span><span class="si">{</span><span class="n">left_surf_path</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">28</span> <span class="k">assert</span> <span class="n">right_surf_path</span><span class="o">.</span><span class="n">exists</span><span class="p">(),</span> <span class="sa">f</span><span class="s2">&quot;Right mid-surface not found: </span><span class="si">{</span><span class="n">right_surf_path</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">29</span> <span class="k">assert</span> <span class="n">left_infl_path</span><span class="o">.</span><span class="n">exists</span><span class="p">(),</span> <span class="sa">f</span><span class="s2">&quot;Left inflated surface not found: </span><span class="si">{</span><span class="n">left_surf_path</span><span class="si">}</span><span class="s2">&quot;</span>
+
+<span class="ne">AssertionError</span>: Left mid-surface not found: ds004496/derivatives/ciftify/sub-01/standard_fsLR_surface/sub-01.L.midthickness.32k_fs_LR.surf.gii
 </pre></div>
 </div>
 </div>
