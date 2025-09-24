@@ -429,7 +429,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analyzing-mr-spectra-from-human-motor-cortex">Analyzing MR Spectra from Human Motor Cortex</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analyzing-mr-spectra-from-the-human-brain-using-single-voxel-spectroscopy-svs">Analyzing MR Spectra from the Human Brain using Single Voxel Spectroscopy (SVS)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mr-spectroscopy-mrs">MR Spectroscopy (MRS)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#citation-and-resources">Citation and Resources:</a></li>
@@ -460,8 +460,8 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="mr-spectroscopy-with-osprey">
 <h1>MR Spectroscopy with Osprey<a class="headerlink" href="#mr-spectroscopy-with-osprey" title="Link to this heading">#</a></h1>
-<section id="analyzing-mr-spectra-from-human-motor-cortex">
-<h2>Analyzing MR Spectra from Human Motor Cortex<a class="headerlink" href="#analyzing-mr-spectra-from-human-motor-cortex" title="Link to this heading">#</a></h2>
+<section id="analyzing-mr-spectra-from-the-human-brain-using-single-voxel-spectroscopy-svs">
+<h2>Analyzing MR Spectra from the Human Brain using Single Voxel Spectroscopy (SVS)<a class="headerlink" href="#analyzing-mr-spectra-from-the-human-brain-using-single-voxel-spectroscopy-svs" title="Link to this heading">#</a></h2>
 <p><strong>Author</strong>: Michal Toth</p>
 <p>This notebook was prepared for an audience of clinicians at the 2025 PACTALS (Pan-Asian consortium of Treatment and Research in ALS) conference in Melbourne (<a class="reference external" href="https://www.pactalscongress.com/programme">link</a>)</p>
 <div style="border:2px solid #1976D2; border-radius:10px; padding:15px; background-color:#f0f3f5;">
@@ -590,8 +590,8 @@ The computer will either:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>vendor_id	: GenuineIntel
-model name	: Intel(R) Xeon(R) Platinum 8370C CPU @ 2.80GHz
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>vendor_id	: AuthenticAMD
+model name	: AMD EPYC 7763 64-Core Processor
 </pre></div>
 </div>
 </div>
@@ -678,94 +678,71 @@ Archive:  ./data_osprey/osprey.zip
 ng: ./data_osprey/sub-002/ses-01/anat/sub-002_ses-01_acq-MP2RAGE_desc-defaced_T1w.nii
    creating: ./data_osprey/sub-002/ses-01/mrs/
   inflating: ./data_osprey/sub-002/ses-01/mrs/meas_MID00104_FID130221_svs_slaser_dkd_ul_wref.dat
-
   inflating: ./data_osprey/sub-002/ses-01/mrs/meas_MID00103_FID130220_svs_slaser_dkd_ul.dat
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|          | 0.00/150M [00:00&lt;?, ?bytes/s]
-  0%|          | 16.4k/150M [00:00&lt;23:03, 109kbytes/s]
-  0%|          | 49.2k/150M [00:00&lt;18:01, 139kbytes/s]
-  0%|          | 81.9k/150M [00:00&lt;16:58, 148kbytes/s]
+  0%|          | 16.4k/150M [00:00&lt;23:00, 109kbytes/s]
+  0%|          | 49.2k/150M [00:00&lt;18:00, 139kbytes/s]
+  0%|          | 81.9k/150M [00:00&lt;16:57, 148kbytes/s]
   0%|          | 131k/150M [00:00&lt;10:52, 230kbytes/s]
   0%|          | 180k/150M [00:00&lt;08:50, 283kbytes/s]
   0%|          | 246k/150M [00:00&lt;06:36, 379kbytes/s]
-  0%|          | 377k/150M [00:01&lt;04:07, 607kbytes/s]
-  0%|          | 524k/150M [00:01&lt;03:01, 826kbytes/s]
-  1%|          | 770k/150M [00:01&lt;01:57, 1.27Mbytes/s]
-  1%|          | 1.08M/150M [00:01&lt;01:23, 1.79Mbytes/s]
-  1%|          | 1.57M/150M [00:01&lt;00:55, 2.68Mbytes/s]
-  2%|▏         | 2.31M/150M [00:01&lt;00:36, 4.04Mbytes/s]
-  2%|▏         | 3.34M/150M [00:01&lt;00:25, 5.87Mbytes/s]
-  3%|▎         | 4.88M/150M [00:01&lt;00:16, 8.67Mbytes/s]
-  5%|▍         | 6.83M/150M [00:01&lt;00:12, 11.8Mbytes/s]
-  6%|▌         | 8.49M/150M [00:01&lt;00:10, 13.2Mbytes/s]
-  7%|▋         | 10.4M/150M [00:02&lt;00:09, 14.9Mbytes/s]
-  8%|▊         | 12.2M/150M [00:02&lt;00:08, 15.4Mbytes/s]
-  9%|▉         | 13.9M/150M [00:02&lt;00:08, 15.6Mbytes/s]
- 11%|█         | 16.0M/150M [00:02&lt;00:08, 16.7Mbytes/s]
- 12%|█▏        | 17.8M/150M [00:02&lt;00:07, 16.7Mbytes/s]
- 13%|█▎        | 19.7M/150M [00:02&lt;00:07, 17.5Mbytes/s]
- 14%|█▍        | 21.6M/150M [00:02&lt;00:07, 17.8Mbytes/s]
- 16%|█▌        | 23.4M/150M [00:02&lt;00:07, 17.5Mbytes/s]
- 17%|█▋        | 25.3M/150M [00:02&lt;00:06, 18.0Mbytes/s]
- 18%|█▊        | 27.1M/150M [00:02&lt;00:07, 17.3Mbytes/s]
- 19%|█▉        | 29.2M/150M [00:03&lt;00:06, 17.6Mbytes/s]
- 21%|██        | 31.0M/150M [00:03&lt;00:06, 17.7Mbytes/s]
- 22%|██▏       | 32.8M/150M [00:03&lt;00:06, 17.5Mbytes/s]
- 23%|██▎       | 34.7M/150M [00:03&lt;00:06, 18.0Mbytes/s]
- 24%|██▍       | 36.5M/150M [00:03&lt;00:06, 17.8Mbytes/s]
- 25%|██▌       | 38.3M/150M [00:03&lt;00:06, 17.8Mbytes/s]
- 27%|██▋       | 40.2M/150M [00:03&lt;00:06, 18.0Mbytes/s]
- 28%|██▊       | 42.0M/150M [00:03&lt;00:06, 17.7Mbytes/s]
- 29%|██▉       | 43.8M/150M [00:03&lt;00:06, 17.6Mbytes/s]
- 30%|███       | 45.5M/150M [00:04&lt;00:06, 17.4Mbytes/s]
- 31%|███▏      | 47.3M/150M [00:04&lt;00:07, 14.1Mbytes/s]
- 32%|███▏      | 48.8M/150M [00:04&lt;00:08, 12.1Mbytes/s]
- 35%|███▍      | 52.1M/150M [00:04&lt;00:07, 13.9Mbytes/s]
- 37%|███▋      | 55.3M/150M [00:04&lt;00:06, 15.2Mbytes/s]
- 39%|███▉      | 58.4M/150M [00:04&lt;00:05, 15.9Mbytes/s]
- 41%|████      | 61.1M/150M [00:05&lt;00:04, 18.0Mbytes/s]
- 42%|████▏     | 63.0M/150M [00:05&lt;00:04, 18.0Mbytes/s]
- 43%|████▎     | 64.9M/150M [00:05&lt;00:05, 16.1Mbytes/s]
- 45%|████▍     | 67.4M/150M [00:05&lt;00:04, 18.3Mbytes/s]
- 46%|████▌     | 69.4M/150M [00:05&lt;00:04, 18.2Mbytes/s]
- 47%|████▋     | 71.3M/150M [00:05&lt;00:04, 16.1Mbytes/s]
- 49%|████▉     | 73.9M/150M [00:05&lt;00:04, 18.5Mbytes/s]
- 50%|█████     | 75.9M/150M [00:05&lt;00:04, 18.4Mbytes/s]
- 52%|█████▏    | 77.8M/150M [00:06&lt;00:04, 16.3Mbytes/s]
- 53%|█████▎    | 80.2M/150M [00:06&lt;00:04, 15.7Mbytes/s]
- 55%|█████▌    | 82.9M/150M [00:06&lt;00:03, 18.3Mbytes/s]
- 56%|█████▋    | 84.9M/150M [00:06&lt;00:03, 18.2Mbytes/s]
- 58%|█████▊    | 86.8M/150M [00:06&lt;00:03, 16.2Mbytes/s]
- 59%|█████▉    | 89.4M/150M [00:06&lt;00:03, 18.7Mbytes/s]
- 61%|██████    | 91.4M/150M [00:06&lt;00:03, 18.4Mbytes/s]
- 62%|██████▏   | 93.4M/150M [00:06&lt;00:03, 16.3Mbytes/s]
- 64%|██████▎   | 95.8M/150M [00:07&lt;00:03, 15.9Mbytes/s]
- 65%|██████▌   | 98.5M/150M [00:07&lt;00:02, 18.4Mbytes/s]
- 67%|██████▋   | 100M/150M [00:07&lt;00:02, 18.1Mbytes/s]
- 68%|██████▊   | 102M/150M [00:07&lt;00:02, 16.3Mbytes/s]
- 70%|██████▉   | 105M/150M [00:07&lt;00:02, 18.6Mbytes/s]
- 71%|███████   | 107M/150M [00:07&lt;00:02, 18.3Mbytes/s]
- 72%|███████▏  | 109M/150M [00:07&lt;00:02, 16.3Mbytes/s]
- 74%|███████▍  | 112M/150M [00:07&lt;00:02, 19.0Mbytes/s]
- 76%|███████▌  | 114M/150M [00:08&lt;00:01, 18.7Mbytes/s]
- 77%|███████▋  | 116M/150M [00:08&lt;00:02, 16.5Mbytes/s]
- 78%|███████▊  | 118M/150M [00:08&lt;00:02, 16.0Mbytes/s]
- 80%|████████  | 121M/150M [00:08&lt;00:01, 18.5Mbytes/s]
- 82%|████████▏ | 123M/150M [00:08&lt;00:01, 18.4Mbytes/s]
- 83%|████████▎ | 125M/150M [00:08&lt;00:01, 16.3Mbytes/s]
- 85%|████████▍ | 127M/150M [00:08&lt;00:01, 18.8Mbytes/s]
- 86%|████████▌ | 129M/150M [00:08&lt;00:01, 18.5Mbytes/s]
- 87%|████████▋ | 131M/150M [00:09&lt;00:01, 16.4Mbytes/s]
- 89%|████████▉ | 134M/150M [00:09&lt;00:01, 15.7Mbytes/s]
- 91%|█████████ | 136M/150M [00:09&lt;00:00, 18.4Mbytes/s]
- 92%|█████████▏| 138M/150M [00:09&lt;00:00, 18.2Mbytes/s]
- 93%|█████████▎| 140M/150M [00:09&lt;00:00, 15.2Mbytes/s]
- 95%|█████████▍| 143M/150M [00:09&lt;00:00, 14.8Mbytes/s]
- 97%|█████████▋| 146M/150M [00:09&lt;00:00, 15.7Mbytes/s]
- 99%|█████████▉| 149M/150M [00:10&lt;00:00, 15.4Mbytes/s]
-100%|█████████▉| 150M/150M [00:10&lt;00:00, 13.5Mbytes/s]
-100%|██████████| 150M/150M [00:10&lt;00:00, 14.5Mbytes/s]
+  0%|          | 360k/150M [00:00&lt;04:15, 587kbytes/s]
+  0%|          | 492k/150M [00:01&lt;03:13, 776kbytes/s]
+  0%|          | 737k/150M [00:01&lt;02:01, 1.23Mbytes/s]
+  1%|          | 1.05M/150M [00:01&lt;01:25, 1.75Mbytes/s]
+  1%|          | 1.52M/150M [00:01&lt;00:57, 2.60Mbytes/s]
+  1%|▏         | 2.24M/150M [00:01&lt;00:37, 3.93Mbytes/s]
+  2%|▏         | 3.24M/150M [00:01&lt;00:25, 5.70Mbytes/s]
+  3%|▎         | 4.73M/150M [00:01&lt;00:17, 8.40Mbytes/s]
+  5%|▍         | 6.91M/150M [00:01&lt;00:11, 12.4Mbytes/s]
+  6%|▌         | 9.01M/150M [00:01&lt;00:09, 14.9Mbytes/s]
+  8%|▊         | 11.5M/150M [00:02&lt;00:07, 17.5Mbytes/s]
+  9%|▉         | 13.6M/150M [00:02&lt;00:07, 18.0Mbytes/s]
+ 11%|█         | 16.1M/150M [00:02&lt;00:06, 19.3Mbytes/s]
+ 12%|█▏        | 18.1M/150M [00:02&lt;00:07, 18.2Mbytes/s]
+ 14%|█▍        | 20.8M/150M [00:02&lt;00:07, 17.7Mbytes/s]
+ 15%|█▌        | 23.1M/150M [00:02&lt;00:06, 18.8Mbytes/s]
+ 17%|█▋        | 26.2M/150M [00:02&lt;00:05, 22.1Mbytes/s]
+ 19%|█▉        | 28.5M/150M [00:02&lt;00:05, 22.1Mbytes/s]
+ 20%|██        | 30.8M/150M [00:02&lt;00:06, 19.3Mbytes/s]
+ 22%|██▏       | 33.3M/150M [00:03&lt;00:05, 19.9Mbytes/s]
+ 24%|██▍       | 36.3M/150M [00:03&lt;00:05, 20.6Mbytes/s]
+ 26%|██▌       | 38.5M/150M [00:03&lt;00:05, 20.8Mbytes/s]
+ 27%|██▋       | 41.1M/150M [00:03&lt;00:05, 21.1Mbytes/s]
+ 29%|██▉       | 44.1M/150M [00:03&lt;00:04, 21.4Mbytes/s]
+ 31%|███       | 46.3M/150M [00:03&lt;00:04, 21.4Mbytes/s]
+ 32%|███▏      | 48.8M/150M [00:03&lt;00:04, 21.4Mbytes/s]
+ 34%|███▍      | 51.9M/150M [00:03&lt;00:04, 21.7Mbytes/s]
+ 36%|███▌      | 54.0M/150M [00:04&lt;00:04, 21.6Mbytes/s]
+ 37%|███▋      | 56.2M/150M [00:04&lt;00:05, 17.8Mbytes/s]
+ 39%|███▊      | 58.1M/150M [00:04&lt;00:06, 15.3Mbytes/s]
+ 41%|████▏     | 62.2M/150M [00:04&lt;00:04, 17.7Mbytes/s]
+ 44%|████▍     | 66.0M/150M [00:04&lt;00:04, 19.0Mbytes/s]
+ 46%|████▋     | 69.9M/150M [00:04&lt;00:04, 19.8Mbytes/s]
+ 49%|████▊     | 73.3M/150M [00:05&lt;00:04, 19.0Mbytes/s]
+ 51%|█████     | 76.8M/150M [00:05&lt;00:03, 19.1Mbytes/s]
+ 54%|█████▎    | 80.6M/150M [00:05&lt;00:03, 19.8Mbytes/s]
+ 56%|█████▌    | 84.5M/150M [00:05&lt;00:03, 20.3Mbytes/s]
+ 59%|█████▊    | 88.3M/150M [00:05&lt;00:03, 20.7Mbytes/s]
+ 61%|██████▏   | 92.1M/150M [00:06&lt;00:02, 20.9Mbytes/s]
+ 64%|██████▍   | 95.9M/150M [00:06&lt;00:02, 21.1Mbytes/s]
+ 66%|██████▋   | 99.8M/150M [00:06&lt;00:02, 21.2Mbytes/s]
+ 69%|██████▉   | 104M/150M [00:06&lt;00:02, 21.3Mbytes/s]
+ 71%|███████▏  | 107M/150M [00:06&lt;00:02, 21.3Mbytes/s]
+ 74%|███████▍  | 111M/150M [00:06&lt;00:01, 21.4Mbytes/s]
+ 77%|███████▋  | 115M/150M [00:07&lt;00:01, 21.4Mbytes/s]
+ 79%|███████▉  | 119M/150M [00:07&lt;00:01, 21.5Mbytes/s]
+ 82%|████████▏ | 123M/150M [00:07&lt;00:01, 21.5Mbytes/s]
+ 84%|████████▍ | 127M/150M [00:07&lt;00:01, 21.5Mbytes/s]
+ 87%|████████▋ | 130M/150M [00:07&lt;00:00, 21.5Mbytes/s]
+ 89%|████████▉ | 134M/150M [00:08&lt;00:00, 21.5Mbytes/s]
+ 92%|█████████▏| 138M/150M [00:08&lt;00:00, 21.5Mbytes/s]
+ 94%|█████████▍| 142M/150M [00:08&lt;00:00, 21.5Mbytes/s]
+ 97%|█████████▋| 146M/150M [00:08&lt;00:00, 21.5Mbytes/s]
+ 99%|█████████▉| 150M/150M [00:08&lt;00:00, 21.5Mbytes/s]
+100%|██████████| 150M/150M [00:08&lt;00:00, 17.2Mbytes/s]
 </pre></div>
 </div>
 </div>
@@ -824,14 +801,14 @@ ng: ./data_osprey/sub-002/ses-01/anat/sub-002_ses-01_acq-MP2RAGE_desc-defaced_T1
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">base_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
-<span class="c1"># base_path = &quot;/wsl.localhost/ubuntu-24.04/home/uqmtoth/Repos/example-notebooks/books/spectroscopy&quot;</span>
 <span class="n">data_path</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">base_path</span><span class="si">}</span><span class="s1">/data_osprey&#39;</span>
 <span class="n">output_path</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">base_path</span><span class="si">}</span><span class="s1">/osprey-output&#39;</span>
 <span class="n">basis_set</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">data_path</span><span class="si">}</span><span class="s1">/basis_siemens_slaser30.mat&#39;</span>
 <span class="n">job_path</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">base_path</span><span class="si">}</span><span class="s1">/osprey-job.json&#39;</span>
-<span class="c1"># job_path = &quot;./osprey-job.json&quot;</span>
+
 <span class="n">sub</span> <span class="o">=</span> <span class="s1">&#39;sub-002&#39;</span>
 <span class="n">ses</span> <span class="o">=</span> <span class="s1">&#39;ses-01&#39;</span>
+
 <span class="c1"># Metabolite data.</span>
 <span class="n">files</span> <span class="o">=</span> <span class="p">[</span>
     <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">data_path</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">sub</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">ses</span><span class="si">}</span><span class="s1">/mrs/meas_MID00103_FID130220_svs_slaser_dkd_ul.dat&#39;</span>
@@ -1180,6 +1157,16 @@ Full Osprey runtime: 307.078156 seconds
 <div class="cell_output docutils container">
 <div class="output text_html"><img src="https://raw.githubusercontent.com/neurodesk/example-notebooks/refs/heads/main/books/images/osprey-notebook.png"/></div></div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">ipython_image</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">output_path</span><span class="si">}</span><span class="s2">/Reports/reportFigures/sub-002/sub-002_seg_svs_space-scanner_mask.jpg&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/3ee3a31d64b49cf6d0b2391f0d076647e9fd60830f3e8cceb773a61e685c9245.jpg" src="_images/3ee3a31d64b49cf6d0b2391f0d076647e9fd60830f3e8cceb773a61e685c9245.jpg" />
+</div>
+</div>
 </section>
 <section id="spectral-modelling">
 <h3>Spectral modelling<a class="headerlink" href="#spectral-modelling" title="Link to this heading">#</a></h3>
@@ -1202,7 +1189,6 @@ Full Osprey runtime: 307.078156 seconds
 <span class="n">crlb_dict</span> <span class="o">=</span> <span class="n">crlbs</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:]</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()</span>
 
 <span class="c1"># Osprey fitting results image.</span>
-<span class="c1"># img_path = f&quot;{output_path}/Reports/reportFigures/sub-002/sub-002_metab_A_model.jpg&quot;</span>
 <span class="n">img_path</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">output_path</span><span class="si">}</span><span class="s2">/Reports/reportFigures/sub-002/sub-002_metab_A_model.jpg&quot;</span>
 <span class="n">img</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">img_path</span><span class="p">)</span>
 
@@ -1227,34 +1213,19 @@ Full Osprey runtime: 307.078156 seconds
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># HTML-formatted title so that it can be combined with an image.</span>
-<span class="n">title</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">HTML</span><span class="p">(</span>
-    <span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">    &lt;div style=&#39;</span>
-<span class="s2">        font:25px sans-serif;</span>
-<span class="s2">        text-align:center;</span>
-<span class="s2">        color:black;</span>
-<span class="s2">        background-color:white;</span>
-<span class="s2">        padding:10px;</span>
-<span class="s2">        display:block;</span>
-<span class="s2">        width:100%;</span>
-<span class="s2">        box-sizing:border-box;</span>
-<span class="s2">    &#39;&gt;</span>
-<span class="s2">        Averaged spectra</span>
-<span class="s2">    &lt;/div&gt;</span>
-<span class="s2">    &quot;&quot;&quot;</span>
-<span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">Markdown</span><span class="p">,</span> <span class="n">HTML</span><span class="p">,</span> <span class="n">Image</span>
 
-<span class="n">img</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Image</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">output_path</span><span class="si">}</span><span class="s2">/Reports/reportFigures/sub-002/sub-002_metab_A.jpg&quot;</span><span class="p">)</span>
+<span class="c1"># Centered title</span>
+<span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="s2">&quot;&lt;h2 style=&#39;text-align: center;&#39;&gt;Averaged Spectra&lt;/h2&gt;&quot;</span><span class="p">))</span>
 
-<span class="c1"># Put the title above the image.</span>
-<span class="n">panel</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">VBox</span><span class="p">([</span><span class="n">title</span><span class="p">,</span> <span class="n">img</span><span class="p">],</span> <span class="n">layout</span><span class="o">=</span><span class="n">widgets</span><span class="o">.</span><span class="n">Layout</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="s2">&quot;50%&quot;</span><span class="p">))</span>
-<span class="n">display</span><span class="p">(</span><span class="n">panel</span><span class="p">)</span>
+<span class="c1"># Image (keeps default alignment unless styled otherwise)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Image</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">output_path</span><span class="si">}</span><span class="s2">/Reports/reportFigures/sub-002/sub-002_metab_A.jpg&quot;</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "64b1f10ab5f74d389a13f4a122cd009a", "version_major": 2, "version_minor": 0}</script></div>
+<div class="output text_html"><h2 style='text-align: center;'>Averaged Spectra</h2></div><img alt="_images/2392edb5615535e863b57a6de3855cefee9728f81de79f3b52fd0e508b12aa65.jpg" src="_images/2392edb5615535e863b57a6de3855cefee9728f81de79f3b52fd0e508b12aa65.jpg" />
+</div>
 </div>
 </section>
 <section id="metabolite-concetrations">
@@ -1353,7 +1324,7 @@ Full Osprey runtime: 307.078156 seconds
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analyzing-mr-spectra-from-human-motor-cortex">Analyzing MR Spectra from Human Motor Cortex</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analyzing-mr-spectra-from-the-human-brain-using-single-voxel-spectroscopy-svs">Analyzing MR Spectra from the Human Brain using Single Voxel Spectroscopy (SVS)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mr-spectroscopy-mrs">MR Spectroscopy (MRS)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#citation-and-resources">Citation and Resources:</a></li>
