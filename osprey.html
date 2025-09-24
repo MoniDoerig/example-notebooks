@@ -630,6 +630,14 @@ Also make sure that all modulefiles written in TCL start with the string
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%capture</span>
+<span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="n">nibabel</span> <span class="n">numpy</span> <span class="n">pandas</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">shutil</span>
@@ -677,72 +685,77 @@ Archive:  ./data_osprey/osprey.zip
   inflati
 ng: ./data_osprey/sub-002/ses-01/anat/sub-002_ses-01_acq-MP2RAGE_desc-defaced_T1w.nii
    creating: ./data_osprey/sub-002/ses-01/mrs/
-  inflating: ./data_osprey/sub-002/ses-01/mrs/meas_MID00104_FID130221_svs_slaser_dkd_ul_wref.dat
+  inflating: ./data_osprey/sub-002/ses-01/mrs/meas_MI
+D00104_FID130221_svs_slaser_dkd_ul_wref.dat
   inflating: ./data_osprey/sub-002/ses-01/mrs/meas_MID00103_FID130220_svs_slaser_dkd_ul.dat
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|          | 0.00/150M [00:00&lt;?, ?bytes/s]
-  0%|          | 16.4k/150M [00:00&lt;23:00, 109kbytes/s]
-  0%|          | 49.2k/150M [00:00&lt;18:00, 139kbytes/s]
-  0%|          | 81.9k/150M [00:00&lt;16:57, 148kbytes/s]
-  0%|          | 131k/150M [00:00&lt;10:52, 230kbytes/s]
-  0%|          | 180k/150M [00:00&lt;08:50, 283kbytes/s]
-  0%|          | 246k/150M [00:00&lt;06:36, 379kbytes/s]
-  0%|          | 360k/150M [00:00&lt;04:15, 587kbytes/s]
-  0%|          | 492k/150M [00:01&lt;03:13, 776kbytes/s]
-  0%|          | 737k/150M [00:01&lt;02:01, 1.23Mbytes/s]
-  1%|          | 1.05M/150M [00:01&lt;01:25, 1.75Mbytes/s]
-  1%|          | 1.52M/150M [00:01&lt;00:57, 2.60Mbytes/s]
-  1%|▏         | 2.24M/150M [00:01&lt;00:37, 3.93Mbytes/s]
-  2%|▏         | 3.24M/150M [00:01&lt;00:25, 5.70Mbytes/s]
-  3%|▎         | 4.73M/150M [00:01&lt;00:17, 8.40Mbytes/s]
-  5%|▍         | 6.91M/150M [00:01&lt;00:11, 12.4Mbytes/s]
-  6%|▌         | 9.01M/150M [00:01&lt;00:09, 14.9Mbytes/s]
-  8%|▊         | 11.5M/150M [00:02&lt;00:07, 17.5Mbytes/s]
-  9%|▉         | 13.6M/150M [00:02&lt;00:07, 18.0Mbytes/s]
- 11%|█         | 16.1M/150M [00:02&lt;00:06, 19.3Mbytes/s]
- 12%|█▏        | 18.1M/150M [00:02&lt;00:07, 18.2Mbytes/s]
- 14%|█▍        | 20.8M/150M [00:02&lt;00:07, 17.7Mbytes/s]
- 15%|█▌        | 23.1M/150M [00:02&lt;00:06, 18.8Mbytes/s]
- 17%|█▋        | 26.2M/150M [00:02&lt;00:05, 22.1Mbytes/s]
- 19%|█▉        | 28.5M/150M [00:02&lt;00:05, 22.1Mbytes/s]
- 20%|██        | 30.8M/150M [00:02&lt;00:06, 19.3Mbytes/s]
- 22%|██▏       | 33.3M/150M [00:03&lt;00:05, 19.9Mbytes/s]
- 24%|██▍       | 36.3M/150M [00:03&lt;00:05, 20.6Mbytes/s]
- 26%|██▌       | 38.5M/150M [00:03&lt;00:05, 20.8Mbytes/s]
- 27%|██▋       | 41.1M/150M [00:03&lt;00:05, 21.1Mbytes/s]
- 29%|██▉       | 44.1M/150M [00:03&lt;00:04, 21.4Mbytes/s]
- 31%|███       | 46.3M/150M [00:03&lt;00:04, 21.4Mbytes/s]
- 32%|███▏      | 48.8M/150M [00:03&lt;00:04, 21.4Mbytes/s]
- 34%|███▍      | 51.9M/150M [00:03&lt;00:04, 21.7Mbytes/s]
- 36%|███▌      | 54.0M/150M [00:04&lt;00:04, 21.6Mbytes/s]
- 37%|███▋      | 56.2M/150M [00:04&lt;00:05, 17.8Mbytes/s]
- 39%|███▊      | 58.1M/150M [00:04&lt;00:06, 15.3Mbytes/s]
- 41%|████▏     | 62.2M/150M [00:04&lt;00:04, 17.7Mbytes/s]
- 44%|████▍     | 66.0M/150M [00:04&lt;00:04, 19.0Mbytes/s]
- 46%|████▋     | 69.9M/150M [00:04&lt;00:04, 19.8Mbytes/s]
- 49%|████▊     | 73.3M/150M [00:05&lt;00:04, 19.0Mbytes/s]
- 51%|█████     | 76.8M/150M [00:05&lt;00:03, 19.1Mbytes/s]
- 54%|█████▎    | 80.6M/150M [00:05&lt;00:03, 19.8Mbytes/s]
- 56%|█████▌    | 84.5M/150M [00:05&lt;00:03, 20.3Mbytes/s]
- 59%|█████▊    | 88.3M/150M [00:05&lt;00:03, 20.7Mbytes/s]
- 61%|██████▏   | 92.1M/150M [00:06&lt;00:02, 20.9Mbytes/s]
- 64%|██████▍   | 95.9M/150M [00:06&lt;00:02, 21.1Mbytes/s]
- 66%|██████▋   | 99.8M/150M [00:06&lt;00:02, 21.2Mbytes/s]
- 69%|██████▉   | 104M/150M [00:06&lt;00:02, 21.3Mbytes/s]
- 71%|███████▏  | 107M/150M [00:06&lt;00:02, 21.3Mbytes/s]
- 74%|███████▍  | 111M/150M [00:06&lt;00:01, 21.4Mbytes/s]
- 77%|███████▋  | 115M/150M [00:07&lt;00:01, 21.4Mbytes/s]
- 79%|███████▉  | 119M/150M [00:07&lt;00:01, 21.5Mbytes/s]
- 82%|████████▏ | 123M/150M [00:07&lt;00:01, 21.5Mbytes/s]
- 84%|████████▍ | 127M/150M [00:07&lt;00:01, 21.5Mbytes/s]
- 87%|████████▋ | 130M/150M [00:07&lt;00:00, 21.5Mbytes/s]
- 89%|████████▉ | 134M/150M [00:08&lt;00:00, 21.5Mbytes/s]
- 92%|█████████▏| 138M/150M [00:08&lt;00:00, 21.5Mbytes/s]
- 94%|█████████▍| 142M/150M [00:08&lt;00:00, 21.5Mbytes/s]
- 97%|█████████▋| 146M/150M [00:08&lt;00:00, 21.5Mbytes/s]
- 99%|█████████▉| 150M/150M [00:08&lt;00:00, 21.5Mbytes/s]
-100%|██████████| 150M/150M [00:08&lt;00:00, 17.2Mbytes/s]
+  0%|          | 49.2k/150M [00:00&lt;12:14, 205kbytes/s]
+  0%|          | 81.9k/150M [00:00&lt;14:12, 176kbytes/s]
+  0%|          | 147k/150M [00:00&lt;08:25, 297kbytes/s]
+  0%|          | 197k/150M [00:00&lt;07:33, 331kbytes/s]
+  0%|          | 279k/150M [00:00&lt;05:39, 443kbytes/s]
+  0%|          | 410k/150M [00:00&lt;03:46, 662kbytes/s]
+  0%|          | 557k/150M [00:01&lt;02:52, 870kbytes/s]
+  1%|          | 786k/150M [00:01&lt;01:58, 1.27Mbytes/s]
+  1%|          | 1.11M/150M [00:01&lt;01:22, 1.82Mbytes/s]
+  1%|          | 1.56M/150M [00:01&lt;00:58, 2.55Mbytes/s]
+  1%|▏         | 2.23M/150M [00:01&lt;00:39, 3.74Mbytes/s]
+  2%|▏         | 3.16M/150M [00:01&lt;00:27, 5.36Mbytes/s]
+  3%|▎         | 4.44M/150M [00:01&lt;00:19, 7.51Mbytes/s]
+  4%|▍         | 6.32M/150M [00:01&lt;00:13, 10.8Mbytes/s]
+  6%|▌         | 8.49M/150M [00:01&lt;00:10, 13.7Mbytes/s]
+  7%|▋         | 10.6M/150M [00:01&lt;00:08, 15.7Mbytes/s]
+  8%|▊         | 12.7M/150M [00:02&lt;00:08, 16.7Mbytes/s]
+ 10%|█         | 15.1M/150M [00:02&lt;00:07, 18.5Mbytes/s]
+ 11%|█▏        | 17.0M/150M [00:02&lt;00:07, 18.7Mbytes/s]
+ 13%|█▎        | 19.2M/150M [00:02&lt;00:06, 19.3Mbytes/s]
+ 14%|█▍        | 21.1M/150M [00:02&lt;00:06, 18.9Mbytes/s]
+ 16%|█▌        | 23.4M/150M [00:02&lt;00:06, 19.5Mbytes/s]
+ 17%|█▋        | 25.4M/150M [00:02&lt;00:06, 19.4Mbytes/s]
+ 18%|█▊        | 27.7M/150M [00:02&lt;00:06, 19.5Mbytes/s]
+ 20%|█▉        | 29.9M/150M [00:02&lt;00:06, 19.9Mbytes/s]
+ 21%|██▏       | 32.0M/150M [00:03&lt;00:06, 19.5Mbytes/s]
+ 23%|██▎       | 34.3M/150M [00:03&lt;00:05, 20.3Mbytes/s]
+ 24%|██▍       | 36.3M/150M [00:03&lt;00:05, 20.3Mbytes/s]
+ 26%|██▌       | 38.6M/150M [00:03&lt;00:05, 20.9Mbytes/s]
+ 27%|██▋       | 40.7M/150M [00:03&lt;00:05, 19.9Mbytes/s]
+ 29%|██▊       | 42.9M/150M [00:03&lt;00:05, 20.1Mbytes/s]
+ 30%|██▉       | 44.9M/150M [00:03&lt;00:05, 20.0Mbytes/s]
+ 31%|███▏      | 47.3M/150M [00:03&lt;00:04, 20.9Mbytes/s]
+ 33%|███▎      | 49.4M/150M [00:03&lt;00:05, 20.2Mbytes/s]
+ 34%|███▍      | 51.4M/150M [00:03&lt;00:04, 19.9Mbytes/s]
+ 35%|███▌      | 53.4M/150M [00:04&lt;00:04, 19.8Mbytes/s]
+ 37%|███▋      | 55.5M/150M [00:04&lt;00:04, 19.4Mbytes/s]
+ 38%|███▊      | 57.8M/150M [00:04&lt;00:04, 20.5Mbytes/s]
+ 40%|███▉      | 59.9M/150M [00:04&lt;00:04, 19.6Mbytes/s]
+ 41%|████▏     | 62.4M/150M [00:04&lt;00:04, 20.0Mbytes/s]
+ 43%|████▎     | 64.5M/150M [00:04&lt;00:04, 20.3Mbytes/s]
+ 44%|████▍     | 66.6M/150M [00:04&lt;00:04, 19.5Mbytes/s]
+ 46%|████▌     | 68.6M/150M [00:04&lt;00:05, 15.6Mbytes/s]
+ 47%|████▋     | 70.7M/150M [00:05&lt;00:05, 13.8Mbytes/s]
+ 50%|████▉     | 74.7M/150M [00:05&lt;00:04, 16.2Mbytes/s]
+ 52%|█████▏    | 78.6M/150M [00:05&lt;00:04, 16.3Mbytes/s]
+ 55%|█████▍    | 82.1M/150M [00:05&lt;00:04, 16.8Mbytes/s]
+ 57%|█████▋    | 85.9M/150M [00:05&lt;00:03, 17.8Mbytes/s]
+ 60%|█████▉    | 89.7M/150M [00:06&lt;00:03, 18.4Mbytes/s]
+ 62%|██████▏   | 93.6M/150M [00:06&lt;00:03, 18.9Mbytes/s]
+ 65%|██████▍   | 97.5M/150M [00:06&lt;00:02, 19.2Mbytes/s]
+ 67%|██████▋   | 101M/150M [00:06&lt;00:02, 19.4Mbytes/s]
+ 70%|██████▉   | 105M/150M [00:06&lt;00:02, 19.6Mbytes/s]
+ 72%|███████▏  | 109M/150M [00:07&lt;00:02, 19.7Mbytes/s]
+ 75%|███████▌  | 113M/150M [00:07&lt;00:01, 19.8Mbytes/s]
+ 78%|███████▊  | 117M/150M [00:07&lt;00:01, 19.8Mbytes/s]
+ 80%|████████  | 121M/150M [00:07&lt;00:01, 19.8Mbytes/s]
+ 83%|████████▎ | 124M/150M [00:07&lt;00:01, 19.9Mbytes/s]
+ 85%|████████▌ | 128M/150M [00:08&lt;00:01, 19.9Mbytes/s]
+ 88%|████████▊ | 132M/150M [00:08&lt;00:00, 19.9Mbytes/s]
+ 90%|█████████ | 136M/150M [00:08&lt;00:00, 19.9Mbytes/s]
+ 93%|█████████▎| 140M/150M [00:08&lt;00:00, 19.9Mbytes/s]
+ 95%|█████████▌| 144M/150M [00:08&lt;00:00, 19.8Mbytes/s]
+ 98%|█████████▊| 147M/150M [00:09&lt;00:00, 19.9Mbytes/s]
+100%|██████████| 150M/150M [00:09&lt;00:00, 16.5Mbytes/s]
 </pre></div>
 </div>
 </div>
@@ -774,7 +787,7 @@ ng: ./data_osprey/sub-002/ses-01/anat/sub-002_ses-01_acq-MP2RAGE_desc-defaced_T1
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">CalledProcessError</span><span class="g g-Whitespace">                        </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Get path to Osprey executable.</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">osprey_path</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">check_output</span><span class="p">(</span><span class="s2">&quot;which ospreyCMD&quot;</span><span class="p">,</span> <span class="n">shell</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
 <span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># Extract container base and image path.</span>

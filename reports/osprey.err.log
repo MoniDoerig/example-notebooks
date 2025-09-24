@@ -49,7 +49,7 @@ basis_path = os.path.join(
 
 [31m---------------------------------------------------------------------------[39m
 [31mCalledProcessError[39m                        Traceback (most recent call last)
-[36mCell[39m[36m [39m[32mIn[5][39m[32m, line 2[39m
+[36mCell[39m[36m [39m[32mIn[6][39m[32m, line 2[39m
 [32m      1[39m [38;5;66;03m# Get path to Osprey executable.[39;00m
 [32m----> [39m[32m2[39m osprey_path = [43msubprocess[49m[43m.[49m[43mcheck_output[49m[43m([49m[33;43m"[39;49m[33;43mwhich ospreyCMD[39;49m[33;43m"[39;49m[43m,[49m[43m [49m[43mshell[49m[43m=[49m[38;5;28;43;01mTrue[39;49;00m[43m,[49m[43m [49m[43mtext[49m[43m=[49m[38;5;28;43;01mTrue[39;49;00m[43m)[49m.strip()
 [32m      4[39m [38;5;66;03m# Extract container base and image path.[39;00m
