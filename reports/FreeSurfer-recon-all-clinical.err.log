@@ -25,125 +25,87 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-# Display original file in grayscale
-from ipyniivue import NiiVue
-from IPython.display import display, Image
-import nibabel as nib, numpy as np
+%%bash
+#--------------------------------------------
+# FreeSurfer recon-all-clinical pipeline
+#--------------------------------------------
 
-T1_PATH = "./data/structural/mp2rage.nii.gz" 
+set -euo pipefail  # Stop on unset variables or errors
 
-# Robust intensity window (ignore zeros and outliers)
-t1 = nib.load(T1_PATH).get_fdata()
-vals = t1[t1 > 0]
-vmin, vmax = np.percentile(vals, [0.5, 99.5]) if vals.size else (None, None)
+#----------------------------
+# Config
+#----------------------------
+INPUT_SCAN=./data/structural/mp2rage.nii.gz
+SUBJECT_ID=TestSubject
+THREADS=2 #adapt if more resources are available
+SUBJECT_DIR=./data/structural/recon-all-clinical
 
-nv = NiiVue(
-    height=600,
-    multiplanar_layout="grid",
-    multiplanar_show_render=True,
-    is_ruler=False,
-    is_colorbar=True,
-    is_orient_cube=True,
-    is_radiological_convention=True,
-    back_color=(0.1,0.1,0.1,1.0),
-)
+# Ensure output folder exists
+mkdir -p "$SUBJECT_DIR"
+echo "SUBJECT_DIR=$SUBJECT_DIR"
+echo "SUBJECT_ID=$SUBJECT_ID"
+echo "INPUT_SCAN=$INPUT_SCAN"
+echo
 
-nv.add_volume({
-    "path": T1_PATH,
-    "name": "native",
-    "opacity": 1.0,
-    "colormap": "gray",
-    "cal_min": float(vmin) if vmin is not None else None,
-    "cal_max": float(vmax) if vmax is not None else None,
-    "ignore_zero_voxels": True,
-})
+#----------------------------
+# Allow deeper folder structures in some FreeSurfer builds
+#----------------------------
+export FS_ALLOW_DEEP=1
+export SINGULARITYENV_FS_ALLOW_DEEP=1
+export APPTAINERENV_FS_ALLOW_DEEP=1
 
-nv.set_crosshair_color([0,0,0,1])
-display(nv)
+#----------------------------
+# Start pipeline
+#----------------------------
+# Remove previous "is-running" file if it exists
+rm -f "$SUBJECT_DIR/$SUBJECT_ID/scripts/IsRunning.lh+rh"
+
+# Run the actual recon-all-clinical pipeline
+recon-all-clinical.sh "$INPUT_SCAN" "$SUBJECT_ID" "$THREADS" "$SUBJECT_DIR"
+
+#----------------------------
+# End message
+#----------------------------
+echo "----- recon-all-clinical.sh completed -----"
+echo "Results saved to: $SUBJECT_DIR/$SUBJECT_ID"
+
 ------------------
 
+----- stdout -----
+SUBJECT_DIR=./data/structural/recon-all-clinical
+SUBJECT_ID=TestSubject
+----- stdout -----
+INPUT_SCAN=./data/structural/mp2rage.nii.gz
+----- stderr -----
+bash: line 36: recon-all-clinical.sh: command not found
+------------------
 
 [31m---------------------------------------------------------------------------[39m
-[31mTraitError[39m                                Traceback (most recent call last)
-[36mCell[39m[36m [39m[32mIn[6][39m[32m, line 13[39m
-[32m     10[39m vals = t1[t1 > [32m0[39m]
-[32m     11[39m vmin, vmax = np.percentile(vals, [[32m0.5[39m, [32m99.5[39m]) [38;5;28;01mif[39;00m vals.size [38;5;28;01melse[39;00m ([38;5;28;01mNone[39;00m, [38;5;28;01mNone[39;00m)
-[32m---> [39m[32m13[39m nv = [43mNiiVue[49m[43m([49m
-[32m     14[39m [43m    [49m[43mheight[49m[43m=[49m[32;43m600[39;49m[43m,[49m
-[32m     15[39m [43m    [49m[43mmultiplanar_layout[49m[43m=[49m[33;43m"[39;49m[33;43mgrid[39;49m[33;43m"[39;49m[43m,[49m
-[32m     16[39m [43m    [49m[43mmultiplanar_show_render[49m[43m=[49m[38;5;28;43;01mTrue[39;49;00m[43m,[49m
-[32m     17[39m [43m    [49m[43mis_ruler[49m[43m=[49m[38;5;28;43;01mFalse[39;49;00m[43m,[49m
-[32m     18[39m [43m    [49m[43mis_colorbar[49m[43m=[49m[38;5;28;43;01mTrue[39;49;00m[43m,[49m
-[32m     19[39m [43m    [49m[43mis_orient_cube[49m[43m=[49m[38;5;28;43;01mTrue[39;49;00m[43m,[49m
-[32m     20[39m [43m    [49m[43mis_radiological_convention[49m[43m=[49m[38;5;28;43;01mTrue[39;49;00m[43m,[49m
-[32m     21[39m [43m    [49m[43mback_color[49m[43m=[49m[43m([49m[32;43m0.1[39;49m[43m,[49m[32;43m0.1[39;49m[43m,[49m[32;43m0.1[39;49m[43m,[49m[32;43m1.0[39;49m[43m)[49m[43m,[49m
-[32m     22[39m [43m)[49m
-[32m     24[39m nv.add_volume({
-[32m     25[39m     [33m"[39m[33mpath[39m[33m"[39m: T1_PATH,
-[32m     26[39m     [33m"[39m[33mname[39m[33m"[39m: [33m"[39m[33mnative[39m[33m"[39m,
-[32m   (...)[39m[32m     31[39m     [33m"[39m[33mignore_zero_voxels[39m[33m"[39m: [38;5;28;01mTrue[39;00m,
-[32m     32[39m })
-[32m     34[39m nv.set_crosshair_color([[32m0[39m,[32m0[39m,[32m0[39m,[32m1[39m])
+[31mCalledProcessError[39m                        Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[8][39m[32m, line 1[39m
+[32m----> [39m[32m1[39m [43mget_ipython[49m[43m([49m[43m)[49m[43m.[49m[43mrun_cell_magic[49m[43m([49m[33;43m'[39;49m[33;43mbash[39;49m[33;43m'[39;49m[43m,[49m[43m [49m[33;43m'[39;49m[33;43m'[39;49m[43m,[49m[43m [49m[33;43m'[39;49m[33;43m#--------------------------------------------[39;49m[38;5;130;43;01m\n[39;49;00m[33;43m# FreeSurfer recon-all-clinical pipeline[39;49m[38;5;130;43;01m\n[39;49;00m[33;43m#--------------------------------------------[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;130;43;01m\n[39;49;00m[33;43mset -euo pipefail  # Stop on unset variables or errors[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;130;43;01m\n[39;49;00m[33;43m#----------------------------[39;49m[38;5;130;43;01m\n[39;49;00m[33;43m# Config[39;49m[38;5;130;43;01m\n[39;49;00m[33;43m#----------------------------[39;49m[38;5;130;43;01m\n[39;49;00m[33;43mINPUT_SCAN=./data/structural/mp2rage.nii.gz[39;49m[38;5;130;43;01m\n[39;49;00m[33;43mSUBJECT_ID=TestSubject[39;49m[38;5;130;43;01m\n[39;49;00m[33;43mTHREADS=2 #adapt if more resources are available[39;49m[38;5;130;43;01m\n[39;49;00m[33;43mSUBJECT_DIR=./data/structural/recon-all-clinical[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;130;43;01m\n[39;49;00m[33;43m# Ensure output folder exists[39;49m[38;5;130;43;01m\n[39;49;00m[33;43mmkdir -p [39;49m[33;43m"[39;49m[33;43m$SUBJECT_DIR[39;49m[33;43m"[39;49m[38;5;130;43;01m\n[39;49;00m[33;43mecho [39;49m[33;43m"[39;49m[33;43mSUBJECT_DIR=$SUBJECT_DIR[39;49m[33;43m"[39;49m[38;5;130;43;01m\n[39;49;00m[33;43mecho [39;49m[33;43m"[39;49m[33;43mSUBJECT_ID=$SUBJECT_ID[39;49m[33;43m"[39;49m[38;5;130;43;01m\n[39;49;00m[33;43mecho [39;49m[33;43m"[39;49m[33;43mINPUT_SCAN=$INPUT_SCAN[39;49m[33;43m"[39;49m[38;5;130;43;01m\n[39;49;00m[33;43mecho[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;130;43;01m\n[39;49;00m[33;43m#----------------------------[39;49m[38;5;130;43;01m\n[39;49;00m[33;43m# Allow deeper folder structures in some FreeSurfer builds[39;49m[38;5;130;43;01m\n[39;49;00m[33;43m#----------------------------[39;49m[38;5;130;43;01m\n[39;49;00m[33;43mexport FS_ALLOW_DEEP=1[39;49m[38;5;130;43;01m\n[39;49;00m[33;43mexport SINGULARITYENV_FS_ALLOW_DEEP=1[39;49m[38;5;130;43;01m\n[39;49;00m[33;43mexport APPTAINERENV_FS_ALLOW_DEEP=1[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;130;43;01m\n[39;49;00m[33;43m#----------------------------[39;49m[38;5;130;43;01m\n[39;49;00m[33;43m# Start pipeline[39;49m[38;5;130;43;01m\n[39;49;00m[33;43m#----------------------------[39;49m[38;5;130;43;01m\n[39;49;00m[33;43m# Remove previous [39;49m[33;43m"[39;49m[33;43mis-running[39;49m[33;43m"[39;49m[33;43m file if it exists[39;49m[38;5;130;43;01m\n[39;49;00m[33;43mrm -f [39;49m[33;43m"[39;49m[33;43m$SUBJECT_DIR/$SUBJECT_ID/scripts/IsRunning.lh+rh[39;49m[33;43m"[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;130;43;01m\n[39;49;00m[33;43m# Run the actual recon-all-clinical pipeline[39;49m[38;5;130;43;01m\n[39;49;00m[33;43mrecon-all-clinical.sh [39;49m[33;43m"[39;49m[33;43m$INPUT_SCAN[39;49m[33;43m"[39;49m[33;43m [39;49m[33;43m"[39;49m[33;43m$SUBJECT_ID[39;49m[33;43m"[39;49m[33;43m [39;49m[33;43m"[39;49m[33;43m$THREADS[39;49m[33;43m"[39;49m[33;43m [39;49m[33;43m"[39;49m[33;43m$SUBJECT_DIR[39;49m[33;43m"[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;130;43;01m\n[39;49;00m[33;43m#----------------------------[39;49m[38;5;130;43;01m\n[39;49;00m[33;43m# End message[39;49m[38;5;130;43;01m\n[39;49;00m[33;43m#----------------------------[39;49m[38;5;130;43;01m\n[39;49;00m[33;43mecho [39;49m[33;43m"[39;49m[33;43m----- recon-all-clinical.sh completed -----[39;49m[33;43m"[39;49m[38;5;130;43;01m\n[39;49;00m[33;43mecho [39;49m[33;43m"[39;49m[33;43mResults saved to: $SUBJECT_DIR/$SUBJECT_ID[39;49m[33;43m"[39;49m[38;5;130;43;01m\n[39;49;00m[33;43m'[39;49m[43m)[49m
 
-[36mFile [39m[32m/opt/conda/lib/python3.12/site-packages/ipyniivue/widget.py:401[39m, in [36mNiiVue.__init__[39m[34m(self, height, **options)[39m
-[32m    386[39m [38;5;250m[39m[33mr[39m[33;03m"""[39;00m
-[32m    387[39m [33;03mInitialize the NiiVue widget.[39;00m
-[32m    388[39m 
-[32m   (...)[39m[32m    398[39m [33;03m    See :class:`ipyniivue.config_options.ConfigOptions` for all options.[39;00m
-[32m    399[39m [33;03m"""[39;00m
-[32m    400[39m [38;5;66;03m# Get options[39;00m
-[32m--> [39m[32m401[39m opts = [43mConfigOptions[49m[43m([49m[43mparent[49m[43m=[49m[38;5;28;43mself[39;49m[43m,[49m[43m [49m[43m*[49m[43m*[49m[43moptions[49m[43m)[49m
-[32m    402[39m [38;5;28msuper[39m().[34m__init__[39m(height=height, opts=opts, volumes=[], meshes=[])
-[32m    404[39m [38;5;66;03m# Handle messages coming from frontend[39;00m
+[36mFile [39m[32m/opt/conda/lib/python3.12/site-packages/IPython/core/interactiveshell.py:2549[39m, in [36mInteractiveShell.run_cell_magic[39m[34m(self, magic_name, line, cell)[39m
+[32m   2547[39m [38;5;28;01mwith[39;00m [38;5;28mself[39m.builtin_trap:
+[32m   2548[39m     args = (magic_arg_s, cell)
+[32m-> [39m[32m2549[39m     result = [43mfn[49m[43m([49m[43m*[49m[43margs[49m[43m,[49m[43m [49m[43m*[49m[43m*[49m[43mkwargs[49m[43m)[49m
+[32m   2551[39m [38;5;66;03m# The code below prevents the output from being displayed[39;00m
+[32m   2552[39m [38;5;66;03m# when using magics with decorator @output_can_be_silenced[39;00m
+[32m   2553[39m [38;5;66;03m# when the last Python token in the expression is a ';'.[39;00m
+[32m   2554[39m [38;5;28;01mif[39;00m [38;5;28mgetattr[39m(fn, magic.MAGIC_OUTPUT_CAN_BE_SILENCED, [38;5;28;01mFalse[39;00m):
 
-[36mFile [39m[32m/opt/conda/lib/python3.12/site-packages/ipyniivue/config_options.py:93[39m, in [36mConfigOptions.__init__[39m[34m(self, parent, **kwargs)[39m
-[32m     92[39m [38;5;28;01mdef[39;00m[38;5;250m [39m[34m__init__[39m([38;5;28mself[39m, parent=[38;5;28;01mNone[39;00m, **kwargs):
-[32m---> [39m[32m93[39m     [38;5;28;43msuper[39;49m[43m([49m[43m)[49m[43m.[49m[34;43m__init__[39;49m[43m([49m[43m*[49m[43m*[49m[43mkwargs[49m[43m)[49m
-[32m     94[39m     [38;5;28mself[39m._parent = parent
+[36mFile [39m[32m/opt/conda/lib/python3.12/site-packages/IPython/core/magics/script.py:159[39m, in [36mScriptMagics._make_script_magic.<locals>.named_script_magic[39m[34m(line, cell)[39m
+[32m    157[39m [38;5;28;01melse[39;00m:
+[32m    158[39m     line = script
+[32m--> [39m[32m159[39m [38;5;28;01mreturn[39;00m [38;5;28;43mself[39;49m[43m.[49m[43mshebang[49m[43m([49m[43mline[49m[43m,[49m[43m [49m[43mcell[49m[43m)[49m
 
-[36mFile [39m[32m/opt/conda/lib/python3.12/site-packages/traitlets/traitlets.py:1355[39m, in [36mHasTraits.__init__[39m[34m(self, *args, **kwargs)[39m
-[32m   1353[39m [38;5;28;01mfor[39;00m key, value [38;5;129;01min[39;00m kwargs.items():
-[32m   1354[39m     [38;5;28;01mif[39;00m [38;5;28mself[39m.has_trait(key):
-[32m-> [39m[32m1355[39m         [38;5;28;43msetattr[39;49m[43m([49m[38;5;28;43mself[39;49m[43m,[49m[43m [49m[43mkey[49m[43m,[49m[43m [49m[43mvalue[49m[43m)[49m
-[32m   1356[39m         changes[key] = Bunch(
-[32m   1357[39m             name=key,
-[32m   1358[39m             old=[38;5;28;01mNone[39;00m,
-[32m   (...)[39m[32m   1361[39m             [38;5;28mtype[39m=[33m"[39m[33mchange[39m[33m"[39m,
-[32m   1362[39m         )
-[32m   1363[39m     [38;5;28;01melse[39;00m:
-[32m   1364[39m         [38;5;66;03m# passthrough args that don't set traits to super[39;00m
+[36mFile [39m[32m/opt/conda/lib/python3.12/site-packages/IPython/core/magics/script.py:336[39m, in [36mScriptMagics.shebang[39m[34m(self, line, cell)[39m
+[32m    331[39m [38;5;28;01mif[39;00m args.raise_error [38;5;129;01mand[39;00m p.returncode != [32m0[39m:
+[32m    332[39m     [38;5;66;03m# If we get here and p.returncode is still None, we must have[39;00m
+[32m    333[39m     [38;5;66;03m# killed it but not yet seen its return code. We don't wait for it,[39;00m
+[32m    334[39m     [38;5;66;03m# in case it's stuck in uninterruptible sleep. -9 = SIGKILL[39;00m
+[32m    335[39m     rc = p.returncode [38;5;129;01mor[39;00m -[32m9[39m
+[32m--> [39m[32m336[39m     [38;5;28;01mraise[39;00m CalledProcessError(rc, cell)
 
-[36mFile [39m[32m/opt/conda/lib/python3.12/site-packages/traitlets/traitlets.py:716[39m, in [36mTraitType.__set__[39m[34m(self, obj, value)[39m
-[32m    714[39m [38;5;28;01mif[39;00m [38;5;28mself[39m.read_only:
-[32m    715[39m     [38;5;28;01mraise[39;00m TraitError([33m'[39m[33mThe [39m[33m"[39m[38;5;132;01m%s[39;00m[33m"[39m[33m trait is read-only.[39m[33m'[39m % [38;5;28mself[39m.name)
-[32m--> [39m[32m716[39m [38;5;28;43mself[39;49m[43m.[49m[43mset[49m[43m([49m[43mobj[49m[43m,[49m[43m [49m[43mvalue[49m[43m)[49m
-
-[36mFile [39m[32m/opt/conda/lib/python3.12/site-packages/traitlets/traitlets.py:690[39m, in [36mTraitType.set[39m[34m(self, obj, value)[39m
-[32m    689[39m [38;5;28;01mdef[39;00m[38;5;250m [39m[34mset[39m([38;5;28mself[39m, obj: HasTraits, value: S) -> [38;5;28;01mNone[39;00m:
-[32m--> [39m[32m690[39m     new_value = [38;5;28;43mself[39;49m[43m.[49m[43m_validate[49m[43m([49m[43mobj[49m[43m,[49m[43m [49m[43mvalue[49m[43m)[49m
-[32m    691[39m     [38;5;28;01massert[39;00m [38;5;28mself[39m.name [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m
-[32m    692[39m     [38;5;28;01mtry[39;00m:
-
-[36mFile [39m[32m/opt/conda/lib/python3.12/site-packages/traitlets/traitlets.py:722[39m, in [36mTraitType._validate[39m[34m(self, obj, value)[39m
-[32m    720[39m     [38;5;28;01mreturn[39;00m value
-[32m    721[39m [38;5;28;01mif[39;00m [38;5;28mhasattr[39m([38;5;28mself[39m, [33m"[39m[33mvalidate[39m[33m"[39m):
-[32m--> [39m[32m722[39m     value = [38;5;28;43mself[39;49m[43m.[49m[43mvalidate[49m[43m([49m[43mobj[49m[43m,[49m[43m [49m[43mvalue[49m[43m)[49m
-[32m    723[39m [38;5;28;01mif[39;00m obj._cross_validation_lock [38;5;129;01mis[39;00m [38;5;28;01mFalse[39;00m:
-[32m    724[39m     value = [38;5;28mself[39m._cross_validate(obj, value)
-
-[36mFile [39m[32m/opt/conda/lib/python3.12/site-packages/traitlets/traitlets.py:4276[39m, in [36mUseEnum.validate[39m[34m(self, obj, value)[39m
-[32m   4274[39m     [38;5;28;01melse[39;00m:
-[32m   4275[39m         [38;5;28;01mreturn[39;00m [38;5;28mself[39m.default_value
-[32m-> [39m[32m4276[39m [38;5;28;43mself[39;49m[43m.[49m[43merror[49m[43m([49m[43mobj[49m[43m,[49m[43m [49m[43mvalue[49m[43m)[49m
-
-[36mFile [39m[32m/opt/conda/lib/python3.12/site-packages/traitlets/traitlets.py:831[39m, in [36mTraitType.error[39m[34m(self, obj, value, error, info)[39m
-[32m    825[39m [38;5;28;01melse[39;00m:
-[32m    826[39m     e = [33m"[39m[33mThe [39m[33m'[39m[38;5;132;01m{}[39;00m[33m'[39m[33m trait expected [39m[38;5;132;01m{}[39;00m[33m, not [39m[38;5;132;01m{}[39;00m[33m.[39m[33m"[39m.format(
-[32m    827[39m         [38;5;28mself[39m.name,
-[32m    828[39m         info [38;5;129;01mor[39;00m [38;5;28mself[39m.info(),
-[32m    829[39m         describe([33m"[39m[33mthe[39m[33m"[39m, value),
-[32m    830[39m     )
-[32m--> [39m[32m831[39m [38;5;28;01mraise[39;00m TraitError(e)
-
-[31mTraitError[39m: The 'multiplanar_layout' trait of a ConfigOptions instance expected any of ['AUTO', 'COLUMN', 'GRID', 'ROW'], not the str 'grid'.
+[31mCalledProcessError[39m: Command 'b'#--------------------------------------------\n# FreeSurfer recon-all-clinical pipeline\n#--------------------------------------------\n\nset -euo pipefail  # Stop on unset variables or errors\n\n#----------------------------\n# Config\n#----------------------------\nINPUT_SCAN=./data/structural/mp2rage.nii.gz\nSUBJECT_ID=TestSubject\nTHREADS=2 #adapt if more resources are available\nSUBJECT_DIR=./data/structural/recon-all-clinical\n\n# Ensure output folder exists\nmkdir -p "$SUBJECT_DIR"\necho "SUBJECT_DIR=$SUBJECT_DIR"\necho "SUBJECT_ID=$SUBJECT_ID"\necho "INPUT_SCAN=$INPUT_SCAN"\necho\n\n#----------------------------\n# Allow deeper folder structures in some FreeSurfer builds\n#----------------------------\nexport FS_ALLOW_DEEP=1\nexport SINGULARITYENV_FS_ALLOW_DEEP=1\nexport APPTAINERENV_FS_ALLOW_DEEP=1\n\n#----------------------------\n# Start pipeline\n#----------------------------\n# Remove previous "is-running" file if it exists\nrm -f "$SUBJECT_DIR/$SUBJECT_ID/scripts/IsRunning.lh+rh"\n\n# Run the actual recon-all-clinical pipeline\nrecon-all-clinical.sh "$INPUT_SCAN" "$SUBJECT_ID" "$THREADS" "$SUBJECT_DIR"\n\n#----------------------------\n# End message\n#----------------------------\necho "----- recon-all-clinical.sh completed -----"\necho "Results saved to: $SUBJECT_DIR/$SUBJECT_ID"\n'' returned non-zero exit status 127.
 
