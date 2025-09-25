@@ -491,12 +491,14 @@ The computer will either:
 <p style="color:#0D47A1; font-weight:bold; font-size:16px;">
 💡 Tip: Always <b>read the explanation</b above each code cell first – it tells you in plain words what the computer will do.
 </p>
-</div><p>There are a few <strong>dataformats</strong> that are used in this tutorial: <br>
-Files that end in <strong>‘.mgz’ and ‘nii.gz’</strong> are <strong>volumetric images</strong> (either showing the brain or a specific region of the brain).  <br>
-Files that end in <strong>‘.stat’</strong> are <strong>statistics files</strong>.  <br>
-Files that end in <strong>.txt</strong> are just <strong>text-files</strong>.  <br>
-Files that end in <strong>‘.csv’</strong> are <strong>datasheets</strong>.  <br>
-Files that end in <strong>‘.pial, .surf etc’</strong> are <strong>surface files</strong>.  <br></p>
+</div><p>There are a few <strong>dataformats</strong> that are used in this tutorial: <br></p>
+<ul class="simple">
+<li><p>Files that end in <strong>‘.mgz’ and ‘nii.gz’</strong> are <strong>volumetric images</strong> (either showing the brain or a specific region of the brain).  <br></p></li>
+<li><p>Files that end in <strong>‘.stat’</strong> are <strong>statistics files</strong>.  <br></p></li>
+<li><p>Files that end in <strong>.txt</strong> are just <strong>text-files</strong>.  <br></p></li>
+<li><p>Files that end in <strong>‘.csv’</strong> are <strong>datasheets</strong>.  <br></p></li>
+<li><p>Files that end in <strong>‘.pial, .surf etc’</strong> are <strong>surface files</strong>.  <br></p></li>
+</ul>
 </section>
 <section id="load-the-module-for-this-workbook">
 <h1>Load the module for this workbook<a class="headerlink" href="#load-the-module-for-this-workbook" title="Link to this heading">#</a></h1>
@@ -600,44 +602,48 @@ to start the download.
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading File
   0%|                                           | 0.00/72.7M [00:00&lt;?, ?bytes/s]
-  0%|                                   | 16.4k/72.7M [00:00&lt;09:21, 129kbytes/s]
-  0%|                                   | 49.2k/72.7M [00:00&lt;07:22, 164kbytes/s]
-  0%|                                   | 81.9k/72.7M [00:00&lt;06:57, 174kbytes/s]
-  0%|                                    | 147k/72.7M [00:00&lt;04:12, 287kbytes/s]
-  0%|                                    | 213k/72.7M [00:00&lt;03:12, 377kbytes/s]
-  0%|▏                                   | 328k/72.7M [00:00&lt;02:03, 584kbytes/s]
-  1%|▏                                   | 475k/72.7M [00:00&lt;01:27, 823kbytes/s]
-  1%|▎                                  | 754k/72.7M [00:01&lt;00:52, 1.37Mbytes/s]
-  2%|▌                                 | 1.13M/72.7M [00:01&lt;00:34, 2.05Mbytes/s]
-  2%|▊                                 | 1.77M/72.7M [00:01&lt;00:21, 3.29Mbytes/s]
-  4%|█▎                                | 2.77M/72.7M [00:01&lt;00:13, 5.22Mbytes/s]
-  6%|██                                | 4.28M/72.7M [00:01&lt;00:08, 8.11Mbytes/s]
-  9%|███▏                              | 6.72M/72.7M [00:01&lt;00:05, 12.9Mbytes/s]
- 13%|████▎                             | 9.32M/72.7M [00:01&lt;00:03, 16.4Mbytes/s]
- 17%|█████▊                            | 12.3M/72.7M [00:01&lt;00:03, 19.5Mbytes/s]
- 21%|███████                           | 15.0M/72.7M [00:01&lt;00:02, 21.7Mbytes/s]
- 24%|████████▏                         | 17.5M/72.7M [00:01&lt;00:02, 22.1Mbytes/s]
- 28%|█████████▍                        | 20.2M/72.7M [00:02&lt;00:02, 23.6Mbytes/s]
- 31%|██████████▋                       | 22.9M/72.7M [00:02&lt;00:02, 24.6Mbytes/s]
- 35%|███████████▊                      | 25.4M/72.7M [00:02&lt;00:01, 24.2Mbytes/s]
- 39%|█████████████                     | 28.0M/72.7M [00:02&lt;00:01, 25.0Mbytes/s]
- 42%|██████████████▎                   | 30.7M/72.7M [00:02&lt;00:01, 24.9Mbytes/s]
- 46%|███████████████▌                  | 33.3M/72.7M [00:02&lt;00:01, 24.3Mbytes/s]
- 49%|████████████████▊                 | 35.8M/72.7M [00:02&lt;00:01, 24.7Mbytes/s]
- 53%|██████████████████▏               | 38.8M/72.7M [00:02&lt;00:01, 25.3Mbytes/s]
- 57%|███████████████████▎              | 41.4M/72.7M [00:02&lt;00:01, 24.6Mbytes/s]
- 61%|████████████████████▌             | 44.0M/72.7M [00:03&lt;00:01, 25.2Mbytes/s]
- 65%|█████████████████████▉            | 47.0M/72.7M [00:03&lt;00:01, 25.3Mbytes/s]
- 68%|███████████████████████▏          | 49.7M/72.7M [00:03&lt;00:00, 25.9Mbytes/s]
- 72%|████████████████████████▍         | 52.3M/72.7M [00:03&lt;00:00, 25.4Mbytes/s]
- 76%|█████████████████████████▋        | 55.0M/72.7M [00:03&lt;00:00, 25.7Mbytes/s]
- 79%|██████████████████████████▉       | 57.6M/72.7M [00:03&lt;00:00, 25.4Mbytes/s]
- 83%|████████████████████████████      | 60.1M/72.7M [00:03&lt;00:00, 25.3Mbytes/s]
- 86%|█████████████████████████████▎    | 62.7M/72.7M [00:03&lt;00:00, 24.6Mbytes/s]
- 90%|██████████████████████████████▋   | 65.6M/72.7M [00:03&lt;00:00, 25.3Mbytes/s]
- 94%|███████████████████████████████▉  | 68.2M/72.7M [00:03&lt;00:00, 24.6Mbytes/s]
- 97%|█████████████████████████████████ | 70.8M/72.7M [00:04&lt;00:00, 25.0Mbytes/s]
-100%|██████████████████████████████████| 72.7M/72.7M [00:04&lt;00:00, 17.6Mbytes/s]
+  0%|                                   | 49.2k/72.7M [00:00&lt;05:24, 224kbytes/s]
+  0%|                                   | 81.9k/72.7M [00:00&lt;06:15, 193kbytes/s]
+  0%|                                    | 147k/72.7M [00:00&lt;03:44, 323kbytes/s]
+  0%|                                    | 213k/72.7M [00:00&lt;03:03, 396kbytes/s]
+  0%|▏                                   | 295k/72.7M [00:00&lt;02:21, 512kbytes/s]
+  1%|▏                                   | 442k/72.7M [00:00&lt;01:33, 775kbytes/s]
+  1%|▎                                  | 623k/72.7M [00:00&lt;01:08, 1.06Mbytes/s]
+  1%|▍                                  | 901k/72.7M [00:01&lt;00:46, 1.55Mbytes/s]
+  2%|▌                                 | 1.31M/72.7M [00:01&lt;00:31, 2.28Mbytes/s]
+  3%|▉                                 | 1.90M/72.7M [00:01&lt;00:21, 3.33Mbytes/s]
+  4%|█▎                                | 2.82M/72.7M [00:01&lt;00:13, 5.04Mbytes/s]
+  6%|█▉                                | 4.11M/72.7M [00:01&lt;00:09, 7.36Mbytes/s]
+  8%|██▊                               | 6.03M/72.7M [00:01&lt;00:06, 10.9Mbytes/s]
+ 12%|███▉                              | 8.49M/72.7M [00:01&lt;00:04, 14.5Mbytes/s]
+ 15%|█████                             | 10.8M/72.7M [00:01&lt;00:03, 16.9Mbytes/s]
+ 18%|██████                            | 12.9M/72.7M [00:01&lt;00:03, 18.2Mbytes/s]
+ 21%|███████▏                          | 15.3M/72.7M [00:01&lt;00:02, 19.8Mbytes/s]
+ 24%|████████▏                         | 17.4M/72.7M [00:02&lt;00:02, 19.6Mbytes/s]
+ 28%|█████████▎                        | 20.0M/72.7M [00:02&lt;00:02, 20.6Mbytes/s]
+ 31%|██████████▌                       | 22.5M/72.7M [00:02&lt;00:02, 21.8Mbytes/s]
+ 34%|███████████▌                      | 24.7M/72.7M [00:02&lt;00:02, 21.7Mbytes/s]
+ 37%|████████████▌                     | 27.0M/72.7M [00:02&lt;00:02, 21.8Mbytes/s]
+ 40%|█████████████▋                    | 29.2M/72.7M [00:02&lt;00:02, 21.3Mbytes/s]
+ 44%|██████████████▊                   | 31.7M/72.7M [00:02&lt;00:01, 21.7Mbytes/s]
+ 47%|███████████████▉                  | 34.0M/72.7M [00:02&lt;00:01, 22.2Mbytes/s]
+ 50%|████████████████▉                 | 36.3M/72.7M [00:02&lt;00:01, 22.0Mbytes/s]
+ 53%|██████████████████                | 38.6M/72.7M [00:03&lt;00:01, 22.2Mbytes/s]
+ 56%|███████████████████               | 40.8M/72.7M [00:03&lt;00:01, 21.7Mbytes/s]
+ 60%|████████████████████▎             | 43.4M/72.7M [00:03&lt;00:01, 22.1Mbytes/s]
+ 63%|█████████████████████▍            | 45.7M/72.7M [00:03&lt;00:01, 22.4Mbytes/s]
+ 66%|██████████████████████▍           | 48.0M/72.7M [00:03&lt;00:01, 22.2Mbytes/s]
+ 69%|███████████████████████▌          | 50.3M/72.7M [00:03&lt;00:01, 22.2Mbytes/s]
+ 72%|████████████████████████▌         | 52.5M/72.7M [00:03&lt;00:00, 21.7Mbytes/s]
+ 76%|█████████████████████████▋        | 55.0M/72.7M [00:03&lt;00:00, 21.8Mbytes/s]
+ 79%|██████████████████████████▊       | 57.3M/72.7M [00:03&lt;00:00, 22.2Mbytes/s]
+ 82%|███████████████████████████▊      | 59.5M/72.7M [00:03&lt;00:00, 22.0Mbytes/s]
+ 85%|████████████████████████████▉     | 61.8M/72.7M [00:04&lt;00:00, 22.1Mbytes/s]
+ 88%|█████████████████████████████▉    | 64.0M/72.7M [00:04&lt;00:00, 21.6Mbytes/s]
+ 91%|███████████████████████████████   | 66.4M/72.7M [00:04&lt;00:00, 21.7Mbytes/s]
+ 95%|████████████████████████████████▏ | 68.7M/72.7M [00:04&lt;00:00, 22.0Mbytes/s]
+ 98%|█████████████████████████████████▏| 70.9M/72.7M [00:04&lt;00:00, 21.9Mbytes/s]
+100%|██████████████████████████████████| 72.7M/72.7M [00:04&lt;00:00, 15.9Mbytes/s]
 </pre></div>
 </div>
 </div>
@@ -712,7 +718,7 @@ This will open <code>mp2rage.nii.gz</code> in the interactive viewer.
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 1, "model_id": "196367e1b3f44bca8c9723755a5d3738"}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 1, "model_id": "2d7ffe564d6246cfb9eac0d144831375"}</script></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
