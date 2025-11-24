@@ -42,7 +42,7 @@ res = edge3.run()
 ------------------
 
 ----- stdout -----
-251124-22:43:37,636 nipype.interface WARNING:
+251124-23:00:08,616 nipype.interface WARNING:
 	 FSLOUTPUTTYPE environment variable is not set. Setting FSLOUTPUTTYPE=NIFTI
 ------------------
 
@@ -86,5 +86,5 @@ res = edge3.run()
 [32m    766[39m     [38;5;28;01melse[39;00m [33m"[39m[33m<skipped>[39m[33m"[39m
 [32m    767[39m )
 
-[31mOSError[39m: No command "bet" found on host 614510f418f7. Please check that the corresponding package is installed.
+[31mOSError[39m: No command "bet" found on host b9e46418548e. Please check that the corresponding package is installed.
 
