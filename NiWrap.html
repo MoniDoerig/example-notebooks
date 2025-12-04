@@ -242,16 +242,34 @@
       
       <li><a href="https://play-america.neurodesk.org/hub/user-redirect/git-pull?repo=https%3A//github.com/NeuroDesk/example-notebooks&urlpath=lab/tree/example-notebooks/books/NiWrap.ipynb&branch=main" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch on JupyterHub"
+   title="Launch on Run in America"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img alt="JupyterHub logo" src="_static/images/logo_jupyterhub.svg">
+    <img alt="Run in America logo" src="_static/images/logo_jupyterhub.svg">
   </span>
-<span class="btn__text-container">JupyterHub</span>
+<span class="btn__text-container">Run in America</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://play-europe.neurodesk.org/hub/user-redirect/git-pull?repo=https%3A//github.com/NeuroDesk/example-notebooks&urlpath=lab/tree/example-notebooks/books/NiWrap.ipynb&branch=main" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Run in Europe"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Run in Europe logo" src="_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">Run in Europe</span>
 </a>
 </li>
       
@@ -430,10 +448,9 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#surface-based-visualization-workflow-for-single-subject-cifti">Surface-Based Visualization Workflow for Single-Subject CIFTI</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#citation">Citation:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#citation-and-resources">Citation and Resources:</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tools-included-in-this-workflow">Tools included in this workflow</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset">Dataset</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#output-cpu-information">Output CPU information</a></li>
 </ul>
 </li>
 </ul>
@@ -469,6 +486,7 @@ document.write(`
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#analyze-and-visualize-top-10-face-selective-parcels">Analyze and visualize top 10 face-selective Parcels</a></li>
 </ul>
 </li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dependencies-in-jupyter-python">Dependencies in Jupyter/Python</a></li>
 </ul>
 </li>
 </ul>
@@ -487,8 +505,9 @@ document.write(`
 <section id="surface-based-visualization-workflow-for-single-subject-cifti">
 <h2>Surface-Based Visualization Workflow for Single-Subject CIFTI<a class="headerlink" href="#surface-based-visualization-workflow-for-single-subject-cifti" title="Link to this heading">#</a></h2>
 <p><strong>Author</strong>: Monika Doerig</p>
-<section id="citation">
-<h3>Citation:<a class="headerlink" href="#citation" title="Link to this heading">#</a></h3>
+<p><strong>Date</strong>: 23 July 2025</p>
+<section id="citation-and-resources">
+<h3>Citation and Resources:<a class="headerlink" href="#citation-and-resources" title="Link to this heading">#</a></h3>
 <section id="tools-included-in-this-workflow">
 <h4>Tools included in this workflow<a class="headerlink" href="#tools-included-in-this-workflow" title="Link to this heading">#</a></h4>
 <p><strong>NiWrap:</strong></p>
@@ -515,23 +534,6 @@ document.write(`
 <ul class="simple">
 <li><p>Zhengxin Gong and Ming Zhou and Yuxuan Dai and Yushan Wen and Youyi Liu and Zonglei Zhen (2023). A large-scale fMRI dataset for the visual processing of naturalistic scenes. OpenNeuro. [Dataset] doi: <a class="reference external" href="https://openneuro.org/datasets/ds004496/versions/2.1.2">doi:10.18112/openneuro.ds004496.v2.1.2</a></p></li>
 </ul>
-</section>
-<section id="output-cpu-information">
-<h4>Output CPU information<a class="headerlink" href="#output-cpu-information" title="Link to this heading">#</a></h4>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>cat<span class="w"> </span>/proc/cpuinfo<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s1">&#39;vendor&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>uniq
-<span class="o">!</span>cat<span class="w"> </span>/proc/cpuinfo<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s1">&#39;model name&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>uniq
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>vendor_id	: AuthenticAMD
-model name	: AMD EPYC 7763 64-Core Processor
-</pre></div>
-</div>
-</div>
-</div>
 </section>
 </section>
 </section>
@@ -633,25 +635,25 @@ echo &quot;Datalad download complete for ds004496.&quot;
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>install(error): /tmp/tmphx558hy3/ds004496 (dataset) [CommandError: &#39;git -c diff.ignoreSubmodules=non
-e -c core.quotepath=false annex init -c annex.dotfiles=true&#39; failed with exitcode 1 under /tmp/tmphx
-558hy3/ds004496] [CommandError: &#39;git -c diff.ignoreSubmodules=none -c core.quotepath=false annex ini
-t -c annex.dotfiles=true&#39; failed with exitcode 1 under /tmp/tmphx558hy3/ds004496]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>install(error): /tmp/tmprp3_2x47/ds004496 (dataset) [CommandError: &#39;git -c diff.ignoreSubmodules=non
+e -c core.quotepath=false annex init -c annex.dotfiles=true&#39; failed with exitcode 1 under /tmp/tmprp
+3_2x47/ds004496] [CommandError: &#39;git -c diff.ignoreSubmodules=none -c core.quotepath=false annex ini
+t -c annex.dotfiles=true&#39; failed with exitcode 1 under /tmp/tmprp3_2x47/ds004496]
 Downloading Ciftify derivative files for sub-01 from ds004496...
 Datalad download complete for ds004496.
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>It is highly recommended to configure Git before using DataLad. Set both &#39;user.name&#39; and &#39;user.email
 &#39; configuration variables.
-[INFO] Attempting a clone into /tmp/tmphx558hy3/ds004496
-[INFO] Attempting to clone from https://github.com/OpenNeuroDatasets/ds004496.git to /tmp/tmphx558hy
-3/ds004496
+[INFO] Attempting a clone into /tmp/tmprp3_2x47/ds004496
+[INFO] Attempting to clone from https://github.com/OpenNeuroDatasets/ds004496.git to /tmp/tmprp3_2x4
+7/ds004496
 [INFO] Start enumerating objects
 [INFO] Start counting objects
 [INFO] Start compressing objects
 [INFO] Start receiving objects
 [INFO] Start resolving deltas
-[INFO] Completed clone attempts for Dataset(/tmp/tmphx558hy3/ds004496)
+[INFO] Completed clone attempts for Dataset(/tmp/tmprp3_2x47/ds004496)
 [INFO] Remote origin not usable by git-annex; setting annex-ignore
 [INFO] https://github.com/OpenNeuroDatasets/ds004496.git/config download failed: Not Found
 [INFO] Author identity unknown
@@ -667,16 +669,17 @@ bal user.email &quot;you@example.com&quot;
 | to set your acco
 unt&#39;s default identity.
 | Omit --global to set the identity only in this repository.
-[INFO] fatal: unable to auto-detect email address (got &#39;root@7203d7ebdb3c.(none)&#39;)
+[INFO] fatal: unable to auto-detect email address (got &#39;root@4987c95c7c6b.(none)&#39;)
 [INFO] git-annex: user error (git [&quot;--git-dir=.git&quot;,&quot;--work-tree=.&quot;,&quot;--literal-pathspecs&quot;,&quot;-c&quot;,&quot;anne
-x.dotfiles=true&quot;,&quot;commit-tree&quot;,&quot;11cb3a217a937735e341801a73141c0aca7ed8de&quot;,&quot;--no-gpg-sign&quot;,&quot;-p&quot;,&quot;refs
+x.dotfiles=true&quot;,&quot;commit-tree&quot;,&quot;554264ef096f3c7296327db8d5b7bf1659cb2d42&quot;,&quot;--no-gpg-sign&quot;,&quot;-p&quot;,&quot;refs
 /heads/git-annex&quot;] exited 128)
 bash: line 13: cd: ds004496: No such file or directory
 It is highly recommended to configure Git before using DataLad. Set both &#39;user.name&#39; and &#39;user.email
 &#39; configuration variables.
-[ERROR] NoDatasetFound(No dataset found at &#39;/tmp/tmphx558hy3&#39; for the purpose &quot;get content of &lt;&lt;[&#39;de
-rivatives/++75 chars++ii&#39;]&gt;&gt;&quot;.  Specify a dataset to work with by providing its path via the `datase
-t` option, or change the current working directory to be in a dataset.) (NoDatasetFound)
+[ERROR] datalad.support.exceptions.NoDatasetFound(No dataset found at &#39;/tmp/tmprp3_2x47&#39; for the pur
+pose &quot;get content of &lt;&lt;[&#39;derivatives/++75 chars++ii&#39;]&gt;&gt;&quot;.  Specify a dataset to work with by providi
+ng its path via the `dataset` option, or change the current working directory to be in a dataset.) (
+NoDatasetFound)
 usage: datalad get [-h] [-s LABEL] [-d PATH] [-r] [-R LEVELS] [-n]
                    [-D DESCRIPTIO
 N] [--reckless [auto|ephemeral|shared-...]]
@@ -684,9 +687,10 @@ N] [--reckless [auto|ephemeral|shared-...]]
      [PATH ...]
 It is highly recommended to configure Git before using DataLad. Set both &#39;user.name&#39; and &#39;user.email
 &#39; configuration variables.
-[ERROR] NoDatasetFound(No dataset found at &#39;/tmp/tmphx558hy3&#39; for the purpose &quot;get content of &lt;&lt;[&#39;de
-rivatives/++34 chars++ce&#39;]&gt;&gt;&quot;.  Specify a dataset to work with by providing its path via the `datase
-t` option, or change the current working directory to be in a dataset.) (NoDatasetFound)
+[ERROR] datalad.support.exceptions.NoDatasetFound(No dataset found at &#39;/tmp/tmprp3_2x47&#39; for the pur
+pose &quot;get content of &lt;&lt;[&#39;derivatives/++34 chars++ce&#39;]&gt;&gt;&quot;.  Specify a dataset to work with by providi
+ng its path via the `dataset` option, or change the current working directory to be in a dataset.) (
+NoDatasetFound)
 usage: datalad get [-h] [-s LABEL] [-d PATH] [-r] [-R LEVELS] [-n]
                    [-D DESCRIPTIO
 N] [--reckless [auto|ephemeral|shared-...]]
@@ -736,7 +740,7 @@ N] [--reckless [auto|ephemeral|shared-...]]
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">AssertionError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">27</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">27</span>
 <span class="g g-Whitespace">     </span><span class="mi">23</span> <span class="n">sulcal_depth_path</span> <span class="o">=</span> <span class="n">surface_dir</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">SUBJECT_ID</span><span class="si">}</span><span class="s2">.sulc.32k_fs_LR.dscalar.nii&quot;</span>
 <span class="g g-Whitespace">     </span><span class="mi">26</span> <span class="c1"># --- Verify files exist before we start ---</span>
 <span class="ne">---&gt; </span><span class="mi">27</span> <span class="k">assert</span> <span class="n">left_surf_path</span><span class="o">.</span><span class="n">exists</span><span class="p">(),</span> <span class="sa">f</span><span class="s2">&quot;Left mid-surface not found: </span><span class="si">{</span><span class="n">left_surf_path</span><span class="si">}</span><span class="s2">&quot;</span>
@@ -872,7 +876,7 @@ Object - others
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[D] Running command: wb_command -cifti-math &#39;x * (x &gt; 1.081139940023422)&#39; /home/jovyan/Git_repositories/example-notebooks/books/functional_imaging/niwrap_results/beta_face_thresholded.dscalar.nii -var x /home/jovyan/Git_repositories/example-notebooks/books/functional_imaging/niwrap_results/beta_face.dscalar.nii
 [I] parsed &#39;x * (x &gt; 1.081139940023422)&#39; as &#39;x * (x &gt; 1.08113994002342)&#39;
-[I] Executed cifti-math in 0:00:00.232172
+[I] Executed cifti-math in 0:00:00.251962
 </pre></div>
 </div>
 </div>
@@ -904,7 +908,7 @@ Object - others
 </div>
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[D] Running command: wb_command -cifti-separate /home/jovyan/Git_repositories/example-notebooks/books/functional_imaging/niwrap_results/beta_face_thresholded.dscalar.nii COLUMN -metric CORTEX_LEFT /home/jovyan/Git_repositories/example-notebooks/books/functional_imaging/niwrap_results/sub-01_thresh_lh.func.gii -metric CORTEX_RIGHT /home/jovyan/Git_repositories/example-notebooks/books/functional_imaging/niwrap_results/sub-01_thresh_rh.func.gii
-[I] Executed cifti-separate in 0:00:00.201324
+[I] Executed cifti-separate in 0:00:00.192519
 </pre></div>
 </div>
 </div>
@@ -936,7 +940,7 @@ Object - others
 </div>
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[D] Running command: wb_command -cifti-separate /home/jovyan/Git_repositories/example-notebooks/books/functional_imaging/ds004496/derivatives/ciftify/sub-01/standard_fsLR_surface/sub-01.sulc.32k_fs_LR.dscalar.nii COLUMN -metric CORTEX_LEFT /home/jovyan/Git_repositories/example-notebooks/books/functional_imaging/niwrap_results/sub-01.L.sulc.func.gii -metric CORTEX_RIGHT /home/jovyan/Git_repositories/example-notebooks/books/functional_imaging/niwrap_results/sub-01.R.sulc.func.gii
-[I] Executed cifti-separate in 0:00:00.189456
+[I] Executed cifti-separate in 0:00:00.195140
 </pre></div>
 </div>
 </div>
@@ -1336,7 +1340,7 @@ function decodeHemisphere(surfaceInfo, surface, hemisphere){
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/5d4cd5c7a32db56d984db2c9db7e60bc24baa32b8d7e56d3db87fd38cc1b7607.png" src="_images/5d4cd5c7a32db56d984db2c9db7e60bc24baa32b8d7e56d3db87fd38cc1b7607.png" />
+<img alt="_images/9f55744a919d5bf2b223352544e18f0b7529709421e9ac57f32398f2701fd151.png" src="_images/9f55744a919d5bf2b223352544e18f0b7529709421e9ac57f32398f2701fd151.png" />
 </div>
 </div>
 </section>
@@ -1358,7 +1362,7 @@ function decodeHemisphere(surfaceInfo, surface, hemisphere){
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[D] Running command: wb_command -cifti-stats /home/jovyan/Git_repositories/example-notebooks/books/functional_imaging/niwrap_results/beta_face_thresholded.dscalar.nii -reduce COUNT_NONZERO -show-map-name
 [I] 1:	Face - others:	2971
-[I] Executed cifti-stats in 0:00:00.194127
+[I] Executed cifti-stats in 0:00:00.186400
 </pre></div>
 </div>
 </div>
@@ -1393,9 +1397,9 @@ function decodeHemisphere(surfaceInfo, surface, hemisphere){
 </div>
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[D] Running command: wb_command -metric-smoothing /home/jovyan/Git_repositories/example-notebooks/books/functional_imaging/ds004496/derivatives/ciftify/sub-01/standard_fsLR_surface/sub-01.L.midthickness.32k_fs_LR.surf.gii /home/jovyan/Git_repositories/example-notebooks/books/functional_imaging/niwrap_results/sub-01_thresh_lh.func.gii 2.0 /home/jovyan/Git_repositories/example-notebooks/books/functional_imaging/niwrap_results/sub-01_thresh_smooth.L.func.gii
-[I] Executed metric-smoothing in 0:00:00.452040
+[I] Executed metric-smoothing in 0:00:00.415578
 [D] Running command: wb_command -metric-smoothing /home/jovyan/Git_repositories/example-notebooks/books/functional_imaging/ds004496/derivatives/ciftify/sub-01/standard_fsLR_surface/sub-01.R.midthickness.32k_fs_LR.surf.gii /home/jovyan/Git_repositories/example-notebooks/books/functional_imaging/niwrap_results/sub-01_thresh_rh.func.gii 2.0 /home/jovyan/Git_repositories/example-notebooks/books/functional_imaging/niwrap_results/sub-01_thresh_smooth.R.func.gii
-[I] Executed metric-smoothing in 0:00:00.369080
+[I] Executed metric-smoothing in 0:00:00.438166
 </pre></div>
 </div>
 </div>
@@ -1427,7 +1431,7 @@ function decodeHemisphere(surfaceInfo, surface, hemisphere){
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/d02965586a07499536dbdb30809e165fd4231334e9646a4509b4753fa3b1c9b1.png" src="_images/d02965586a07499536dbdb30809e165fd4231334e9646a4509b4753fa3b1c9b1.png" />
+<img alt="_images/2a05f168b0674afdddba5776b3cf821d99fdbb2dbd78d947408e6ac5225d3bcb.png" src="_images/2a05f168b0674afdddba5776b3cf821d99fdbb2dbd78d947408e6ac5225d3bcb.png" />
 </div>
 </div>
 </section>
@@ -1450,7 +1454,7 @@ function decodeHemisphere(surfaceInfo, surface, hemisphere){
 </div>
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[D] Running command: wb_command -cifti-parcellate /home/jovyan/Git_repositories/example-notebooks/books/functional_imaging/niwrap_results/beta_face_thresholded.dscalar.nii /home/jovyan/Git_repositories/example-notebooks/books/functional_imaging/Schaefer2018_400Parcels_17Networks_order.dlabel.nii COLUMN /home/jovyan/Git_repositories/example-notebooks/books/functional_imaging/niwrap_results/sub-01_parcellated.pscalar.nii
-[I] Executed cifti-parcellate in 0:00:00.281348
+[I] Executed cifti-parcellate in 0:00:00.254114
 </pre></div>
 </div>
 </div>
@@ -1467,7 +1471,7 @@ function decodeHemisphere(surfaceInfo, surface, hemisphere){
 </div>
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[D] Running command: wb_command -cifti-label-export-table /home/jovyan/Git_repositories/example-notebooks/books/functional_imaging/Schaefer2018_400Parcels_17Networks_order.dlabel.nii parcels /home/jovyan/Git_repositories/example-notebooks/books/functional_imaging/niwrap_results/schaefer_labels.txt
-[I] Executed cifti-label-export-table in 0:00:00.185427
+[I] Executed cifti-label-export-table in 0:00:00.181663
 </pre></div>
 </div>
 </div>
@@ -1659,7 +1663,7 @@ function decodeHemisphere(surfaceInfo, surface, hemisphere){
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Found networks: [&#39;LimbicA&#39;, &#39;DefaultC&#39;, &#39;DefaultA&#39;, &#39;SalVentAttnA&#39;, &#39;SomMotB&#39;, &#39;ContB&#39;, &#39;DefaultB&#39;, &#39;TempPar&#39;, &#39;DorsAttnB&#39;, &#39;VisPeri&#39;, &#39;ContA&#39;, &#39;DorsAttnA&#39;, &#39;SomMotA&#39;, &#39;LimbicB&#39;, &#39;ContC&#39;, &#39;SalVentAttnB&#39;, &#39;VisCent&#39;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Found networks: [&#39;LimbicB&#39;, &#39;LimbicA&#39;, &#39;ContB&#39;, &#39;VisCent&#39;, &#39;ContA&#39;, &#39;SalVentAttnB&#39;, &#39;ContC&#39;, &#39;DefaultC&#39;, &#39;SalVentAttnA&#39;, &#39;SomMotA&#39;, &#39;DefaultB&#39;, &#39;DorsAttnB&#39;, &#39;DorsAttnA&#39;, &#39;SomMotB&#39;, &#39;TempPar&#39;, &#39;DefaultA&#39;, &#39;VisPeri&#39;]
 </pre></div>
 </div>
 </div>
@@ -1692,7 +1696,7 @@ function decodeHemisphere(surfaceInfo, surface, hemisphere){
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4006bc4ecd0d3122dfec11a948eca7f43f421d04fa7a7f48cb0ff55a68a0e79b.png" src="_images/4006bc4ecd0d3122dfec11a948eca7f43f421d04fa7a7f48cb0ff55a68a0e79b.png" />
+<img alt="_images/2afc1b0252bef5d9338b5debf45da65410e1e42d99038bbda598c4853be84aaa.png" src="_images/2afc1b0252bef5d9338b5debf45da65410e1e42d99038bbda598c4853be84aaa.png" />
 </div>
 </div>
 </section>
@@ -1762,7 +1766,7 @@ function decodeHemisphere(surfaceInfo, surface, hemisphere){
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/d273cbc2b24f2a2846cb8de8da78d7aced248ad4fab659d953f2c54bd0d57bf8.png" src="_images/d273cbc2b24f2a2846cb8de8da78d7aced248ad4fab659d953f2c54bd0d57bf8.png" />
+<img alt="_images/3203d1f190fcf058ec79163e411d198c962dca9a7343a42586d24ebf42e25d00.png" src="_images/3203d1f190fcf058ec79163e411d198c962dca9a7343a42586d24ebf42e25d00.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Top 10 Face-Selective Parcels:
 ------------------------------------------------------------
  1. 17Networks_RH_DorsAttnA_TempOcc_2        |  2.771 | DorsAttnA
@@ -1780,6 +1784,47 @@ function decodeHemisphere(surfaceInfo, surface, hemisphere){
 </div>
 </div>
 </section>
+</section>
+<section id="dependencies-in-jupyter-python">
+<h3>Dependencies in Jupyter/Python<a class="headerlink" href="#dependencies-in-jupyter-python" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Using the package <a class="reference external" href="https://github.com/rasbt/watermark">watermark</a> to document system environment and software versions used in this notebook</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> watermark
+
+<span class="o">%</span><span class="k">watermark</span>
+<span class="o">%</span><span class="k">watermark</span> --iversions
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Last updated: 2025-11-02T23:44:19.884530+00:00
+
+Python implementation: CPython
+Python version       : 3.11.6
+IPython version      : 8.16.1
+
+Compiler    : GCC 12.3.0
+OS          : Linux
+Release     : 5.4.0-204-generic
+Machine     : x86_64
+Processor   : x86_64
+CPU cores   : 32
+Architecture: 64bit
+
+matplotlib      : 3.8.4
+nibabel         : 5.3.2
+numpy           : 2.2.6
+nilearn         : 0.12.0
+re              : 2.2.1
+niwrap_workbench: 0.6.1
+pandas          : 2.2.3
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 </section>
 </section>
@@ -1831,10 +1876,9 @@ function decodeHemisphere(surfaceInfo, surface, hemisphere){
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#surface-based-visualization-workflow-for-single-subject-cifti">Surface-Based Visualization Workflow for Single-Subject CIFTI</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#citation">Citation:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#citation-and-resources">Citation and Resources:</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tools-included-in-this-workflow">Tools included in this workflow</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset">Dataset</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#output-cpu-information">Output CPU information</a></li>
 </ul>
 </li>
 </ul>
@@ -1870,6 +1914,7 @@ function decodeHemisphere(surfaceInfo, surface, hemisphere){
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#analyze-and-visualize-top-10-face-selective-parcels">Analyze and visualize top 10 face-selective Parcels</a></li>
 </ul>
 </li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dependencies-in-jupyter-python">Dependencies in Jupyter/Python</a></li>
 </ul>
 </li>
 </ul>
