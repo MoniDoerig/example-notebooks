@@ -1,0 +1,126 @@
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.13/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+    ~~~~~~~~~^
+        nb,
+        ^^^
+    ...<4 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "/opt/conda/lib/python3.13/site-packages/nbclient/client.py", line 1319, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/opt/conda/lib/python3.13/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/opt/conda/lib/python3.13/asyncio/base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "/opt/conda/lib/python3.13/site-packages/nbclient/client.py", line 709, in async_execute
+    await self.async_execute_cell(
+        cell, index, execution_count=self.code_cells_executed + 1
+    )
+  File "/opt/conda/lib/python3.13/site-packages/nbclient/client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/opt/conda/lib/python3.13/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+!mkdir -p ./data
+
+os.chdir('./data')
+!datalad install https://github.com/OpenNeuroDatasets/ds003787.git # install NYU retinotopy dataset
+os.chdir('ds003787/derivatives/freesurfer') # change directories
+list_of_subs = os.listdir('.')
+
+# download required files to run deepretinotopy
+for sub in list_of_subs:
+    for hemisphere in ['lh', 'rh']:
+        for file in ['pial', 'white', 'sphere', 'sphere.reg', 'thickness']:
+            cmd=f"""datalad get {sub}/surf/{hemisphere}.{file}""" 
+            os.system(cmd)
+------------------
+
+----- stdout -----
+It is highly recommended to configure Git before using DataLad. Set both 'user.name' and 'user.email' configuration variables.
+----- stdout -----
+Cloning:   0%|                             | 0.00/2.00 [00:00<?, ? candidates/s]
+----- stdout -----
+
+Enumerating: 0.00 Objects [00:00, ? Objects/s][A
+                                              [A
+Counting:   0%|                               | 0.00/137k [00:00<?, ? Objects/s][A
+----- stdout -----
+
+                                                                                [A
+Compressing:   0%|                            | 0.00/113k [00:00<?, ? Objects/s][A
+                                                                                [A
+Receiving:   0%|                              | 0.00/137k [00:00<?, ? Objects/s][A
+----- stdout -----
+
+Receiving:   6%|█▎                   | 8.21k/137k [00:00<00:01, 79.0k Objects/s][A
+----- stdout -----
+
+Receiving:  26%|█████▋                | 35.6k/137k [00:00<00:00, 188k Objects/s][A
+----- stdout -----
+
+Receiving:  47%|██████████▎           | 64.3k/137k [00:00<00:00, 232k Objects/s][A
+----- stdout -----
+
+Receiving:  66%|██████████████▌       | 90.3k/137k [00:00<00:00, 241k Objects/s][A
+----- stdout -----
+
+Receiving:  86%|███████████████████▊   | 118k/137k [00:00<00:00, 248k Objects/s][A
+----- stdout -----
+
+                                                                                [A
+----- stdout -----
+
+Resolving:   0%|                              | 0.00/22.7k [00:00<?, ? Deltas/s][A
+----- stdout -----
+
+Resolving:  39%|████████▏            | 8.85k/22.7k [00:00<00:00, 86.6k Deltas/s][A
+----- stdout -----
+
+Resolving:  78%|████████████████▍    | 17.7k/22.7k [00:00<00:00, 85.0k Deltas/s][A
+----- stdout -----
+
+                                                                                [A
+----- stdout -----
+
+----- stdout -----
+[INFO   ] Remote origin not usable by git-annex; setting annex-ignore 
+[INFO   ] https://github.com/OpenNeuroDatasets/ds003787.git/config download failed: Not Found
+----- stdout -----
+[INFO   ] Author identity unknown
+| 
+| *** Please tell me who you are.
+| 
+| Run
+| 
+|   git config --global user.email "you@example.com"
+|   git config --global user.name "Your Name"
+| 
+| to set your account's default identity.
+| Omit --global to set the identity only in this repository.
+| 
+| fatal: unable to auto-detect email address (got 'root@3c82e072e358.(none)') 
+[INFO   ] git-annex: user error (git ["--git-dir=.git","--work-tree=.","--literal-pathspecs","-c","annex.dotfiles=true","commit-tree","8d1de8fc90bbc26a489841b474c6a9fa0bf2565c","--no-gpg-sign","-p","refs/heads/git-annex"] exited 128) 
+[1;1minstall[0m([1;31merror[0m): /tmp/tmpff95_s31/data/ds003787 ([1;35mdataset[0m) [CommandError: 'git -c diff.ignoreSubmodules=none -c core.quotepath=false annex init -c annex.dotfiles=true' failed with exitcode 1 under /tmp/tmpff95_s31/data/ds003787][1;31m [CommandError: 'git -c diff.ignoreSubmodules=none -c core.quotepath=false annex init -c annex.dotfiles=true' failed with exitcode 1 under /tmp/tmpff95_s31/data/ds003787][0m
+----- stdout -----
+[0m
+------------------
+
+[31m---------------------------------------------------------------------------[39m
+[31mFileNotFoundError[39m                         Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[4][39m[32m, line 5[39m
+[32m      3[39m os.chdir([33m'[39m[33m./data[39m[33m'[39m)
+[32m      4[39m get_ipython().system([33m'[39m[33mdatalad install https://github.com/OpenNeuroDatasets/ds003787.git # install NYU retinotopy dataset[39m[33m'[39m)
+[32m----> [39m[32m5[39m [43mos[49m[43m.[49m[43mchdir[49m[43m([49m[33;43m'[39;49m[33;43mds003787/derivatives/freesurfer[39;49m[33;43m'[39;49m[43m)[49m [38;5;66;03m# change directories[39;00m
+[32m      6[39m list_of_subs = os.listdir([33m'[39m[33m.[39m[33m'[39m)
+[32m      8[39m [38;5;66;03m# download required files to run deepretinotopy[39;00m
+
+[31mFileNotFoundError[39m: [Errno 2] No such file or directory: 'ds003787/derivatives/freesurfer'
+
