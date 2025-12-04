@@ -1,29 +1,33 @@
 Traceback (most recent call last):
-  File "/home/runner/.local/lib/python3.10/site-packages/jupyter_core/utils/__init__.py", line 154, in wrapped
-    asyncio.get_running_loop()
-RuntimeError: no running event loop
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/runner/.local/lib/python3.10/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+  File "/opt/conda/lib/python3.13/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
     executenb(
-  File "/home/runner/.local/lib/python3.10/site-packages/nbclient/client.py", line 1319, in execute
+    ~~~~~~~~~^
+        nb,
+        ^^^
+    ...<4 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "/opt/conda/lib/python3.13/site-packages/nbclient/client.py", line 1319, in execute
     return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
-  File "/home/runner/.local/lib/python3.10/site-packages/jupyter_core/utils/__init__.py", line 158, in wrapped
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/opt/conda/lib/python3.13/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
     return loop.run_until_complete(inner)
-  File "/usr/lib/python3.10/asyncio/base_events.py", line 649, in run_until_complete
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/opt/conda/lib/python3.13/asyncio/base_events.py", line 725, in run_until_complete
     return future.result()
-  File "/home/runner/.local/lib/python3.10/site-packages/nbclient/client.py", line 709, in async_execute
+           ~~~~~~~~~~~~~^^
+  File "/opt/conda/lib/python3.13/site-packages/nbclient/client.py", line 709, in async_execute
     await self.async_execute_cell(
-  File "/home/runner/.local/lib/python3.10/site-packages/nbclient/client.py", line 1062, in async_execute_cell
+        cell, index, execution_count=self.code_cells_executed + 1
+    )
+  File "/opt/conda/lib/python3.13/site-packages/nbclient/client.py", line 1062, in async_execute_cell
     await self._check_raise_for_error(cell, cell_index, exec_reply)
-  File "/home/runner/.local/lib/python3.10/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
+  File "/opt/conda/lib/python3.13/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-dataDir='/neurodesktop-storage/'
-os.chdir(dataDir) # change directories
 !datalad install https://github.com/OpenNeuroDatasets/ds004698.git # install NYU retinotopy dataset
 os.chdir('ds004698') # change directories
 subject='sub-01'
@@ -33,14 +37,87 @@ os.system(cmd1)
 os.system(cmd2)
 ------------------
 
+----- stdout -----
+It is highly recommended to configure Git before using DataLad. Set both 'user.name' and 'user.email' configuration variables.
+----- stdout -----
+Cloning:   0%|                             | 0.00/2.00 [00:00<?, ? candidates/s]
+----- stdout -----
 
-[0;31m---------------------------------------------------------------------------[0m
-[0;31mFileNotFoundError[0m                         Traceback (most recent call last)
-Cell [0;32mIn[4], line 2[0m
-[1;32m      1[0m dataDir[38;5;241m=[39m[38;5;124m'[39m[38;5;124m/neurodesktop-storage/[39m[38;5;124m'[39m
-[0;32m----> 2[0m [43mos[49m[38;5;241;43m.[39;49m[43mchdir[49m[43m([49m[43mdataDir[49m[43m)[49m [38;5;66;03m# change directories[39;00m
-[1;32m      3[0m get_ipython()[38;5;241m.[39msystem([38;5;124m'[39m[38;5;124mdatalad install https://github.com/OpenNeuroDatasets/ds004698.git # install NYU retinotopy dataset[39m[38;5;124m'[39m)
-[1;32m      4[0m os[38;5;241m.[39mchdir([38;5;124m'[39m[38;5;124mds004698[39m[38;5;124m'[39m) [38;5;66;03m# change directories[39;00m
+Enumerating: 0.00 Objects [00:00, ? Objects/s][A
+                                              [A
+Counting:   0%|                              | 0.00/99.6k [00:00<?, ? Objects/s][A
+----- stdout -----
 
-[0;31mFileNotFoundError[0m: [Errno 2] No such file or directory: '/neurodesktop-storage/'
+                                                                                [A
+Compressing:   0%|                           | 0.00/68.8k [00:00<?, ? Objects/s][A
+----- stdout -----
+
+Compressing:  51%|█████████▋         | 35.1k/68.8k [00:00<00:00, 205k Objects/s][A
+----- stdout -----
+
+                                                                                [A
+Receiving:   0%|                             | 0.00/99.6k [00:00<?, ? Objects/s][A
+----- stdout -----
+
+Receiving:   5%|█                   | 4.98k/99.6k [00:00<00:01, 48.9k Objects/s][A
+----- stdout -----
+
+Receiving:  29%|██████               | 28.9k/99.6k [00:00<00:00, 156k Objects/s][A
+----- stdout -----
+
+Receiving:  56%|███████████▊         | 55.8k/99.6k [00:00<00:00, 206k Objects/s][A
+----- stdout -----
+
+Receiving:  77%|████████████████▏    | 76.7k/99.6k [00:00<00:00, 206k Objects/s][A
+----- stdout -----
+
+Receiving:  98%|████████████████████▌| 97.6k/99.6k [00:00<00:00, 191k Objects/s][A
+                                                                                [A
+Resolving:   0%|                              | 0.00/28.4k [00:00<?, ? Deltas/s][A
+----- stdout -----
+
+Resolving:  39%|████████▌             | 11.1k/28.4k [00:00<00:00, 108k Deltas/s][A
+----- stdout -----
+
+Resolving:  78%|████████████████▍    | 22.1k/28.4k [00:00<00:00, 95.5k Deltas/s][A
+----- stdout -----
+
+                                                                                [A
+----- stdout -----
+
+----- stdout -----
+[INFO   ] Remote origin not usable by git-annex; setting annex-ignore 
+[INFO   ] https://github.com/OpenNeuroDatasets/ds004698.git/config download failed: Not Found 
+[INFO   ] Cannot run git-annex-remote-openneuro -- It is not installed in PATH (/usr/lib/git-core:/opt/conda/bin:/github/home/.local/bin:/opt/conda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin) 
+[INFO   ] Cannot run git-annex-remote-openneuro -- It is not installed in PATH (/usr/lib/git-core:/opt/conda/bin:/github/home/.local/bin:/opt/conda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin) 
+[INFO   ] unable to use external special remote git-annex-remote-openneuro
+----- stdout -----
+[INFO   ] Author identity unknown
+| 
+| *** Please tell me who you are.
+| 
+| Run
+| 
+|   git config --global user.email "you@example.com"
+|   git config --global user.name "Your Name"
+| 
+| to set your account's default identity.
+| Omit --global to set the identity only in this repository. 
+[INFO   ] fatal: unable to auto-detect email address (got 'root@9be16f9221d1.(none)') 
+[INFO   ] git-annex: user error (git ["--git-dir=.git","--work-tree=.","--literal-pathspecs","-c","annex.dotfiles=true","commit-tree","a8e7812377d42478fa9213006c2e254e5351f8ee","--no-gpg-sign","-p","refs/heads/git-annex"] exited 128)
+----- stdout -----
+[1;1minstall[0m([1;31merror[0m): /tmp/tmpzjmw994c/ds004698 ([1;35mdataset[0m) [CommandError: 'git -c diff.ignoreSubmodules=none -c core.quotepath=false annex init -c annex.dotfiles=true' failed with exitcode 1 under /tmp/tmpzjmw994c/ds004698][1;31m [CommandError: 'git -c diff.ignoreSubmodules=none -c core.quotepath=false annex init -c annex.dotfiles=true' failed with exitcode 1 under /tmp/tmpzjmw994c/ds004698][0m
+----- stdout -----
+[0m
+------------------
+
+[31m---------------------------------------------------------------------------[39m
+[31mFileNotFoundError[39m                         Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[4][39m[32m, line 2[39m
+[32m      1[39m get_ipython().system([33m'[39m[33mdatalad install https://github.com/OpenNeuroDatasets/ds004698.git # install NYU retinotopy dataset[39m[33m'[39m)
+[32m----> [39m[32m2[39m [43mos[49m[43m.[49m[43mchdir[49m[43m([49m[33;43m'[39;49m[33;43mds004698[39;49m[33;43m'[39;49m[43m)[49m [38;5;66;03m# change directories[39;00m
+[32m      3[39m subject=[33m'[39m[33msub-01[39m[33m'[39m
+[32m      4[39m cmd1=[33mf[39m[33m"""[39m[33mdatalad get derivatives/freesurfer/[39m[38;5;132;01m{[39;00msubject[38;5;132;01m}[39;00m[33m/*[39m[33m"""[39m [38;5;66;03m# download all freesurfer files from subject[39;00m
+
+[31mFileNotFoundError[39m: [Errno 2] No such file or directory: 'ds004698'
 
