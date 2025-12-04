@@ -486,6 +486,7 @@ document.write(`
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretation-of-sphere-roi-results">✅ Interpretation of Sphere ROI Results</a></li>
 </ul>
 </li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dependencies-in-jupyter-python">Dependencies in Jupyter/Python</a></li>
 </ul>
 </li>
 </ul>
@@ -528,28 +529,13 @@ document.write(`
 </section>
 <section id="dataset">
 <h3>Dataset<a class="headerlink" href="#dataset" title="Link to this heading">#</a></h3>
-<p><strong>Data from OpenNeuro:</strong> Flanker Dataset</p>
+<p><strong>Flanker Dataset from OpenNeuro:</strong></p>
 <ul class="simple">
 <li><p>Kelly AMC and Uddin LQ and Biswal BB and Castellanos FX and Milham MP (2018). Flanker task (event-related). <a class="reference external" href="https://openneuro.org/datasets/ds000102/versions/00001/">OpenNeuro Dataset ds000102</a>. [Dataset] doi: null</p></li>
 <li><p>Kelly AM, Uddin LQ, Biswal BB, Castellanos FX, Milham MP. Competition between functional brain networks mediates behavioral variability. Neuroimage. 2008 Jan 1;39(1):527-37. doi: <a class="reference external" href="https://doi.org/10.1016/j.neuroimage.2007.08.008">10.1016/j.neuroimage.2007.08.008</a>. Epub 2007 Aug 23. PMID: 17919929.</p></li>
 <li><p>Mennes, M., Kelly, C., Zuo, X.N., Di Martino, A., Biswal, B.B., Castellanos, F.X., Milham, M.P. (2010). Inter-individual differences in resting-state functional connectivity predict task-induced BOLD activity. Neuroimage, 50(4):1690-701. doi: <a class="reference external" href="https://doi.org/10.1016/j.neuroimage.2010.01.002">10.1016/j.neuroimage.2010.01.002</a>. Epub 2010 Jan 15. Erratum in: Neuroimage. 2011 Mar 1;55(1):434</p></li>
 <li><p>Mennes, M., Zuo, X.N., Kelly, C., Di Martino, A., Zang, Y.F., Biswal, B., Castellanos, F.X., Milham, M.P. (2011). Linking inter-individual differences in neural activation and behavior to intrinsic brain dynamics. Neuroimage, 54(4):2950-9. doi: <a class="reference external" href="https://doi.org/10.1016/j.neuroimage.2010.10.046">10.1016/j.neuroimage.2010.10.046</a>ed in your example</p></li>
 </ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Output CPU information:</span>
-<span class="o">!</span>cat<span class="w"> </span>/proc/cpuinfo<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s1">&#39;vendor&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>uniq
-<span class="o">!</span>cat<span class="w"> </span>/proc/cpuinfo<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s1">&#39;model name&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>uniq
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>vendor_id	: AuthenticAMD
-model name	: AMD EPYC 7763 64-Core Processor
-</pre></div>
-</div>
-</div>
-</div>
 </section>
 </section>
 <section id="load-packages">
@@ -635,11 +621,12 @@ Counting:   0%|                               | 0.00/27.0 [00:00&lt;?, ? Objects
 Compressing:   0%|                            | 0.00/23.0 [00:00&lt;?, ? Objects/s]
                                                                                 
 Receiving:   0%|                             | 0.00/2.15k [00:00&lt;?, ? Objects/s]
+
                                                                                 
 Resolving:   0%|                                | 0.00/537 [00:00&lt;?, ? Deltas/s]
                                                                                 
 [INFO   ] Remote origin not usable by git-annex; setting annex-ignore 
-[INFO   ] https://github.com/OpenNeuroDatasets/ds000102.git/config download failed: Not Found 
+[INFO   ] https://github.com/OpenNeuroDatasets/ds000102.git/config download failed: Not Found
 [INFO   ] Author identity unknown
 | 
 | *** Please tell me who you are.
@@ -651,9 +638,9 @@ Resolving:   0%|                                | 0.00/537 [00:00&lt;?, ? Deltas
 | 
 | to set your account&#39;s default identity.
 | Omit --global to set the identity only in this repository. 
-[INFO   ] fatal: unable to auto-detect email address (got &#39;root@bbee35575703.(none)&#39;) 
-[INFO   ] git-annex: user error (git [&quot;--git-dir=.git&quot;,&quot;--work-tree=.&quot;,&quot;--literal-pathspecs&quot;,&quot;-c&quot;,&quot;annex.dotfiles=true&quot;,&quot;commit-tree&quot;,&quot;00baeb8fd1dbf03c390bbd2223f75bdbc62b6972&quot;,&quot;--no-gpg-sign&quot;,&quot;-p&quot;,&quot;refs/heads/git-annex&quot;] exited 128) 
-<span class=" -Color -Color-Bold">install</span>(<span class=" -Color -Color-Bold -Color-Bold-Red">error</span>): /tmp/tmpfl6wqfpb/ds000102 (<span class=" -Color -Color-Bold -Color-Bold-Magenta">dataset</span>) [CommandError: &#39;git -c diff.ignoreSubmodules=none -c core.quotepath=false annex init -c annex.dotfiles=true&#39; failed with exitcode 1 under /tmp/tmpfl6wqfpb/ds000102]<span class=" -Color -Color-Bold -Color-Bold-Red"> [CommandError: &#39;git -c diff.ignoreSubmodules=none -c core.quotepath=false annex init -c annex.dotfiles=true&#39; failed with exitcode 1 under /tmp/tmpfl6wqfpb/ds000102]</span>
+[INFO   ] fatal: unable to auto-detect email address (got &#39;root@f27be063dd6d.(none)&#39;) 
+[INFO   ] git-annex: user error (git [&quot;--git-dir=.git&quot;,&quot;--work-tree=.&quot;,&quot;--literal-pathspecs&quot;,&quot;-c&quot;,&quot;annex.dotfiles=true&quot;,&quot;commit-tree&quot;,&quot;3fc1b436d3fa71b1a46641d024626ad7e4014021&quot;,&quot;--no-gpg-sign&quot;,&quot;-p&quot;,&quot;refs/heads/git-annex&quot;] exited 128) 
+<span class=" -Color -Color-Bold">install</span>(<span class=" -Color -Color-Bold -Color-Bold-Red">error</span>): /tmp/tmpxqda5h8f/ds000102 (<span class=" -Color -Color-Bold -Color-Bold-Magenta">dataset</span>) [CommandError: &#39;git -c diff.ignoreSubmodules=none -c core.quotepath=false annex init -c annex.dotfiles=true&#39; failed with exitcode 1 under /tmp/tmpxqda5h8f/ds000102]<span class=" -Color -Color-Bold -Color-Bold-Red"> [CommandError: &#39;git -c diff.ignoreSubmodules=none -c core.quotepath=false annex init -c annex.dotfiles=true&#39; failed with exitcode 1 under /tmp/tmpxqda5h8f/ds000102]</span>
 
 /bin/bash: line 1: cd: ds000102: No such file or directory
 </pre></div>
@@ -866,24 +853,24 @@ These notebooks demonstrate how to use <code class="docutils literal notranslate
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "206481c097cf4ce6a270f2da23cf4002"}</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Summary of results:
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "ef1447eda14e4154b8c82c4aa0c08a8f"}</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Summary of results:
+sub-02 failed: unexpected error
+[Errno 2] No such file or directory: &#39;afni_proc.py&#39;
 sub-01 failed: unexpected error
 [Errno 2] No such file or directory: &#39;afni_proc.py&#39;
-sub-02 failed: unexpected error
+sub-03 failed: unexpected error
 [Errno 2] No such file or directory: &#39;afni_proc.py&#39;
 sub-04 failed: unexpected error
 [Errno 2] No such file or directory: &#39;afni_proc.py&#39;
 sub-05 failed: unexpected error
 [Errno 2] No such file or directory: &#39;afni_proc.py&#39;
-sub-03 failed: unexpected error
-[Errno 2] No such file or directory: &#39;afni_proc.py&#39;
 sub-06 failed: unexpected error
-[Errno 2] No such file or directory: &#39;afni_proc.py&#39;
-sub-07 failed: unexpected error
 [Errno 2] No such file or directory: &#39;afni_proc.py&#39;
 sub-08 failed: unexpected error
 [Errno 2] No such file or directory: &#39;afni_proc.py&#39;
 sub-09 failed: unexpected error
+[Errno 2] No such file or directory: &#39;afni_proc.py&#39;
+sub-07 failed: unexpected error
 [Errno 2] No such file or directory: &#39;afni_proc.py&#39;
 </pre></div>
 </div>
@@ -998,48 +985,48 @@ sub-09 failed: unexpected error
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running 3dttest++...
 
 
-Command: 3dttest++ -prefix /tmp/tmpfl6wqfpb/afni_pro_glm/group_results/Flanker-Inc-Con_ttest -mask /tmp/tmpfl6wqfpb/afni_pro_glm/group_mask+tlrc -setA Inc-Con
+Command: 3dttest++ -prefix /tmp/tmpxqda5h8f/afni_pro_glm/group_results/Flanker-Inc-Con_ttest -mask /tmp/tmpxqda5h8f/afni_pro_glm/group_mask+tlrc -setA Inc-Con
 </pre></div>
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">13</span><span class="p">],</span> <span class="n">line</span> <span class="mi">32</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">12</span><span class="p">],</span> <span class="n">line</span> <span class="mi">32</span>
 <span class="g g-Whitespace">     </span><span class="mi">30</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="g g-Whitespace">     </span><span class="mi">31</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Command:&quot;</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">cmd_list</span><span class="p">))</span>
 <span class="ne">---&gt; </span><span class="mi">32</span> <span class="n">result</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">cmd_list</span><span class="p">,</span> <span class="n">capture_output</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="g g-Whitespace">     </span><span class="mi">34</span> <span class="c1"># Show output</span>
 <span class="g g-Whitespace">     </span><span class="mi">35</span> <span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">stdout</span><span class="p">)</span>
 
-<span class="nn">File /opt/conda/lib/python3.12/subprocess.py:548,</span> in <span class="ni">run</span><span class="nt">(input, capture_output, timeout, check, *popenargs, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">545</span>     <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;stdout&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">PIPE</span>
-<span class="g g-Whitespace">    </span><span class="mi">546</span>     <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;stderr&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">PIPE</span>
-<span class="ne">--&gt; </span><span class="mi">548</span> <span class="k">with</span> <span class="n">Popen</span><span class="p">(</span><span class="o">*</span><span class="n">popenargs</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="k">as</span> <span class="n">process</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">549</span>     <span class="k">try</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">550</span>         <span class="n">stdout</span><span class="p">,</span> <span class="n">stderr</span> <span class="o">=</span> <span class="n">process</span><span class="o">.</span><span class="n">communicate</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
+<span class="nn">File /opt/conda/lib/python3.13/subprocess.py:554,</span> in <span class="ni">run</span><span class="nt">(input, capture_output, timeout, check, *popenargs, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">551</span>     <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;stdout&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">PIPE</span>
+<span class="g g-Whitespace">    </span><span class="mi">552</span>     <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;stderr&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">PIPE</span>
+<span class="ne">--&gt; </span><span class="mi">554</span> <span class="k">with</span> <span class="n">Popen</span><span class="p">(</span><span class="o">*</span><span class="n">popenargs</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="k">as</span> <span class="n">process</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">555</span>     <span class="k">try</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">556</span>         <span class="n">stdout</span><span class="p">,</span> <span class="n">stderr</span> <span class="o">=</span> <span class="n">process</span><span class="o">.</span><span class="n">communicate</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
 
-<span class="nn">File /opt/conda/lib/python3.12/subprocess.py:1026,</span> in <span class="ni">Popen.__init__</span><span class="nt">(self, args, bufsize, executable, stdin, stdout, stderr, preexec_fn, close_fds, shell, cwd, env, universal_newlines, startupinfo, creationflags, restore_signals, start_new_session, pass_fds, user, group, extra_groups, encoding, errors, text, umask, pipesize, process_group)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1022</span>         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">text_mode</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1023</span>             <span class="bp">self</span><span class="o">.</span><span class="n">stderr</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">TextIOWrapper</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">stderr</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1024</span>                     <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="n">errors</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1026</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_execute_child</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">executable</span><span class="p">,</span> <span class="n">preexec_fn</span><span class="p">,</span> <span class="n">close_fds</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1027</span>                         <span class="n">pass_fds</span><span class="p">,</span> <span class="n">cwd</span><span class="p">,</span> <span class="n">env</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1028</span>                         <span class="n">startupinfo</span><span class="p">,</span> <span class="n">creationflags</span><span class="p">,</span> <span class="n">shell</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1029</span>                         <span class="n">p2cread</span><span class="p">,</span> <span class="n">p2cwrite</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1030</span>                         <span class="n">c2pread</span><span class="p">,</span> <span class="n">c2pwrite</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1031</span>                         <span class="n">errread</span><span class="p">,</span> <span class="n">errwrite</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1032</span>                         <span class="n">restore_signals</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1033</span>                         <span class="n">gid</span><span class="p">,</span> <span class="n">gids</span><span class="p">,</span> <span class="n">uid</span><span class="p">,</span> <span class="n">umask</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1034</span>                         <span class="n">start_new_session</span><span class="p">,</span> <span class="n">process_group</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1035</span> <span class="k">except</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1036</span>     <span class="c1"># Cleanup if the child failed starting.</span>
-<span class="g g-Whitespace">   </span><span class="mi">1037</span>     <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="nb">filter</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">stdin</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">stdout</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">stderr</span><span class="p">)):</span>
+<span class="nn">File /opt/conda/lib/python3.13/subprocess.py:1039,</span> in <span class="ni">Popen.__init__</span><span class="nt">(self, args, bufsize, executable, stdin, stdout, stderr, preexec_fn, close_fds, shell, cwd, env, universal_newlines, startupinfo, creationflags, restore_signals, start_new_session, pass_fds, user, group, extra_groups, encoding, errors, text, umask, pipesize, process_group)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1035</span>         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">text_mode</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1036</span>             <span class="bp">self</span><span class="o">.</span><span class="n">stderr</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">TextIOWrapper</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">stderr</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1037</span>                     <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="n">errors</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1039</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_execute_child</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">executable</span><span class="p">,</span> <span class="n">preexec_fn</span><span class="p">,</span> <span class="n">close_fds</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1040</span>                         <span class="n">pass_fds</span><span class="p">,</span> <span class="n">cwd</span><span class="p">,</span> <span class="n">env</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1041</span>                         <span class="n">startupinfo</span><span class="p">,</span> <span class="n">creationflags</span><span class="p">,</span> <span class="n">shell</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1042</span>                         <span class="n">p2cread</span><span class="p">,</span> <span class="n">p2cwrite</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1043</span>                         <span class="n">c2pread</span><span class="p">,</span> <span class="n">c2pwrite</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1044</span>                         <span class="n">errread</span><span class="p">,</span> <span class="n">errwrite</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1045</span>                         <span class="n">restore_signals</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1046</span>                         <span class="n">gid</span><span class="p">,</span> <span class="n">gids</span><span class="p">,</span> <span class="n">uid</span><span class="p">,</span> <span class="n">umask</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1047</span>                         <span class="n">start_new_session</span><span class="p">,</span> <span class="n">process_group</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1048</span> <span class="k">except</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1049</span>     <span class="c1"># Cleanup if the child failed starting.</span>
+<span class="g g-Whitespace">   </span><span class="mi">1050</span>     <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="nb">filter</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">stdin</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">stdout</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">stderr</span><span class="p">)):</span>
 
-<span class="nn">File /opt/conda/lib/python3.12/subprocess.py:1955,</span> in <span class="ni">Popen._execute_child</span><span class="nt">(self, args, executable, preexec_fn, close_fds, pass_fds, cwd, env, startupinfo, creationflags, shell, p2cread, p2cwrite, c2pread, c2pwrite, errread, errwrite, restore_signals, gid, gids, uid, umask, start_new_session, process_group)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1953</span>     <span class="n">err_msg</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">strerror</span><span class="p">(</span><span class="n">errno_num</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1954</span> <span class="k">if</span> <span class="n">err_filename</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1955</span>     <span class="k">raise</span> <span class="n">child_exception_type</span><span class="p">(</span><span class="n">errno_num</span><span class="p">,</span> <span class="n">err_msg</span><span class="p">,</span> <span class="n">err_filename</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1956</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1957</span>     <span class="k">raise</span> <span class="n">child_exception_type</span><span class="p">(</span><span class="n">errno_num</span><span class="p">,</span> <span class="n">err_msg</span><span class="p">)</span>
+<span class="nn">File /opt/conda/lib/python3.13/subprocess.py:1972,</span> in <span class="ni">Popen._execute_child</span><span class="nt">(self, args, executable, preexec_fn, close_fds, pass_fds, cwd, env, startupinfo, creationflags, shell, p2cread, p2cwrite, c2pread, c2pwrite, errread, errwrite, restore_signals, gid, gids, uid, umask, start_new_session, process_group)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1970</span>     <span class="n">err_msg</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">strerror</span><span class="p">(</span><span class="n">errno_num</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1971</span> <span class="k">if</span> <span class="n">err_filename</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1972</span>     <span class="k">raise</span> <span class="n">child_exception_type</span><span class="p">(</span><span class="n">errno_num</span><span class="p">,</span> <span class="n">err_msg</span><span class="p">,</span> <span class="n">err_filename</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1973</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1974</span>     <span class="k">raise</span> <span class="n">child_exception_type</span><span class="p">(</span><span class="n">errno_num</span><span class="p">,</span> <span class="n">err_msg</span><span class="p">)</span>
 
 <span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;3dttest++&#39;
 </pre></div>
@@ -1121,68 +1108,68 @@ Command: 3dMEMA -prefix /home/jovyan/Git_repositories/example-notebooks/books/fu
 [1] &quot;Totally 61 slices in the volume data.&quot;
 [1] &quot;Starting to analyze data slice-wise. Running progression shown below:&quot;
 [1] &quot;-----------------&quot;
-Z slice # 1 done:  07/10/25 05:49:07.589 
-Z slice # 2 done:  07/10/25 05:49:08.603 
-Z slice # 3 done:  07/10/25 05:49:09.726 
-Z slice # 4 done:  07/10/25 05:49:10.118 
-Z slice # 5 done:  07/10/25 05:49:10.704 
-Z slice # 6 done:  07/10/25 05:49:11.366 
-Z slice # 7 done:  07/10/25 05:49:12.652 
-Z slice # 8 done:  07/10/25 05:49:13.983 
-Z slice # 9 done:  07/10/25 05:49:15.759 
-Z slice # 10 done:  07/10/25 05:49:17.221 
-Z slice # 11 done:  07/10/25 05:49:18.423 
-Z slice # 12 done:  07/10/25 05:49:19.306 
-Z slice # 13 done:  07/10/25 05:49:20.249 
-Z slice # 14 done:  07/10/25 05:49:21.665 
-Z slice # 15 done:  07/10/25 05:49:22.775 
-Z slice # 16 done:  07/10/25 05:49:23.885 
-Z slice # 17 done:  07/10/25 05:49:25.210 
-Z slice # 18 done:  07/10/25 05:49:26.532 
-Z slice # 19 done:  07/10/25 05:49:27.840 
-Z slice # 20 done:  07/10/25 05:49:29.105 
-Z slice # 21 done:  07/10/25 05:49:31.621 
-Z slice # 22 done:  07/10/25 05:49:33.027 
-Z slice # 23 done:  07/10/25 05:49:34.683 
-Z slice # 24 done:  07/10/25 05:49:36.030 
-Z slice # 25 done:  07/10/25 05:49:37.414 
-Z slice # 26 done:  07/10/25 05:49:38.720 
-Z slice # 27 done:  07/10/25 05:49:39.983 
-Z slice # 28 done:  07/10/25 05:49:41.225 
-Z slice # 29 done:  07/10/25 05:49:42.400 
-Z slice # 30 done:  07/10/25 05:49:44.457 
-Z slice # 31 done:  07/10/25 05:49:45.804 
-Z slice # 32 done:  07/10/25 05:49:48.696 
-Z slice # 33 done:  07/10/25 05:49:50.349 
-Z slice # 34 done:  07/10/25 05:49:52.033 
-Z slice # 35 done:  07/10/25 05:49:54.557 
-Z slice # 36 done:  07/10/25 05:49:57.688 
-Z slice # 37 done:  07/10/25 05:49:59.483 
-Z slice # 38 done:  07/10/25 05:50:01.881 
-Z slice # 39 done:  07/10/25 05:50:04.005 
-Z slice # 40 done:  07/10/25 05:50:05.435 
-Z slice # 41 done:  07/10/25 05:50:06.771 
-Z slice # 42 done:  07/10/25 05:50:08.800 
-Z slice # 43 done:  07/10/25 05:50:09.863 
-Z slice # 44 done:  07/10/25 05:50:11.276 
-Z slice # 45 done:  07/10/25 05:50:12.229 
-Z slice # 46 done:  07/10/25 05:50:13.331 
-Z slice # 47 done:  07/10/25 05:50:14.097 
-Z slice # 48 done:  07/10/25 05:50:14.759 
-Z slice # 49 done:  07/10/25 05:50:15.241 
-Z slice # 50 done:  07/10/25 05:50:15.709 
-Z slice # 51 done:  07/10/25 05:50:16.850 
-Z slice # 52 done:  07/10/25 05:50:17.262 
-Z slice # 53 done:  07/10/25 05:50:17.601 
-Z slice # 54 done:  07/10/25 05:50:17.946 
-Z slice # 55 done:  07/10/25 05:50:18.407 
-Z slice # 56 done:  07/10/25 05:50:18.908 
-Z slice # 57 done:  07/10/25 05:50:19.336 
-Z slice # 58 done:  07/10/25 05:50:19.861 
-Z slice # 59 done:  07/10/25 05:50:20.566 
-Z slice # 60 done:  07/10/25 05:50:21.175 
-Z slice # 61 done:  07/10/25 05:50:22.133 
-[1] &quot;Analysis finished: 07/10/25 05:50:22.134&quot;
+Z slice # 1 done:  11/04/25 05:20:20.846 
+Z slice # 2 done:  11/04/25 05:20:21.102 
+Z slice # 3 done:  11/04/25 05:20:21.405 
+Z slice # 4 done:  11/04/25 05:20:21.744 
+Z slice # 5 done:  11/04/25 05:20:22.224 
+Z slice # 6 done:  11/04/25 05:20:22.743 
+Z slice # 7 done:  11/04/25 05:20:23.239 
+Z slice # 8 done:  11/04/25 05:20:23.805 
+Z slice # 9 done:  11/04/25 05:20:24.481 
+Z slice # 10 done:  11/04/25 05:20:25.288 
+Z slice # 11 done:  11/04/25 05:20:26.118 
+Z slice # 12 done:  11/04/25 05:20:28.067 
+Z slice # 13 done:  11/04/25 05:20:28.915 
+Z slice # 14 done:  11/04/25 05:20:29.912 
+Z slice # 15 done:  11/04/25 05:20:30.910 
+Z slice # 16 done:  11/04/25 05:20:31.913 
+Z slice # 17 done:  11/04/25 05:20:33.018 
+Z slice # 18 done:  11/04/25 05:20:34.212 
+Z slice # 19 done:  11/04/25 05:20:35.392 
+Z slice # 20 done:  11/04/25 05:20:36.512 
+Z slice # 21 done:  11/04/25 05:20:37.653 
+Z slice # 22 done:  11/04/25 05:20:38.770 
+Z slice # 23 done:  11/04/25 05:20:40.007 
+Z slice # 24 done:  11/04/25 05:20:41.220 
+Z slice # 25 done:  11/04/25 05:20:42.504 
+Z slice # 26 done:  11/04/25 05:20:43.786 
+Z slice # 27 done:  11/04/25 05:20:45.005 
+Z slice # 28 done:  11/04/25 05:20:46.204 
+Z slice # 29 done:  11/04/25 05:20:47.372 
+Z slice # 30 done:  11/04/25 05:20:48.487 
+Z slice # 31 done:  11/04/25 05:20:49.563 
+Z slice # 32 done:  11/04/25 05:20:50.668 
+Z slice # 33 done:  11/04/25 05:20:51.756 
+Z slice # 34 done:  11/04/25 05:20:52.830 
+Z slice # 35 done:  11/04/25 05:20:53.897 
+Z slice # 36 done:  11/04/25 05:20:54.934 
+Z slice # 37 done:  11/04/25 05:20:56.057 
+Z slice # 38 done:  11/04/25 05:20:57.130 
+Z slice # 39 done:  11/04/25 05:20:58.124 
+Z slice # 40 done:  11/04/25 05:20:59.131 
+Z slice # 41 done:  11/04/25 05:21:00.167 
+Z slice # 42 done:  11/04/25 05:21:01.132 
+Z slice # 43 done:  11/04/25 05:21:02.026 
+Z slice # 44 done:  11/04/25 05:21:02.877 
+Z slice # 45 done:  11/04/25 05:21:03.630 
+Z slice # 46 done:  11/04/25 05:21:04.346 
+Z slice # 47 done:  11/04/25 05:21:04.878 
+Z slice # 48 done:  11/04/25 05:21:05.357 
+Z slice # 49 done:  11/04/25 05:21:05.734 
+Z slice # 50 done:  11/04/25 05:21:06.109 
+Z slice # 51 done:  11/04/25 05:21:06.463 
+Z slice # 52 done:  11/04/25 05:21:06.781 
+Z slice # 53 done:  11/04/25 05:21:07.041 
+Z slice # 54 done:  11/04/25 05:21:07.290 
+Z slice # 55 done:  11/04/25 05:21:07.543 
+Z slice # 56 done:  11/04/25 05:21:07.802 
+Z slice # 57 done:  11/04/25 05:21:08.055 
+Z slice # 58 done:  11/04/25 05:21:08.309 
+Z slice # 59 done:  11/04/25 05:21:08.562 
+Z slice # 60 done:  11/04/25 05:21:08.820 
+Z slice # 61 done:  11/04/25 05:21:09.075 
+[1] &quot;Analysis finished: 11/04/25 05:21:09.077&quot;
 [1] &quot;#++++++++++++++++++++++++++++++++++++++++++++&quot;
 [1] &quot;system is computationally singular: reciprocal condition number = 0&quot;
 
@@ -1250,7 +1237,7 @@ This approach is intended for <strong>exploratory visualization only</strong> an
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>++ 3dinfo: AFNI version=AFNI_21.2.00 (Jul  8 2021) [64-bit]
 
 Dataset File:    /home/jovyan/Git_repositories/example-notebooks/books/functional_imaging/afni_pro_glm/group_results/Flanker-Inc-Con_ttest.nii.gz
-Identifier Code: XYZ_XIzASD3GHkMp361OqibBeA  Creation Date: Thu Jul 10 05:50:26 2025
+Identifier Code: XYZ_e6jy6nwqCv_6fUYGSp5k8w  Creation Date: Tue Nov  4 05:21:10 2025
 Template Space:  MNI
 Dataset Type:    Anat Bucket (-abuc)
 Byte Order:      LSB_FIRST {assumed} [this CPU native = LSB_FIRST]
@@ -1271,8 +1258,8 @@ Number of values stored at each pixel = 2
      statcode = fitt;  statpar = 8
 
 ----- HISTORY -----
-[jovyan@jupyter-monidoerig: Thu Jul 10 05:48:55 2025] {AFNI_21.2.00:linux_openmp_64} 3dttest++ -prefix /home/jovyan/Git_repositories/example-notebooks/books/functional_imaging/afni_pro_glm/group_results/Flanker-Inc-Con_ttest -mask /home/jovyan/Git_repositories/example-notebooks/books/functional_imaging/afni_pro_glm/group_mask+tlrc -setA Inc-Con sub-01 &#39;/home/jovyan/Git_repositories/example-notebooks/books/functional_imaging/afni_pro_glm/sub-01.results/stats.sub-01+tlrc[7]&#39; sub-02 &#39;/home/jovyan/Git_repositories/example-notebooks/books/functional_imaging/afni_pro_glm/sub-02.results/stats.sub-02+tlrc[7]&#39; sub-03 &#39;/home/jovyan/Git_repositories/example-notebooks/books/functional_imaging/afni_pro_glm/sub-03.results/stats.sub-03+tlrc[7]&#39; sub-04 &#39;/home/jovyan/Git_repositories/example-notebooks/books/functional_imaging/afni_pro_glm/sub-04.results/stats.sub-04+tlrc[7]&#39; sub-05 &#39;/home/jovyan/Git_repositories/example-notebooks/books/functional_imaging/afni_pro_glm/sub-05.results/stats.sub-05+tlrc[7]&#39; sub-06 &#39;/home/jovyan/Git_repositories/example-notebooks/books/functional_imaging/afni_pro_glm/sub-06.results/stats.sub-06+tlrc[7]&#39; sub-07 &#39;/home/jovyan/Git_repositories/example-notebooks/books/functional_imaging/afni_pro_glm/sub-07.results/stats.sub-07+tlrc[7]&#39; sub-08 &#39;/home/jovyan/Git_repositories/example-notebooks/books/functional_imaging/afni_pro_glm/sub-08.results/stats.sub-08+tlrc[7]&#39; sub-09 &#39;/home/jovyan/Git_repositories/example-notebooks/books/functional_imaging/afni_pro_glm/sub-09.results/stats.sub-09+tlrc[7]&#39;
-[jovyan@jupyter-monidoerig: Thu Jul 10 05:50:26 2025] {AFNI_21.2.00:linux_openmp_64} 3dcopy ./afni_pro_glm/group_results/Flanker-Inc-Con_ttest+tlrc ./afni_pro_glm/group_results/Flanker-Inc-Con_ttest.nii.gz
+[jovyan@jupyter-monidoerig: Tue Nov  4 05:20:07 2025] {AFNI_21.2.00:linux_openmp_64} 3dttest++ -prefix /home/jovyan/Git_repositories/example-notebooks/books/functional_imaging/afni_pro_glm/group_results/Flanker-Inc-Con_ttest -mask /home/jovyan/Git_repositories/example-notebooks/books/functional_imaging/afni_pro_glm/group_mask+tlrc -setA Inc-Con sub-01 &#39;/home/jovyan/Git_repositories/example-notebooks/books/functional_imaging/afni_pro_glm/sub-01.results/stats.sub-01+tlrc[7]&#39; sub-02 &#39;/home/jovyan/Git_repositories/example-notebooks/books/functional_imaging/afni_pro_glm/sub-02.results/stats.sub-02+tlrc[7]&#39; sub-03 &#39;/home/jovyan/Git_repositories/example-notebooks/books/functional_imaging/afni_pro_glm/sub-03.results/stats.sub-03+tlrc[7]&#39; sub-04 &#39;/home/jovyan/Git_repositories/example-notebooks/books/functional_imaging/afni_pro_glm/sub-04.results/stats.sub-04+tlrc[7]&#39; sub-05 &#39;/home/jovyan/Git_repositories/example-notebooks/books/functional_imaging/afni_pro_glm/sub-05.results/stats.sub-05+tlrc[7]&#39; sub-06 &#39;/home/jovyan/Git_repositories/example-notebooks/books/functional_imaging/afni_pro_glm/sub-06.results/stats.sub-06+tlrc[7]&#39; sub-07 &#39;/home/jovyan/Git_repositories/example-notebooks/books/functional_imaging/afni_pro_glm/sub-07.results/stats.sub-07+tlrc[7]&#39; sub-08 &#39;/home/jovyan/Git_repositories/example-notebooks/books/functional_imaging/afni_pro_glm/sub-08.results/stats.sub-08+tlrc[7]&#39; sub-09 &#39;/home/jovyan/Git_repositories/example-notebooks/books/functional_imaging/afni_pro_glm/sub-09.results/stats.sub-09+tlrc[7]&#39;
+[jovyan@jupyter-monidoerig: Tue Nov  4 05:21:10 2025] {AFNI_21.2.00:linux_openmp_64} 3dcopy ./afni_pro_glm/group_results/Flanker-Inc-Con_ttest+tlrc ./afni_pro_glm/group_results/Flanker-Inc-Con_ttest.nii.gz
 </pre></div>
 </div>
 </div>
@@ -1289,9 +1276,9 @@ Number of values stored at each pixel = 2
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>++ 3dTcat: AFNI version=AFNI_21.2.00 (Jul  8 2021) [64-bit]
-++ elapsed time = 0.7 s
+++ elapsed time = 0.1 s
 ++ 3dTcat: AFNI version=AFNI_21.2.00 (Jul  8 2021) [64-bit]
-++ elapsed time = 0.6 s
+++ elapsed time = 0.1 s
 </pre></div>
 </div>
 </div>
@@ -1344,8 +1331,8 @@ Number of values stored at each pixel = 2
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/b0f89165da58d83dd2fc871cee1e289b673ccc38645386aa7e1f919c6d3962c6.png" src="_images/b0f89165da58d83dd2fc871cee1e289b673ccc38645386aa7e1f919c6d3962c6.png" />
-<img alt="_images/f7ae45f00af081ce5949ad1a8c57bc0a055d2c20a9fe285b203f73a0be0c1dee.png" src="_images/f7ae45f00af081ce5949ad1a8c57bc0a055d2c20a9fe285b203f73a0be0c1dee.png" />
+<img alt="_images/7505fb9d13e27bba605dbc9dbb96e47770f0c01781709169a7b0da258c5341ef.png" src="_images/7505fb9d13e27bba605dbc9dbb96e47770f0c01781709169a7b0da258c5341ef.png" />
+<img alt="_images/9808a885df1393bdc52d91a27d18637e07976ea1d6064bbc26e2c37d549acd21.png" src="_images/9808a885df1393bdc52d91a27d18637e07976ea1d6064bbc26e2c37d549acd21.png" />
 </div>
 </div>
 </section>
@@ -3610,10 +3597,10 @@ Best match for ctx_rh_G_and_S_cingul-Mid-Ant:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;nilearn.plotting.displays._slicers.OrthoSlicer at 0x7f0e72554c50&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;nilearn.plotting.displays._slicers.OrthoSlicer at 0x7faed8d189d0&gt;
 </pre></div>
 </div>
-<img alt="_images/6557e95e305924f2799e75abefadbb4cca3c6cdf2a0259c6a884888946299173.png" src="_images/6557e95e305924f2799e75abefadbb4cca3c6cdf2a0259c6a884888946299173.png" />
+<img alt="_images/4cbbcd208a06870644bfe862e7796687184a02f6103c831be5b05c8482211a1f.png" src="_images/4cbbcd208a06870644bfe862e7796687184a02f6103c831be5b05c8482211a1f.png" />
 </div>
 </div>
 <p><strong>3. Resample the Mask to Match Functional Data:</strong></p>
@@ -3844,6 +3831,48 @@ t = 3.3636, p = 0.0099
 </ul>
 </section>
 </section>
+<section id="dependencies-in-jupyter-python">
+<h3>Dependencies in Jupyter/Python<a class="headerlink" href="#dependencies-in-jupyter-python" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Using the package <a class="reference external" href="https://github.com/rasbt/watermark">watermark</a> to document system environment and software versions used in this notebook</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> watermark
+
+<span class="o">%</span><span class="k">watermark</span>
+<span class="o">%</span><span class="k">watermark</span> --iversions
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Last updated: 2025-11-04T05:21:43.675155+00:00
+
+Python implementation: CPython
+Python version       : 3.11.6
+IPython version      : 8.16.1
+
+Compiler    : GCC 12.3.0
+OS          : Linux
+Release     : 5.4.0-204-generic
+Machine     : x86_64
+Processor   : x86_64
+CPU cores   : 32
+Architecture: 64bit
+
+ipyniivue : 2.3.2
+tqdm      : 4.66.1
+numpy     : 2.2.4
+nibabel   : 5.3.2
+nilearn   : 0.11.1
+IPython   : 8.16.1
+scipy     : 1.13.0
+matplotlib: 3.8.4
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 </section>
 </section>
 
@@ -3932,6 +3961,7 @@ t = 3.3636, p = 0.0099
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretation-of-sphere-roi-results">✅ Interpretation of Sphere ROI Results</a></li>
 </ul>
 </li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dependencies-in-jupyter-python">Dependencies in Jupyter/Python</a></li>
 </ul>
 </li>
 </ul>
