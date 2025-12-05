@@ -450,7 +450,6 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#an-interactive-rise-slideshow">An interactive RISE slideshow</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#output-cpu-information">Output CPU information</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-content">Table of content</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-nipype">1. Introduction to Nipype</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nipype-in-jupyter-notebooks-on-neurodesk">2. Nipype in Jupyter Notebooks on Neurodesk</a></li>
@@ -506,25 +505,8 @@ document.write(`
 <section id="an-interactive-rise-slideshow">
 <h2>An interactive RISE slideshow<a class="headerlink" href="#an-interactive-rise-slideshow" title="Link to this heading">#</a></h2>
 <p style="font-size: 15px;"> <b>Author:</b> Monika Doerig </p>
-<p style="font-size: 12px;">Press <code>Space</code> to proceed through the slideshow.</p></section>
-<section id="output-cpu-information">
-<h2>Output CPU information<a class="headerlink" href="#output-cpu-information" title="Link to this heading">#</a></h2>
-<p>In code cells you press <code class="docutils literal notranslate"><span class="pre">Shift-Enter</span></code> (as usual) to evaluate your code and directly move to the next cell if it is already displayed.</p>
+<p style="font-size: 15px;"> <b>Date:</b> 3 June 2024 </p><p style="font-size: 12px;">Press <code>Space</code> to proceed through the slideshow.</p><p>In code cells you press <code class="docutils literal notranslate"><span class="pre">Shift-Enter</span></code> (as usual) to evaluate your code and directly move to the next cell if it is already displayed.</p>
 <p>Press <code class="docutils literal notranslate"><span class="pre">Ctrl-Enter</span></code> to run a command without direclty moving to the next cell.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>cat<span class="w"> </span>/proc/cpuinfo<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s1">&#39;vendor&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>uniq
-<span class="o">!</span>cat<span class="w"> </span>/proc/cpuinfo<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s1">&#39;model name&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>uniq
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>vendor_id	: AuthenticAMD
-model name	: AMD EPYC 7763 64-Core Processor
-</pre></div>
-</div>
-</div>
-</div>
 <p style="font-size: 18px;">Keep pressing <code>Space</code> to advance to the next slide.</p><div class="hint">
   <p class="hint-title" style="font-size: 1.5em; color: green;"><i class="fas fa-bullseye" style="color: green;"></i> <span style="font-size: 1.5em;">Objectives</span></p>
   <ul>
@@ -566,7 +548,7 @@ model name	: AMD EPYC 7763 64-Core Processor
 </a>
 <p>Neurodesk project enables the use of all neuroimaging applications inside computational notebooks</p>
 <p><strong>Demonstration of the module system in Python and Nipype:</strong></p>
-<p>We will use the software tool <code class="docutils literal notranslate"><span class="pre">lmod</span></code> to manage and load different software packages and libraires. It simplifies the process of accessing and utilizing various software applications and allows users to easily switch between different versions of software packages, manage dependencies, and ensure compatibility with their computing environment.</p>
+<p>We will use the software tool <code class="docutils literal notranslate"><span class="pre">module</span></code> to manage and load different software packages and libraires. It simplifies the process of accessing and utilizing various software applications and allows users to easily switch between different versions of software packages, manage dependencies, and ensure compatibility with their computing environment.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># In code cells you press Shift-Enter to evaluate your code and directly move to the next cell if it is already displayed. </span>
@@ -717,6 +699,7 @@ Counting:   0%|                               | 0.00/27.0 [00:00&lt;?, ? Objects
                                                                                 
 Compressing:   0%|                            | 0.00/23.0 [00:00&lt;?, ? Objects/s]
                                                                                 
+
 Receiving:   0%|                             | 0.00/2.15k [00:00&lt;?, ? Objects/s]
 
                                                                                 
@@ -736,9 +719,9 @@ Resolving:   0%|                                | 0.00/537 [00:00&lt;?, ? Deltas
 | to set your account&#39;s default identity.
 | Omit --global to set the identity only in this repository.
 | 
-| fatal: unable to auto-detect email address (got &#39;root@798858acecb8.(none)&#39;) 
-[INFO   ] git-annex: user error (git [&quot;--git-dir=.git&quot;,&quot;--work-tree=.&quot;,&quot;--literal-pathspecs&quot;,&quot;-c&quot;,&quot;annex.dotfiles=true&quot;,&quot;commit-tree&quot;,&quot;0e38f05454d38da589bfee3d97f2dc2f383e9a5b&quot;,&quot;--no-gpg-sign&quot;,&quot;-p&quot;,&quot;refs/heads/git-annex&quot;] exited 128) 
-<span class=" -Color -Color-Bold">install</span>(<span class=" -Color -Color-Bold -Color-Bold-Red">error</span>): /tmp/tmpcnlu7kat/ds000102 (<span class=" -Color -Color-Bold -Color-Bold-Magenta">dataset</span>) [CommandError: &#39;git -c diff.ignoreSubmodules=none -c core.quotepath=false annex init -c annex.dotfiles=true&#39; failed with exitcode 1 under /tmp/tmpcnlu7kat/ds000102]<span class=" -Color -Color-Bold -Color-Bold-Red"> [CommandError: &#39;git -c diff.ignoreSubmodules=none -c core.quotepath=false annex init -c annex.dotfiles=true&#39; failed with exitcode 1 under /tmp/tmpcnlu7kat/ds000102]</span>
+| fatal: unable to auto-detect email address (got &#39;root@a551576739e1.(none)&#39;) 
+[INFO   ] git-annex: user error (git [&quot;--git-dir=.git&quot;,&quot;--work-tree=.&quot;,&quot;--literal-pathspecs&quot;,&quot;-c&quot;,&quot;annex.dotfiles=true&quot;,&quot;commit-tree&quot;,&quot;9acfef636242656a6e7e5c1ed91aaf153596f343&quot;,&quot;--no-gpg-sign&quot;,&quot;-p&quot;,&quot;refs/heads/git-annex&quot;] exited 128) 
+<span class=" -Color -Color-Bold">install</span>(<span class=" -Color -Color-Bold -Color-Bold-Red">error</span>): /tmp/tmpnebkp0nk/ds000102 (<span class=" -Color -Color-Bold -Color-Bold-Magenta">dataset</span>) [CommandError: &#39;git -c diff.ignoreSubmodules=none -c core.quotepath=false annex init -c annex.dotfiles=true&#39; failed with exitcode 1 under /tmp/tmpnebkp0nk/ds000102]<span class=" -Color -Color-Bold -Color-Bold-Red"> [CommandError: &#39;git -c diff.ignoreSubmodules=none -c core.quotepath=false annex init -c annex.dotfiles=true&#39; failed with exitcode 1 under /tmp/tmpnebkp0nk/ds000102]</span>
 
 /bin/bash: line 1: cd: ds000102: No such file or directory
 </pre></div>
@@ -957,27 +940,27 @@ None
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TraitError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">10</span><span class="p">],</span> <span class="n">line</span> <span class="mi">5</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">5</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">skullstrip</span> <span class="o">=</span> <span class="n">fsl</span><span class="o">.</span><span class="n">BET</span><span class="p">()</span>
 <span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># Set input (and output)</span>
 <span class="ne">----&gt; </span><span class="mi">5</span> <span class="n">skullstrip</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">in_file</span> <span class="o">=</span> <span class="s1">&#39;./ds000102/sub-01/anat/sub-01_T1w.nii.gz&#39;</span> 
 <span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">skullstrip</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">out_file</span> <span class="o">=</span> <span class="s1">&#39;./output/T1w_nipype_bet.nii.gz&#39;</span> <span class="c1"># Interfaces by default spit out results to the local directory why relative paths work (outputs are not stored in temporary files like in Nodes/Workflow)</span>
 
-<span class="nn">File /opt/conda/lib/python3.12/site-packages/nipype/interfaces/base/traits_extension.py:325,</span> in <span class="ni">File.validate</span><span class="nt">(self, objekt, name, value, return_pathlike)</span>
+<span class="nn">File /opt/conda/lib/python3.13/site-packages/nipype/interfaces/base/traits_extension.py:325,</span> in <span class="ni">File.validate</span><span class="nt">(self, objekt, name, value, return_pathlike)</span>
 <span class="g g-Whitespace">    </span><span class="mi">323</span> <span class="k">def</span><span class="w"> </span><span class="nf">validate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">objekt</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">return_pathlike</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="g g-Whitespace">    </span><span class="mi">324</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;Validate a value change.&quot;&quot;&quot;</span>
 <span class="ne">--&gt; </span><span class="mi">325</span>     <span class="n">value</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">validate</span><span class="p">(</span><span class="n">objekt</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">return_pathlike</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">326</span>     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_exts</span><span class="p">:</span>
 <span class="g g-Whitespace">    </span><span class="mi">327</span>         <span class="n">fname</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">name</span>
 
-<span class="nn">File /opt/conda/lib/python3.12/site-packages/nipype/interfaces/base/traits_extension.py:135,</span> in <span class="ni">BasePath.validate</span><span class="nt">(self, objekt, name, value, return_pathlike)</span>
+<span class="nn">File /opt/conda/lib/python3.13/site-packages/nipype/interfaces/base/traits_extension.py:135,</span> in <span class="ni">BasePath.validate</span><span class="nt">(self, objekt, name, value, return_pathlike)</span>
 <span class="g g-Whitespace">    </span><span class="mi">133</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">exists</span><span class="p">:</span>
 <span class="g g-Whitespace">    </span><span class="mi">134</span>     <span class="k">if</span> <span class="ow">not</span> <span class="n">value</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
 <span class="ne">--&gt; </span><span class="mi">135</span>         <span class="bp">self</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">objekt</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">))</span>
 <span class="g g-Whitespace">    </span><span class="mi">137</span>     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_is_file</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">value</span><span class="o">.</span><span class="n">is_file</span><span class="p">():</span>
 <span class="g g-Whitespace">    </span><span class="mi">138</span>         <span class="bp">self</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">objekt</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">))</span>
 
-<span class="nn">File /opt/conda/lib/python3.12/site-packages/traits/base_trait_handler.py:74,</span> in <span class="ni">BaseTraitHandler.error</span><span class="nt">(self, object, name, value)</span>
+<span class="nn">File /opt/conda/lib/python3.13/site-packages/traits/base_trait_handler.py:74,</span> in <span class="ni">BaseTraitHandler.error</span><span class="nt">(self, object, name, value)</span>
 <span class="g g-Whitespace">     </span><span class="mi">57</span> <span class="k">def</span><span class="w"> </span><span class="nf">error</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">object</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
 <span class="g g-Whitespace">     </span><span class="mi">58</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;Raises a TraitError exception.</span>
 <span class="g g-Whitespace">     </span><span class="mi">59</span><span class="sd"> </span>
@@ -1111,12 +1094,12 @@ skull_mask_file = &lt;undefined&gt;
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>250606-01:27:47,466 nipype.workflow INFO:
-	 [Node] Setting-up &quot;bet_node&quot; in &quot;/tmp/tmp13hyf_z5/bet_node&quot;.
-250606-01:27:47,470 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>251031-00:46:21,111 nipype.workflow INFO:
+	 [Node] Setting-up &quot;bet_node&quot; in &quot;/tmp/tmp1dkhodhh/bet_node&quot;.
+251031-00:46:21,116 nipype.workflow INFO:
 	 [Node] Executing &quot;bet_node&quot; &lt;nipype.interfaces.fsl.preprocess.BET&gt;
-250606-01:27:51,451 nipype.workflow INFO:
-	 [Node] Finished &quot;bet_node&quot;, elapsed time 3.979764s.
+251031-00:46:25,77 nipype.workflow INFO:
+	 [Node] Finished &quot;bet_node&quot;, elapsed time 3.959091s.
 </pre></div>
 </div>
 </div>
@@ -1158,8 +1141,8 @@ skull_mask_file = &lt;undefined&gt;
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/9f3e991b1ed35b5ec81ff63b35b46fdd7ad834a5877e15bc10c0dc22e2036452.png" src="_images/9f3e991b1ed35b5ec81ff63b35b46fdd7ad834a5877e15bc10c0dc22e2036452.png" />
-<img alt="_images/6927c25cdc20b5bd783d5479288fcb2d8a287875ba07c56e5af05e0a70104359.png" src="_images/6927c25cdc20b5bd783d5479288fcb2d8a287875ba07c56e5af05e0a70104359.png" />
+<img alt="_images/117c82f9a26472b87fa378819f45771476cf42663f6e1fb93acbdfe834224a9a.png" src="_images/117c82f9a26472b87fa378819f45771476cf42663f6e1fb93acbdfe834224a9a.png" />
+<img alt="_images/3596bef69bf77f6ae3d830079c8c14bc204022eb63ef047f4c4797ed342b6c85.png" src="_images/3596bef69bf77f6ae3d830079c8c14bc204022eb63ef047f4c4797ed342b6c85.png" />
 </div>
 </div>
 </section>
@@ -1267,7 +1250,7 @@ skull_mask_file = &lt;undefined&gt;
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>250606-01:27:55,578 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>251031-00:46:30,538 nipype.workflow INFO:
 	 Generated workflow graph: /home/jovyan/Git_repositories/example-notebooks/books/workflows/output/working_dir/smoothflow/workflow_graph.png (graph2use=hierarchical, simple_form=True).
 </pre></div>
 </div>
@@ -1284,7 +1267,7 @@ skull_mask_file = &lt;undefined&gt;
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>250606-01:27:55,939 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>251031-00:46:30,929 nipype.workflow INFO:
 	 Generated workflow graph: /home/jovyan/Git_repositories/example-notebooks/books/workflows/output/working_dir/smoothflow/graph.png (graph2use=flat, simple_form=True).
 </pre></div>
 </div>
@@ -1299,31 +1282,31 @@ skull_mask_file = &lt;undefined&gt;
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>250606-01:27:55,951 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>251031-00:46:30,941 nipype.workflow INFO:
 	 Workflow smoothflow settings: [&#39;check&#39;, &#39;execution&#39;, &#39;logging&#39;, &#39;monitoring&#39;]
-250606-01:27:55,955 nipype.workflow INFO:
+251031-00:46:30,945 nipype.workflow INFO:
 	 Running serially.
-250606-01:27:55,956 nipype.workflow INFO:
+251031-00:46:30,946 nipype.workflow INFO:
 	 [Node] Setting-up &quot;smoothflow.skullstrip&quot; in &quot;/home/jovyan/Git_repositories/example-notebooks/books/workflows/output/working_dir/smoothflow/skullstrip&quot;.
-250606-01:27:55,959 nipype.workflow INFO:
+251031-00:46:30,949 nipype.workflow INFO:
 	 [Node] Executing &quot;skullstrip&quot; &lt;nipype.interfaces.fsl.preprocess.BET&gt;
-250606-01:27:59,939 nipype.workflow INFO:
-	 [Node] Finished &quot;skullstrip&quot;, elapsed time 3.9788740000000002s.
-250606-01:27:59,943 nipype.workflow INFO:
+251031-00:46:34,891 nipype.workflow INFO:
+	 [Node] Finished &quot;skullstrip&quot;, elapsed time 3.9415459999999998s.
+251031-00:46:34,895 nipype.workflow INFO:
 	 [Node] Setting-up &quot;smoothflow.smooth&quot; in &quot;/home/jovyan/Git_repositories/example-notebooks/books/workflows/output/working_dir/smoothflow/smooth&quot;.
-250606-01:27:59,945 nipype.workflow INFO:
+251031-00:46:34,897 nipype.workflow INFO:
 	 [Node] Executing &quot;smooth&quot; &lt;nipype.interfaces.fsl.maths.IsotropicSmooth&gt;
-250606-01:28:07,569 nipype.workflow INFO:
-	 [Node] Finished &quot;smooth&quot;, elapsed time 7.6233450000000005s.
-250606-01:28:07,572 nipype.workflow INFO:
+251031-00:46:42,635 nipype.workflow INFO:
+	 [Node] Finished &quot;smooth&quot;, elapsed time 7.737129s.
+251031-00:46:42,649 nipype.workflow INFO:
 	 [Node] Setting-up &quot;smoothflow.mask&quot; in &quot;/home/jovyan/Git_repositories/example-notebooks/books/workflows/output/working_dir/smoothflow/mask&quot;.
-250606-01:28:07,575 nipype.workflow INFO:
+251031-00:46:42,659 nipype.workflow INFO:
 	 [Node] Executing &quot;mask&quot; &lt;nipype.interfaces.fsl.maths.ApplyMask&gt;
-250606-01:28:08,891 nipype.workflow INFO:
-	 [Node] Finished &quot;mask&quot;, elapsed time 1.315226s.
+251031-00:46:44,109 nipype.workflow INFO:
+	 [Node] Finished &quot;mask&quot;, elapsed time 1.448766s.
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;networkx.classes.digraph.DiGraph at 0x7f033446d350&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;networkx.classes.digraph.DiGraph at 0x7f0e75030c10&gt;
 </pre></div>
 </div>
 </div>
@@ -1390,7 +1373,7 @@ skull_mask_file = &lt;undefined&gt;
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/04d03ab5967cba073d6e10fc41be9e44309a380fb22757f5083234d1e9787fca.png" src="_images/04d03ab5967cba073d6e10fc41be9e44309a380fb22757f5083234d1e9787fca.png" />
+<img alt="_images/e23b762a19fa1ecd2413f1a7914a91c3d8e8cf1ec45dc213f5f61c520406dd47.png" src="_images/e23b762a19fa1ecd2413f1a7914a91c3d8e8cf1ec45dc213f5f61c520406dd47.png" />
 </div>
 </div>
 </section>
@@ -1504,11 +1487,11 @@ skull_mask_file = &lt;undefined&gt;
 │       └── sub-02_task-flanker_run-2_events.tsv
 ├── <span class=" -Color -Color-Bold -Color-Bold-Blue">sub-03</span>
 │   ├── <span class=" -Color -Color-Bold -Color-Bold-Blue">anat</span>
-│   │   └── <span class=" -Color -Color-Bold -Color-Bold-Cyan">sub-03_T1w.nii.gz</span> -&gt; <span class=" -Color -Color-Bold -Color-Bold-Red">../../.git/annex/objects/7W/9z/MD5E-s10707026--8f1858934cc7c7457e3a4a71cc2131fc.nii.gz/MD5E-s10707026--8f1858934cc7c7457e3a4a71cc2131fc.nii.gz</span>
+│   │   └── <span class=" -Color -Color-Bold -Color-Bold-Red -Color-Bold-Red-BGBlack">sub-03_T1w.nii.gz</span> -&gt; ../../.git/annex/objects/7W/9z/MD5E-s10707026--8f1858934cc7c7457e3a4a71cc2131fc.nii.gz/MD5E-s10707026--8f1858934cc7c7457e3a4a71cc2131fc.nii.gz
 │   └── <span class=" -Color -Color-Bold -Color-Bold-Blue">func</span>
-│       ├── <span class=" -Color -Color-Bold -Color-Bold-Cyan">sub-03_task-flanker_run-1_bold.nii.gz</span> -&gt; <span class=" -Color -Color-Bold -Color-Bold-Red">../../.git/annex/objects/q6/kF/MD5E-s28755729--b19466702eee6b9385bd6e19e362f94c.nii.gz/MD5E-s28755729--b19466702eee6b9385bd6e19e362f94c.nii.gz</span>
+│       ├── <span class=" -Color -Color-Bold -Color-Bold-Red -Color-Bold-Red-BGBlack">sub-03_task-flanker_run-1_bold.nii.gz</span> -&gt; ../../.git/annex/objects/q6/kF/MD5E-s28755729--b19466702eee6b9385bd6e19e362f94c.nii.gz/MD5E-s28755729--b19466702eee6b9385bd6e19e362f94c.nii.gz
 │       ├── sub-03_task-flanker_run-1_events.tsv
-│       ├── <span class=" -Color -Color-Bold -Color-Bold-Cyan">sub-03_task-flanker_run-2_bold.nii.gz</span> -&gt; <span class=" -Color -Color-Bold -Color-Bold-Red">../../.git/annex/objects/zV/K1/MD5E-s28782544--8d9700a435d08c90f0c1d534efdc8b69.nii.gz/MD5E-s28782544--8d9700a435d08c90f0c1d534efdc8b69.nii.gz</span>
+│       ├── <span class=" -Color -Color-Bold -Color-Bold-Red -Color-Bold-Red-BGBlack">sub-03_task-flanker_run-2_bold.nii.gz</span> -&gt; ../../.git/annex/objects/zV/K1/MD5E-s28782544--8d9700a435d08c90f0c1d534efdc8b69.nii.gz/MD5E-s28782544--8d9700a435d08c90f0c1d534efdc8b69.nii.gz
 │       └── sub-03_task-flanker_run-2_events.tsv
 ├── <span class=" -Color -Color-Bold -Color-Bold-Blue">sub-04</span>
 │   ├── <span class=" -Color -Color-Bold -Color-Bold-Blue">anat</span>
@@ -1792,25 +1775,25 @@ skull_mask_file = &lt;undefined&gt;
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>250606-01:28:12,517 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>251031-00:46:47,638 nipype.workflow INFO:
 	 Workflow data_input settings: [&#39;check&#39;, &#39;execution&#39;, &#39;logging&#39;, &#39;monitoring&#39;]
-250606-01:28:12,524 nipype.workflow INFO:
+251031-00:46:47,645 nipype.workflow INFO:
 	 Running serially.
-250606-01:28:12,525 nipype.workflow INFO:
+251031-00:46:47,646 nipype.workflow INFO:
 	 [Node] Setting-up &quot;data_input.dg&quot; in &quot;/home/jovyan/Git_repositories/example-notebooks/books/workflows/output/working_dir/data_input/_subject_id_01/dg&quot;.
-250606-01:28:12,536 nipype.workflow INFO:
+251031-00:46:47,656 nipype.workflow INFO:
 	 [Node] Executing &quot;dg&quot; &lt;nipype.interfaces.io.DataGrabber&gt;
-250606-01:28:12,539 nipype.workflow INFO:
-	 [Node] Finished &quot;dg&quot;, elapsed time 0.000577s.
-250606-01:28:12,541 nipype.workflow INFO:
+251031-00:46:47,658 nipype.workflow INFO:
+	 [Node] Finished &quot;dg&quot;, elapsed time 0.000579s.
+251031-00:46:47,661 nipype.workflow INFO:
 	 [Node] Setting-up &quot;data_input.dg&quot; in &quot;/home/jovyan/Git_repositories/example-notebooks/books/workflows/output/working_dir/data_input/_subject_id_02/dg&quot;.
-250606-01:28:12,544 nipype.workflow INFO:
+251031-00:46:47,664 nipype.workflow INFO:
 	 [Node] Executing &quot;dg&quot; &lt;nipype.interfaces.io.DataGrabber&gt;
-250606-01:28:12,546 nipype.workflow INFO:
-	 [Node] Finished &quot;dg&quot;, elapsed time 0.000316s.
+251031-00:46:47,666 nipype.workflow INFO:
+	 [Node] Finished &quot;dg&quot;, elapsed time 0.000476s.
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;networkx.classes.digraph.DiGraph at 0x7f0334606450&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;networkx.classes.digraph.DiGraph at 0x7f0e75148250&gt;
 </pre></div>
 </div>
 </div>
@@ -1971,7 +1954,7 @@ skull_mask_file = &lt;undefined&gt;
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>250606-01:28:13,923 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>251031-00:46:48,854 nipype.workflow INFO:
 	 Generated workflow graph: /home/jovyan/Git_repositories/example-notebooks/books/workflows/output/working_dir/preproc/graph.png (graph2use=colored, simple_form=True).
 </pre></div>
 </div>
@@ -1986,63 +1969,63 @@ skull_mask_file = &lt;undefined&gt;
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>250606-01:28:13,932 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>251031-00:46:48,866 nipype.workflow INFO:
 	 Workflow preproc settings: [&#39;check&#39;, &#39;execution&#39;, &#39;logging&#39;, &#39;monitoring&#39;]
-250606-01:28:13,943 nipype.workflow INFO:
+251031-00:46:48,870 nipype.workflow INFO:
 	 Running in parallel.
-250606-01:28:13,958 nipype.workflow INFO:
+251031-00:46:48,880 nipype.workflow INFO:
 	 [MultiProc] Running 0 tasks, and 1 jobs ready. Free memory (GB): 219.48/219.48, Free processors: 32/32.
-250606-01:28:15,12 nipype.workflow INFO:
+251031-00:46:50,51 nipype.workflow INFO:
 	 [Node] Setting-up &quot;preproc.dg&quot; in &quot;/home/jovyan/Git_repositories/example-notebooks/books/workflows/output/working_dir/preproc/dg&quot;.
-250606-01:28:15,26 nipype.workflow INFO:
+251031-00:46:50,62 nipype.workflow INFO:
 	 [Node] Executing &quot;dg&quot; &lt;nipype.interfaces.io.DataGrabber&gt;
-250606-01:28:15,30 nipype.workflow INFO:
-	 [Node] Finished &quot;dg&quot;, elapsed time 0.000948s.
-250606-01:28:15,960 nipype.workflow INFO:
+251031-00:46:50,67 nipype.workflow INFO:
+	 [Node] Finished &quot;dg&quot;, elapsed time 0.001017s.
+251031-00:46:50,876 nipype.workflow INFO:
 	 [Job 0] Completed (preproc.dg).
-250606-01:28:15,964 nipype.workflow INFO:
+251031-00:46:50,880 nipype.workflow INFO:
 	 [MultiProc] Running 0 tasks, and 1 jobs ready. Free memory (GB): 219.48/219.48, Free processors: 32/32.
-250606-01:28:16,481 nipype.workflow INFO:
+251031-00:46:51,113 nipype.workflow INFO:
 	 [Node] Setting-up &quot;preproc.mcflirt&quot; in &quot;/home/jovyan/Git_repositories/example-notebooks/books/workflows/output/working_dir/preproc/mcflirt&quot;.
-250606-01:28:16,504 nipype.workflow INFO:
+251031-00:46:51,123 nipype.workflow INFO:
 	 [Node] Executing &quot;mcflirt&quot; &lt;nipype.interfaces.fsl.preprocess.MCFLIRT&gt;
-250606-01:28:17,962 nipype.workflow INFO:
+251031-00:46:52,875 nipype.workflow INFO:
 	 [MultiProc] Running 1 tasks, and 0 jobs ready. Free memory (GB): 219.28/219.48, Free processors: 31/32.
                      Currently running:
                        * preproc.mcflirt
-250606-01:28:48,637 nipype.workflow INFO:
-	 [Node] Finished &quot;mcflirt&quot;, elapsed time 32.125453s.
-250606-01:28:49,977 nipype.workflow INFO:
+251031-00:47:18,471 nipype.workflow INFO:
+	 [Node] Finished &quot;mcflirt&quot;, elapsed time 27.344782s.
+251031-00:47:18,876 nipype.workflow INFO:
 	 [Job 1] Completed (preproc.mcflirt).
-250606-01:28:49,979 nipype.workflow INFO:
+251031-00:47:18,879 nipype.workflow INFO:
 	 [MultiProc] Running 0 tasks, and 1 jobs ready. Free memory (GB): 219.48/219.48, Free processors: 32/32.
-250606-01:28:50,115 nipype.workflow INFO:
+251031-00:47:19,18 nipype.workflow INFO:
 	 [Node] Setting-up &quot;preproc.smooth&quot; in &quot;/home/jovyan/Git_repositories/example-notebooks/books/workflows/output/working_dir/preproc/smooth&quot;.
-250606-01:28:50,133 nipype.workflow INFO:
+251031-00:47:19,30 nipype.workflow INFO:
 	 [Node] Executing &quot;smooth&quot; &lt;nipype.interfaces.fsl.maths.IsotropicSmooth&gt;
-250606-01:28:51,973 nipype.workflow INFO:
+251031-00:47:20,877 nipype.workflow INFO:
 	 [MultiProc] Running 1 tasks, and 0 jobs ready. Free memory (GB): 219.28/219.48, Free processors: 31/32.
                      Currently running:
                        * preproc.smooth
-250606-01:29:02,65 nipype.workflow INFO:
-	 [Node] Finished &quot;smooth&quot;, elapsed time 11.92321s.
-250606-01:29:03,975 nipype.workflow INFO:
+251031-00:47:29,173 nipype.workflow INFO:
+	 [Node] Finished &quot;smooth&quot;, elapsed time 10.140791s.
+251031-00:47:30,878 nipype.workflow INFO:
 	 [Job 2] Completed (preproc.smooth).
-250606-01:29:03,977 nipype.workflow INFO:
+251031-00:47:30,881 nipype.workflow INFO:
 	 [MultiProc] Running 0 tasks, and 1 jobs ready. Free memory (GB): 219.48/219.48, Free processors: 32/32.
-250606-01:29:04,116 nipype.workflow INFO:
+251031-00:47:31,15 nipype.workflow INFO:
 	 [Node] Setting-up &quot;preproc.sinker&quot; in &quot;/home/jovyan/Git_repositories/example-notebooks/books/workflows/output/working_dir/preproc/sinker&quot;.
-250606-01:29:04,177 nipype.workflow INFO:
+251031-00:47:31,30 nipype.workflow INFO:
 	 [Node] Executing &quot;sinker&quot; &lt;nipype.interfaces.io.DataSink&gt;
-250606-01:29:04,181 nipype.workflow INFO:
-	 [Node] Finished &quot;sinker&quot;, elapsed time 0.001353s.
-250606-01:29:05,975 nipype.workflow INFO:
+251031-00:47:31,41 nipype.workflow INFO:
+	 [Node] Finished &quot;sinker&quot;, elapsed time 0.007466s.
+251031-00:47:32,878 nipype.workflow INFO:
 	 [Job 3] Completed (preproc.sinker).
-250606-01:29:05,977 nipype.workflow INFO:
+251031-00:47:32,881 nipype.workflow INFO:
 	 [MultiProc] Running 0 tasks, and 0 jobs ready. Free memory (GB): 219.48/219.48, Free processors: 32/32.
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;networkx.classes.digraph.DiGraph at 0x7f033464a6d0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;networkx.classes.digraph.DiGraph at 0x7f0e7504da50&gt;
 </pre></div>
 </div>
 </div>
@@ -2084,45 +2067,45 @@ For example, to get rid of the string 'bold' and to adapt the file ending of the
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>250606-01:29:12,288 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>251031-00:47:35,922 nipype.workflow INFO:
 	 Workflow preproc settings: [&#39;check&#39;, &#39;execution&#39;, &#39;logging&#39;, &#39;monitoring&#39;]
-250606-01:29:12,294 nipype.workflow INFO:
+251031-00:47:35,928 nipype.workflow INFO:
 	 Running serially.
-250606-01:29:12,295 nipype.workflow INFO:
+251031-00:47:35,929 nipype.workflow INFO:
 	 [Node] Setting-up &quot;preproc.dg&quot; in &quot;/home/jovyan/Git_repositories/example-notebooks/books/workflows/output/working_dir/preproc/dg&quot;.
-250606-01:29:12,298 nipype.workflow INFO:
+251031-00:47:35,932 nipype.workflow INFO:
 	 [Node] Executing &quot;dg&quot; &lt;nipype.interfaces.io.DataGrabber&gt;
-250606-01:29:12,300 nipype.workflow INFO:
-	 [Node] Finished &quot;dg&quot;, elapsed time 0.00033s.
-250606-01:29:12,307 nipype.workflow INFO:
+251031-00:47:35,933 nipype.workflow INFO:
+	 [Node] Finished &quot;dg&quot;, elapsed time 0.000376s.
+251031-00:47:35,936 nipype.workflow INFO:
 	 [Node] Setting-up &quot;preproc.mcflirt&quot; in &quot;/home/jovyan/Git_repositories/example-notebooks/books/workflows/output/working_dir/preproc/mcflirt&quot;.
-250606-01:29:12,309 nipype.workflow INFO:
+251031-00:47:35,938 nipype.workflow INFO:
 	 [Node] Cached &quot;preproc.mcflirt&quot; - collecting precomputed outputs
-250606-01:29:12,310 nipype.workflow INFO:
+251031-00:47:35,938 nipype.workflow INFO:
 	 [Node] &quot;preproc.mcflirt&quot; found cached.
-250606-01:29:12,310 nipype.workflow INFO:
+251031-00:47:35,939 nipype.workflow INFO:
 	 [Node] Setting-up &quot;preproc.smooth&quot; in &quot;/home/jovyan/Git_repositories/example-notebooks/books/workflows/output/working_dir/preproc/smooth&quot;.
-250606-01:29:12,312 nipype.workflow INFO:
+251031-00:47:35,941 nipype.workflow INFO:
 	 [Node] Cached &quot;preproc.smooth&quot; - collecting precomputed outputs
-250606-01:29:12,312 nipype.workflow INFO:
+251031-00:47:35,942 nipype.workflow INFO:
 	 [Node] &quot;preproc.smooth&quot; found cached.
-250606-01:29:12,313 nipype.workflow INFO:
+251031-00:47:35,943 nipype.workflow INFO:
 	 [Node] Setting-up &quot;preproc.sinker&quot; in &quot;/home/jovyan/Git_repositories/example-notebooks/books/workflows/output/working_dir/preproc/sinker&quot;.
-250606-01:29:12,315 nipype.workflow INFO:
+251031-00:47:35,945 nipype.workflow INFO:
 	 [Node] Outdated cache found for &quot;preproc.sinker&quot;.
-250606-01:29:12,318 nipype.workflow INFO:
+251031-00:47:35,948 nipype.workflow INFO:
 	 [Node] Executing &quot;sinker&quot; &lt;nipype.interfaces.io.DataSink&gt;
-250606-01:29:12,319 nipype.interface INFO:
+251031-00:47:35,949 nipype.interface INFO:
 	 sub: /home/jovyan/Git_repositories/example-notebooks/books/workflows/output/working_dir/preproc/results/sub-01/sub-01_task-flanker_run-1_bold_mcf_smooth.nii.gz -&gt; /home/jovyan/Git_repositories/example-notebooks/books/workflows/output/working_dir/preproc/results/sub-01/sub-01_task-flanker_run-1_mcf_smooth.nii.gz
-250606-01:29:12,320 nipype.interface INFO:
+251031-00:47:35,950 nipype.interface INFO:
 	 sub: /home/jovyan/Git_repositories/example-notebooks/books/workflows/output/working_dir/preproc/results/sub-01/sub-01_task-flanker_run-1_bold_mcf.nii.gz -&gt; /home/jovyan/Git_repositories/example-notebooks/books/workflows/output/working_dir/preproc/results/sub-01/sub-01_task-flanker_run-1_mcf.nii.gz
-250606-01:29:12,321 nipype.interface INFO:
+251031-00:47:35,951 nipype.interface INFO:
 	 sub: /home/jovyan/Git_repositories/example-notebooks/books/workflows/output/working_dir/preproc/results/sub-01/sub-01_task-flanker_run-1_bold_mcf.nii.gz.par -&gt; /home/jovyan/Git_repositories/example-notebooks/books/workflows/output/working_dir/preproc/results/sub-01/sub-01_task-flanker_run-1_mcf.par
-250606-01:29:12,322 nipype.workflow INFO:
-	 [Node] Finished &quot;sinker&quot;, elapsed time 0.002846s.
+251031-00:47:35,952 nipype.workflow INFO:
+	 [Node] Finished &quot;sinker&quot;, elapsed time 0.003552s.
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;networkx.classes.digraph.DiGraph at 0x7f033442f4d0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;networkx.classes.digraph.DiGraph at 0x7f0e7514a310&gt;
 </pre></div>
 </div>
 </div>
@@ -2245,14 +2228,6 @@ For example, to get rid of the string 'bold' and to adapt the file ending of the
 <ul class="simple">
 <li><p>Using the package <a class="reference external" href="https://github.com/rasbt/watermark">watermark</a> to print out computer characteristics and software versions.</p></li>
 </ul>
-<div class="cell tag_scroll-output docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%capture</span>
-<span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="n">watermark</span>
-</pre></div>
-</div>
-</div>
-</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> watermark
@@ -2263,11 +2238,11 @@ For example, to get rid of the string 'bold' and to adapt the file ending of the
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Last updated: 2025-06-06T01:29:15.338246+00:00
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Last updated: 2025-10-31T00:47:36.922878+00:00
 
 Python implementation: CPython
 Python version       : 3.11.6
-IPython version      : 9.1.0
+IPython version      : 8.16.1
 
 Compiler    : GCC 12.3.0
 OS          : Linux
@@ -2277,12 +2252,12 @@ Processor   : x86_64
 CPU cores   : 32
 Architecture: 64bit
 
-nibabel   : 5.3.2
-matplotlib: 3.10.3
-IPython   : 9.1.0
 nipype    : 1.8.6
-nilearn   : 0.11.1
+matplotlib: 3.8.4
 numpy     : 2.2.6
+IPython   : 8.16.1
+nilearn   : 0.12.1
+nibabel   : 5.2.1
 </pre></div>
 </div>
 </div>
@@ -2363,7 +2338,6 @@ numpy     : 2.2.6
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#an-interactive-rise-slideshow">An interactive RISE slideshow</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#output-cpu-information">Output CPU information</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-content">Table of content</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-nipype">1. Introduction to Nipype</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nipype-in-jupyter-notebooks-on-neurodesk">2. Nipype in Jupyter Notebooks on Neurodesk</a></li>
