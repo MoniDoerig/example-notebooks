@@ -242,16 +242,34 @@
       
       <li><a href="https://play-america.neurodesk.org/hub/user-redirect/git-pull?repo=https%3A//github.com/NeuroDesk/example-notebooks&urlpath=lab/tree/example-notebooks/books/freesurfer-recon-all-clinical.ipynb&branch=main" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch on JupyterHub"
+   title="Launch on Run in America"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img alt="JupyterHub logo" src="_static/images/logo_jupyterhub.svg">
+    <img alt="Run in America logo" src="_static/images/logo_jupyterhub.svg">
   </span>
-<span class="btn__text-container">JupyterHub</span>
+<span class="btn__text-container">Run in America</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://play-europe.neurodesk.org/hub/user-redirect/git-pull?repo=https%3A//github.com/NeuroDesk/example-notebooks&urlpath=lab/tree/example-notebooks/books/freesurfer-recon-all-clinical.ipynb&branch=main" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Run in Europe"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Run in Europe logo" src="_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">Run in Europe</span>
 </a>
 </li>
       
@@ -429,11 +447,21 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">FreeSurfer: recon-all-clinical</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#general-instructions">General Instructions:</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#load-the-module-for-this-workbook">Load the module for this workbook</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#let-s-try-running-the-command-with-the-help-flag">Let’s try running the command with the –help flag!</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#run">Run</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">FreeSurfer: recon-all-clinical</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#citations-and-resources">Citations and Resources:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tools-included-in-this-workflow">Tools included in this workflow</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset">Dataset:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-instructions">General Instructions:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-the-module-for-this-workbook">Load the module for this workbook</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#let-s-try-running-the-command-with-the-help-flag">Let’s try running the command with the –help flag!</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#run">Run</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dependencies-in-jupyter-python">Dependencies in Jupyter/Python</a></li>
+</ul>
+</li>
 </ul>
 
             </nav>
@@ -446,25 +474,32 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="freesurfer-recon-all-clinical">
+  <section class="tex2jax_ignore mathjax_ignore" id="freesurfer-recon-all-clinical">
 <h1>FreeSurfer: recon-all-clinical<a class="headerlink" href="#freesurfer-recon-all-clinical" title="Link to this heading">#</a></h1>
 <p>This notebook was prepared for an audience of clinicians at the 2025 <a class="reference external" href="https://www.pactalscongress.com/programme">PACTALS conference</a> (Pan-Asian consortium of Treatment and Research in ALS) in Melbourne.</p>
 <p><strong>Author:</strong> Thomas Shaw, 1 Sept 2025</p>
 <p><a class="reference external" href="https://github.com/thomshaw92"><img alt="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" style="width: 20px;" /> thomshaw92</a></p>
 <p><a class="reference external" href="https://orcid.org/0000-0003-2490-0532"><img alt="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" style="width: 20px;" /> 0000-0003-2490-0532</a></p>
-<p><strong>Citations:</strong></p>
-<p><strong>Dataset</strong>: T1 weighted MP2RAGE at 7T (healthy control)</p>
-<ul class="simple">
-<li><p>Shaw TB, York A, Barth M, Bollmann S. Towards Optimising MRI Characterisation of Tissue (TOMCAT) Dataset including all Longitudinal Automatic Segmentation of Hippocampal Subfields (LASHiS) data. Data Brief. 2020 Jul 20;32:106043. doi: <a class="reference external" href="https://doi.org/10.1016/j.dib.2020.106043">https://doi.org/10.1016/j.dib.2020.106043</a> PMID: 32793772; PMCID: PMC7415822.</p></li>
-</ul>
+<section id="citations-and-resources">
+<h2>Citations and Resources:<a class="headerlink" href="#citations-and-resources" title="Link to this heading">#</a></h2>
+<section id="tools-included-in-this-workflow">
+<h3>Tools included in this workflow<a class="headerlink" href="#tools-included-in-this-workflow" title="Link to this heading">#</a></h3>
 <p><strong>recon-all-clinical</strong>:</p>
 <ul class="simple">
 <li><p>Karthik Gopinath, Douglas N. Greve, Colin Magdamo, Steve Arnold, Sudeshna Das, Oula Puonti, Juan Eugenio Iglesias,
 “Recon-all-clinical”: Cortical surface reconstruction and analysis of heterogeneous clinical brain MRI, Medical Image Analysis, Volume 103, 2025, 103608, ISSN 1361-8415, <a class="reference external" href="https://doi.org/10.1016/j.media.2025.103608">https://doi.org/10.1016/j.media.2025.103608</a>.</p></li>
 </ul>
 </section>
+<section id="dataset">
+<h3>Dataset:<a class="headerlink" href="#dataset" title="Link to this heading">#</a></h3>
+<p><strong>T1 weighted MP2RAGE at 7T (healthy control)</strong></p>
+<ul class="simple">
+<li><p>Shaw TB, York A, Barth M, Bollmann S. Towards Optimising MRI Characterisation of Tissue (TOMCAT) Dataset including all Longitudinal Automatic Segmentation of Hippocampal Subfields (LASHiS) data. Data Brief. 2020 Jul 20;32:106043. doi: <a class="reference external" href="https://doi.org/10.1016/j.dib.2020.106043">https://doi.org/10.1016/j.dib.2020.106043</a> PMID: 32793772; PMCID: PMC7415822.</p></li>
+</ul>
+</section>
+</section>
 <section id="general-instructions">
-<h1>General Instructions:<a class="headerlink" href="#general-instructions" title="Link to this heading">#</a></h1>
+<h2>General Instructions:<a class="headerlink" href="#general-instructions" title="Link to this heading">#</a></h2>
 <div style="border:2px solid #1976D2; border-radius:10px; padding:15px; background-color:#F0F8FF;">
 <h2 style="color:#0D47A1;">📘 How to Use This Notebook</h2>
 <p>
@@ -501,7 +536,7 @@ The computer will either:
 </ul>
 </section>
 <section id="load-the-module-for-this-workbook">
-<h1>Load the module for this workbook<a class="headerlink" href="#load-the-module-for-this-workbook" title="Link to this heading">#</a></h1>
+<h2>Load the module for this workbook<a class="headerlink" href="#load-the-module-for-this-workbook" title="Link to this heading">#</a></h2>
 <div style="border:2px solid #9C27B0; border-radius:10px; padding:15px; background-color:#FAF5FF;">
 <h2 style="color:#6A1B9A;">📦 What is a "Module"?</h2>
 <p>
@@ -564,7 +599,7 @@ Also make sure that all modulefiles written in TCL start with the string
 </div>
 </section>
 <section id="let-s-try-running-the-command-with-the-help-flag">
-<h1>Let’s try running the command with the –help flag!<a class="headerlink" href="#let-s-try-running-the-command-with-the-help-flag" title="Link to this heading">#</a></h1>
+<h2>Let’s try running the command with the –help flag!<a class="headerlink" href="#let-s-try-running-the-command-with-the-help-flag" title="Link to this heading">#</a></h2>
 <div class="cell tag_scroll-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>recon-all-clinical.sh<span class="w"> </span>--help
@@ -602,48 +637,690 @@ to start the download.
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading File
   0%|                                           | 0.00/72.7M [00:00&lt;?, ?bytes/s]
-  0%|                                   | 49.2k/72.7M [00:00&lt;05:24, 224kbytes/s]
-  0%|                                   | 81.9k/72.7M [00:00&lt;06:15, 193kbytes/s]
-  0%|                                    | 147k/72.7M [00:00&lt;03:44, 323kbytes/s]
-  0%|                                    | 213k/72.7M [00:00&lt;03:03, 396kbytes/s]
-  0%|▏                                   | 295k/72.7M [00:00&lt;02:21, 512kbytes/s]
-  1%|▏                                   | 442k/72.7M [00:00&lt;01:33, 775kbytes/s]
-  1%|▎                                  | 623k/72.7M [00:00&lt;01:08, 1.06Mbytes/s]
-  1%|▍                                  | 901k/72.7M [00:01&lt;00:46, 1.55Mbytes/s]
-  2%|▌                                 | 1.31M/72.7M [00:01&lt;00:31, 2.28Mbytes/s]
-  3%|▉                                 | 1.90M/72.7M [00:01&lt;00:21, 3.33Mbytes/s]
-  4%|█▎                                | 2.82M/72.7M [00:01&lt;00:13, 5.04Mbytes/s]
-  6%|█▉                                | 4.11M/72.7M [00:01&lt;00:09, 7.36Mbytes/s]
-  8%|██▊                               | 6.03M/72.7M [00:01&lt;00:06, 10.9Mbytes/s]
- 12%|███▉                              | 8.49M/72.7M [00:01&lt;00:04, 14.5Mbytes/s]
- 15%|█████                             | 10.8M/72.7M [00:01&lt;00:03, 16.9Mbytes/s]
- 18%|██████                            | 12.9M/72.7M [00:01&lt;00:03, 18.2Mbytes/s]
- 21%|███████▏                          | 15.3M/72.7M [00:01&lt;00:02, 19.8Mbytes/s]
- 24%|████████▏                         | 17.4M/72.7M [00:02&lt;00:02, 19.6Mbytes/s]
- 28%|█████████▎                        | 20.0M/72.7M [00:02&lt;00:02, 20.6Mbytes/s]
- 31%|██████████▌                       | 22.5M/72.7M [00:02&lt;00:02, 21.8Mbytes/s]
- 34%|███████████▌                      | 24.7M/72.7M [00:02&lt;00:02, 21.7Mbytes/s]
- 37%|████████████▌                     | 27.0M/72.7M [00:02&lt;00:02, 21.8Mbytes/s]
- 40%|█████████████▋                    | 29.2M/72.7M [00:02&lt;00:02, 21.3Mbytes/s]
- 44%|██████████████▊                   | 31.7M/72.7M [00:02&lt;00:01, 21.7Mbytes/s]
- 47%|███████████████▉                  | 34.0M/72.7M [00:02&lt;00:01, 22.2Mbytes/s]
- 50%|████████████████▉                 | 36.3M/72.7M [00:02&lt;00:01, 22.0Mbytes/s]
- 53%|██████████████████                | 38.6M/72.7M [00:03&lt;00:01, 22.2Mbytes/s]
- 56%|███████████████████               | 40.8M/72.7M [00:03&lt;00:01, 21.7Mbytes/s]
- 60%|████████████████████▎             | 43.4M/72.7M [00:03&lt;00:01, 22.1Mbytes/s]
- 63%|█████████████████████▍            | 45.7M/72.7M [00:03&lt;00:01, 22.4Mbytes/s]
- 66%|██████████████████████▍           | 48.0M/72.7M [00:03&lt;00:01, 22.2Mbytes/s]
- 69%|███████████████████████▌          | 50.3M/72.7M [00:03&lt;00:01, 22.2Mbytes/s]
- 72%|████████████████████████▌         | 52.5M/72.7M [00:03&lt;00:00, 21.7Mbytes/s]
- 76%|█████████████████████████▋        | 55.0M/72.7M [00:03&lt;00:00, 21.8Mbytes/s]
- 79%|██████████████████████████▊       | 57.3M/72.7M [00:03&lt;00:00, 22.2Mbytes/s]
- 82%|███████████████████████████▊      | 59.5M/72.7M [00:03&lt;00:00, 22.0Mbytes/s]
- 85%|████████████████████████████▉     | 61.8M/72.7M [00:04&lt;00:00, 22.1Mbytes/s]
- 88%|█████████████████████████████▉    | 64.0M/72.7M [00:04&lt;00:00, 21.6Mbytes/s]
- 91%|███████████████████████████████   | 66.4M/72.7M [00:04&lt;00:00, 21.7Mbytes/s]
- 95%|████████████████████████████████▏ | 68.7M/72.7M [00:04&lt;00:00, 22.0Mbytes/s]
- 98%|█████████████████████████████████▏| 70.9M/72.7M [00:04&lt;00:00, 21.9Mbytes/s]
-100%|██████████████████████████████████| 72.7M/72.7M [00:04&lt;00:00, 15.9Mbytes/s]
+  0%|                                   | 16.4k/72.7M [00:00&lt;08:55, 136kbytes/s]
+  0%|                                   | 49.2k/72.7M [00:00&lt;07:02, 172kbytes/s]
+  0%|                                   | 81.9k/72.7M [00:00&lt;06:39, 182kbytes/s]
+  0%|                                    | 147k/72.7M [00:00&lt;04:01, 300kbytes/s]
+  0%|                                    | 213k/72.7M [00:00&lt;03:03, 395kbytes/s]
+  0%|▏                                   | 295k/72.7M [00:00&lt;02:41, 449kbytes/s]
+  1%|▏                                   | 393k/72.7M [00:00&lt;02:03, 587kbytes/s]
+  1%|▏                                   | 459k/72.7M [00:01&lt;02:02, 592kbytes/s]
+  1%|▎                                   | 524k/72.7M [00:01&lt;02:02, 590kbytes/s]
+  1%|▎                                   | 606k/72.7M [00:01&lt;01:50, 651kbytes/s]
+  1%|▎                                   | 688k/72.7M [00:01&lt;01:44, 688kbytes/s]
+  1%|▍                                   | 770k/72.7M [00:01&lt;01:47, 669kbytes/s]
+  1%|▍                                   | 852k/72.7M [00:01&lt;01:53, 632kbytes/s]
+  1%|▍                                   | 967k/72.7M [00:01&lt;01:47, 664kbytes/s]
+  1%|▌                                  | 1.06M/72.7M [00:01&lt;01:38, 728kbytes/s]
+  2%|▌                                  | 1.15M/72.7M [00:02&lt;01:45, 679kbytes/s]
+  2%|▌                                  | 1.23M/72.7M [00:02&lt;01:41, 705kbytes/s]
+  2%|▋                                  | 1.31M/72.7M [00:02&lt;01:45, 679kbytes/s]
+  2%|▋                                  | 1.41M/72.7M [00:02&lt;01:46, 670kbytes/s]
+  2%|▋                                  | 1.51M/72.7M [00:02&lt;01:36, 735kbytes/s]
+  2%|▊                                  | 1.59M/72.7M [00:02&lt;01:44, 683kbytes/s]
+  2%|▊                                  | 1.67M/72.7M [00:02&lt;01:40, 705kbytes/s]
+  2%|▊                                  | 1.75M/72.7M [00:02&lt;01:44, 682kbytes/s]
+  3%|▉                                  | 1.85M/72.7M [00:03&lt;01:45, 672kbytes/s]
+  3%|▉                                  | 1.93M/72.7M [00:03&lt;01:40, 704kbytes/s]
+  3%|▉                                  | 2.02M/72.7M [00:03&lt;01:36, 730kbytes/s]
+  3%|█                                  | 2.10M/72.7M [00:03&lt;01:39, 710kbytes/s]
+  3%|█                                  | 2.18M/72.7M [00:03&lt;01:47, 653kbytes/s]
+  3%|█                                  | 2.28M/72.7M [00:03&lt;01:35, 734kbytes/s]
+  3%|█▏                                 | 2.36M/72.7M [00:03&lt;01:45, 667kbytes/s]
+  3%|█▏                                 | 2.44M/72.7M [00:03&lt;01:40, 702kbytes/s]
+  3%|█▏                                 | 2.52M/72.7M [00:04&lt;01:43, 678kbytes/s]
+  4%|█▎                                 | 2.62M/72.7M [00:04&lt;01:44, 670kbytes/s]
+  4%|█▎                                 | 2.72M/72.7M [00:04&lt;01:33, 747kbytes/s]
+  4%|█▎                                 | 2.80M/72.7M [00:04&lt;01:43, 677kbytes/s]
+  4%|█▍                                 | 2.88M/72.7M [00:04&lt;01:39, 700kbytes/s]
+  4%|█▍                                 | 2.97M/72.7M [00:04&lt;01:42, 683kbytes/s]
+  4%|█▍                                 | 3.06M/72.7M [00:04&lt;01:43, 672kbytes/s]
+  4%|█▌                                 | 3.18M/72.7M [00:04&lt;01:41, 688kbytes/s]
+  5%|█▌                                 | 3.28M/72.7M [00:05&lt;01:32, 750kbytes/s]
+  5%|█▌                                 | 3.36M/72.7M [00:05&lt;01:40, 692kbytes/s]
+  5%|█▋                                 | 3.44M/72.7M [00:05&lt;01:38, 702kbytes/s]
+  5%|█▋                                 | 3.52M/72.7M [00:05&lt;01:41, 678kbytes/s]
+  5%|█▋                                 | 3.62M/72.7M [00:05&lt;01:43, 669kbytes/s]
+  5%|█▊                                 | 3.74M/72.7M [00:05&lt;01:40, 686kbytes/s]
+  5%|█▊                                 | 3.83M/72.7M [00:05&lt;01:43, 665kbytes/s]
+  5%|█▉                                 | 3.95M/72.7M [00:06&lt;01:40, 684kbytes/s]
+  6%|█▉                                 | 4.06M/72.7M [00:06&lt;01:38, 697kbytes/s]
+  6%|██                                 | 4.18M/72.7M [00:06&lt;01:37, 705kbytes/s]
+  6%|██                                 | 4.28M/72.7M [00:06&lt;01:39, 688kbytes/s]
+  6%|██                                 | 4.39M/72.7M [00:06&lt;01:37, 699kbytes/s]
+  6%|██▏                                | 4.49M/72.7M [00:06&lt;01:30, 752kbytes/s]
+  6%|██▏                                | 4.57M/72.7M [00:06&lt;01:35, 711kbytes/s]
+  6%|██▏                                | 4.65M/72.7M [00:07&lt;01:35, 715kbytes/s]
+  7%|██▎                                | 4.73M/72.7M [00:07&lt;01:36, 701kbytes/s]
+  7%|██▎                                | 4.83M/72.7M [00:07&lt;01:40, 677kbytes/s]
+  7%|██▍                                | 4.95M/72.7M [00:07&lt;01:36, 703kbytes/s]
+  7%|██▍                                | 5.06M/72.7M [00:07&lt;01:37, 696kbytes/s]
+  7%|██▍                                | 5.16M/72.7M [00:07&lt;01:37, 694kbytes/s]
+  7%|██▌                                | 5.28M/72.7M [00:07&lt;01:36, 700kbytes/s]
+  7%|██▌                                | 5.39M/72.7M [00:08&lt;01:34, 713kbytes/s]
+  8%|██▋                                | 5.51M/72.7M [00:08&lt;01:34, 714kbytes/s]
+  8%|██▋                                | 5.60M/72.7M [00:08&lt;01:44, 642kbytes/s]
+  8%|██▋                                | 5.67M/72.7M [00:08&lt;01:58, 563kbytes/s]
+  8%|██▊                                | 5.73M/72.7M [00:08&lt;02:00, 554kbytes/s]
+  8%|██▊                                | 5.80M/72.7M [00:08&lt;02:07, 527kbytes/s]
+  8%|██▊                                | 5.90M/72.7M [00:09&lt;01:57, 569kbytes/s]
+  8%|██▉                                | 6.01M/72.7M [00:09&lt;01:48, 615kbytes/s]
+  8%|██▉                                | 6.13M/72.7M [00:09&lt;01:42, 652kbytes/s]
+  9%|███                                | 6.24M/72.7M [00:09&lt;01:38, 673kbytes/s]
+  9%|███                                | 6.34M/72.7M [00:09&lt;01:39, 666kbytes/s]
+  9%|███                                | 6.46M/72.7M [00:09&lt;01:36, 686kbytes/s]
+  9%|███▏                               | 6.57M/72.7M [00:10&lt;01:34, 698kbytes/s]
+  9%|███▏                               | 6.68M/72.7M [00:10&lt;01:32, 715kbytes/s]
+  9%|███▎                               | 6.78M/72.7M [00:10&lt;01:34, 697kbytes/s]
+  9%|███▎                               | 6.90M/72.7M [00:10&lt;01:32, 707kbytes/s]
+ 10%|███▍                               | 7.01M/72.7M [00:10&lt;01:32, 709kbytes/s]
+ 10%|███▍                               | 7.13M/72.7M [00:10&lt;01:30, 722kbytes/s]
+ 10%|███▍                               | 7.23M/72.7M [00:10&lt;01:33, 701kbytes/s]
+ 10%|███▌                               | 7.34M/72.7M [00:11&lt;01:32, 708kbytes/s]
+ 10%|███▌                               | 7.45M/72.7M [00:11&lt;01:31, 712kbytes/s]
+ 10%|███▋                               | 7.57M/72.7M [00:11&lt;01:29, 725kbytes/s]
+ 11%|███▋                               | 7.67M/72.7M [00:11&lt;01:32, 704kbytes/s]
+ 11%|███▋                               | 7.78M/72.7M [00:11&lt;01:31, 712kbytes/s]
+ 11%|███▊                               | 7.90M/72.7M [00:11&lt;01:30, 715kbytes/s]
+ 11%|███▊                               | 8.01M/72.7M [00:12&lt;01:28, 727kbytes/s]
+ 11%|███▉                               | 8.11M/72.7M [00:12&lt;01:31, 704kbytes/s]
+ 11%|███▉                               | 8.22M/72.7M [00:12&lt;01:30, 713kbytes/s]
+ 11%|████                               | 8.34M/72.7M [00:12&lt;01:29, 716kbytes/s]
+ 12%|████                               | 8.45M/72.7M [00:12&lt;01:28, 728kbytes/s]
+ 12%|████                               | 8.55M/72.7M [00:12&lt;01:30, 708kbytes/s]
+ 12%|████▏                              | 8.67M/72.7M [00:12&lt;01:30, 709kbytes/s]
+ 12%|████▏                              | 8.78M/72.7M [00:13&lt;01:28, 724kbytes/s]
+ 12%|████▎                              | 8.90M/72.7M [00:13&lt;01:26, 734kbytes/s]
+ 12%|████▎                              | 8.99M/72.7M [00:13&lt;01:29, 710kbytes/s]
+ 13%|████▍                              | 9.11M/72.7M [00:13&lt;01:29, 714kbytes/s]
+ 13%|████▍                              | 9.22M/72.7M [00:13&lt;01:27, 727kbytes/s]
+ 13%|████▍                              | 9.34M/72.7M [00:13&lt;01:30, 696kbytes/s]
+ 13%|████▌                              | 9.42M/72.7M [00:14&lt;01:37, 646kbytes/s]
+ 13%|████▌                              | 9.49M/72.7M [00:14&lt;01:47, 590kbytes/s]
+ 13%|████▌                              | 9.55M/72.7M [00:14&lt;01:52, 560kbytes/s]
+ 13%|████▋                              | 9.67M/72.7M [00:14&lt;01:41, 620kbytes/s]
+ 13%|████▋                              | 9.78M/72.7M [00:14&lt;01:35, 661kbytes/s]
+ 14%|████▊                              | 9.88M/72.7M [00:14&lt;01:35, 661kbytes/s]
+ 14%|████▊                              | 9.99M/72.7M [00:14&lt;01:32, 678kbytes/s]
+ 14%|████▊                              | 10.1M/72.7M [00:15&lt;01:29, 702kbytes/s]
+ 14%|████▉                              | 10.2M/72.7M [00:15&lt;01:26, 719kbytes/s]
+ 14%|████▉                              | 10.3M/72.7M [00:15&lt;01:28, 701kbytes/s]
+ 14%|█████                              | 10.4M/72.7M [00:15&lt;01:27, 708kbytes/s]
+ 15%|█████                              | 10.6M/72.7M [00:15&lt;01:25, 723kbytes/s]
+ 15%|█████▏                             | 10.6M/72.7M [00:15&lt;01:28, 703kbytes/s]
+ 15%|█████▏                             | 10.8M/72.7M [00:16&lt;01:27, 709kbytes/s]
+ 15%|█████▏                             | 10.9M/72.7M [00:16&lt;01:25, 721kbytes/s]
+ 15%|█████▎                             | 11.0M/72.7M [00:16&lt;01:24, 732kbytes/s]
+ 15%|█████▎                             | 11.1M/72.7M [00:16&lt;01:26, 709kbytes/s]
+ 15%|█████▍                             | 11.2M/72.7M [00:16&lt;01:26, 713kbytes/s]
+ 16%|█████▍                             | 11.3M/72.7M [00:16&lt;01:24, 727kbytes/s]
+ 16%|█████▌                             | 11.4M/72.7M [00:16&lt;01:23, 737kbytes/s]
+ 16%|█████▌                             | 11.5M/72.7M [00:17&lt;01:25, 712kbytes/s]
+ 16%|█████▌                             | 11.6M/72.7M [00:17&lt;01:25, 714kbytes/s]
+ 16%|█████▋                             | 11.8M/72.7M [00:17&lt;01:23, 728kbytes/s]
+ 16%|█████▋                             | 11.9M/72.7M [00:17&lt;01:22, 737kbytes/s]
+ 16%|█████▊                             | 12.0M/72.7M [00:17&lt;01:25, 712kbytes/s]
+ 17%|█████▊                             | 12.1M/72.7M [00:17&lt;01:24, 715kbytes/s]
+ 17%|█████▉                             | 12.2M/72.7M [00:18&lt;01:23, 727kbytes/s]
+ 17%|█████▉                             | 12.3M/72.7M [00:18&lt;01:21, 737kbytes/s]
+ 17%|█████▉                             | 12.4M/72.7M [00:18&lt;01:24, 712kbytes/s]
+ 17%|██████                             | 12.5M/72.7M [00:18&lt;01:24, 715kbytes/s]
+ 17%|██████                             | 12.6M/72.7M [00:18&lt;01:22, 728kbytes/s]
+ 18%|██████▏                            | 12.7M/72.7M [00:18&lt;01:24, 706kbytes/s]
+ 18%|██████▏                            | 12.9M/72.7M [00:18&lt;01:24, 710kbytes/s]
+ 18%|██████▏                            | 13.0M/72.7M [00:19&lt;01:22, 725kbytes/s]
+ 18%|██████▎                            | 13.1M/72.7M [00:19&lt;01:21, 735kbytes/s]
+ 18%|██████▎                            | 13.2M/72.7M [00:19&lt;01:23, 711kbytes/s]
+ 18%|██████▍                            | 13.3M/72.7M [00:19&lt;01:23, 712kbytes/s]
+ 18%|██████▍                            | 13.4M/72.7M [00:19&lt;01:21, 726kbytes/s]
+ 19%|██████▌                            | 13.5M/72.7M [00:19&lt;01:23, 709kbytes/s]
+ 19%|██████▌                            | 13.6M/72.7M [00:20&lt;01:25, 692kbytes/s]
+ 19%|██████▋                            | 13.8M/72.7M [00:20&lt;01:21, 719kbytes/s]
+ 19%|██████▋                            | 13.9M/72.7M [00:20&lt;01:20, 731kbytes/s]
+ 19%|██████▋                            | 14.0M/72.7M [00:20&lt;01:19, 739kbytes/s]
+ 19%|██████▊                            | 14.1M/72.7M [00:20&lt;01:22, 712kbytes/s]
+ 20%|██████▊                            | 14.2M/72.7M [00:20&lt;01:21, 717kbytes/s]
+ 20%|██████▉                            | 14.3M/72.7M [00:20&lt;01:20, 729kbytes/s]
+ 20%|██████▉                            | 14.4M/72.7M [00:21&lt;01:18, 739kbytes/s]
+ 20%|██████▉                            | 14.5M/72.7M [00:21&lt;01:21, 713kbytes/s]
+ 20%|███████                            | 14.6M/72.7M [00:21&lt;01:21, 716kbytes/s]
+ 20%|███████                            | 14.8M/72.7M [00:21&lt;01:19, 729kbytes/s]
+ 20%|███████▏                           | 14.9M/72.7M [00:21&lt;01:18, 738kbytes/s]
+ 21%|███████▏                           | 15.0M/72.7M [00:21&lt;01:21, 712kbytes/s]
+ 21%|███████▎                           | 15.1M/72.7M [00:22&lt;01:20, 715kbytes/s]
+ 21%|███████▎                           | 15.2M/72.7M [00:22&lt;01:18, 728kbytes/s]
+ 21%|███████▍                           | 15.3M/72.7M [00:22&lt;01:17, 737kbytes/s]
+ 21%|███████▍                           | 15.4M/72.7M [00:22&lt;01:20, 713kbytes/s]
+ 21%|███████▍                           | 15.5M/72.7M [00:22&lt;01:20, 714kbytes/s]
+ 22%|███████▌                           | 15.6M/72.7M [00:22&lt;01:18, 728kbytes/s]
+ 22%|███████▌                           | 15.8M/72.7M [00:22&lt;01:17, 737kbytes/s]
+ 22%|███████▋                           | 15.9M/72.7M [00:23&lt;01:20, 702kbytes/s]
+ 22%|███████▋                           | 16.0M/72.7M [00:23&lt;01:19, 715kbytes/s]
+ 22%|███████▋                           | 16.1M/72.7M [00:23&lt;01:17, 728kbytes/s]
+ 22%|███████▊                           | 16.2M/72.7M [00:23&lt;01:16, 737kbytes/s]
+ 22%|███████▊                           | 16.3M/72.7M [00:23&lt;01:19, 712kbytes/s]
+ 23%|███████▉                           | 16.4M/72.7M [00:23&lt;01:18, 716kbytes/s]
+ 23%|███████▉                           | 16.5M/72.7M [00:24&lt;01:17, 729kbytes/s]
+ 23%|████████                           | 16.6M/72.7M [00:24&lt;01:16, 733kbytes/s]
+ 23%|████████                           | 16.7M/72.7M [00:24&lt;01:18, 709kbytes/s]
+ 23%|████████                           | 16.9M/72.7M [00:24&lt;01:18, 712kbytes/s]
+ 23%|████████▏                          | 17.0M/72.7M [00:24&lt;01:16, 725kbytes/s]
+ 24%|████████▏                          | 17.1M/72.7M [00:24&lt;01:15, 736kbytes/s]
+ 24%|████████▎                          | 17.2M/72.7M [00:24&lt;01:18, 711kbytes/s]
+ 24%|████████▎                          | 17.3M/72.7M [00:25&lt;01:17, 715kbytes/s]
+ 24%|████████▍                          | 17.4M/72.7M [00:25&lt;01:15, 728kbytes/s]
+ 24%|████████▍                          | 17.5M/72.7M [00:25&lt;01:15, 735kbytes/s]
+ 24%|████████▍                          | 17.6M/72.7M [00:25&lt;01:17, 711kbytes/s]
+ 24%|████████▌                          | 17.7M/72.7M [00:25&lt;01:17, 713kbytes/s]
+ 25%|████████▌                          | 17.9M/72.7M [00:25&lt;01:15, 727kbytes/s]
+ 25%|████████▋                          | 18.0M/72.7M [00:25&lt;01:14, 737kbytes/s]
+ 25%|████████▋                          | 18.1M/72.7M [00:26&lt;01:16, 711kbytes/s]
+ 25%|████████▊                          | 18.2M/72.7M [00:26&lt;01:16, 716kbytes/s]
+ 25%|████████▊                          | 18.3M/72.7M [00:26&lt;01:14, 729kbytes/s]
+ 25%|████████▊                          | 18.4M/72.7M [00:26&lt;01:13, 737kbytes/s]
+ 25%|████████▉                          | 18.5M/72.7M [00:26&lt;01:16, 713kbytes/s]
+ 26%|████████▉                          | 18.6M/72.7M [00:26&lt;01:15, 716kbytes/s]
+ 26%|█████████                          | 18.7M/72.7M [00:27&lt;01:18, 690kbytes/s]
+ 26%|█████████                          | 18.8M/72.7M [00:27&lt;01:24, 637kbytes/s]
+ 26%|█████████                          | 18.9M/72.7M [00:27&lt;01:31, 586kbytes/s]
+ 26%|█████████▏                         | 19.0M/72.7M [00:27&lt;01:35, 561kbytes/s]
+ 26%|█████████▏                         | 19.1M/72.7M [00:27&lt;01:27, 611kbytes/s]
+ 26%|█████████▏                         | 19.2M/72.7M [00:27&lt;01:21, 655kbytes/s]
+ 27%|█████████▎                         | 19.3M/72.7M [00:27&lt;01:17, 684kbytes/s]
+ 27%|█████████▎                         | 19.4M/72.7M [00:28&lt;01:18, 675kbytes/s]
+ 27%|█████████▍                         | 19.5M/72.7M [00:28&lt;01:17, 690kbytes/s]
+ 27%|█████████▍                         | 19.6M/72.7M [00:28&lt;01:14, 711kbytes/s]
+ 27%|█████████▌                         | 19.7M/72.7M [00:28&lt;01:13, 723kbytes/s]
+ 27%|█████████▌                         | 19.8M/72.7M [00:28&lt;01:15, 703kbytes/s]
+ 27%|█████████▌                         | 20.0M/72.7M [00:28&lt;01:14, 709kbytes/s]
+ 28%|█████████▋                         | 20.1M/72.7M [00:29&lt;01:12, 724kbytes/s]
+ 28%|█████████▋                         | 20.2M/72.7M [00:29&lt;01:11, 733kbytes/s]
+ 28%|█████████▊                         | 20.3M/72.7M [00:29&lt;01:13, 709kbytes/s]
+ 28%|█████████▊                         | 20.4M/72.7M [00:29&lt;01:13, 713kbytes/s]
+ 28%|█████████▉                         | 20.5M/72.7M [00:29&lt;01:11, 727kbytes/s]
+ 28%|█████████▉                         | 20.6M/72.7M [00:29&lt;01:10, 737kbytes/s]
+ 29%|█████████▉                         | 20.7M/72.7M [00:29&lt;01:13, 711kbytes/s]
+ 29%|██████████                         | 20.8M/72.7M [00:30&lt;01:12, 715kbytes/s]
+ 29%|██████████                         | 21.0M/72.7M [00:30&lt;01:11, 728kbytes/s]
+ 29%|██████████▏                        | 21.1M/72.7M [00:30&lt;01:09, 738kbytes/s]
+ 29%|██████████▏                        | 21.2M/72.7M [00:30&lt;01:12, 713kbytes/s]
+ 29%|██████████▏                        | 21.3M/72.7M [00:30&lt;01:11, 715kbytes/s]
+ 29%|██████████▎                        | 21.4M/72.7M [00:30&lt;01:10, 728kbytes/s]
+ 30%|██████████▎                        | 21.5M/72.7M [00:31&lt;01:09, 738kbytes/s]
+ 30%|██████████▍                        | 21.6M/72.7M [00:31&lt;01:11, 713kbytes/s]
+ 30%|██████████▍                        | 21.7M/72.7M [00:31&lt;01:11, 717kbytes/s]
+ 30%|██████████▌                        | 21.8M/72.7M [00:31&lt;01:10, 725kbytes/s]
+ 30%|██████████▌                        | 22.0M/72.7M [00:31&lt;01:08, 736kbytes/s]
+ 30%|██████████▌                        | 22.1M/72.7M [00:31&lt;01:11, 712kbytes/s]
+ 30%|██████████▋                        | 22.2M/72.7M [00:31&lt;01:10, 716kbytes/s]
+ 31%|██████████▋                        | 22.3M/72.7M [00:32&lt;01:09, 729kbytes/s]
+ 31%|██████████▊                        | 22.4M/72.7M [00:32&lt;01:08, 739kbytes/s]
+ 31%|██████████▊                        | 22.5M/72.7M [00:32&lt;01:10, 714kbytes/s]
+ 31%|██████████▉                        | 22.6M/72.7M [00:32&lt;01:09, 717kbytes/s]
+ 31%|██████████▉                        | 22.7M/72.7M [00:32&lt;01:08, 729kbytes/s]
+ 31%|██████████▉                        | 22.8M/72.7M [00:32&lt;01:07, 739kbytes/s]
+ 32%|███████████                        | 22.9M/72.7M [00:33&lt;01:09, 714kbytes/s]
+ 32%|███████████                        | 23.1M/72.7M [00:33&lt;01:09, 715kbytes/s]
+ 32%|███████████▏                       | 23.2M/72.7M [00:33&lt;01:08, 727kbytes/s]
+ 32%|███████████▏                       | 23.3M/72.7M [00:33&lt;01:07, 737kbytes/s]
+ 32%|███████████▎                       | 23.4M/72.7M [00:33&lt;01:09, 710kbytes/s]
+ 32%|███████████▎                       | 23.5M/72.7M [00:33&lt;01:08, 717kbytes/s]
+ 32%|███████████▎                       | 23.6M/72.7M [00:33&lt;01:07, 730kbytes/s]
+ 33%|███████████▍                       | 23.7M/72.7M [00:34&lt;01:06, 739kbytes/s]
+ 33%|███████████▍                       | 23.8M/72.7M [00:34&lt;01:08, 714kbytes/s]
+ 33%|███████████▌                       | 23.9M/72.7M [00:34&lt;01:07, 718kbytes/s]
+ 33%|███████████▌                       | 24.1M/72.7M [00:34&lt;01:06, 730kbytes/s]
+ 33%|███████████▋                       | 24.2M/72.7M [00:34&lt;01:05, 740kbytes/s]
+ 33%|███████████▋                       | 24.3M/72.7M [00:34&lt;01:07, 715kbytes/s]
+ 34%|███████████▋                       | 24.4M/72.7M [00:35&lt;01:09, 694kbytes/s]
+ 34%|███████████▊                       | 24.5M/72.7M [00:35&lt;01:16, 628kbytes/s]
+ 34%|███████████▊                       | 24.5M/72.7M [00:35&lt;01:20, 596kbytes/s]
+ 34%|███████████▊                       | 24.6M/72.7M [00:35&lt;01:20, 595kbytes/s]
+ 34%|███████████▉                       | 24.7M/72.7M [00:35&lt;01:18, 614kbytes/s]
+ 34%|███████████▉                       | 24.8M/72.7M [00:35&lt;01:13, 648kbytes/s]
+ 34%|████████████                       | 24.9M/72.7M [00:35&lt;01:10, 682kbytes/s]
+ 34%|████████████                       | 25.1M/72.7M [00:36&lt;01:07, 705kbytes/s]
+ 35%|████████████                       | 25.1M/72.7M [00:36&lt;01:08, 690kbytes/s]
+ 35%|████████████▏                      | 25.3M/72.7M [00:36&lt;01:06, 709kbytes/s]
+ 35%|████████████▏                      | 25.4M/72.7M [00:36&lt;01:05, 721kbytes/s]
+ 35%|████████████▎                      | 25.5M/72.7M [00:36&lt;01:07, 703kbytes/s]
+ 35%|████████████▎                      | 25.6M/72.7M [00:36&lt;01:06, 709kbytes/s]
+ 35%|████████████▍                      | 25.7M/72.7M [00:37&lt;01:04, 724kbytes/s]
+ 36%|████████████▍                      | 25.8M/72.7M [00:37&lt;01:03, 735kbytes/s]
+ 36%|████████████▍                      | 25.9M/72.7M [00:37&lt;01:05, 713kbytes/s]
+ 36%|████████████▌                      | 26.0M/72.7M [00:37&lt;01:05, 710kbytes/s]
+ 36%|████████████▌                      | 26.1M/72.7M [00:37&lt;01:04, 725kbytes/s]
+ 36%|████████████▋                      | 26.3M/72.7M [00:37&lt;01:03, 735kbytes/s]
+ 36%|████████████▋                      | 26.4M/72.7M [00:37&lt;01:04, 713kbytes/s]
+ 36%|████████████▋                      | 26.5M/72.7M [00:38&lt;01:04, 716kbytes/s]
+ 37%|████████████▊                      | 26.6M/72.7M [00:38&lt;01:03, 729kbytes/s]
+ 37%|████████████▊                      | 26.7M/72.7M [00:38&lt;01:02, 736kbytes/s]
+ 37%|████████████▉                      | 26.8M/72.7M [00:38&lt;01:04, 714kbytes/s]
+ 37%|████████████▉                      | 26.9M/72.7M [00:38&lt;01:04, 714kbytes/s]
+ 37%|█████████████                      | 27.0M/72.7M [00:38&lt;01:02, 725kbytes/s]
+ 37%|█████████████                      | 27.1M/72.7M [00:38&lt;01:01, 736kbytes/s]
+ 37%|█████████████                      | 27.2M/72.7M [00:39&lt;01:03, 714kbytes/s]
+ 38%|█████████████▏                     | 27.4M/72.7M [00:39&lt;01:02, 726kbytes/s]
+ 38%|█████████████▏                     | 27.5M/72.7M [00:39&lt;01:01, 736kbytes/s]
+ 38%|█████████████▎                     | 27.6M/72.7M [00:39&lt;01:03, 713kbytes/s]
+ 38%|█████████████▎                     | 27.7M/72.7M [00:39&lt;01:03, 712kbytes/s]
+ 38%|█████████████▍                     | 27.8M/72.7M [00:39&lt;01:01, 726kbytes/s]
+ 38%|█████████████▍                     | 27.9M/72.7M [00:40&lt;01:00, 735kbytes/s]
+ 39%|█████████████▍                     | 28.0M/72.7M [00:40&lt;01:02, 712kbytes/s]
+ 39%|█████████████▌                     | 28.1M/72.7M [00:40&lt;01:03, 696kbytes/s]
+ 39%|█████████████▌                     | 28.2M/72.7M [00:40&lt;01:09, 639kbytes/s]
+ 39%|█████████████▌                     | 28.3M/72.7M [00:40&lt;01:14, 594kbytes/s]
+ 39%|█████████████▋                     | 28.4M/72.7M [00:40&lt;01:14, 596kbytes/s]
+ 39%|█████████████▋                     | 28.5M/72.7M [00:40&lt;01:11, 615kbytes/s]
+ 39%|█████████████▊                     | 28.6M/72.7M [00:41&lt;01:07, 650kbytes/s]
+ 39%|█████████████▊                     | 28.7M/72.7M [00:41&lt;01:04, 682kbytes/s]
+ 40%|█████████████▊                     | 28.8M/72.7M [00:41&lt;01:02, 705kbytes/s]
+ 40%|█████████████▉                     | 28.9M/72.7M [00:41&lt;01:03, 692kbytes/s]
+ 40%|█████████████▉                     | 29.0M/72.7M [00:41&lt;01:02, 703kbytes/s]
+ 40%|██████████████                     | 29.1M/72.7M [00:41&lt;01:00, 719kbytes/s]
+ 40%|██████████████                     | 29.2M/72.7M [00:42&lt;00:59, 732kbytes/s]
+ 40%|██████████████▏                    | 29.3M/72.7M [00:42&lt;01:01, 710kbytes/s]
+ 41%|██████████████▏                    | 29.5M/72.7M [00:42&lt;00:59, 724kbytes/s]
+ 41%|██████████████▏                    | 29.6M/72.7M [00:42&lt;00:58, 734kbytes/s]
+ 41%|██████████████▎                    | 29.7M/72.7M [00:42&lt;01:00, 708kbytes/s]
+ 41%|██████████████▎                    | 29.8M/72.7M [00:42&lt;00:59, 718kbytes/s]
+ 41%|██████████████▍                    | 29.9M/72.7M [00:42&lt;00:58, 730kbytes/s]
+ 41%|██████████████▍                    | 30.0M/72.7M [00:43&lt;00:57, 738kbytes/s]
+ 41%|██████████████▌                    | 30.1M/72.7M [00:43&lt;00:59, 715kbytes/s]
+ 42%|██████████████▌                    | 30.2M/72.7M [00:43&lt;00:59, 718kbytes/s]
+ 42%|██████████████▌                    | 30.3M/72.7M [00:43&lt;00:58, 729kbytes/s]
+ 42%|██████████████▋                    | 30.5M/72.7M [00:43&lt;00:57, 738kbytes/s]
+ 42%|██████████████▋                    | 30.6M/72.7M [00:43&lt;00:58, 715kbytes/s]
+ 42%|██████████████▊                    | 30.7M/72.7M [00:44&lt;00:58, 718kbytes/s]
+ 42%|██████████████▊                    | 30.8M/72.7M [00:44&lt;00:57, 726kbytes/s]
+ 43%|██████████████▉                    | 30.9M/72.7M [00:44&lt;00:56, 741kbytes/s]
+ 43%|██████████████▉                    | 31.0M/72.7M [00:44&lt;00:58, 717kbytes/s]
+ 43%|██████████████▉                    | 31.1M/72.7M [00:44&lt;00:57, 720kbytes/s]
+ 43%|███████████████                    | 31.2M/72.7M [00:44&lt;00:56, 732kbytes/s]
+ 43%|███████████████                    | 31.3M/72.7M [00:44&lt;00:55, 739kbytes/s]
+ 43%|███████████████▏                   | 31.4M/72.7M [00:45&lt;00:57, 716kbytes/s]
+ 43%|███████████████▏                   | 31.6M/72.7M [00:45&lt;00:56, 728kbytes/s]
+ 44%|███████████████▎                   | 31.7M/72.7M [00:45&lt;00:55, 738kbytes/s]
+ 44%|███████████████▎                   | 31.8M/72.7M [00:45&lt;00:57, 713kbytes/s]
+ 44%|███████████████▎                   | 31.9M/72.7M [00:45&lt;00:56, 718kbytes/s]
+ 44%|███████████████▍                   | 32.0M/72.7M [00:45&lt;00:55, 731kbytes/s]
+ 44%|███████████████▍                   | 32.1M/72.7M [00:45&lt;00:54, 740kbytes/s]
+ 44%|███████████████▌                   | 32.2M/72.7M [00:46&lt;00:56, 714kbytes/s]
+ 44%|███████████████▌                   | 32.3M/72.7M [00:46&lt;01:01, 659kbytes/s]
+ 45%|███████████████▌                   | 32.4M/72.7M [00:46&lt;01:04, 622kbytes/s]
+ 45%|███████████████▌                   | 32.4M/72.7M [00:46&lt;01:08, 591kbytes/s]
+ 45%|███████████████▋                   | 32.6M/72.7M [00:46&lt;01:02, 643kbytes/s]
+ 45%|███████████████▋                   | 32.7M/72.7M [00:46&lt;01:02, 645kbytes/s]
+ 45%|███████████████▊                   | 32.8M/72.7M [00:47&lt;00:59, 673kbytes/s]
+ 45%|███████████████▊                   | 32.9M/72.7M [00:47&lt;00:56, 699kbytes/s]
+ 45%|███████████████▉                   | 33.0M/72.7M [00:47&lt;00:55, 718kbytes/s]
+ 46%|███████████████▉                   | 33.1M/72.7M [00:47&lt;00:56, 698kbytes/s]
+ 46%|███████████████▉                   | 33.2M/72.7M [00:47&lt;00:55, 708kbytes/s]
+ 46%|████████████████                   | 33.3M/72.7M [00:47&lt;00:54, 724kbytes/s]
+ 46%|████████████████                   | 33.4M/72.7M [00:47&lt;00:53, 735kbytes/s]
+ 46%|████████████████▏                  | 33.5M/72.7M [00:48&lt;00:55, 711kbytes/s]
+ 46%|████████████████▏                  | 33.7M/72.7M [00:48&lt;00:53, 724kbytes/s]
+ 46%|████████████████▎                  | 33.8M/72.7M [00:48&lt;00:53, 734kbytes/s]
+ 47%|████████████████▎                  | 33.9M/72.7M [00:48&lt;00:54, 710kbytes/s]
+ 47%|████████████████▎                  | 34.0M/72.7M [00:48&lt;00:53, 717kbytes/s]
+ 47%|████████████████▍                  | 34.1M/72.7M [00:48&lt;00:52, 728kbytes/s]
+ 47%|████████████████▍                  | 34.2M/72.7M [00:49&lt;00:53, 726kbytes/s]
+ 47%|████████████████▌                  | 34.3M/72.7M [00:49&lt;00:57, 668kbytes/s]
+ 47%|████████████████▌                  | 34.4M/72.7M [00:49&lt;00:53, 717kbytes/s]
+ 48%|████████████████▋                  | 34.6M/72.7M [00:49&lt;00:52, 729kbytes/s]
+ 48%|████████████████▋                  | 34.7M/72.7M [00:49&lt;00:51, 738kbytes/s]
+ 48%|████████████████▋                  | 34.8M/72.7M [00:49&lt;00:53, 704kbytes/s]
+ 48%|████████████████▊                  | 34.9M/72.7M [00:49&lt;00:53, 709kbytes/s]
+ 48%|████████████████▊                  | 35.0M/72.7M [00:50&lt;00:52, 721kbytes/s]
+ 48%|████████████████▉                  | 35.1M/72.7M [00:50&lt;00:50, 741kbytes/s]
+ 48%|████████████████▉                  | 35.2M/72.7M [00:50&lt;00:52, 712kbytes/s]
+ 49%|█████████████████                  | 35.3M/72.7M [00:50&lt;00:51, 723kbytes/s]
+ 49%|█████████████████                  | 35.4M/72.7M [00:50&lt;00:50, 735kbytes/s]
+ 49%|█████████████████                  | 35.6M/72.7M [00:50&lt;00:49, 743kbytes/s]
+ 49%|█████████████████▏                 | 35.7M/72.7M [00:51&lt;00:49, 741kbytes/s]
+ 49%|█████████████████▏                 | 35.8M/72.7M [00:51&lt;00:51, 714kbytes/s]
+ 49%|█████████████████▎                 | 35.9M/72.7M [00:51&lt;00:50, 729kbytes/s]
+ 50%|█████████████████▎                 | 36.0M/72.7M [00:51&lt;00:49, 739kbytes/s]
+ 50%|█████████████████▍                 | 36.1M/72.7M [00:51&lt;00:51, 710kbytes/s]
+ 50%|█████████████████▍                 | 36.2M/72.7M [00:51&lt;00:50, 721kbytes/s]
+ 50%|█████████████████▍                 | 36.3M/72.7M [00:51&lt;00:49, 734kbytes/s]
+ 50%|█████████████████▌                 | 36.4M/72.7M [00:52&lt;00:49, 733kbytes/s]
+ 50%|█████████████████▌                 | 36.5M/72.7M [00:52&lt;00:50, 720kbytes/s]
+ 50%|█████████████████▋                 | 36.7M/72.7M [00:52&lt;00:49, 724kbytes/s]
+ 51%|█████████████████▋                 | 36.8M/72.7M [00:52&lt;00:48, 736kbytes/s]
+ 51%|█████████████████▊                 | 36.9M/72.7M [00:52&lt;00:48, 742kbytes/s]
+ 51%|█████████████████▊                 | 37.0M/72.7M [00:52&lt;00:49, 717kbytes/s]
+ 51%|█████████████████▊                 | 37.1M/72.7M [00:53&lt;00:49, 721kbytes/s]
+ 51%|█████████████████▉                 | 37.2M/72.7M [00:53&lt;00:48, 733kbytes/s]
+ 51%|█████████████████▉                 | 37.3M/72.7M [00:53&lt;00:47, 742kbytes/s]
+ 51%|██████████████████                 | 37.4M/72.7M [00:53&lt;00:49, 710kbytes/s]
+ 52%|██████████████████                 | 37.5M/72.7M [00:53&lt;00:48, 724kbytes/s]
+ 52%|██████████████████▏                | 37.7M/72.7M [00:53&lt;00:47, 735kbytes/s]
+ 52%|██████████████████▏                | 37.8M/72.7M [00:53&lt;00:47, 736kbytes/s]
+ 52%|██████████████████▏                | 37.9M/72.7M [00:54&lt;00:48, 712kbytes/s]
+ 52%|██████████████████▎                | 38.0M/72.7M [00:54&lt;00:48, 719kbytes/s]
+ 52%|██████████████████▎                | 38.1M/72.7M [00:54&lt;00:47, 732kbytes/s]
+ 53%|██████████████████▍                | 38.2M/72.7M [00:54&lt;00:46, 741kbytes/s]
+ 53%|██████████████████▍                | 38.3M/72.7M [00:54&lt;00:48, 714kbytes/s]
+ 53%|██████████████████▌                | 38.4M/72.7M [00:54&lt;00:47, 722kbytes/s]
+ 53%|██████████████████▌                | 38.5M/72.7M [00:54&lt;00:47, 725kbytes/s]
+ 53%|██████████████████▌                | 38.6M/72.7M [00:55&lt;00:46, 737kbytes/s]
+ 53%|██████████████████▋                | 38.7M/72.7M [00:55&lt;00:47, 713kbytes/s]
+ 53%|██████████████████▋                | 38.9M/72.7M [00:55&lt;00:47, 706kbytes/s]
+ 54%|██████████████████▊                | 38.9M/72.7M [00:55&lt;00:52, 641kbytes/s]
+ 54%|██████████████████▊                | 39.0M/72.7M [00:55&lt;00:55, 602kbytes/s]
+ 54%|██████████████████▊                | 39.1M/72.7M [00:55&lt;00:55, 600kbytes/s]
+ 54%|██████████████████▊                | 39.2M/72.7M [00:56&lt;00:54, 619kbytes/s]
+ 54%|██████████████████▉                | 39.3M/72.7M [00:56&lt;00:50, 655kbytes/s]
+ 54%|██████████████████▉                | 39.4M/72.7M [00:56&lt;00:48, 687kbytes/s]
+ 54%|███████████████████                | 39.5M/72.7M [00:56&lt;00:46, 710kbytes/s]
+ 55%|███████████████████                | 39.6M/72.7M [00:56&lt;00:47, 693kbytes/s]
+ 55%|███████████████████▏               | 39.7M/72.7M [00:56&lt;00:46, 707kbytes/s]
+ 55%|███████████████████▏               | 39.9M/72.7M [00:56&lt;00:45, 716kbytes/s]
+ 55%|███████████████████▎               | 40.0M/72.7M [00:57&lt;00:44, 730kbytes/s]
+ 55%|███████████████████▎               | 40.1M/72.7M [00:57&lt;00:46, 707kbytes/s]
+ 55%|███████████████████▎               | 40.2M/72.7M [00:57&lt;00:45, 716kbytes/s]
+ 55%|███████████████████▍               | 40.3M/72.7M [00:57&lt;00:44, 729kbytes/s]
+ 56%|███████████████████▍               | 40.4M/72.7M [00:57&lt;00:43, 739kbytes/s]
+ 56%|███████████████████▌               | 40.5M/72.7M [00:57&lt;00:44, 715kbytes/s]
+ 56%|███████████████████▌               | 40.6M/72.7M [00:58&lt;00:44, 721kbytes/s]
+ 56%|███████████████████▌               | 40.7M/72.7M [00:58&lt;00:43, 732kbytes/s]
+ 56%|███████████████████▋               | 40.9M/72.7M [00:58&lt;00:42, 740kbytes/s]
+ 56%|███████████████████▋               | 41.0M/72.7M [00:58&lt;00:44, 716kbytes/s]
+ 57%|███████████████████▊               | 41.1M/72.7M [00:58&lt;00:43, 721kbytes/s]
+ 57%|███████████████████▊               | 41.2M/72.7M [00:58&lt;00:42, 734kbytes/s]
+ 57%|███████████████████▉               | 41.3M/72.7M [00:58&lt;00:42, 742kbytes/s]
+ 57%|███████████████████▉               | 41.4M/72.7M [00:59&lt;00:43, 716kbytes/s]
+ 57%|███████████████████▉               | 41.5M/72.7M [00:59&lt;00:43, 722kbytes/s]
+ 57%|████████████████████               | 41.6M/72.7M [00:59&lt;00:42, 734kbytes/s]
+ 57%|████████████████████               | 41.7M/72.7M [00:59&lt;00:41, 742kbytes/s]
+ 58%|████████████████████▏              | 41.8M/72.7M [00:59&lt;00:43, 716kbytes/s]
+ 58%|████████████████████▏              | 42.0M/72.7M [00:59&lt;00:43, 708kbytes/s]
+ 58%|████████████████████▎              | 42.1M/72.7M [00:59&lt;00:41, 731kbytes/s]
+ 58%|████████████████████▎              | 42.2M/72.7M [01:00&lt;00:41, 741kbytes/s]
+ 58%|████████████████████▎              | 42.3M/72.7M [01:00&lt;00:42, 716kbytes/s]
+ 58%|████████████████████▍              | 42.4M/72.7M [01:00&lt;00:41, 721kbytes/s]
+ 58%|████████████████████▍              | 42.5M/72.7M [01:00&lt;00:41, 734kbytes/s]
+ 59%|████████████████████▌              | 42.6M/72.7M [01:00&lt;00:40, 743kbytes/s]
+ 59%|████████████████████▌              | 42.7M/72.7M [01:00&lt;00:41, 717kbytes/s]
+ 59%|████████████████████▋              | 42.8M/72.7M [01:01&lt;00:41, 722kbytes/s]
+ 59%|████████████████████▋              | 43.0M/72.7M [01:01&lt;00:40, 733kbytes/s]
+ 59%|████████████████████▋              | 43.1M/72.7M [01:01&lt;00:39, 742kbytes/s]
+ 59%|████████████████████▊              | 43.2M/72.7M [01:01&lt;00:41, 717kbytes/s]
+ 60%|████████████████████▊              | 43.3M/72.7M [01:01&lt;00:44, 663kbytes/s]
+ 60%|████████████████████▊              | 43.3M/72.7M [01:01&lt;00:46, 626kbytes/s]
+ 60%|████████████████████▉              | 43.4M/72.7M [01:01&lt;00:49, 593kbytes/s]
+ 60%|████████████████████▉              | 43.5M/72.7M [01:02&lt;00:45, 645kbytes/s]
+ 60%|█████████████████████              | 43.6M/72.7M [01:02&lt;00:44, 646kbytes/s]
+ 60%|█████████████████████              | 43.7M/72.7M [01:02&lt;00:43, 670kbytes/s]
+ 60%|█████████████████████              | 43.8M/72.7M [01:02&lt;00:41, 698kbytes/s]
+ 60%|█████████████████████▏             | 44.0M/72.7M [01:02&lt;00:40, 716kbytes/s]
+ 61%|█████████████████████▏             | 44.1M/72.7M [01:02&lt;00:39, 722kbytes/s]
+ 61%|█████████████████████▎             | 44.2M/72.7M [01:03&lt;00:40, 702kbytes/s]
+ 61%|█████████████████████▎             | 44.3M/72.7M [01:03&lt;00:39, 720kbytes/s]
+ 61%|█████████████████████▍             | 44.4M/72.7M [01:03&lt;00:38, 732kbytes/s]
+ 61%|█████████████████████▍             | 44.5M/72.7M [01:03&lt;00:39, 710kbytes/s]
+ 61%|█████████████████████▍             | 44.6M/72.7M [01:03&lt;00:39, 715kbytes/s]
+ 62%|█████████████████████▌             | 44.7M/72.7M [01:03&lt;00:38, 729kbytes/s]
+ 62%|█████████████████████▌             | 44.8M/72.7M [01:03&lt;00:37, 739kbytes/s]
+ 62%|█████████████████████▋             | 44.9M/72.7M [01:04&lt;00:38, 715kbytes/s]
+ 62%|█████████████████████▋             | 45.1M/72.7M [01:04&lt;00:38, 718kbytes/s]
+ 62%|█████████████████████▊             | 45.2M/72.7M [01:04&lt;00:37, 731kbytes/s]
+ 62%|█████████████████████▊             | 45.3M/72.7M [01:04&lt;00:36, 741kbytes/s]
+ 62%|█████████████████████▊             | 45.4M/72.7M [01:04&lt;00:38, 716kbytes/s]
+ 63%|█████████████████████▉             | 45.5M/72.7M [01:04&lt;00:37, 718kbytes/s]
+ 63%|█████████████████████▉             | 45.6M/72.7M [01:04&lt;00:37, 730kbytes/s]
+ 63%|██████████████████████             | 45.7M/72.7M [01:05&lt;00:36, 738kbytes/s]
+ 63%|██████████████████████             | 45.8M/72.7M [01:05&lt;00:37, 713kbytes/s]
+ 63%|██████████████████████             | 45.9M/72.7M [01:05&lt;00:37, 719kbytes/s]
+ 63%|██████████████████████▏            | 46.1M/72.7M [01:05&lt;00:36, 732kbytes/s]
+ 64%|██████████████████████▏            | 46.2M/72.7M [01:05&lt;00:36, 734kbytes/s]
+ 64%|██████████████████████▎            | 46.3M/72.7M [01:05&lt;00:37, 709kbytes/s]
+ 64%|██████████████████████▎            | 46.4M/72.7M [01:06&lt;00:36, 725kbytes/s]
+ 64%|██████████████████████▍            | 46.5M/72.7M [01:06&lt;00:35, 736kbytes/s]
+ 64%|██████████████████████▍            | 46.6M/72.7M [01:06&lt;00:36, 714kbytes/s]
+ 64%|██████████████████████▍            | 46.7M/72.7M [01:06&lt;00:36, 718kbytes/s]
+ 64%|██████████████████████▌            | 46.8M/72.7M [01:06&lt;00:35, 730kbytes/s]
+ 65%|██████████████████████▌            | 46.9M/72.7M [01:06&lt;00:34, 740kbytes/s]
+ 65%|██████████████████████▋            | 47.0M/72.7M [01:06&lt;00:35, 717kbytes/s]
+ 65%|██████████████████████▋            | 47.2M/72.7M [01:07&lt;00:35, 714kbytes/s]
+ 65%|██████████████████████▊            | 47.3M/72.7M [01:07&lt;00:34, 729kbytes/s]
+ 65%|██████████████████████▊            | 47.4M/72.7M [01:07&lt;00:34, 739kbytes/s]
+ 65%|██████████████████████▊            | 47.5M/72.7M [01:07&lt;00:35, 716kbytes/s]
+ 65%|██████████████████████▉            | 47.6M/72.7M [01:07&lt;00:34, 717kbytes/s]
+ 66%|██████████████████████▉            | 47.7M/72.7M [01:07&lt;00:34, 731kbytes/s]
+ 66%|███████████████████████            | 47.8M/72.7M [01:08&lt;00:33, 740kbytes/s]
+ 66%|███████████████████████            | 47.9M/72.7M [01:08&lt;00:34, 717kbytes/s]
+ 66%|███████████████████████▏           | 48.0M/72.7M [01:08&lt;00:34, 719kbytes/s]
+ 66%|███████████████████████▏           | 48.2M/72.7M [01:08&lt;00:33, 732kbytes/s]
+ 66%|███████████████████████▏           | 48.3M/72.7M [01:08&lt;00:33, 733kbytes/s]
+ 67%|███████████████████████▎           | 48.4M/72.7M [01:08&lt;00:34, 709kbytes/s]
+ 67%|███████████████████████▎           | 48.5M/72.7M [01:08&lt;00:33, 725kbytes/s]
+ 67%|███████████████████████▍           | 48.6M/72.7M [01:09&lt;00:32, 736kbytes/s]
+ 67%|███████████████████████▍           | 48.7M/72.7M [01:09&lt;00:33, 714kbytes/s]
+ 67%|███████████████████████▌           | 48.8M/72.7M [01:09&lt;00:33, 715kbytes/s]
+ 67%|███████████████████████▌           | 48.9M/72.7M [01:09&lt;00:32, 728kbytes/s]
+ 67%|███████████████████████▌           | 49.0M/72.7M [01:09&lt;00:32, 738kbytes/s]
+ 68%|███████████████████████▋           | 49.1M/72.7M [01:09&lt;00:32, 716kbytes/s]
+ 68%|███████████████████████▋           | 49.3M/72.7M [01:10&lt;00:32, 720kbytes/s]
+ 68%|███████████████████████▊           | 49.4M/72.7M [01:10&lt;00:31, 731kbytes/s]
+ 68%|███████████████████████▊           | 49.5M/72.7M [01:10&lt;00:31, 741kbytes/s]
+ 68%|███████████████████████▊           | 49.6M/72.7M [01:10&lt;00:32, 717kbytes/s]
+ 68%|███████████████████████▉           | 49.7M/72.7M [01:10&lt;00:31, 721kbytes/s]
+ 69%|███████████████████████▉           | 49.8M/72.7M [01:10&lt;00:31, 733kbytes/s]
+ 69%|████████████████████████           | 49.9M/72.7M [01:10&lt;00:30, 739kbytes/s]
+ 69%|████████████████████████           | 50.0M/72.7M [01:11&lt;00:31, 716kbytes/s]
+ 69%|████████████████████████▏          | 50.1M/72.7M [01:11&lt;00:31, 720kbytes/s]
+ 69%|████████████████████████▏          | 50.2M/72.7M [01:11&lt;00:30, 731kbytes/s]
+ 69%|████████████████████████▎          | 50.4M/72.7M [01:11&lt;00:31, 703kbytes/s]
+ 69%|████████████████████████▎          | 50.4M/72.7M [01:11&lt;00:34, 653kbytes/s]
+ 69%|████████████████████████▎          | 50.5M/72.7M [01:11&lt;00:35, 623kbytes/s]
+ 70%|████████████████████████▎          | 50.6M/72.7M [01:11&lt;00:37, 589kbytes/s]
+ 70%|████████████████████████▍          | 50.7M/72.7M [01:12&lt;00:34, 641kbytes/s]
+ 70%|████████████████████████▍          | 50.8M/72.7M [01:12&lt;00:33, 646kbytes/s]
+ 70%|████████████████████████▌          | 50.9M/72.7M [01:12&lt;00:32, 673kbytes/s]
+ 70%|████████████████████████▌          | 51.0M/72.7M [01:12&lt;00:30, 699kbytes/s]
+ 70%|████████████████████████▌          | 51.1M/72.7M [01:12&lt;00:30, 717kbytes/s]
+ 70%|████████████████████████▋          | 51.2M/72.7M [01:12&lt;00:30, 699kbytes/s]
+ 71%|████████████████████████▋          | 51.3M/72.7M [01:13&lt;00:30, 709kbytes/s]
+ 71%|████████████████████████▊          | 51.5M/72.7M [01:13&lt;00:29, 725kbytes/s]
+ 71%|████████████████████████▊          | 51.6M/72.7M [01:13&lt;00:28, 735kbytes/s]
+ 71%|████████████████████████▉          | 51.7M/72.7M [01:13&lt;00:29, 714kbytes/s]
+ 71%|████████████████████████▉          | 51.8M/72.7M [01:13&lt;00:29, 716kbytes/s]
+ 71%|████████████████████████▉          | 51.9M/72.7M [01:13&lt;00:28, 729kbytes/s]
+ 72%|█████████████████████████          | 52.0M/72.7M [01:13&lt;00:27, 739kbytes/s]
+ 72%|█████████████████████████          | 52.1M/72.7M [01:14&lt;00:28, 713kbytes/s]
+ 72%|█████████████████████████▏         | 52.2M/72.7M [01:14&lt;00:28, 719kbytes/s]
+ 72%|█████████████████████████▏         | 52.3M/72.7M [01:14&lt;00:27, 731kbytes/s]
+ 72%|█████████████████████████▎         | 52.5M/72.7M [01:14&lt;00:27, 732kbytes/s]
+ 72%|█████████████████████████▎         | 52.6M/72.7M [01:14&lt;00:28, 709kbytes/s]
+ 72%|█████████████████████████▎         | 52.7M/72.7M [01:14&lt;00:27, 725kbytes/s]
+ 73%|█████████████████████████▍         | 52.8M/72.7M [01:15&lt;00:27, 735kbytes/s]
+ 73%|█████████████████████████▍         | 52.9M/72.7M [01:15&lt;00:27, 713kbytes/s]
+ 73%|█████████████████████████▌         | 53.0M/72.7M [01:15&lt;00:27, 717kbytes/s]
+ 73%|█████████████████████████▌         | 53.1M/72.7M [01:15&lt;00:26, 729kbytes/s]
+ 73%|█████████████████████████▋         | 53.2M/72.7M [01:15&lt;00:26, 738kbytes/s]
+ 73%|█████████████████████████▋         | 53.3M/72.7M [01:15&lt;00:27, 713kbytes/s]
+ 74%|█████████████████████████▋         | 53.4M/72.7M [01:15&lt;00:26, 719kbytes/s]
+ 74%|█████████████████████████▊         | 53.6M/72.7M [01:16&lt;00:26, 731kbytes/s]
+ 74%|█████████████████████████▊         | 53.7M/72.7M [01:16&lt;00:25, 740kbytes/s]
+ 74%|█████████████████████████▉         | 53.8M/72.7M [01:16&lt;00:26, 715kbytes/s]
+ 74%|█████████████████████████▉         | 53.9M/72.7M [01:16&lt;00:26, 720kbytes/s]
+ 74%|██████████████████████████         | 54.0M/72.7M [01:16&lt;00:25, 733kbytes/s]
+ 74%|██████████████████████████         | 54.1M/72.7M [01:16&lt;00:25, 741kbytes/s]
+ 75%|██████████████████████████         | 54.2M/72.7M [01:16&lt;00:25, 716kbytes/s]
+ 75%|██████████████████████████▏        | 54.3M/72.7M [01:17&lt;00:25, 719kbytes/s]
+ 75%|██████████████████████████▏        | 54.4M/72.7M [01:17&lt;00:24, 732kbytes/s]
+ 75%|██████████████████████████▎        | 54.6M/72.7M [01:17&lt;00:24, 733kbytes/s]
+ 75%|██████████████████████████▎        | 54.7M/72.7M [01:17&lt;00:25, 710kbytes/s]
+ 75%|██████████████████████████▍        | 54.8M/72.7M [01:17&lt;00:24, 726kbytes/s]
+ 76%|██████████████████████████▍        | 54.9M/72.7M [01:17&lt;00:24, 736kbytes/s]
+ 76%|██████████████████████████▍        | 55.0M/72.7M [01:18&lt;00:24, 713kbytes/s]
+ 76%|██████████████████████████▌        | 55.1M/72.7M [01:18&lt;00:24, 719kbytes/s]
+ 76%|██████████████████████████▌        | 55.2M/72.7M [01:18&lt;00:27, 642kbytes/s]
+ 76%|██████████████████████████▌        | 55.2M/72.7M [01:18&lt;00:28, 610kbytes/s]
+ 76%|██████████████████████████▋        | 55.3M/72.7M [01:18&lt;00:28, 604kbytes/s]
+ 76%|██████████████████████████▋        | 55.4M/72.7M [01:18&lt;00:27, 620kbytes/s]
+ 76%|██████████████████████████▋        | 55.5M/72.7M [01:18&lt;00:26, 656kbytes/s]
+ 77%|██████████████████████████▊        | 55.7M/72.7M [01:19&lt;00:24, 688kbytes/s]
+ 77%|██████████████████████████▊        | 55.8M/72.7M [01:19&lt;00:23, 709kbytes/s]
+ 77%|██████████████████████████▉        | 55.9M/72.7M [01:19&lt;00:24, 695kbytes/s]
+ 77%|██████████████████████████▉        | 56.0M/72.7M [01:19&lt;00:23, 707kbytes/s]
+ 77%|███████████████████████████        | 56.1M/72.7M [01:19&lt;00:22, 724kbytes/s]
+ 77%|███████████████████████████        | 56.2M/72.7M [01:19&lt;00:22, 735kbytes/s]
+ 77%|███████████████████████████        | 56.3M/72.7M [01:20&lt;00:22, 712kbytes/s]
+ 78%|███████████████████████████▏       | 56.4M/72.7M [01:20&lt;00:22, 719kbytes/s]
+ 78%|███████████████████████████▏       | 56.5M/72.7M [01:20&lt;00:22, 730kbytes/s]
+ 78%|███████████████████████████▎       | 56.7M/72.7M [01:20&lt;00:21, 733kbytes/s]
+ 78%|███████████████████████████▎       | 56.8M/72.7M [01:20&lt;00:22, 709kbytes/s]
+ 78%|███████████████████████████▍       | 56.9M/72.7M [01:20&lt;00:21, 725kbytes/s]
+ 78%|███████████████████████████▍       | 57.0M/72.7M [01:20&lt;00:21, 736kbytes/s]
+ 79%|███████████████████████████▍       | 57.1M/72.7M [01:21&lt;00:21, 712kbytes/s]
+ 79%|███████████████████████████▌       | 57.2M/72.7M [01:21&lt;00:21, 719kbytes/s]
+ 79%|███████████████████████████▌       | 57.3M/72.7M [01:21&lt;00:21, 732kbytes/s]
+ 79%|███████████████████████████▋       | 57.4M/72.7M [01:21&lt;00:20, 741kbytes/s]
+ 79%|███████████████████████████▋       | 57.5M/72.7M [01:21&lt;00:21, 715kbytes/s]
+ 79%|███████████████████████████▊       | 57.6M/72.7M [01:21&lt;00:20, 722kbytes/s]
+ 79%|███████████████████████████▊       | 57.8M/72.7M [01:21&lt;00:20, 734kbytes/s]
+ 80%|███████████████████████████▊       | 57.9M/72.7M [01:22&lt;00:19, 742kbytes/s]
+ 80%|███████████████████████████▉       | 58.0M/72.7M [01:22&lt;00:20, 716kbytes/s]
+ 80%|███████████████████████████▉       | 58.1M/72.7M [01:22&lt;00:20, 722kbytes/s]
+ 80%|████████████████████████████       | 58.2M/72.7M [01:22&lt;00:19, 734kbytes/s]
+ 80%|████████████████████████████       | 58.3M/72.7M [01:22&lt;00:19, 743kbytes/s]
+ 80%|████████████████████████████▏      | 58.4M/72.7M [01:22&lt;00:19, 717kbytes/s]
+ 81%|████████████████████████████▏      | 58.5M/72.7M [01:23&lt;00:19, 722kbytes/s]
+ 81%|████████████████████████████▏      | 58.6M/72.7M [01:23&lt;00:19, 734kbytes/s]
+ 81%|████████████████████████████▎      | 58.8M/72.7M [01:23&lt;00:18, 735kbytes/s]
+ 81%|████████████████████████████▎      | 58.9M/72.7M [01:23&lt;00:20, 688kbytes/s]
+ 81%|████████████████████████████▍      | 58.9M/72.7M [01:23&lt;00:21, 644kbytes/s]
+ 81%|████████████████████████████▍      | 59.0M/72.7M [01:23&lt;00:23, 592kbytes/s]
+ 81%|████████████████████████████▍      | 59.1M/72.7M [01:23&lt;00:22, 593kbytes/s]
+ 81%|████████████████████████████▍      | 59.2M/72.7M [01:24&lt;00:22, 612kbytes/s]
+ 82%|████████████████████████████▌      | 59.3M/72.7M [01:24&lt;00:20, 649kbytes/s]
+ 82%|████████████████████████████▌      | 59.4M/72.7M [01:24&lt;00:19, 683kbytes/s]
+ 82%|████████████████████████████▋      | 59.5M/72.7M [01:24&lt;00:18, 707kbytes/s]
+ 82%|████████████████████████████▋      | 59.6M/72.7M [01:24&lt;00:18, 692kbytes/s]
+ 82%|████████████████████████████▊      | 59.7M/72.7M [01:24&lt;00:18, 703kbytes/s]
+ 82%|████████████████████████████▊      | 59.9M/72.7M [01:25&lt;00:17, 720kbytes/s]
+ 83%|████████████████████████████▉      | 60.0M/72.7M [01:25&lt;00:17, 730kbytes/s]
+ 83%|████████████████████████████▉      | 60.1M/72.7M [01:25&lt;00:17, 708kbytes/s]
+ 83%|████████████████████████████▉      | 60.2M/72.7M [01:25&lt;00:17, 716kbytes/s]
+ 83%|█████████████████████████████      | 60.3M/72.7M [01:25&lt;00:16, 730kbytes/s]
+ 83%|█████████████████████████████      | 60.4M/72.7M [01:25&lt;00:16, 740kbytes/s]
+ 83%|█████████████████████████████▏     | 60.5M/72.7M [01:25&lt;00:17, 715kbytes/s]
+ 83%|█████████████████████████████▏     | 60.6M/72.7M [01:26&lt;00:16, 721kbytes/s]
+ 84%|█████████████████████████████▏     | 60.7M/72.7M [01:26&lt;00:16, 732kbytes/s]
+ 84%|█████████████████████████████▎     | 60.9M/72.7M [01:26&lt;00:16, 727kbytes/s]
+ 84%|█████████████████████████████▎     | 60.9M/72.7M [01:26&lt;00:16, 704kbytes/s]
+ 84%|█████████████████████████████▍     | 61.1M/72.7M [01:26&lt;00:16, 721kbytes/s]
+ 84%|█████████████████████████████▍     | 61.2M/72.7M [01:26&lt;00:15, 733kbytes/s]
+ 84%|█████████████████████████████▌     | 61.3M/72.7M [01:26&lt;00:16, 710kbytes/s]
+ 84%|█████████████████████████████▌     | 61.4M/72.7M [01:27&lt;00:15, 717kbytes/s]
+ 85%|█████████████████████████████▌     | 61.5M/72.7M [01:27&lt;00:15, 728kbytes/s]
+ 85%|█████████████████████████████▋     | 61.6M/72.7M [01:27&lt;00:14, 739kbytes/s]
+ 85%|█████████████████████████████▋     | 61.7M/72.7M [01:27&lt;00:15, 714kbytes/s]
+ 85%|█████████████████████████████▊     | 61.8M/72.7M [01:27&lt;00:15, 720kbytes/s]
+ 85%|█████████████████████████████▊     | 61.9M/72.7M [01:27&lt;00:14, 732kbytes/s]
+ 85%|█████████████████████████████▉     | 62.1M/72.7M [01:28&lt;00:14, 740kbytes/s]
+ 86%|█████████████████████████████▉     | 62.2M/72.7M [01:28&lt;00:14, 715kbytes/s]
+ 86%|█████████████████████████████▉     | 62.3M/72.7M [01:28&lt;00:14, 720kbytes/s]
+ 86%|██████████████████████████████     | 62.4M/72.7M [01:28&lt;00:14, 733kbytes/s]
+ 86%|██████████████████████████████     | 62.5M/72.7M [01:28&lt;00:13, 740kbytes/s]
+ 86%|██████████████████████████████▏    | 62.6M/72.7M [01:28&lt;00:14, 715kbytes/s]
+ 86%|██████████████████████████████▏    | 62.7M/72.7M [01:28&lt;00:14, 706kbytes/s]
+ 86%|██████████████████████████████▏    | 62.8M/72.7M [01:29&lt;00:15, 652kbytes/s]
+ 86%|██████████████████████████████▎    | 62.9M/72.7M [01:29&lt;00:16, 600kbytes/s]
+ 87%|██████████████████████████████▎    | 62.9M/72.7M [01:29&lt;00:16, 593kbytes/s]
+ 87%|██████████████████████████████▎    | 63.0M/72.7M [01:29&lt;00:15, 611kbytes/s]
+ 87%|██████████████████████████████▍    | 63.2M/72.7M [01:29&lt;00:14, 657kbytes/s]
+ 87%|██████████████████████████████▍    | 63.3M/72.7M [01:29&lt;00:13, 688kbytes/s]
+ 87%|██████████████████████████████▌    | 63.4M/72.7M [01:30&lt;00:13, 679kbytes/s]
+ 87%|██████████████████████████████▌    | 63.5M/72.7M [01:30&lt;00:13, 696kbytes/s]
+ 88%|██████████████████████████████▋    | 63.6M/72.7M [01:30&lt;00:12, 716kbytes/s]
+ 88%|██████████████████████████████▋    | 63.7M/72.7M [01:30&lt;00:12, 730kbytes/s]
+ 88%|██████████████████████████████▋    | 63.8M/72.7M [01:30&lt;00:12, 706kbytes/s]
+ 88%|██████████████████████████████▊    | 63.9M/72.7M [01:30&lt;00:12, 715kbytes/s]
+ 88%|██████████████████████████████▊    | 64.0M/72.7M [01:30&lt;00:11, 729kbytes/s]
+ 88%|██████████████████████████████▉    | 64.2M/72.7M [01:31&lt;00:11, 739kbytes/s]
+ 88%|██████████████████████████████▉    | 64.3M/72.7M [01:31&lt;00:11, 714kbytes/s]
+ 89%|██████████████████████████████▉    | 64.4M/72.7M [01:31&lt;00:11, 720kbytes/s]
+ 89%|███████████████████████████████    | 64.5M/72.7M [01:31&lt;00:11, 733kbytes/s]
+ 89%|███████████████████████████████    | 64.6M/72.7M [01:31&lt;00:10, 740kbytes/s]
+ 89%|███████████████████████████████▏   | 64.7M/72.7M [01:31&lt;00:11, 716kbytes/s]
+ 89%|███████████████████████████████▏   | 64.8M/72.7M [01:32&lt;00:10, 722kbytes/s]
+ 89%|███████████████████████████████▎   | 64.9M/72.7M [01:32&lt;00:10, 734kbytes/s]
+ 89%|███████████████████████████████▎   | 65.0M/72.7M [01:32&lt;00:10, 734kbytes/s]
+ 90%|███████████████████████████████▎   | 65.1M/72.7M [01:32&lt;00:10, 710kbytes/s]
+ 90%|███████████████████████████████▍   | 65.3M/72.7M [01:32&lt;00:10, 726kbytes/s]
+ 90%|███████████████████████████████▍   | 65.4M/72.7M [01:32&lt;00:09, 737kbytes/s]
+ 90%|███████████████████████████████▌   | 65.5M/72.7M [01:32&lt;00:10, 713kbytes/s]
+ 90%|███████████████████████████████▌   | 65.6M/72.7M [01:33&lt;00:09, 718kbytes/s]
+ 90%|███████████████████████████████▋   | 65.7M/72.7M [01:33&lt;00:09, 731kbytes/s]
+ 91%|███████████████████████████████▋   | 65.8M/72.7M [01:33&lt;00:09, 740kbytes/s]
+ 91%|███████████████████████████████▋   | 65.9M/72.7M [01:33&lt;00:09, 715kbytes/s]
+ 91%|███████████████████████████████▊   | 66.0M/72.7M [01:33&lt;00:09, 721kbytes/s]
+ 91%|███████████████████████████████▊   | 66.1M/72.7M [01:33&lt;00:08, 732kbytes/s]
+ 91%|███████████████████████████████▉   | 66.3M/72.7M [01:33&lt;00:08, 741kbytes/s]
+ 91%|███████████████████████████████▉   | 66.4M/72.7M [01:34&lt;00:08, 713kbytes/s]
+ 91%|████████████████████████████████   | 66.5M/72.7M [01:34&lt;00:08, 700kbytes/s]
+ 92%|████████████████████████████████   | 66.6M/72.7M [01:34&lt;00:09, 646kbytes/s]
+ 92%|████████████████████████████████   | 66.6M/72.7M [01:34&lt;00:10, 596kbytes/s]
+ 92%|████████████████████████████████   | 66.7M/72.7M [01:34&lt;00:09, 599kbytes/s]
+ 92%|████████████████████████████████▏  | 66.8M/72.7M [01:34&lt;00:09, 616kbytes/s]
+ 92%|████████████████████████████████▏  | 66.9M/72.7M [01:35&lt;00:08, 653kbytes/s]
+ 92%|████████████████████████████████▎  | 67.0M/72.7M [01:35&lt;00:08, 686kbytes/s]
+ 92%|████████████████████████████████▎  | 67.1M/72.7M [01:35&lt;00:07, 701kbytes/s]
+ 93%|████████████████████████████████▍  | 67.2M/72.7M [01:35&lt;00:07, 684kbytes/s]
+ 93%|████████████████████████████████▍  | 67.4M/72.7M [01:35&lt;00:07, 707kbytes/s]
+ 93%|████████████████████████████████▍  | 67.5M/72.7M [01:35&lt;00:07, 724kbytes/s]
+ 93%|████████████████████████████████▌  | 67.6M/72.7M [01:35&lt;00:07, 704kbytes/s]
+ 93%|████████████████████████████████▌  | 67.7M/72.7M [01:36&lt;00:07, 711kbytes/s]
+ 93%|████████████████████████████████▋  | 67.8M/72.7M [01:36&lt;00:06, 726kbytes/s]
+ 93%|████████████████████████████████▋  | 67.9M/72.7M [01:36&lt;00:06, 736kbytes/s]
+ 94%|████████████████████████████████▋  | 68.0M/72.7M [01:36&lt;00:06, 713kbytes/s]
+ 94%|████████████████████████████████▊  | 68.1M/72.7M [01:36&lt;00:06, 719kbytes/s]
+ 94%|████████████████████████████████▊  | 68.2M/72.7M [01:36&lt;00:06, 732kbytes/s]
+ 94%|████████████████████████████████▉  | 68.4M/72.7M [01:37&lt;00:05, 741kbytes/s]
+ 94%|████████████████████████████████▉  | 68.5M/72.7M [01:37&lt;00:05, 716kbytes/s]
+ 94%|█████████████████████████████████  | 68.6M/72.7M [01:37&lt;00:05, 722kbytes/s]
+ 94%|█████████████████████████████████  | 68.7M/72.7M [01:37&lt;00:05, 731kbytes/s]
+ 95%|█████████████████████████████████▏ | 68.8M/72.7M [01:37&lt;00:05, 739kbytes/s]
+ 95%|█████████████████████████████████▏ | 68.9M/72.7M [01:37&lt;00:05, 715kbytes/s]
+ 95%|█████████████████████████████████▏ | 69.0M/72.7M [01:37&lt;00:05, 721kbytes/s]
+ 95%|█████████████████████████████████▎ | 69.1M/72.7M [01:38&lt;00:04, 733kbytes/s]
+ 95%|█████████████████████████████████▎ | 69.2M/72.7M [01:38&lt;00:04, 734kbytes/s]
+ 95%|█████████████████████████████████▍ | 69.3M/72.7M [01:38&lt;00:04, 711kbytes/s]
+ 96%|█████████████████████████████████▍ | 69.5M/72.7M [01:38&lt;00:04, 726kbytes/s]
+ 96%|█████████████████████████████████▍ | 69.6M/72.7M [01:38&lt;00:04, 737kbytes/s]
+ 96%|█████████████████████████████████▌ | 69.7M/72.7M [01:38&lt;00:04, 713kbytes/s]
+ 96%|█████████████████████████████████▌ | 69.8M/72.7M [01:38&lt;00:04, 719kbytes/s]
+ 96%|█████████████████████████████████▋ | 69.9M/72.7M [01:39&lt;00:03, 732kbytes/s]
+ 96%|█████████████████████████████████▋ | 70.0M/72.7M [01:39&lt;00:03, 741kbytes/s]
+ 96%|█████████████████████████████████▊ | 70.1M/72.7M [01:39&lt;00:03, 716kbytes/s]
+ 97%|█████████████████████████████████▊ | 70.2M/72.7M [01:39&lt;00:03, 689kbytes/s]
+ 97%|█████████████████████████████████▊ | 70.3M/72.7M [01:39&lt;00:03, 639kbytes/s]
+ 97%|█████████████████████████████████▉ | 70.4M/72.7M [01:39&lt;00:03, 593kbytes/s]
+ 97%|█████████████████████████████████▉ | 70.5M/72.7M [01:40&lt;00:03, 595kbytes/s]
+ 97%|█████████████████████████████████▉ | 70.5M/72.7M [01:40&lt;00:03, 614kbytes/s]
+ 97%|██████████████████████████████████ | 70.7M/72.7M [01:40&lt;00:03, 650kbytes/s]
+ 97%|██████████████████████████████████ | 70.8M/72.7M [01:40&lt;00:02, 684kbytes/s]
+ 98%|██████████████████████████████████▏| 70.9M/72.7M [01:40&lt;00:02, 704kbytes/s]
+ 98%|██████████████████████████████████▏| 71.0M/72.7M [01:40&lt;00:02, 690kbytes/s]
+ 98%|██████████████████████████████████▏| 71.1M/72.7M [01:40&lt;00:02, 702kbytes/s]
+ 98%|██████████████████████████████████▎| 71.2M/72.7M [01:41&lt;00:02, 720kbytes/s]
+ 98%|██████████████████████████████████▎| 71.3M/72.7M [01:41&lt;00:01, 724kbytes/s]
+ 98%|██████████████████████████████████▍| 71.4M/72.7M [01:41&lt;00:01, 703kbytes/s]
+ 98%|██████████████████████████████████▍| 71.5M/72.7M [01:41&lt;00:01, 718kbytes/s]
+ 99%|██████████████████████████████████▌| 71.7M/72.7M [01:41&lt;00:01, 730kbytes/s]
+ 99%|██████████████████████████████████▌| 71.8M/72.7M [01:41&lt;00:01, 709kbytes/s]
+ 99%|██████████████████████████████████▌| 71.9M/72.7M [01:42&lt;00:01, 716kbytes/s]
+ 99%|██████████████████████████████████▋| 72.0M/72.7M [01:42&lt;00:00, 730kbytes/s]
+ 99%|██████████████████████████████████▋| 72.1M/72.7M [01:42&lt;00:00, 740kbytes/s]
+ 99%|██████████████████████████████████▊| 72.2M/72.7M [01:42&lt;00:00, 715kbytes/s]
+ 99%|██████████████████████████████████▊| 72.3M/72.7M [01:42&lt;00:00, 721kbytes/s]
+100%|██████████████████████████████████▉| 72.4M/72.7M [01:42&lt;00:00, 734kbytes/s]
+100%|██████████████████████████████████▉| 72.5M/72.7M [01:42&lt;00:00, 742kbytes/s]
+100%|███████████████████████████████████| 72.7M/72.7M [01:43&lt;00:00, 705kbytes/s]
 </pre></div>
 </div>
 </div>
@@ -718,7 +1395,7 @@ This will open <code>mp2rage.nii.gz</code> in the interactive viewer.
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 1, "model_id": "2d7ffe564d6246cfb9eac0d144831375"}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 1, "model_id": "ff4f94671cbc4b7e80888bd2511492eb"}</script></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -729,6 +1406,7 @@ This will open <code>mp2rage.nii.gz</code> in the interactive viewer.
 <div class="cell_output docutils container">
 <div class="output text_html"><img src="https://raw.githubusercontent.com/neurodesk/example-notebooks/refs/heads/main/books/images/recon_all_clinical_t1w.png"/></div></div>
 </div>
+</section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="run">
 <h1>Run<a class="headerlink" href="#run" title="Link to this heading">#</a></h1>
@@ -817,27 +1495,27 @@ INPUT_SCAN=./data/structural/mp2rage.nii.gz
 <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_cell_magic</span><span class="p">(</span><span class="s1">&#39;bash&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;#--------------------------------------------</span><span class="se">\n</span><span class="s1"># FreeSurfer recon-all-clinical pipeline</span><span class="se">\n</span><span class="s1">#--------------------------------------------</span><span class="se">\n\n</span><span class="s1">set -euo pipefail  # Stop on unset variables or errors</span><span class="se">\n\n</span><span class="s1">#----------------------------</span><span class="se">\n</span><span class="s1"># Config</span><span class="se">\n</span><span class="s1">#----------------------------</span><span class="se">\n</span><span class="s1">INPUT_SCAN=./data/structural/mp2rage.nii.gz</span><span class="se">\n</span><span class="s1">SUBJECT_ID=TestSubject</span><span class="se">\n</span><span class="s1">THREADS=2 #adapt if more resources are available</span><span class="se">\n</span><span class="s1">SUBJECT_DIR=./data/structural/recon-all-clinical</span><span class="se">\n\n</span><span class="s1"># Ensure output folder exists</span><span class="se">\n</span><span class="s1">mkdir -p &quot;$SUBJECT_DIR&quot;</span><span class="se">\n</span><span class="s1">echo &quot;SUBJECT_DIR=$SUBJECT_DIR&quot;</span><span class="se">\n</span><span class="s1">echo &quot;SUBJECT_ID=$SUBJECT_ID&quot;</span><span class="se">\n</span><span class="s1">echo &quot;INPUT_SCAN=$INPUT_SCAN&quot;</span><span class="se">\n</span><span class="s1">echo</span><span class="se">\n\n</span><span class="s1">#----------------------------</span><span class="se">\n</span><span class="s1"># Allow deeper folder structures in some FreeSurfer builds</span><span class="se">\n</span><span class="s1">#----------------------------</span><span class="se">\n</span><span class="s1">export FS_ALLOW_DEEP=1</span><span class="se">\n</span><span class="s1">export SINGULARITYENV_FS_ALLOW_DEEP=1</span><span class="se">\n</span><span class="s1">export APPTAINERENV_FS_ALLOW_DEEP=1</span><span class="se">\n\n</span><span class="s1">#----------------------------</span><span class="se">\n</span><span class="s1"># Start pipeline</span><span class="se">\n</span><span class="s1">#----------------------------</span><span class="se">\n</span><span class="s1"># Remove previous &quot;is-running&quot; file if it exists</span><span class="se">\n</span><span class="s1">rm -f &quot;$SUBJECT_DIR/$SUBJECT_ID/scripts/IsRunning.lh+rh&quot;</span><span class="se">\n\n</span><span class="s1"># Run the actual recon-all-clinical pipeline</span><span class="se">\n</span><span class="s1">recon-all-clinical.sh &quot;$INPUT_SCAN&quot; &quot;$SUBJECT_ID&quot; &quot;$THREADS&quot; &quot;$SUBJECT_DIR&quot;</span><span class="se">\n\n</span><span class="s1">#----------------------------</span><span class="se">\n</span><span class="s1"># End message</span><span class="se">\n</span><span class="s1">#----------------------------</span><span class="se">\n</span><span class="s1">echo &quot;----- recon-all-clinical.sh completed -----&quot;</span><span class="se">\n</span><span class="s1">echo &quot;Results saved to: $SUBJECT_DIR/$SUBJECT_ID&quot;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
 
-<span class="nn">File /opt/conda/lib/python3.12/site-packages/IPython/core/interactiveshell.py:2549,</span> in <span class="ni">InteractiveShell.run_cell_magic</span><span class="nt">(self, magic_name, line, cell)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2547</span> <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">builtin_trap</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">2548</span>     <span class="n">args</span> <span class="o">=</span> <span class="p">(</span><span class="n">magic_arg_s</span><span class="p">,</span> <span class="n">cell</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">2549</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2551</span> <span class="c1"># The code below prevents the output from being displayed</span>
-<span class="g g-Whitespace">   </span><span class="mi">2552</span> <span class="c1"># when using magics with decorator @output_can_be_silenced</span>
-<span class="g g-Whitespace">   </span><span class="mi">2553</span> <span class="c1"># when the last Python token in the expression is a &#39;;&#39;.</span>
-<span class="g g-Whitespace">   </span><span class="mi">2554</span> <span class="k">if</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">magic</span><span class="o">.</span><span class="n">MAGIC_OUTPUT_CAN_BE_SILENCED</span><span class="p">,</span> <span class="kc">False</span><span class="p">):</span>
+<span class="nn">File /opt/conda/lib/python3.13/site-packages/IPython/core/interactiveshell.py:2565,</span> in <span class="ni">InteractiveShell.run_cell_magic</span><span class="nt">(self, magic_name, line, cell)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2563</span> <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">builtin_trap</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">2564</span>     <span class="n">args</span> <span class="o">=</span> <span class="p">(</span><span class="n">magic_arg_s</span><span class="p">,</span> <span class="n">cell</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">2565</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2567</span> <span class="c1"># The code below prevents the output from being displayed</span>
+<span class="g g-Whitespace">   </span><span class="mi">2568</span> <span class="c1"># when using magics with decorator @output_can_be_silenced</span>
+<span class="g g-Whitespace">   </span><span class="mi">2569</span> <span class="c1"># when the last Python token in the expression is a &#39;;&#39;.</span>
+<span class="g g-Whitespace">   </span><span class="mi">2570</span> <span class="k">if</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">magic</span><span class="o">.</span><span class="n">MAGIC_OUTPUT_CAN_BE_SILENCED</span><span class="p">,</span> <span class="kc">False</span><span class="p">):</span>
 
-<span class="nn">File /opt/conda/lib/python3.12/site-packages/IPython/core/magics/script.py:159,</span> in <span class="ni">ScriptMagics._make_script_magic.&lt;locals&gt;.named_script_magic</span><span class="nt">(line, cell)</span>
-<span class="g g-Whitespace">    </span><span class="mi">157</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">158</span>     <span class="n">line</span> <span class="o">=</span> <span class="n">script</span>
-<span class="ne">--&gt; </span><span class="mi">159</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">shebang</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">cell</span><span class="p">)</span>
+<span class="nn">File /opt/conda/lib/python3.13/site-packages/IPython/core/magics/script.py:160,</span> in <span class="ni">ScriptMagics._make_script_magic.&lt;locals&gt;.named_script_magic</span><span class="nt">(line, cell)</span>
+<span class="g g-Whitespace">    </span><span class="mi">158</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">159</span>     <span class="n">line</span> <span class="o">=</span> <span class="n">script</span>
+<span class="ne">--&gt; </span><span class="mi">160</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">shebang</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">cell</span><span class="p">)</span>
 
-<span class="nn">File /opt/conda/lib/python3.12/site-packages/IPython/core/magics/script.py:336,</span> in <span class="ni">ScriptMagics.shebang</span><span class="nt">(self, line, cell)</span>
-<span class="g g-Whitespace">    </span><span class="mi">331</span> <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">raise_error</span> <span class="ow">and</span> <span class="n">p</span><span class="o">.</span><span class="n">returncode</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">332</span>     <span class="c1"># If we get here and p.returncode is still None, we must have</span>
-<span class="g g-Whitespace">    </span><span class="mi">333</span>     <span class="c1"># killed it but not yet seen its return code. We don&#39;t wait for it,</span>
-<span class="g g-Whitespace">    </span><span class="mi">334</span>     <span class="c1"># in case it&#39;s stuck in uninterruptible sleep. -9 = SIGKILL</span>
-<span class="g g-Whitespace">    </span><span class="mi">335</span>     <span class="n">rc</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">returncode</span> <span class="ow">or</span> <span class="o">-</span><span class="mi">9</span>
-<span class="ne">--&gt; </span><span class="mi">336</span>     <span class="k">raise</span> <span class="n">CalledProcessError</span><span class="p">(</span><span class="n">rc</span><span class="p">,</span> <span class="n">cell</span><span class="p">)</span>
+<span class="nn">File /opt/conda/lib/python3.13/site-packages/IPython/core/magics/script.py:348,</span> in <span class="ni">ScriptMagics.shebang</span><span class="nt">(self, line, cell)</span>
+<span class="g g-Whitespace">    </span><span class="mi">343</span> <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">raise_error</span> <span class="ow">and</span> <span class="n">p</span><span class="o">.</span><span class="n">returncode</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">344</span>     <span class="c1"># If we get here and p.returncode is still None, we must have</span>
+<span class="g g-Whitespace">    </span><span class="mi">345</span>     <span class="c1"># killed it but not yet seen its return code. We don&#39;t wait for it,</span>
+<span class="g g-Whitespace">    </span><span class="mi">346</span>     <span class="c1"># in case it&#39;s stuck in uninterruptible sleep. -9 = SIGKILL</span>
+<span class="g g-Whitespace">    </span><span class="mi">347</span>     <span class="n">rc</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">returncode</span> <span class="ow">or</span> <span class="o">-</span><span class="mi">9</span>
+<span class="ne">--&gt; </span><span class="mi">348</span>     <span class="k">raise</span> <span class="n">CalledProcessError</span><span class="p">(</span><span class="n">rc</span><span class="p">,</span> <span class="n">cell</span><span class="p">)</span>
 
 <span class="ne">CalledProcessError</span>: Command &#39;b&#39;#--------------------------------------------\n# FreeSurfer recon-all-clinical pipeline\n#--------------------------------------------\n\nset -euo pipefail  # Stop on unset variables or errors\n\n#----------------------------\n# Config\n#----------------------------\nINPUT_SCAN=./data/structural/mp2rage.nii.gz\nSUBJECT_ID=TestSubject\nTHREADS=2 #adapt if more resources are available\nSUBJECT_DIR=./data/structural/recon-all-clinical\n\n# Ensure output folder exists\nmkdir -p &quot;$SUBJECT_DIR&quot;\necho &quot;SUBJECT_DIR=$SUBJECT_DIR&quot;\necho &quot;SUBJECT_ID=$SUBJECT_ID&quot;\necho &quot;INPUT_SCAN=$INPUT_SCAN&quot;\necho\n\n#----------------------------\n# Allow deeper folder structures in some FreeSurfer builds\n#----------------------------\nexport FS_ALLOW_DEEP=1\nexport SINGULARITYENV_FS_ALLOW_DEEP=1\nexport APPTAINERENV_FS_ALLOW_DEEP=1\n\n#----------------------------\n# Start pipeline\n#----------------------------\n# Remove previous &quot;is-running&quot; file if it exists\nrm -f &quot;$SUBJECT_DIR/$SUBJECT_ID/scripts/IsRunning.lh+rh&quot;\n\n# Run the actual recon-all-clinical pipeline\nrecon-all-clinical.sh &quot;$INPUT_SCAN&quot; &quot;$SUBJECT_ID&quot; &quot;$THREADS&quot; &quot;$SUBJECT_DIR&quot;\n\n#----------------------------\n# End message\n#----------------------------\necho &quot;----- recon-all-clinical.sh completed -----&quot;\necho &quot;Results saved to: $SUBJECT_DIR/$SUBJECT_ID&quot;\n&#39;&#39; returned non-zero exit status 127.
 </pre></div>
@@ -883,7 +1561,7 @@ This will open <code>aseg.mgz</code> in the viewer with FreeSurfer colors.
 <span class="c1"># Viewer</span>
 <span class="n">nv</span> <span class="o">=</span> <span class="n">NiiVue</span><span class="p">(</span>
     <span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span>
-    <span class="n">multiplanar_layout</span><span class="o">=</span><span class="s2">&quot;grid&quot;</span><span class="p">,</span>
+    <span class="n">multiplanar_layout</span><span class="o">=</span><span class="s2">&quot;GRID&quot;</span><span class="p">,</span>
     <span class="n">multiplanar_show_render</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
     <span class="n">is_colorbar</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
     <span class="n">is_orient_cube</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
@@ -906,7 +1584,7 @@ This will open <code>aseg.mgz</code> in the viewer with FreeSurfer colors.
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "701dfe2a576240f299dbfc97a2c3dd0d", "version_major": 2, "version_minor": 1}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "8ad8dc48e72b4027ad90f9898966c67e", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -951,8 +1629,6 @@ You’ll see a 3D model of the brain surface – red for left, blue for right.
 
 <span class="n">nv</span> <span class="o">=</span> <span class="n">NiiVue</span><span class="p">(</span>
     <span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span>
-    <span class="n">multiplanar_layout</span><span class="o">=</span><span class="s2">&quot;render&quot;</span><span class="p">,</span>   <span class="c1"># pure 3D</span>
-    <span class="n">multiplanar_show_render</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
     <span class="n">is_colorbar</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
     <span class="n">is_orient_cube</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
     <span class="n">is_radiological_convention</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
@@ -969,7 +1645,7 @@ You’ll see a 3D model of the brain surface – red for left, blue for right.
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "0b4e3b8656a342338da931c084c618ed", "version_major": 2, "version_minor": 1}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "f191d8f547d344e9a7a49d3f8ccb4074", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1003,12 +1679,11 @@ You’ll see the <b>white matter surfaces</b> in 3D (orange = left, blue = right
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># White surfaces (lh/rh) with solid colors</span>
 
-<span class="n">lh</span> <span class="o">=</span> <span class="n">surf</span><span class="o">/</span><span class="s2">&quot;lh.white&quot;</span><span class="p">;</span> <span class="n">rh</span> <span class="o">=</span> <span class="n">surf</span><span class="o">/</span><span class="s2">&quot;rh.white&quot;</span>
+<span class="n">lh</span> <span class="o">=</span> <span class="n">surf_dir</span><span class="o">/</span><span class="s2">&quot;lh.white&quot;</span><span class="p">;</span> <span class="n">rh</span> <span class="o">=</span> <span class="n">surf_dir</span><span class="o">/</span><span class="s2">&quot;rh.white&quot;</span>
 <span class="k">assert</span> <span class="n">lh</span><span class="o">.</span><span class="n">exists</span><span class="p">()</span> <span class="ow">and</span> <span class="n">rh</span><span class="o">.</span><span class="n">exists</span><span class="p">(),</span> <span class="s2">&quot;Missing white surfaces&quot;</span>
 
-<span class="n">nv</span> <span class="o">=</span> <span class="n">NiiVue</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span> <span class="n">multiplanar_layout</span><span class="o">=</span><span class="s2">&quot;render&quot;</span><span class="p">,</span> <span class="n">multiplanar_show_render</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-            <span class="n">is_colorbar</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">is_orient_cube</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">is_radiological_convention</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-            <span class="n">back_color</span><span class="o">=</span><span class="p">(</span><span class="mf">0.05</span><span class="p">,</span><span class="mf">0.05</span><span class="p">,</span><span class="mf">0.05</span><span class="p">,</span><span class="mf">1.0</span><span class="p">))</span>
+<span class="n">nv</span> <span class="o">=</span> <span class="n">NiiVue</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span><span class="n">is_colorbar</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">is_orient_cube</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> 
+            <span class="n">is_radiological_convention</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">back_color</span><span class="o">=</span><span class="p">(</span><span class="mf">0.05</span><span class="p">,</span><span class="mf">0.05</span><span class="p">,</span><span class="mf">0.05</span><span class="p">,</span><span class="mf">1.0</span><span class="p">))</span>
 
 <span class="n">nv</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">Mesh</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">lh</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;lh.white&quot;</span><span class="p">,</span> <span class="n">rgba255</span><span class="o">=</span><span class="p">[</span><span class="mi">255</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span><span class="mi">90</span><span class="p">,</span><span class="mi">255</span><span class="p">],</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">1.0</span><span class="p">))</span>
 <span class="n">nv</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">Mesh</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">rh</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;rh.white&quot;</span><span class="p">,</span> <span class="n">rgba255</span><span class="o">=</span><span class="p">[</span><span class="mi">90</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">],</span>  <span class="n">opacity</span><span class="o">=</span><span class="mf">1.0</span><span class="p">))</span>
@@ -1018,7 +1693,7 @@ You’ll see the <b>white matter surfaces</b> in 3D (orange = left, blue = right
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "29b8e2bb68624df5a57b33e4e45aa4bf", "version_major": 2, "version_minor": 1}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "4428973195ff44f08c9ebe34878d42e2", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1051,12 +1726,11 @@ You’ll see the <b>inflated left hemisphere</b> in 3D.
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Inflated surfaces (lh/rh) with solid colors</span>
 
-<span class="n">lh</span> <span class="o">=</span> <span class="n">surf</span><span class="o">/</span><span class="s2">&quot;lh.inflated&quot;</span><span class="p">;</span> <span class="n">rh</span> <span class="o">=</span> <span class="n">surf</span><span class="o">/</span><span class="s2">&quot;rh.inflated&quot;</span>
+<span class="n">lh</span> <span class="o">=</span> <span class="n">surf_dir</span><span class="o">/</span><span class="s2">&quot;lh.inflated&quot;</span><span class="p">;</span> <span class="n">rh</span> <span class="o">=</span> <span class="n">surf_dir</span><span class="o">/</span><span class="s2">&quot;rh.inflated&quot;</span>
 <span class="k">assert</span> <span class="n">lh</span><span class="o">.</span><span class="n">exists</span><span class="p">()</span> <span class="ow">and</span> <span class="n">rh</span><span class="o">.</span><span class="n">exists</span><span class="p">(),</span> <span class="s2">&quot;Missing inflated surfaces&quot;</span>
 
-<span class="n">nv</span> <span class="o">=</span> <span class="n">NiiVue</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span> <span class="n">multiplanar_layout</span><span class="o">=</span><span class="s2">&quot;render&quot;</span><span class="p">,</span> <span class="n">multiplanar_show_render</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-            <span class="n">is_colorbar</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">is_orient_cube</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">is_radiological_convention</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-            <span class="n">back_color</span><span class="o">=</span><span class="p">(</span><span class="mf">0.05</span><span class="p">,</span><span class="mf">0.05</span><span class="p">,</span><span class="mf">0.05</span><span class="p">,</span><span class="mf">1.0</span><span class="p">))</span>
+<span class="n">nv</span> <span class="o">=</span> <span class="n">NiiVue</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span> <span class="n">is_colorbar</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">is_orient_cube</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> 
+            <span class="n">is_radiological_convention</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">back_color</span><span class="o">=</span><span class="p">(</span><span class="mf">0.05</span><span class="p">,</span><span class="mf">0.05</span><span class="p">,</span><span class="mf">0.05</span><span class="p">,</span><span class="mf">1.0</span><span class="p">))</span>
 
 <span class="n">nv</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">Mesh</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">lh</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;lh.inflated&quot;</span><span class="p">,</span> <span class="n">rgba255</span><span class="o">=</span><span class="p">[</span><span class="mi">255</span><span class="p">,</span><span class="mi">140</span><span class="p">,</span><span class="mi">140</span><span class="p">,</span><span class="mi">255</span><span class="p">],</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">1.0</span><span class="p">))</span>
 <span class="c1">#nv.add_mesh(Mesh(path=str(rh), name=&quot;rh.inflated&quot;, rgba255=[140,140,255,255], opacity=1.0))</span>
@@ -1066,7 +1740,7 @@ You’ll see the <b>inflated left hemisphere</b> in 3D.
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "30726039931c4759a151db9d94e6757a", "version_major": 2, "version_minor": 1}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "23f2a189756d4cbd9c2a2c1fe89eaa98", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1158,18 +1832,18 @@ Use it to confirm that key outputs exist and to find logs if something went wron
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>=== Subject directory tree (top) ===
 total 32K
-drwxr-sr-x 2 jovyan users 4.0K Sep 24 02:37 label
-drwxr-sr-x 3 jovyan users 4.0K Sep 24 02:28 mri
-drwxr-sr-x 2 jovyan users 4.0K Sep 24 02:38 scripts
-drwxr-sr-x 2 jovyan users 4.0K Sep 24 02:38 stats
-drwxr-sr-x 2 jovyan users 4.0K Sep 24 02:16 surf
-drwxr-sr-x 2 jovyan users 4.0K Sep 24 00:54 tmp
-drwxr-sr-x 2 jovyan users 4.0K Sep 24 00:54 touch
-drwxr-sr-x 2 jovyan users 4.0K Sep 24 00:54 trash
+drwxr-sr-x 2 jovyan users 4.0K Oct 30 06:24 label
+drwxr-sr-x 3 jovyan users 4.0K Oct 30 22:18 mri
+drwxr-sr-x 2 jovyan users 4.0K Oct 30 23:53 scripts
+drwxr-sr-x 2 jovyan users 4.0K Oct 30 06:24 stats
+drwxr-sr-x 2 jovyan users 4.0K Oct 30 23:15 surf
+drwxr-sr-x 2 jovyan users 4.0K Oct 30 04:30 tmp
+drwxr-sr-x 2 jovyan users 4.0K Oct 30 04:30 touch
+drwxr-sr-x 2 jovyan users 4.0K Oct 30 04:30 trash
 
 === Logs/scripts ===
-total 356K
--rw-r--r-- 1 jovyan users 349K Sep 24 02:38 recon-all-clinical.log
+total 352K
+-rw-r--r-- 1 jovyan users 347K Oct 30 23:53 recon-all-clinical.log
 mri/         All volumetric outputs (.mgz).
 surf/        Cortical meshes and annotation files (.white, .pial, .inflated, .annot).
 label/       Labels, annotation tables (.ctab), region lists.
@@ -1179,6 +1853,44 @@ scripts/     Run logs, IsRunning flags, and command histories.
 </div>
 </div>
 </div>
+<section id="dependencies-in-jupyter-python">
+<h2>Dependencies in Jupyter/Python<a class="headerlink" href="#dependencies-in-jupyter-python" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Using the package <a class="reference external" href="https://github.com/rasbt/watermark">watermark</a> to document system environment and software versions used in this notebook</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> watermark
+
+<span class="o">%</span><span class="k">watermark</span>
+<span class="o">%</span><span class="k">watermark</span> --iversions
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Last updated: 2025-10-31T00:04:58.447546+00:00
+
+Python implementation: CPython
+Python version       : 3.11.6
+IPython version      : 8.16.1
+
+Compiler    : GCC 12.3.0
+OS          : Linux
+Release     : 5.4.0-204-generic
+Machine     : x86_64
+Processor   : x86_64
+CPU cores   : 32
+Architecture: 64bit
+
+IPython  : 8.16.1
+numpy    : 2.2.6
+nibabel  : 5.2.1
+ipyniivue: 2.3.2
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1227,11 +1939,21 @@ scripts/     Run logs, IsRunning flags, and command histories.
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">FreeSurfer: recon-all-clinical</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#general-instructions">General Instructions:</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#load-the-module-for-this-workbook">Load the module for this workbook</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#let-s-try-running-the-command-with-the-help-flag">Let’s try running the command with the –help flag!</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#run">Run</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">FreeSurfer: recon-all-clinical</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#citations-and-resources">Citations and Resources:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tools-included-in-this-workflow">Tools included in this workflow</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset">Dataset:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-instructions">General Instructions:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-the-module-for-this-workbook">Load the module for this workbook</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#let-s-try-running-the-command-with-the-help-flag">Let’s try running the command with the –help flag!</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#run">Run</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dependencies-in-jupyter-python">Dependencies in Jupyter/Python</a></li>
+</ul>
+</li>
 </ul>
 
   </nav></div>
