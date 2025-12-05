@@ -242,16 +242,34 @@
       
       <li><a href="https://play-america.neurodesk.org/hub/user-redirect/git-pull?repo=https%3A//github.com/NeuroDesk/example-notebooks&urlpath=lab/tree/example-notebooks/books/eeg_with_mne.ipynb&branch=main" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch on JupyterHub"
+   title="Launch on Run in America"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img alt="JupyterHub logo" src="_static/images/logo_jupyterhub.svg">
+    <img alt="Run in America logo" src="_static/images/logo_jupyterhub.svg">
   </span>
-<span class="btn__text-container">JupyterHub</span>
+<span class="btn__text-container">Run in America</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://play-europe.neurodesk.org/hub/user-redirect/git-pull?repo=https%3A//github.com/NeuroDesk/example-notebooks&urlpath=lab/tree/example-notebooks/books/eeg_with_mne.ipynb&branch=main" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Run in Europe"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Run in Europe logo" src="_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">Run in Europe</span>
 </a>
 </li>
       
@@ -433,7 +451,6 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tools-included-in-this-workflow">Tools included in this workflow</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tutorial-this-work-is-based-on">Tutorial this work is based on</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset">Dataset</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#check-cpu-vendor-and-model-for-compatibility-or-performance-considerations">Check CPU vendor and model for compatibility or performance considerations</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-and-import-python-libraries">Install and import python libraries</a></li>
@@ -444,7 +461,10 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#extract-eeg-channels-and-preprocess">Extract EEG Channels and Preprocess</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#epoching-the-data">Epoching the Data</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fft">FFT</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exporting-the-data">Exporting the data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exporting-the-data">Exporting the data</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#dependencies-in-jupyter-python">Dependencies in Jupyter/Python</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -460,7 +480,8 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="eeg-analysis-with-mne">
 <h1>EEG Analysis with MNE<a class="headerlink" href="#eeg-analysis-with-mne" title="Link to this heading">#</a></h1>
-<p><strong>Author</strong>: Angela Renton &amp; Monika Doerig</p>
+<p><strong>Author</strong>: Angela Renton, Monika Doerig</p>
+<p><strong>Date</strong>: 11 Aug 2025</p>
 <section id="citation">
 <h2>Citation:<a class="headerlink" href="#citation" title="Link to this heading">#</a></h2>
 <section id="tools-included-in-this-workflow">
@@ -483,23 +504,6 @@ document.write(`
 <li><p>Renton, A. (2022, April 11). Optimising the classification of feature-based attention in frequency-tagged electroencephalography data. <a class="reference external" href="https://doi.org/10.17605/OSF.IO/C689U">https://doi.org/10.17605/OSF.IO/C689U</a></p></li>
 </ul>
 </section>
-<section id="check-cpu-vendor-and-model-for-compatibility-or-performance-considerations">
-<h3>Check CPU vendor and model for compatibility or performance considerations<a class="headerlink" href="#check-cpu-vendor-and-model-for-compatibility-or-performance-considerations" title="Link to this heading">#</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>cat<span class="w"> </span>/proc/cpuinfo<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s1">&#39;vendor&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>uniq
-<span class="o">!</span>cat<span class="w"> </span>/proc/cpuinfo<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s1">&#39;model name&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>uniq
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>vendor_id	: AuthenticAMD
-model name	: AMD EPYC 7763 64-Core Processor
-</pre></div>
-</div>
-</div>
-</div>
-</section>
 </section>
 <section id="install-and-import-python-libraries">
 <h2>Install and import python libraries<a class="headerlink" href="#install-and-import-python-libraries" title="Link to this heading">#</a></h2>
@@ -507,42 +511,6 @@ model name	: AMD EPYC 7763 64-Core Processor
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%capture</span> 
 <span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="n">mne</span><span class="o">==</span><span class="mf">1.10.0</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;import mne; mne.sys_info()&quot;</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Platform             Linux-6.8.0-1031-azure-x86_64-with-glibc2.35
-Python               3.10.12 (main, May 27 2025, 17:12:29) [GCC 11.4.0]
-Executable           /usr/bin/python
-CPU                  AMD EPYC 7763 64-Core Processor (4 cores)
-Memory               15.6 GiB
-
-Core
-├☑ mne               1.10.0 (latest release)
-├☑ numpy             2.2.6 (OpenBLAS 0.3.29 with 4 threads)
-├☑ scipy             1.15.3
-└☑ matplotlib        3.10.5 (backend=module://matplotlib_inline.backend_inline)
-
-Numerical (optional)
-├☑ sklearn           1.7.1
-├☑ nibabel           5.3.2
-├☑ nilearn           0.12.0
-├☑ pandas            2.3.1
-└☐ unavailable       numba, dipy, openmeeg, cupy, h5io, h5py
-
-Visualization (optional)
-├☑ ipywidgets        8.1.7
-└☐ unavailable       pyvista, pyvistaqt, vtk, qtpy, ipympl, pyqtgraph, mne-qt-browser, trame_client, trame_server, trame_vtk, trame_vuetify
-
-Ecosystem (optional)
-└☐ unavailable       mne-bids, mne-nirs, mne-features, mne-connectivity, mne-icalabel, mne-bids-pipeline, neo, eeglabio, edfio, mffpy, pybv
 </pre></div>
 </div>
 </div>
@@ -590,8 +558,7 @@ Ecosystem (optional)
    creating: Data_sample/sourcedata/
    creating: Data_sample/sourcedata/sub-01/
    creating: Data_sample/sourcedata/sub-01/behave/
-  inflating: Data_sample/sourcedata/sub-01/behave/sub-01_task-FeatAttnDec_behav.mat
-
+  inflating: Data_sample/sourcedata/sub-01/behave/sub-01_task-FeatAttnDec_behav.mat  
    creating: Data_sample/sourcedata/sub-01/eeg/
   inflating: Data_sample/sourcedata/sub-01/eeg/sub-01_task-FeatAttnDec_eeg.mat
 
@@ -637,7 +604,7 @@ Ecosystem (optional)
         ├── sub-01_task-FeatAttnDec_eeg.vmrk
         └── sub-01_task-FeatAttnDec_events.tsv
 
-6 directories, 13 files
+7 directories, 13 files
 </pre></div>
 </div>
 </div>
@@ -705,7 +672,7 @@ Reading 0 ... 3706303  =      0.000 ...  3088.586 secs...
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/33d456d704b15ca0899ea6b6256e8059bdaa4155fb75acd3e174dc5c5dd40092.png" src="_images/33d456d704b15ca0899ea6b6256e8059bdaa4155fb75acd3e174dc5c5dd40092.png" />
+<img alt="_images/6e4b8dddac73173ddd6a868eb683d092df32a55fa1f0360a32a873a01bf2f64d.png" src="_images/6e4b8dddac73173ddd6a868eb683d092df32a55fa1f0360a32a873a01bf2f64d.png" />
 </div>
 </div>
 <p>Next, let’s visualize the data.</p>
@@ -720,7 +687,7 @@ Reading 0 ... 3706303  =      0.000 ...  3088.586 secs...
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Using matplotlib as 2D backend.
 </pre></div>
 </div>
-<img alt="_images/f7100a31f7f1b0eb08473f2cc9d344e0472f870352dd1f68bf96fb56c0876637.png" src="_images/f7100a31f7f1b0eb08473f2cc9d344e0472f870352dd1f68bf96fb56c0876637.png" />
+<img alt="_images/8d61799d5813b41bc611af12149868efcda9059347ff55f7d950a09558b7f617.png" src="_images/8d61799d5813b41bc611af12149868efcda9059347ff55f7d950a09558b7f617.png" />
 </div>
 </div>
 <p>If, upon visual inspection, you decide to exclude one or more channels (e.g., due to noise or signal dropout), you can mark them as “bad” by adding them to <code class="docutils literal notranslate"><span class="pre">raw.info['bads']</span></code>.</p>
@@ -887,9 +854,9 @@ this file apply (plus whatever default styling the IDE applies).
 
 
 
-<tr class="mne-repr-section-header general-6293848b-9f29-4ed9-8cc1-3936e4e19da8"
+<tr class="mne-repr-section-header general-f49cb48d-7670-4259-80fa-597bf1e3c371"
      title="Hide section" 
-    onclick="toggleVisibility('general-6293848b-9f29-4ed9-8cc1-3936e4e19da8')">
+    onclick="toggleVisibility('general-f49cb48d-7670-4259-80fa-597bf1e3c371')">
     <th class="mne-repr-section-toggle">
         <button >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg>
@@ -901,26 +868,26 @@ this file apply (plus whatever default styling the IDE applies).
 </tr>
 
 
-<tr class="repr-element general-6293848b-9f29-4ed9-8cc1-3936e4e19da8 ">
+<tr class="repr-element general-f49cb48d-7670-4259-80fa-597bf1e3c371 ">
     <td class="mne-repr-section-toggle"></td>
     <td>MNE object type</td>
     <td>Info</td>
 </tr>
-<tr class="repr-element general-6293848b-9f29-4ed9-8cc1-3936e4e19da8 ">
+<tr class="repr-element general-f49cb48d-7670-4259-80fa-597bf1e3c371 ">
     <td class="mne-repr-section-toggle"></td>
     <td>Measurement date</td>
     
     <td>Unknown</td>
     
 </tr>
-<tr class="repr-element general-6293848b-9f29-4ed9-8cc1-3936e4e19da8 ">
+<tr class="repr-element general-f49cb48d-7670-4259-80fa-597bf1e3c371 ">
     <td class="mne-repr-section-toggle"></td>
     <td>Participant</td>
     
     <td>Unknown</td>
     
 </tr>
-<tr class="repr-element general-6293848b-9f29-4ed9-8cc1-3936e4e19da8 ">
+<tr class="repr-element general-f49cb48d-7670-4259-80fa-597bf1e3c371 ">
     <td class="mne-repr-section-toggle"></td>
     <td>Experimenter</td>
     
@@ -935,9 +902,9 @@ this file apply (plus whatever default styling the IDE applies).
 
 
 
-<tr class="mne-repr-section-header acquisition-a3c3a98f-18e4-41db-a1bb-ca85f5991a84"
+<tr class="mne-repr-section-header acquisition-8451437f-41e5-486c-8430-f0acf95b0ee3"
      title="Hide section" 
-    onclick="toggleVisibility('acquisition-a3c3a98f-18e4-41db-a1bb-ca85f5991a84')">
+    onclick="toggleVisibility('acquisition-8451437f-41e5-486c-8430-f0acf95b0ee3')">
     <th class="mne-repr-section-toggle">
         <button >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg>
@@ -956,7 +923,7 @@ this file apply (plus whatever default styling the IDE applies).
 
 
 
-<tr class="repr-element acquisition-a3c3a98f-18e4-41db-a1bb-ca85f5991a84 ">
+<tr class="repr-element acquisition-8451437f-41e5-486c-8430-f0acf95b0ee3 ">
     <td class="mne-repr-section-toggle"></td>
     <td>Sampling frequency</td>
     <td>1200.00 Hz</td>
@@ -972,9 +939,9 @@ this file apply (plus whatever default styling the IDE applies).
 
 
 
-<tr class="mne-repr-section-header channels-93200dd4-41c0-40c1-b10d-d16d8c9d84d0"
+<tr class="mne-repr-section-header channels-fa1cccfb-108b-4b0f-9bf8-0ed54f2323f6"
      title="Hide section" 
-    onclick="toggleVisibility('channels-93200dd4-41c0-40c1-b10d-d16d8c9d84d0')">
+    onclick="toggleVisibility('channels-fa1cccfb-108b-4b0f-9bf8-0ed54f2323f6')">
     <th class="mne-repr-section-toggle">
         <button >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg>
@@ -987,7 +954,7 @@ this file apply (plus whatever default styling the IDE applies).
 
 
     
-<tr class="repr-element channels-93200dd4-41c0-40c1-b10d-d16d8c9d84d0 ">
+<tr class="repr-element channels-fa1cccfb-108b-4b0f-9bf8-0ed54f2323f6 ">
     <td class="mne-repr-section-toggle"></td>
     <td>EEG</td>
     <td>
@@ -1005,7 +972,7 @@ this file apply (plus whatever default styling the IDE applies).
 </tr>
 
 
-<tr class="repr-element channels-93200dd4-41c0-40c1-b10d-d16d8c9d84d0 ">
+<tr class="repr-element channels-fa1cccfb-108b-4b0f-9bf8-0ed54f2323f6 ">
     <td class="mne-repr-section-toggle"></td>
     <td>Head & sensor digitization</td>
     
@@ -1020,9 +987,9 @@ this file apply (plus whatever default styling the IDE applies).
 
 
 
-<tr class="mne-repr-section-header filters-fb1f2090-c89c-4771-ba7f-5f91f72cdfd3"
+<tr class="mne-repr-section-header filters-826f6eee-d06c-4240-a34b-e51bf2882557"
      title="Hide section" 
-    onclick="toggleVisibility('filters-fb1f2090-c89c-4771-ba7f-5f91f72cdfd3')">
+    onclick="toggleVisibility('filters-826f6eee-d06c-4240-a34b-e51bf2882557')">
     <th class="mne-repr-section-toggle">
         <button >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg>
@@ -1034,14 +1001,14 @@ this file apply (plus whatever default styling the IDE applies).
 </tr>
 
 
-<tr class="repr-element filters-fb1f2090-c89c-4771-ba7f-5f91f72cdfd3 ">
+<tr class="repr-element filters-826f6eee-d06c-4240-a34b-e51bf2882557 ">
     <td class="mne-repr-section-toggle"></td>
     <td>Highpass</td>
     <td>0.00 Hz</td>
 </tr>
 
 
-<tr class="repr-element filters-fb1f2090-c89c-4771-ba7f-5f91f72cdfd3 ">
+<tr class="repr-element filters-826f6eee-d06c-4240-a34b-e51bf2882557 ">
     <td class="mne-repr-section-toggle"></td>
     <td>Lowpass</td>
     <td>600.00 Hz</td>
@@ -1066,7 +1033,7 @@ this file apply (plus whatever default styling the IDE applies).
 Plotting power spectral density (dB=True).
 </pre></div>
 </div>
-<img alt="_images/e37b1b77852a0bcf5c4e93d6b603c9b1070eaf7e7c161c63d9467a43ef51e476.png" src="_images/e37b1b77852a0bcf5c4e93d6b603c9b1070eaf7e7c161c63d9467a43ef51e476.png" />
+<img alt="_images/1fb5016492b49d4bf05144da76dafb13fb2e5823503f118bc9af756750427007.png" src="_images/1fb5016492b49d4bf05144da76dafb13fb2e5823503f118bc9af756750427007.png" />
 </div>
 </div>
 <p>It is also possible to plot each EEG channel individually, with options for how the spectrum should be computed, color-coding the channels by location, and more.</p>
@@ -1082,7 +1049,7 @@ Plotting power spectral density (dB=True).
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Plotting power spectral density (dB=True).
 </pre></div>
 </div>
-<img alt="_images/f30048b7bcf0c7d4322ef98b893c8f3e0c7de44c2c96452298011b5fa20977e6.png" src="_images/f30048b7bcf0c7d4322ef98b893c8f3e0c7de44c2c96452298011b5fa20977e6.png" />
+<img alt="_images/8617d8aef6533376bf3c34e6b7645168e86669e40fb0a345e5b85d88f2050a26.png" src="_images/8617d8aef6533376bf3c34e6b7645168e86669e40fb0a345e5b85d88f2050a26.png" />
 </div>
 </div>
 <p>It is also possible to visualize spectral power estimates across sensors as scalp topographies using the Spectrum object’s <code class="docutils literal notranslate"><span class="pre">plot_topomap()</span></code> method. By default, this plots power in five frequency bands (δ, θ, α, β, γ), computes power based on magnetometer channels if available, and displays the estimates on a dB-like logarithmic scale.</p>
@@ -1094,7 +1061,7 @@ Plotting power spectral density (dB=True).
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/7a02eea7b1ddaceedaff47f5fde3c471b9c65c53554d66bcbe997dff7b83af2d.png" src="_images/7a02eea7b1ddaceedaff47f5fde3c471b9c65c53554d66bcbe997dff7b83af2d.png" />
+<img alt="_images/ae57ed5786c8e0cb67bf9e790d0f0af22bdb3922e6f3485fbf2d903c1386c991.png" src="_images/ae57ed5786c8e0cb67bf9e790d0f0af22bdb3922e6f3485fbf2d903c1386c991.png" />
 </div>
 </div>
 </section>
@@ -1140,7 +1107,7 @@ Found 1725 events, first five:
  [31968   126   106]]
 </pre></div>
 </div>
-<img alt="_images/14d64002f56824c45a857c9479804e9ebaf8f20025d6ee63bb8a2c0feb3448a4.png" src="_images/14d64002f56824c45a857c9479804e9ebaf8f20025d6ee63bb8a2c0feb3448a4.png" />
+<img alt="_images/731b21a73457bfbd8c6561f72e37f8a612da2ba45a438ab13c0ebda01a777138.png" src="_images/731b21a73457bfbd8c6561f72e37f8a612da2ba45a438ab13c0ebda01a777138.png" />
 </div>
 </div>
 </section>
@@ -1333,9 +1300,9 @@ this file apply (plus whatever default styling the IDE applies).
 
 
 
-<tr class="mne-repr-section-header general-e55be99f-00eb-43af-b817-dabf0c38e88a"
+<tr class="mne-repr-section-header general-f75c8a53-cfac-4cc4-802b-9c0ee1c557c1"
      title="Hide section" 
-    onclick="toggleVisibility('general-e55be99f-00eb-43af-b817-dabf0c38e88a')">
+    onclick="toggleVisibility('general-f75c8a53-cfac-4cc4-802b-9c0ee1c557c1')">
     <th class="mne-repr-section-toggle">
         <button >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg>
@@ -1347,7 +1314,7 @@ this file apply (plus whatever default styling the IDE applies).
 </tr>
 
 
-<tr class="repr-element general-e55be99f-00eb-43af-b817-dabf0c38e88a ">
+<tr class="repr-element general-f75c8a53-cfac-4cc4-802b-9c0ee1c557c1 ">
     <td class="mne-repr-section-toggle"></td>
     <td>Filename(s)</td>
     <td>
@@ -1358,26 +1325,26 @@ this file apply (plus whatever default styling the IDE applies).
     </td>
 </tr>
 
-<tr class="repr-element general-e55be99f-00eb-43af-b817-dabf0c38e88a ">
+<tr class="repr-element general-f75c8a53-cfac-4cc4-802b-9c0ee1c557c1 ">
     <td class="mne-repr-section-toggle"></td>
     <td>MNE object type</td>
     <td>RawBrainVision</td>
 </tr>
-<tr class="repr-element general-e55be99f-00eb-43af-b817-dabf0c38e88a ">
+<tr class="repr-element general-f75c8a53-cfac-4cc4-802b-9c0ee1c557c1 ">
     <td class="mne-repr-section-toggle"></td>
     <td>Measurement date</td>
     
     <td>Unknown</td>
     
 </tr>
-<tr class="repr-element general-e55be99f-00eb-43af-b817-dabf0c38e88a ">
+<tr class="repr-element general-f75c8a53-cfac-4cc4-802b-9c0ee1c557c1 ">
     <td class="mne-repr-section-toggle"></td>
     <td>Participant</td>
     
     <td>Unknown</td>
     
 </tr>
-<tr class="repr-element general-e55be99f-00eb-43af-b817-dabf0c38e88a ">
+<tr class="repr-element general-f75c8a53-cfac-4cc4-802b-9c0ee1c557c1 ">
     <td class="mne-repr-section-toggle"></td>
     <td>Experimenter</td>
     
@@ -1392,9 +1359,9 @@ this file apply (plus whatever default styling the IDE applies).
 
 
 
-<tr class="mne-repr-section-header acquisition-4df29849-dd33-4770-9411-3635d0d6abff"
+<tr class="mne-repr-section-header acquisition-9823f21f-bee7-4f46-aead-7e731b6457a2"
      title="Hide section" 
-    onclick="toggleVisibility('acquisition-4df29849-dd33-4770-9411-3635d0d6abff')">
+    onclick="toggleVisibility('acquisition-9823f21f-bee7-4f46-aead-7e731b6457a2')">
     <th class="mne-repr-section-toggle">
         <button >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg>
@@ -1406,7 +1373,7 @@ this file apply (plus whatever default styling the IDE applies).
 </tr>
 
 
-<tr class="repr-element acquisition-4df29849-dd33-4770-9411-3635d0d6abff ">
+<tr class="repr-element acquisition-9823f21f-bee7-4f46-aead-7e731b6457a2 ">
     <td class="mne-repr-section-toggle"></td>
     <td>Duration</td>
     <td>00:51:29 (HH:MM:SS)</td>
@@ -1419,14 +1386,14 @@ this file apply (plus whatever default styling the IDE applies).
 
 
 
-<tr class="repr-element acquisition-4df29849-dd33-4770-9411-3635d0d6abff ">
+<tr class="repr-element acquisition-9823f21f-bee7-4f46-aead-7e731b6457a2 ">
     <td class="mne-repr-section-toggle"></td>
     <td>Sampling frequency</td>
     <td>1200.00 Hz</td>
 </tr>
 
 
-<tr class="repr-element acquisition-4df29849-dd33-4770-9411-3635d0d6abff ">
+<tr class="repr-element acquisition-9823f21f-bee7-4f46-aead-7e731b6457a2 ">
     <td class="mne-repr-section-toggle"></td>
     <td>Time points</td>
     <td>3,706,304</td>
@@ -1441,9 +1408,9 @@ this file apply (plus whatever default styling the IDE applies).
 
 
 
-<tr class="mne-repr-section-header channels-c5584436-4620-4efc-877a-ddfae711ebb3"
+<tr class="mne-repr-section-header channels-3798e939-6d6a-4aa6-898e-8e9d6f82eb00"
      title="Hide section" 
-    onclick="toggleVisibility('channels-c5584436-4620-4efc-877a-ddfae711ebb3')">
+    onclick="toggleVisibility('channels-3798e939-6d6a-4aa6-898e-8e9d6f82eb00')">
     <th class="mne-repr-section-toggle">
         <button >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg>
@@ -1456,7 +1423,7 @@ this file apply (plus whatever default styling the IDE applies).
 
 
     
-<tr class="repr-element channels-c5584436-4620-4efc-877a-ddfae711ebb3 ">
+<tr class="repr-element channels-3798e939-6d6a-4aa6-898e-8e9d6f82eb00 ">
     <td class="mne-repr-section-toggle"></td>
     <td>EEG</td>
     <td>
@@ -1469,7 +1436,7 @@ this file apply (plus whatever default styling the IDE applies).
 </tr>
 
 
-<tr class="repr-element channels-c5584436-4620-4efc-877a-ddfae711ebb3 ">
+<tr class="repr-element channels-3798e939-6d6a-4aa6-898e-8e9d6f82eb00 ">
     <td class="mne-repr-section-toggle"></td>
     <td>Head & sensor digitization</td>
     
@@ -1484,9 +1451,9 @@ this file apply (plus whatever default styling the IDE applies).
 
 
 
-<tr class="mne-repr-section-header filters-5d8320c8-940b-4a1f-ad32-5e55d23028fa"
+<tr class="mne-repr-section-header filters-b60088a4-458d-468e-8b76-30e57ee5138d"
      title="Hide section" 
-    onclick="toggleVisibility('filters-5d8320c8-940b-4a1f-ad32-5e55d23028fa')">
+    onclick="toggleVisibility('filters-b60088a4-458d-468e-8b76-30e57ee5138d')">
     <th class="mne-repr-section-toggle">
         <button >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg>
@@ -1498,14 +1465,14 @@ this file apply (plus whatever default styling the IDE applies).
 </tr>
 
 
-<tr class="repr-element filters-5d8320c8-940b-4a1f-ad32-5e55d23028fa ">
+<tr class="repr-element filters-b60088a4-458d-468e-8b76-30e57ee5138d ">
     <td class="mne-repr-section-toggle"></td>
     <td>Highpass</td>
     <td>1.00 Hz</td>
 </tr>
 
 
-<tr class="repr-element filters-5d8320c8-940b-4a1f-ad32-5e55d23028fa ">
+<tr class="repr-element filters-b60088a4-458d-468e-8b76-30e57ee5138d ">
     <td class="mne-repr-section-toggle"></td>
     <td>Lowpass</td>
     <td>45.00 Hz</td>
@@ -1528,7 +1495,7 @@ this file apply (plus whatever default styling the IDE applies).
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/82b4ca334012289ebe3faa55dba6aeb59b5d724a5f2e4bb72dcb680fa6d379b1.png" src="_images/82b4ca334012289ebe3faa55dba6aeb59b5d724a5f2e4bb72dcb680fa6d379b1.png" />
+<img alt="_images/28ce4039e80f3cf022662ad774f1514d236d40ea463905544c8ba1bcb6aabd14.png" src="_images/28ce4039e80f3cf022662ad774f1514d236d40ea463905544c8ba1bcb6aabd14.png" />
 </div>
 </div>
 </section>
@@ -1706,9 +1673,9 @@ this file apply (plus whatever default styling the IDE applies).
 
 
 
-<tr class="mne-repr-section-header general-aaf42039-619d-4a3e-9bd0-89ca41093d05"
+<tr class="mne-repr-section-header general-f35ffef7-16ea-4aad-8922-08d6bbbd027d"
      title="Hide section" 
-    onclick="toggleVisibility('general-aaf42039-619d-4a3e-9bd0-89ca41093d05')">
+    onclick="toggleVisibility('general-f35ffef7-16ea-4aad-8922-08d6bbbd027d')">
     <th class="mne-repr-section-toggle">
         <button >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg>
@@ -1720,26 +1687,26 @@ this file apply (plus whatever default styling the IDE applies).
 </tr>
 
 
-<tr class="repr-element general-aaf42039-619d-4a3e-9bd0-89ca41093d05 ">
+<tr class="repr-element general-f35ffef7-16ea-4aad-8922-08d6bbbd027d ">
     <td class="mne-repr-section-toggle"></td>
     <td>MNE object type</td>
     <td>Epochs</td>
 </tr>
-<tr class="repr-element general-aaf42039-619d-4a3e-9bd0-89ca41093d05 ">
+<tr class="repr-element general-f35ffef7-16ea-4aad-8922-08d6bbbd027d ">
     <td class="mne-repr-section-toggle"></td>
     <td>Measurement date</td>
     
     <td>Unknown</td>
     
 </tr>
-<tr class="repr-element general-aaf42039-619d-4a3e-9bd0-89ca41093d05 ">
+<tr class="repr-element general-f35ffef7-16ea-4aad-8922-08d6bbbd027d ">
     <td class="mne-repr-section-toggle"></td>
     <td>Participant</td>
     
     <td>Unknown</td>
     
 </tr>
-<tr class="repr-element general-aaf42039-619d-4a3e-9bd0-89ca41093d05 ">
+<tr class="repr-element general-f35ffef7-16ea-4aad-8922-08d6bbbd027d ">
     <td class="mne-repr-section-toggle"></td>
     <td>Experimenter</td>
     
@@ -1754,9 +1721,9 @@ this file apply (plus whatever default styling the IDE applies).
 
 
 
-<tr class="mne-repr-section-header acquisition-77627c6d-f07f-4381-afdf-56bc7fb5e274"
+<tr class="mne-repr-section-header acquisition-411558bc-e0ce-447c-ac04-c70359ca05e5"
      title="Hide section" 
-    onclick="toggleVisibility('acquisition-77627c6d-f07f-4381-afdf-56bc7fb5e274')">
+    onclick="toggleVisibility('acquisition-411558bc-e0ce-447c-ac04-c70359ca05e5')">
     <th class="mne-repr-section-toggle">
         <button >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg>
@@ -1771,14 +1738,14 @@ this file apply (plus whatever default styling the IDE applies).
 
 
 
-<tr class="repr-element acquisition-77627c6d-f07f-4381-afdf-56bc7fb5e274 ">
+<tr class="repr-element acquisition-411558bc-e0ce-447c-ac04-c70359ca05e5 ">
     <td class="mne-repr-section-toggle"></td>
     <td>Total number of events</td>
     <td>40</td>
 </tr>
 
 
-<tr class="repr-element acquisition-77627c6d-f07f-4381-afdf-56bc7fb5e274 ">
+<tr class="repr-element acquisition-411558bc-e0ce-447c-ac04-c70359ca05e5 ">
     <td class="mne-repr-section-toggle"></td>
     <td>Events counts</td>
     
@@ -1795,35 +1762,35 @@ this file apply (plus whatever default styling the IDE applies).
 </tr>
 
 
-<tr class="repr-element acquisition-77627c6d-f07f-4381-afdf-56bc7fb5e274 ">
+<tr class="repr-element acquisition-411558bc-e0ce-447c-ac04-c70359ca05e5 ">
     <td class="mne-repr-section-toggle"></td>
     <td>Time range</td>
     <td>0.000 – 15.000 s</td>
 </tr>
 
 
-<tr class="repr-element acquisition-77627c6d-f07f-4381-afdf-56bc7fb5e274 ">
+<tr class="repr-element acquisition-411558bc-e0ce-447c-ac04-c70359ca05e5 ">
     <td class="mne-repr-section-toggle"></td>
     <td>Baseline</td>
     <td>0.000 – 0.000 s</td>
 </tr>
 
 
-<tr class="repr-element acquisition-77627c6d-f07f-4381-afdf-56bc7fb5e274 ">
+<tr class="repr-element acquisition-411558bc-e0ce-447c-ac04-c70359ca05e5 ">
     <td class="mne-repr-section-toggle"></td>
     <td>Sampling frequency</td>
     <td>1200.00 Hz</td>
 </tr>
 
 
-<tr class="repr-element acquisition-77627c6d-f07f-4381-afdf-56bc7fb5e274 ">
+<tr class="repr-element acquisition-411558bc-e0ce-447c-ac04-c70359ca05e5 ">
     <td class="mne-repr-section-toggle"></td>
     <td>Time points</td>
     <td>18,001</td>
 </tr>
 
 
-<tr class="repr-element acquisition-77627c6d-f07f-4381-afdf-56bc7fb5e274 ">
+<tr class="repr-element acquisition-411558bc-e0ce-447c-ac04-c70359ca05e5 ">
     <td class="mne-repr-section-toggle"></td>
     <td>Metadata</td>
     <td>No metadata set</td>
@@ -1837,9 +1804,9 @@ this file apply (plus whatever default styling the IDE applies).
 
 
 
-<tr class="mne-repr-section-header channels-1d4fcd45-f074-4063-bb7c-500485ef3470"
+<tr class="mne-repr-section-header channels-b23b8166-5fcb-43e9-8e3d-dbe84ea1a945"
      title="Hide section" 
-    onclick="toggleVisibility('channels-1d4fcd45-f074-4063-bb7c-500485ef3470')">
+    onclick="toggleVisibility('channels-b23b8166-5fcb-43e9-8e3d-dbe84ea1a945')">
     <th class="mne-repr-section-toggle">
         <button >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg>
@@ -1852,7 +1819,7 @@ this file apply (plus whatever default styling the IDE applies).
 
 
     
-<tr class="repr-element channels-1d4fcd45-f074-4063-bb7c-500485ef3470 ">
+<tr class="repr-element channels-b23b8166-5fcb-43e9-8e3d-dbe84ea1a945 ">
     <td class="mne-repr-section-toggle"></td>
     <td>EEG</td>
     <td>
@@ -1865,7 +1832,7 @@ this file apply (plus whatever default styling the IDE applies).
 </tr>
 
 
-<tr class="repr-element channels-1d4fcd45-f074-4063-bb7c-500485ef3470 ">
+<tr class="repr-element channels-b23b8166-5fcb-43e9-8e3d-dbe84ea1a945 ">
     <td class="mne-repr-section-toggle"></td>
     <td>Head & sensor digitization</td>
     
@@ -1880,9 +1847,9 @@ this file apply (plus whatever default styling the IDE applies).
 
 
 
-<tr class="mne-repr-section-header filters-28c10ff1-2f87-40c3-9192-12c86252ee75"
+<tr class="mne-repr-section-header filters-1a99e778-9555-4226-82e7-bb4fe996bcc4"
      title="Hide section" 
-    onclick="toggleVisibility('filters-28c10ff1-2f87-40c3-9192-12c86252ee75')">
+    onclick="toggleVisibility('filters-1a99e778-9555-4226-82e7-bb4fe996bcc4')">
     <th class="mne-repr-section-toggle">
         <button >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg>
@@ -1894,14 +1861,14 @@ this file apply (plus whatever default styling the IDE applies).
 </tr>
 
 
-<tr class="repr-element filters-28c10ff1-2f87-40c3-9192-12c86252ee75 ">
+<tr class="repr-element filters-1a99e778-9555-4226-82e7-bb4fe996bcc4 ">
     <td class="mne-repr-section-toggle"></td>
     <td>Highpass</td>
     <td>1.00 Hz</td>
 </tr>
 
 
-<tr class="repr-element filters-28c10ff1-2f87-40c3-9192-12c86252ee75 ">
+<tr class="repr-element filters-1a99e778-9555-4226-82e7-bb4fe996bcc4 ">
     <td class="mne-repr-section-toggle"></td>
     <td>Lowpass</td>
     <td>45.00 Hz</td>
@@ -1930,7 +1897,7 @@ this file apply (plus whatever default styling the IDE applies).
 combining channels using &quot;mean&quot;
 </pre></div>
 </div>
-<img alt="_images/c7ce2c888c2689bed1d7dce0ee70e81a5b3510b249dd506430dab917b06bfa82.png" src="_images/c7ce2c888c2689bed1d7dce0ee70e81a5b3510b249dd506430dab917b06bfa82.png" />
+<img alt="_images/b054d9973ccf9d87db54dc8de9e87a99aed4c81e8222ea96a8c7b348c54f3f52.png" src="_images/b054d9973ccf9d87db54dc8de9e87a99aed4c81e8222ea96a8c7b348c54f3f52.png" />
 </div>
 </div>
 <p>In this plot, we can see that the data are frequency tagged. While these data were collected, the participant was performing an attention task in which two visual stimuli were flickering at 6 Hz and 7.5 Hz respectively. On each trial the participant was cued to monitor one of these two stimuli for brief bursts of motion. From previous research, we expect that the steady-state visual evoked potential (SSVEP) should be larger at the attended frequency than the unattended frequency. First, we’ll examine how these frequency-tagged responses evolve over time, then quantify their overall strength. Let’s check if this is true.</p>
@@ -1969,7 +1936,7 @@ combining channels using &quot;mean&quot;
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/6657e3f0066d28c087f573a4907b90299b6eaec9551269801736ae1dddc6e5e2.png" src="_images/6657e3f0066d28c087f573a4907b90299b6eaec9551269801736ae1dddc6e5e2.png" />
+<img alt="_images/625ea04ee98e00edbdae061e0c1cf62f5f85b7d56e5cb280dd7015d5fe4f5b17.png" src="_images/625ea04ee98e00edbdae061e0c1cf62f5f85b7d56e5cb280dd7015d5fe4f5b17.png" />
 </div>
 </div>
 </section>
@@ -2020,10 +1987,48 @@ combining channels using &quot;mean&quot;
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/72f71fea08b62e7e9a3a23400640dbd426e66992845721f51cc5f37d11fe25a4.png" src="_images/72f71fea08b62e7e9a3a23400640dbd426e66992845721f51cc5f37d11fe25a4.png" />
+<img alt="_images/a767004c98656e6ae289d729a010f120b5299e0b2d19e1ea2d7b33e9192d5988.png" src="_images/a767004c98656e6ae289d729a010f120b5299e0b2d19e1ea2d7b33e9192d5988.png" />
 </div>
 </div>
 <p>This plot shows that the SSVEPs were indeed modulated by attention in the direction we would expect!</p>
+<section id="dependencies-in-jupyter-python">
+<h4>Dependencies in Jupyter/Python<a class="headerlink" href="#dependencies-in-jupyter-python" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Using the package <a class="reference external" href="https://github.com/rasbt/watermark">watermark</a> to document system environment and software versions used in this notebook</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> watermark
+
+<span class="o">%</span><span class="k">watermark</span>
+<span class="o">%</span><span class="k">watermark</span> --iversions
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Last updated: 2025-12-05T00:09:54.197161+00:00
+
+Python implementation: CPython
+Python version       : 3.13.9
+IPython version      : 9.7.0
+
+Compiler    : GCC 14.3.0
+OS          : Linux
+Release     : 6.8.0-1041-azure
+Machine     : x86_64
+Processor   : x86_64
+CPU cores   : 4
+Architecture: 64bit
+
+matplotlib: 3.10.7
+numpy     : 2.3.5
+mne       : 1.10.0
+scipy     : 1.16.3
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 </section>
 </section>
 </section>
@@ -2078,7 +2083,6 @@ combining channels using &quot;mean&quot;
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tools-included-in-this-workflow">Tools included in this workflow</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tutorial-this-work-is-based-on">Tutorial this work is based on</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset">Dataset</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#check-cpu-vendor-and-model-for-compatibility-or-performance-considerations">Check CPU vendor and model for compatibility or performance considerations</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-and-import-python-libraries">Install and import python libraries</a></li>
@@ -2089,7 +2093,10 @@ combining channels using &quot;mean&quot;
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#extract-eeg-channels-and-preprocess">Extract EEG Channels and Preprocess</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#epoching-the-data">Epoching the Data</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fft">FFT</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exporting-the-data">Exporting the data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exporting-the-data">Exporting the data</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#dependencies-in-jupyter-python">Dependencies in Jupyter/Python</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
