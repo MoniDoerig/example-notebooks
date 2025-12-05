@@ -1,67 +1,93 @@
 Traceback (most recent call last):
-  File "/home/runner/.local/lib/python3.10/site-packages/jupyter_core/utils/__init__.py", line 154, in wrapped
-    asyncio.get_running_loop()
-RuntimeError: no running event loop
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/runner/.local/lib/python3.10/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+  File "/opt/conda/lib/python3.13/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
     executenb(
-  File "/home/runner/.local/lib/python3.10/site-packages/nbclient/client.py", line 1319, in execute
+    ~~~~~~~~~^
+        nb,
+        ^^^
+    ...<4 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "/opt/conda/lib/python3.13/site-packages/nbclient/client.py", line 1319, in execute
     return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
-  File "/home/runner/.local/lib/python3.10/site-packages/jupyter_core/utils/__init__.py", line 158, in wrapped
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/opt/conda/lib/python3.13/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
     return loop.run_until_complete(inner)
-  File "/usr/lib/python3.10/asyncio/base_events.py", line 649, in run_until_complete
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/opt/conda/lib/python3.13/asyncio/base_events.py", line 725, in run_until_complete
     return future.result()
-  File "/home/runner/.local/lib/python3.10/site-packages/nbclient/client.py", line 709, in async_execute
+           ~~~~~~~~~~~~~^^
+  File "/opt/conda/lib/python3.13/site-packages/nbclient/client.py", line 709, in async_execute
     await self.async_execute_cell(
-  File "/home/runner/.local/lib/python3.10/site-packages/nbclient/client.py", line 1062, in async_execute_cell
+        cell, index, execution_count=self.code_cells_executed + 1
+    )
+  File "/opt/conda/lib/python3.13/site-packages/nbclient/client.py", line 1062, in async_execute_cell
     await self._check_raise_for_error(cell, cell_index, exec_reply)
-  File "/home/runner/.local/lib/python3.10/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
+  File "/opt/conda/lib/python3.13/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-%%bash -s "$fid_path"
-DATA_FILE="$1"
-LCM_DIR="./lcmodel_outputs/"
-MET_H2O="raw"
+# ===  Get path to lcmodel executable
+lcmodel_path = subprocess.check_output("which lcmodel", shell=True, text=True).strip()
 
-mkdir -p "${LCM_DIR}${MET_H2O}"
-    
-/home/jovyan/.lcmodel/varian/bin2raw $DATA_FILE $LCM_DIR $MET_H2O
+# === Extract container base and image path
+container_base = os.path.dirname(lcmodel_path)  # e.g., .../lcmodel_6.3_20220222
+container_id = os.path.basename(container_base)  # e.g., lcmodel_6.3_20220222
+simg_path = os.path.join(container_base, f"{container_id}.simg")
+
+# ===  Construct dataset paths inside 
+fid_path = os.path.join(
+    simg_path,
+    "opt/datasets/Spectra_hippocampus(rat)_TE02/s_20131015_03_BDL106_scan0/isise_01.fid/fid"
+)
+basis_path = os.path.join(
+    simg_path,
+    "opt/datasets/Spectra_hippocampus(rat)_TE02/Control_files_Basis_set"
+)
+# Get single BASIS file (will raise error if not exactly one)
+basis_files = glob.glob(os.path.join(basis_path, "*.BASIS"))
+basis_file = basis_files[0]
+
+
+# === Check existence of the paths
+fid_exists = Path(fid_path).exists()
+basis_dir_exists = Path(basis_path).exists()
+basis_file_exists = Path(basis_file).exists()
+
+# === Report status
+print(f"FID path:          {fid_path}")
+print(f"BASIS file:        {basis_file}")
+print(f"FID exists?        {'✅' if fid_exists else '❌'}")
+print(f"BASIS dir exists?  {'✅' if basis_dir_exists else '❌'}")
+print(f"BASIS file exists?  {'✅' if basis_file_exists else '❌'}")
+
+# Raise error or fallback if paths missing
+if not fid_exists or not basis_file_exists:
+    raise FileNotFoundError("One or more required dataset paths could not be found.")
 ------------------
 
------ stderr -----
-bash: line 7: /home/jovyan/.lcmodel/varian/bin2raw: No such file or directory
-------------------
 
-[0;31m---------------------------------------------------------------------------[0m
-[0;31mCalledProcessError[0m                        Traceback (most recent call last)
-Cell [0;32mIn[9], line 1[0m
-[0;32m----> 1[0m [43mget_ipython[49m[43m([49m[43m)[49m[38;5;241;43m.[39;49m[43mrun_cell_magic[49m[43m([49m[38;5;124;43m'[39;49m[38;5;124;43mbash[39;49m[38;5;124;43m'[39;49m[43m,[49m[43m [49m[38;5;124;43m'[39;49m[38;5;124;43m-s [39;49m[38;5;124;43m"[39;49m[38;5;124;43m$fid_path[39;49m[38;5;124;43m"[39;49m[38;5;124;43m'[39;49m[43m,[49m[43m [49m[38;5;124;43m'[39;49m[38;5;124;43mDATA_FILE=[39;49m[38;5;124;43m"[39;49m[38;5;124;43m$1[39;49m[38;5;124;43m"[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43mLCM_DIR=[39;49m[38;5;124;43m"[39;49m[38;5;124;43m./lcmodel_outputs/[39;49m[38;5;124;43m"[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43mMET_H2O=[39;49m[38;5;124;43m"[39;49m[38;5;124;43mraw[39;49m[38;5;124;43m"[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;130;43;01m\n[39;49;00m[38;5;124;43mmkdir -p [39;49m[38;5;124;43m"[39;49m[38;5;124;43m$[39;49m[38;5;132;43;01m{LCM_DIR}[39;49;00m[38;5;124;43m$[39;49m[38;5;132;43;01m{MET_H2O}[39;49;00m[38;5;124;43m"[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43m    [39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43m/home/jovyan/.lcmodel/varian/bin2raw $DATA_FILE $LCM_DIR $MET_H2O[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43m'[39;49m[43m)[49m
+[31m---------------------------------------------------------------------------[39m
+[31mCalledProcessError[39m                        Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[5][39m[32m, line 2[39m
+[32m      1[39m [38;5;66;03m# ===  Get path to lcmodel executable[39;00m
+[32m----> [39m[32m2[39m lcmodel_path = [43msubprocess[49m[43m.[49m[43mcheck_output[49m[43m([49m[33;43m"[39;49m[33;43mwhich lcmodel[39;49m[33;43m"[39;49m[43m,[49m[43m [49m[43mshell[49m[43m=[49m[38;5;28;43;01mTrue[39;49;00m[43m,[49m[43m [49m[43mtext[49m[43m=[49m[38;5;28;43;01mTrue[39;49;00m[43m)[49m.strip()
+[32m      4[39m [38;5;66;03m# === Extract container base and image path[39;00m
+[32m      5[39m container_base = os.path.dirname(lcmodel_path)  [38;5;66;03m# e.g., .../lcmodel_6.3_20220222[39;00m
 
-File [0;32m~/.local/lib/python3.10/site-packages/IPython/core/interactiveshell.py:2543[0m, in [0;36mInteractiveShell.run_cell_magic[0;34m(self, magic_name, line, cell)[0m
-[1;32m   2541[0m [38;5;28;01mwith[39;00m [38;5;28mself[39m[38;5;241m.[39mbuiltin_trap:
-[1;32m   2542[0m     args [38;5;241m=[39m (magic_arg_s, cell)
-[0;32m-> 2543[0m     result [38;5;241m=[39m [43mfn[49m[43m([49m[38;5;241;43m*[39;49m[43margs[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs[49m[43m)[49m
-[1;32m   2545[0m [38;5;66;03m# The code below prevents the output from being displayed[39;00m
-[1;32m   2546[0m [38;5;66;03m# when using magics with decorator @output_can_be_silenced[39;00m
-[1;32m   2547[0m [38;5;66;03m# when the last Python token in the expression is a ';'.[39;00m
-[1;32m   2548[0m [38;5;28;01mif[39;00m [38;5;28mgetattr[39m(fn, magic[38;5;241m.[39mMAGIC_OUTPUT_CAN_BE_SILENCED, [38;5;28;01mFalse[39;00m):
+[36mFile [39m[32m/opt/conda/lib/python3.13/subprocess.py:472[39m, in [36mcheck_output[39m[34m(timeout, *popenargs, **kwargs)[39m
+[32m    469[39m         empty = [33mb[39m[33m'[39m[33m'[39m
+[32m    470[39m     kwargs[[33m'[39m[33minput[39m[33m'[39m] = empty
+[32m--> [39m[32m472[39m [38;5;28;01mreturn[39;00m [43mrun[49m[43m([49m[43m*[49m[43mpopenargs[49m[43m,[49m[43m [49m[43mstdout[49m[43m=[49m[43mPIPE[49m[43m,[49m[43m [49m[43mtimeout[49m[43m=[49m[43mtimeout[49m[43m,[49m[43m [49m[43mcheck[49m[43m=[49m[38;5;28;43;01mTrue[39;49;00m[43m,[49m
+[32m    473[39m [43m           [49m[43m*[49m[43m*[49m[43mkwargs[49m[43m)[49m.stdout
 
-File [0;32m~/.local/lib/python3.10/site-packages/IPython/core/magics/script.py:159[0m, in [0;36mScriptMagics._make_script_magic.<locals>.named_script_magic[0;34m(line, cell)[0m
-[1;32m    157[0m [38;5;28;01melse[39;00m:
-[1;32m    158[0m     line [38;5;241m=[39m script
-[0;32m--> 159[0m [38;5;28;01mreturn[39;00m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mshebang[49m[43m([49m[43mline[49m[43m,[49m[43m [49m[43mcell[49m[43m)[49m
+[36mFile [39m[32m/opt/conda/lib/python3.13/subprocess.py:577[39m, in [36mrun[39m[34m(input, capture_output, timeout, check, *popenargs, **kwargs)[39m
+[32m    575[39m     retcode = process.poll()
+[32m    576[39m     [38;5;28;01mif[39;00m check [38;5;129;01mand[39;00m retcode:
+[32m--> [39m[32m577[39m         [38;5;28;01mraise[39;00m CalledProcessError(retcode, process.args,
+[32m    578[39m                                  output=stdout, stderr=stderr)
+[32m    579[39m [38;5;28;01mreturn[39;00m CompletedProcess(process.args, retcode, stdout, stderr)
 
-File [0;32m~/.local/lib/python3.10/site-packages/IPython/core/magics/script.py:336[0m, in [0;36mScriptMagics.shebang[0;34m(self, line, cell)[0m
-[1;32m    331[0m [38;5;28;01mif[39;00m args[38;5;241m.[39mraise_error [38;5;129;01mand[39;00m p[38;5;241m.[39mreturncode [38;5;241m!=[39m [38;5;241m0[39m:
-[1;32m    332[0m     [38;5;66;03m# If we get here and p.returncode is still None, we must have[39;00m
-[1;32m    333[0m     [38;5;66;03m# killed it but not yet seen its return code. We don't wait for it,[39;00m
-[1;32m    334[0m     [38;5;66;03m# in case it's stuck in uninterruptible sleep. -9 = SIGKILL[39;00m
-[1;32m    335[0m     rc [38;5;241m=[39m p[38;5;241m.[39mreturncode [38;5;129;01mor[39;00m [38;5;241m-[39m[38;5;241m9[39m
-[0;32m--> 336[0m     [38;5;28;01mraise[39;00m CalledProcessError(rc, cell)
-
-[0;31mCalledProcessError[0m: Command 'b'DATA_FILE="$1"\nLCM_DIR="./lcmodel_outputs/"\nMET_H2O="raw"\n\nmkdir -p "${LCM_DIR}${MET_H2O}"\n    \n/home/jovyan/.lcmodel/varian/bin2raw $DATA_FILE $LCM_DIR $MET_H2O\n'' returned non-zero exit status 127.
+[31mCalledProcessError[39m: Command 'which lcmodel' returned non-zero exit status 1.
 
