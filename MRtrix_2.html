@@ -449,8 +449,13 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#constrained-spherical-deconvolution-and-tissue-estimation">Constrained Spherical Deconvolution and Tissue estimation</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#output-cpu-information">Output CPU information</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-python-modules">Import Python Modules</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#citation-and-resources">Citation and Resources:</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tools-included-in-this-workflow">Tools included in this workflow</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#educational-resources">Educational Resources</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset">Dataset</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-python-libraries">Import Python Libraries</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a><ul class="nav section-nav flex-column">
@@ -468,6 +473,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fiber-orientation-density-fod">Fiber Orientation Density (FOD)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3"></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4"></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reconstruction-with-constrained-spherical-deconvolution-with-dipy">Reconstruction with Constrained Spherical Deconvolution with DIPY</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#normalization">Normalization</a></li>
@@ -479,6 +485,7 @@ document.write(`
 </li>
 </ul>
 </li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dependencies-in-jupyter-python">Dependencies in Jupyter/Python</a></li>
 </ul>
 </li>
 </ul>
@@ -499,12 +506,36 @@ document.write(`
 <p>This notebook is the second in a series on Diffusion Analysis using MRtrix and builds upon the preprocessed data generated in <strong>MRtrix: Part 1 - Preprocessing</strong>. The data necessary for this example will be downloaded from OSF.</p>
 <section id="id1">
 <h3><a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
-<p>Author: Monika Doerig</p>
-<p>Citation:</p>
+<p><strong>Author:</strong> Monika Doerig</p>
+<p><strong>Date:</strong> 5 June 2025</p>
+</section>
+<section id="citation-and-resources">
+<h3>Citation and Resources:<a class="headerlink" href="#citation-and-resources" title="Link to this heading">#</a></h3>
+<section id="tools-included-in-this-workflow">
+<h4>Tools included in this workflow<a class="headerlink" href="#tools-included-in-this-workflow" title="Link to this heading">#</a></h4>
+<p><strong>MRtrix3:</strong></p>
+<ul class="simple">
+<li><p>Tournier, J.-D.; Smith, R. E.; Raffelt, D.; Tabbara, R.; Dhollander, T.; Pietsch, M.; Christiaens, D.; Jeurissen, B.; Yeh, C.-H. &amp; Connelly, A. MRtrix3: A fast, flexible and open software framework for medical image processing and visualisation. NeuroImage, 2019, 202, 116137. <a class="reference external" href="https://doi.org/10.1016/j.neuroimage.2019.116137">https://doi.org/10.1016/j.neuroimage.2019.116137</a></p></li>
+<li><p>For more details: <a class="reference external" href="https://www.mrtrix.org/">https://www.mrtrix.org/</a></p></li>
+</ul>
+<p><strong>DIPY:</strong></p>
+<ul class="simple">
+<li><p>Garyfallidis, E., Brett, M., Amirbekian, B., Rokem, A., van der Walt, S., Descoteaux, M., Nimmo-Smith, I., &amp; Dipy Contributors (2014). Dipy, a library for the analysis of diffusion MRI data. Frontiers in neuroinformatics, 8, 8. <a class="reference external" href="https://doi.org/10.3389/fninf.2014.00008">https://doi.org/10.3389/fninf.2014.00008</a></p></li>
+</ul>
+</section>
+<section id="educational-resources">
+<h4>Educational Resources<a class="headerlink" href="#educational-resources" title="Link to this heading">#</a></h4>
 <p><strong>Andy’s Brain Book:</strong></p>
 <ul class="simple">
 <li><p>This MRtrix example is based on the <a class="reference external" href="https://andysbrainbook.readthedocs.io/en/latest/MRtrix/MRtrix_Introduction.html#">Diffusion Analysis with MRtrix</a> chapter from Andy’s Brain Book (Jahn, 2022. <a class="reference external" href="https://zenodo.org/records/5879294">doi:10.5281/zenodo.5879293</a>)</p></li>
 </ul>
+<p><strong>Tutorial on Neurodesk:</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://neurodesk.org/tutorials-examples/tutorials/open_data/osfclient/">Publishing and Accessing Open Data on OSF with <code class="docutils literal notranslate"><span class="pre">osfclient</span></code> on Neurodesk</a></p></li>
+</ul>
+</section>
+<section id="dataset">
+<h4>Dataset<a class="headerlink" href="#dataset" title="Link to this heading">#</a></h4>
 <p><strong>Original Data from OpenNeuro:</strong></p>
 <ul class="simple">
 <li><p>Hannelore Aerts and Daniele Marinazzo (2018). BTC_preop. <a class="reference external" href="https://openneuro.org/datasets/ds001226/versions/00001">OpenNeuro Dataset ds001226</a></p></li>
@@ -513,39 +544,18 @@ document.write(`
 <ul class="simple">
 <li><p>Dörig, M. (2024, November 19). Diffusion MRI Analysis with MRtrix: An Interactive Three-Part Series on Neurodesk. Retrieved from <a class="reference external" href="https://osf.io/y2dq4/">OSF</a></p></li>
 </ul>
-<p><strong>Tutorial: Publishing and Accessing Open Data on OSF with <code class="docutils literal notranslate"><span class="pre">osfclient</span></code> on Neurodesk:</strong></p>
-<ul class="simple">
-<li><p>https://neurodesk.org/tutorials-examples/tutorials/open_data/osfclient/</p></li>
-</ul>
-<p><strong>MRtrix3:</strong></p>
-<ul class="simple">
-<li><p>Tournier, J.-D.; Smith, R. E.; Raffelt, D.; Tabbara, R.; Dhollander, T.; Pietsch, M.; Christiaens, D.; Jeurissen, B.; Yeh, C.-H. &amp; Connelly, A. MRtrix3: A fast, flexible and open software framework for medical image processing and visualisation. NeuroImage, 2019, 202, 116137. https://doi.org/10.1016/j.neuroimage.2019.116137</p></li>
-<li><p>For more details: https://www.mrtrix.org/</p></li>
-</ul>
-<p><strong>DIPY:</strong></p>
-<ul class="simple">
-<li><p>Garyfallidis, E., Brett, M., Amirbekian, B., Rokem, A., van der Walt, S., Descoteaux, M., Nimmo-Smith, I., &amp; Dipy Contributors (2014). Dipy, a library for the analysis of diffusion MRI data. Frontiers in neuroinformatics, 8, 8. https://doi.org/10.3389/fninf.2014.00008</p></li>
-</ul>
 </section>
-<section id="output-cpu-information">
-<h3>Output CPU information<a class="headerlink" href="#output-cpu-information" title="Link to this heading">#</a></h3>
+</section>
+<section id="import-python-libraries">
+<h3>Import Python Libraries<a class="headerlink" href="#import-python-libraries" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>cat<span class="w"> </span>/proc/cpuinfo<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s1">&#39;vendor&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>uniq
-<span class="o">!</span>cat<span class="w"> </span>/proc/cpuinfo<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s1">&#39;model name&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>uniq
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>vendor_id	: GenuineIntel
-model name	: Intel(R) Xeon(R) Platinum 8370C CPU @ 2.80GHz
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%capture</span>
+<span class="err">!</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">numpy</span><span class="o">==</span><span class="mf">1.26.4</span> <span class="n">vtk</span><span class="o">==</span><span class="mf">9.4.0</span> <span class="n">fury</span><span class="o">==</span><span class="mf">0.11.0</span> <span class="n">dipy</span><span class="o">==</span><span class="mf">1.9.0</span> <span class="n">nibabel</span><span class="o">==</span><span class="mf">5.3.2</span>
 </pre></div>
 </div>
 </div>
 </div>
-</section>
-<section id="import-python-modules">
-<h3>Import Python Modules<a class="headerlink" href="#import-python-modules" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
@@ -557,6 +567,28 @@ model name	: Intel(R) Xeon(R) Platinum 8370C CPU @ 2.80GHz
 <span class="kn">from</span><span class="w"> </span><span class="nn">ipyniivue</span><span class="w"> </span><span class="kn">import</span> <span class="n">NiiVue</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">Markdown</span><span class="p">,</span> <span class="n">Image</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">ipywidgets</span><span class="w"> </span><span class="kn">import</span> <span class="n">RadioButtons</span><span class="p">,</span> <span class="n">VBox</span><span class="p">,</span> <span class="n">HBox</span><span class="p">,</span> <span class="n">Dropdown</span><span class="p">,</span> <span class="n">Output</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dipy.data</span><span class="w"> </span><span class="kn">import</span> <span class="n">default_sphere</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dipy.core.gradients</span><span class="w"> </span><span class="kn">import</span> <span class="n">gradient_table</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dipy.io.image</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_nifti</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dipy.reconst.csdeconv</span><span class="w"> </span><span class="kn">import</span> <span class="n">auto_response_ssst</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dipy.reconst.csdeconv</span><span class="w"> </span><span class="kn">import</span> <span class="n">ConstrainedSphericalDeconvModel</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dipy.viz</span><span class="w"> </span><span class="kn">import</span> <span class="n">window</span><span class="p">,</span> <span class="n">actor</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dipy.sims.voxel</span><span class="w"> </span><span class="kn">import</span> <span class="n">single_tensor_odf</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dipy.direction</span><span class="w"> </span><span class="kn">import</span> <span class="n">peaks_from_model</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">10</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">Markdown</span><span class="p">,</span> <span class="n">Image</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="kn">from</span><span class="w"> </span><span class="nn">ipywidgets</span><span class="w"> </span><span class="kn">import</span> <span class="n">RadioButtons</span><span class="p">,</span> <span class="n">VBox</span><span class="p">,</span> <span class="n">HBox</span><span class="p">,</span> <span class="n">Dropdown</span><span class="p">,</span> <span class="n">Output</span>
+<span class="ne">---&gt; </span><span class="mi">10</span> <span class="kn">from</span><span class="w"> </span><span class="nn">dipy.data</span><span class="w"> </span><span class="kn">import</span> <span class="n">default_sphere</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="kn">from</span><span class="w"> </span><span class="nn">dipy.core.gradients</span><span class="w"> </span><span class="kn">import</span> <span class="n">gradient_table</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="kn">from</span><span class="w"> </span><span class="nn">dipy.io.image</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_nifti</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;dipy&#39;
 </pre></div>
 </div>
 </div>
@@ -579,39 +611,7 @@ model name	: Intel(R) Xeon(R) Platinum 8370C CPU @ 2.80GHz
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Lmod Warning: MODULEPATH is undefined.
-
-
-
-Lmod has detected the following error: The following module(s) are unknown:
-&quot;mrtrix3/3.0.4&quot;
-
-Please check the spelling or version number. Also try &quot;module spider ...&quot;
-It is also possible your cache file is out-of-date; it may help to try:
-  $ module --ignore_cache load &quot;mrtrix3/3.0.4&quot;
-
-Also make sure that all modulefiles written in TCL start with the string
-#%Module
-
-
-
-
-Lmod Warning: MODULEPATH is undefined.
-
-
-
-Lmod has detected the following error: The following module(s) are unknown:
-&quot;fsl/6.0.7.4&quot;
-
-Please check the spelling or version number. Also try &quot;module spider ...&quot;
-It is also possible your cache file is out-of-date; it may help to try:
-  $ module --ignore_cache load &quot;fsl/6.0.7.4&quot;
-
-Also make sure that all modulefiles written in TCL start with the string
-#%Module
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;mrtrix3/3.0.4&#39;, &#39;fsl/6.0.7.4&#39;]
 </pre></div>
 </div>
 </div>
@@ -631,94 +631,11 @@ Also make sure that all modulefiles written in TCL start with the string
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|                                           | 0.00/80.0k [00:00&lt;?, ?bytes/s]
- 41%|██████████████▎                    | 32.8k/80.0k [00:00&lt;00:00, 277kbytes/s]
-100%|███████████████████████████████████| 80.0k/80.0k [00:00&lt;00:00, 353kbytes/s]
-  0%|                                            | 0.00/226M [00:00&lt;?, ?bytes/s]
-  0%|                                    | 32.8k/226M [00:00&lt;13:39, 275kbytes/s]
-  0%|                                    | 65.5k/226M [00:00&lt;12:53, 292kbytes/s]
-  0%|                                    | 98.3k/226M [00:00&lt;13:01, 288kbytes/s]
-  0%|                                     | 180k/226M [00:00&lt;07:59, 470kbytes/s]
-  0%|                                     | 344k/226M [00:00&lt;04:27, 843kbytes/s]
-  0%|                                    | 623k/226M [00:00&lt;02:34, 1.46Mbytes/s]
-  1%|▏                                  | 1.18M/226M [00:00&lt;01:22, 2.73Mbytes/s]
-  1%|▎                                  | 2.31M/226M [00:00&lt;00:41, 5.35Mbytes/s]
-  2%|▋                                  | 4.46M/226M [00:00&lt;00:21, 10.2Mbytes/s]
-  4%|█▎                                 | 8.36M/226M [00:01&lt;00:11, 18.9Mbytes/s]
-  5%|█▉                                 | 12.3M/226M [00:01&lt;00:08, 24.5Mbytes/s]
-  7%|██▎                                | 14.7M/226M [00:01&lt;00:08, 23.5Mbytes/s]
-  8%|██▋                                | 17.1M/226M [00:01&lt;00:08, 23.6Mbytes/s]
-  9%|███▏                               | 20.9M/226M [00:01&lt;00:07, 27.7Mbytes/s]
- 11%|███▊                               | 24.6M/226M [00:01&lt;00:06, 30.5Mbytes/s]
- 13%|████▍                              | 28.4M/226M [00:01&lt;00:06, 32.6Mbytes/s]
- 14%|████▉                              | 31.7M/226M [00:01&lt;00:07, 27.4Mbytes/s]
- 16%|█████▍                             | 35.4M/226M [00:01&lt;00:06, 29.9Mbytes/s]
- 17%|█████▉                             | 38.5M/226M [00:02&lt;00:07, 26.0Mbytes/s]
- 19%|██████▌                            | 42.2M/226M [00:02&lt;00:06, 28.8Mbytes/s]
- 20%|███████▏                           | 46.0M/226M [00:02&lt;00:05, 31.1Mbytes/s]
- 22%|███████▋                           | 49.7M/226M [00:02&lt;00:05, 32.8Mbytes/s]
- 24%|████████▏                          | 53.2M/226M [00:02&lt;00:05, 30.4Mbytes/s]
- 25%|████████▊                          | 57.1M/226M [00:02&lt;00:05, 32.7Mbytes/s]
- 27%|█████████▍                         | 61.0M/226M [00:02&lt;00:04, 34.1Mbytes/s]
- 29%|██████████                         | 64.9M/226M [00:02&lt;00:04, 35.3Mbytes/s]
- 30%|██████████▋                        | 68.7M/226M [00:02&lt;00:04, 36.1Mbytes/s]
- 32%|███████████▎                       | 72.5M/226M [00:03&lt;00:04, 36.7Mbytes/s]
- 34%|███████████▊                       | 76.4M/226M [00:03&lt;00:04, 37.0Mbytes/s]
- 36%|████████████▍                      | 80.2M/226M [00:03&lt;00:03, 37.3Mbytes/s]
- 37%|█████████████                      | 84.1M/226M [00:03&lt;00:03, 37.6Mbytes/s]
- 39%|█████████████▋                     | 87.9M/226M [00:03&lt;00:03, 37.7Mbytes/s]
- 41%|██████████████▏                    | 91.7M/226M [00:03&lt;00:03, 37.7Mbytes/s]
- 42%|██████████████▊                    | 95.6M/226M [00:03&lt;00:03, 37.8Mbytes/s]
- 44%|███████████████▍                   | 99.4M/226M [00:03&lt;00:03, 37.9Mbytes/s]
- 46%|████████████████▍                   | 103M/226M [00:03&lt;00:03, 37.8Mbytes/s]
- 47%|█████████████████                   | 107M/226M [00:03&lt;00:03, 34.1Mbytes/s]
- 49%|█████████████████▋                  | 111M/226M [00:04&lt;00:03, 35.2Mbytes/s]
- 51%|██████████████████▎                 | 115M/226M [00:04&lt;00:03, 36.0Mbytes/s]
- 53%|██████████████████▉                 | 119M/226M [00:04&lt;00:02, 36.5Mbytes/s]
- 54%|███████████████████▌                | 122M/226M [00:04&lt;00:02, 37.0Mbytes/s]
- 56%|████████████████████▏               | 126M/226M [00:04&lt;00:02, 37.3Mbytes/s]
- 58%|████████████████████▊               | 130M/226M [00:04&lt;00:02, 37.6Mbytes/s]
- 59%|█████████████████████▎              | 134M/226M [00:04&lt;00:02, 37.7Mbytes/s]
- 61%|█████████████████████▉              | 138M/226M [00:04&lt;00:02, 37.8Mbytes/s]
- 63%|██████████████████████▌             | 142M/226M [00:04&lt;00:02, 36.2Mbytes/s]
- 64%|███████████████████████▏            | 145M/226M [00:05&lt;00:02, 28.1Mbytes/s]
- 66%|███████████████████████▋            | 149M/226M [00:05&lt;00:02, 29.5Mbytes/s]
- 68%|████████████████████████▎           | 152M/226M [00:05&lt;00:02, 31.5Mbytes/s]
- 69%|████████████████████████▉           | 156M/226M [00:05&lt;00:02, 33.0Mbytes/s]
- 71%|█████████████████████████▍          | 160M/226M [00:05&lt;00:01, 34.3Mbytes/s]
- 72%|██████████████████████████          | 164M/226M [00:05&lt;00:01, 35.1Mbytes/s]
- 74%|██████████████████████████▋         | 167M/226M [00:05&lt;00:01, 35.9Mbytes/s]
- 76%|███████████████████████████▎        | 171M/226M [00:05&lt;00:01, 34.4Mbytes/s]
- 77%|███████████████████████████▊        | 174M/226M [00:05&lt;00:01, 33.3Mbytes/s]
- 79%|████████████████████████████▍       | 178M/226M [00:06&lt;00:01, 32.3Mbytes/s]
- 80%|████████████████████████████▉       | 182M/226M [00:06&lt;00:01, 33.8Mbytes/s]
- 82%|█████████████████████████████▌      | 185M/226M [00:06&lt;00:01, 34.7Mbytes/s]
- 84%|██████████████████████████████▏     | 189M/226M [00:06&lt;00:01, 35.4Mbytes/s]
- 85%|██████████████████████████████▊     | 193M/226M [00:06&lt;00:00, 36.0Mbytes/s]
- 87%|███████████████████████████████▎    | 196M/226M [00:06&lt;00:01, 28.4Mbytes/s]
- 88%|███████████████████████████████▊    | 200M/226M [00:06&lt;00:00, 28.9Mbytes/s]
- 90%|████████████████████████████████▍   | 203M/226M [00:06&lt;00:00, 30.9Mbytes/s]
- 92%|█████████████████████████████████   | 207M/226M [00:06&lt;00:00, 32.7Mbytes/s]
- 93%|█████████████████████████████████▌  | 211M/226M [00:07&lt;00:00, 34.0Mbytes/s]
- 95%|██████████████████████████████████▏ | 214M/226M [00:07&lt;00:00, 34.9Mbytes/s]
- 97%|██████████████████████████████████▊ | 218M/226M [00:07&lt;00:00, 35.7Mbytes/s]
- 98%|███████████████████████████████████▍| 222M/226M [00:07&lt;00:00, 36.2Mbytes/s]
-100%|████████████████████████████████████| 226M/226M [00:07&lt;00:00, 30.2Mbytes/s]
-  0%|                                           | 0.00/8.31M [00:00&lt;?, ?bytes/s]
-  0%|▏                                  | 32.8k/8.31M [00:00&lt;00:29, 276kbytes/s]
-  1%|▎                                  | 65.5k/8.31M [00:00&lt;00:28, 292kbytes/s]
-  1%|▍                                  | 98.3k/8.31M [00:00&lt;00:28, 289kbytes/s]
-  2%|▊                                   | 180k/8.31M [00:00&lt;00:17, 471kbytes/s]
-  4%|█▍                                  | 344k/8.31M [00:00&lt;00:09, 846kbytes/s]
-  7%|██▌                                | 623k/8.31M [00:00&lt;00:05, 1.46Mbytes/s]
- 14%|████▊                             | 1.18M/8.31M [00:00&lt;00:02, 2.74Mbytes/s]
- 28%|█████████▍                        | 2.29M/8.31M [00:00&lt;00:01, 5.31Mbytes/s]
- 48%|████████████████▏                 | 3.95M/8.31M [00:00&lt;00:00, 8.72Mbytes/s]
- 67%|██████████████████████▉           | 5.60M/8.31M [00:01&lt;00:00, 11.1Mbytes/s]
- 88%|█████████████████████████████▉    | 7.31M/8.31M [00:01&lt;00:00, 12.8Mbytes/s]
-100%|██████████████████████████████████| 8.31M/8.31M [00:01&lt;00:00, 6.84Mbytes/s]
-100%|██████████████████████████████████████| 476/476 [00:00&lt;00:00, 4.72Mbytes/s]
-100%|██████████████████████████████████| 2.77k/2.77k [00:00&lt;00:00, 17.3Mbytes/s]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████████████████████████████| 80.0k/80.0k [00:00&lt;00:00, 40.5Mbytes/s]
+100%|████████████████████████████████████| 226M/226M [00:07&lt;00:00, 28.5Mbytes/s]
+100%|██████████████████████████████████| 8.31M/8.31M [00:00&lt;00:00, 59.8Mbytes/s]
+100%|██████████████████████████████████████| 476/476 [00:00&lt;00:00, 3.82Mbytes/s]
+100%|██████████████████████████████████| 2.77k/2.77k [00:00&lt;00:00, 15.6Mbytes/s]
 </pre></div>
 </div>
 </div>
@@ -731,7 +648,22 @@ Also make sure that all modulefiles written in TCL start with the string
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/bin/bash: line 1: mrconvert: command not found
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MRtrix 3.0.4                        mrconvert                        Mar 20 2024
+
+     mrconvert: part of the MRtrix3 package
+
+SYNOPSIS
+
+     Perform conversion between different file types and optionally extract a
+     subset of the input image
+
+USAGE
+
+     mrconvert [ options ] input output
+
+        input        the input image.
+
+        output       the output image.
 </pre></div>
 </div>
 </div>
@@ -751,7 +683,60 @@ Also make sure that all modulefiles written in TCL start with the string
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/bin/bash: line 1: dwi2response: command not found
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dwi2response: 
+dwi2response: <span class=" -Color -Color-Green">Note that this script makes use of commands / algorithms that have relevant articles for citation. Please consult the help page (-help option) for more information.</span>
+dwi2response: 
+dwi2response: <span class=" -Color -Color-Green">Generated scratch directory: /home/jovyan/Git_repositories/example-notebooks/books/diffusion_imaging/dwi2response-tmp-KLMJ15/</span>
+dwi2response: <span class=" -Color -Color-Green">Importing DWI data (/home/jovyan/Git_repositories/example-notebooks/books/diffusion_imaging/MRtrix_preprocessed/sub-02_den_preproc_unbiased.mif)...</span>
+dwi2response: <span class=" -Color -Color-Green">Changing to scratch directory (/home/jovyan/Git_repositories/example-notebooks/books/diffusion_imaging/dwi2response-tmp-KLMJ15/)</span>
+dwi2response: <span class=" -Color -Color-Green">Computing brain mask (dwi2mask)...</span>
+dwi2response: <span class=" -Color -Color-Green">-------</span>
+dwi2response: <span class=" -Color -Color-Green">4 unique b-value(s) detected: 0,700,1200,2800 with 6,16,30,50 volumes</span>
+dwi2response: <span class=" -Color -Color-Green">-------</span>
+dwi2response: <span class=" -Color -Color-Green">Preparation:</span>
+dwi2response: <span class=" -Color -Color-Green">* Eroding brain mask by 3 pass(es)...</span>
+dwi2response: <span class=" -Color -Color-Green">  [ mask: 94895 -&gt; 66960 ]</span>
+dwi2response: <span class=" -Color -Color-Green">* Computing signal decay metric (SDM):</span>
+dwi2response: <span class=" -Color -Color-Green"> * b=0...</span>
+dwi2response: <span class=" -Color -Color-Green"> * b=700...</span>
+dwi2response: <span class=" -Color -Color-Green"> * b=1200...</span>
+dwi2response: <span class=" -Color -Color-Green"> * b=2800...</span>
+dwi2response: <span class=" -Color -Color-Green">* Removing erroneous voxels from mask and correcting SDM...</span>
+dwi2response: <span class=" -Color -Color-Green">  [ mask: 66960 -&gt; 66923 ]</span>
+dwi2response: <span class=" -Color -Color-Green">-------</span>
+dwi2response: <span class=" -Color -Color-Green">Crude segmentation:</span>
+dwi2response: <span class=" -Color -Color-Green">* Crude WM versus GM-CSF separation (at FA=0.2)...</span>
+dwi2response: <span class=" -Color -Color-Green">  [ 66923 -&gt; 36808 (WM) &amp; 30115 (GM-CSF) ]</span>
+dwi2response: <span class=" -Color -Color-Green">* Crude GM versus CSF separation...</span>
+dwi2response: <span class=" -Color -Color-Green">  [ 30115 -&gt; 19977 (GM) &amp; 10138 (CSF) ]</span>
+dwi2response: <span class=" -Color -Color-Green">-------</span>
+dwi2response: <span class=" -Color -Color-Green">Refined segmentation:</span>
+dwi2response: <span class=" -Color -Color-Green">* Refining WM...</span>
+dwi2response: <span class=" -Color -Color-Green">  [ WM: 36808 -&gt; 33730 ]</span>
+dwi2response: <span class=" -Color -Color-Green">* Refining GM...</span>
+dwi2response: <span class=" -Color -Color-Green">  [ GM: 19977 -&gt; 11830 ]</span>
+dwi2response: <span class=" -Color -Color-Green">* Refining CSF...</span>
+dwi2response: <span class=" -Color -Color-Green">  [ CSF: 10138 -&gt; 5102 ]</span>
+dwi2response: <span class=" -Color -Color-Green">-------</span>
+dwi2response: <span class=" -Color -Color-Green">Final voxel selection and response function estimation:</span>
+dwi2response: <span class=" -Color -Color-Green">* CSF:</span>
+dwi2response: <span class=" -Color -Color-Green"> * Selecting final voxels (10.0% of refined CSF)...</span>
+dwi2response: <span class=" -Color -Color-Green">   [ CSF: 5102 -&gt; 510 ]</span>
+dwi2response: <span class=" -Color -Color-Green"> * Estimating response function...</span>
+dwi2response: <span class=" -Color -Color-Green">* GM:</span>
+dwi2response: <span class=" -Color -Color-Green"> * Selecting final voxels (2.0% of refined GM)...</span>
+dwi2response: <span class=" -Color -Color-Green">   [ GM: 11830 -&gt; 237 ]</span>
+dwi2response: <span class=" -Color -Color-Green"> * Estimating response function...</span>
+dwi2response: <span class=" -Color -Color-Green">* Single-fibre WM:</span>
+dwi2response: <span class=" -Color -Color-Green"> * Selecting final voxels (0.5% of refined WM)...</span>
+dwi2response: <span class=" -Color -Color-Green">   Selecting WM single-fibre voxels using built-in (Dhollander et al., 2019) algorithm</span>
+dwi2response: <span class=" -Color -Color-Green">   [ WM: 33730 -&gt; 169 (single-fibre) ]</span>
+dwi2response: <span class=" -Color -Color-Green"> * Estimating response function...</span>
+dwi2response: <span class=" -Color -Color-Green">-------</span>
+dwi2response: <span class=" -Color -Color-Green">Generating outputs...</span>
+dwi2response: <span class=" -Color -Color-Green">-------</span>
+dwi2response: <span class=" -Color -Color-Green">Changing back to original directory (/home/jovyan/Git_repositories/example-notebooks/books/diffusion_imaging)</span>
+dwi2response: <span class=" -Color -Color-Green">Deleting scratch directory (/home/jovyan/Git_repositories/example-notebooks/books/diffusion_imaging/dwi2response-tmp-KLMJ15/)</span>
 </pre></div>
 </div>
 </div>
@@ -825,56 +810,7 @@ Also make sure that all modulefiles written in TCL start with the string
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">14</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="n">mif_file_path2</span> <span class="o">=</span> <span class="s1">&#39;voxels.mif&#39;</span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="c1"># Convert both .mif files to temporary .nii.gz files</span>
-<span class="ne">---&gt; </span><span class="mi">14</span> <span class="n">nii_file1</span> <span class="o">=</span> <span class="n">convert_mif_to_nii</span><span class="p">(</span><span class="n">mif_file_path1</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">15</span> <span class="n">nii_file2</span> <span class="o">=</span> <span class="n">convert_mif_to_nii</span><span class="p">(</span><span class="n">mif_file_path2</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">17</span> <span class="c1"># Load the converted images</span>
-
-<span class="nn">Cell In[7], line 4,</span> in <span class="ni">convert_mif_to_nii</span><span class="nt">(mif_file)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="k">def</span><span class="w"> </span><span class="nf">convert_mif_to_nii</span><span class="p">(</span><span class="n">mif_file</span><span class="p">):</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="k">with</span> <span class="n">tempfile</span><span class="o">.</span><span class="n">NamedTemporaryFile</span><span class="p">(</span><span class="n">suffix</span><span class="o">=</span><span class="s2">&quot;.nii.gz&quot;</span><span class="p">,</span> <span class="n">delete</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="k">as</span> <span class="n">temp_file</span><span class="p">:</span>
-<span class="ne">----&gt; </span><span class="mi">4</span>         <span class="n">result</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="s2">&quot;mrconvert&quot;</span><span class="p">,</span> <span class="n">mif_file</span><span class="p">,</span> <span class="n">temp_file</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="s2">&quot;-force&quot;</span><span class="p">],</span> <span class="n">capture_output</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>         <span class="k">if</span> <span class="n">result</span><span class="o">.</span><span class="n">returncode</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span>             <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error in mrconvert: </span><span class="si">{</span><span class="n">result</span><span class="o">.</span><span class="n">stderr</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-
-<span class="nn">File /opt/conda/lib/python3.12/subprocess.py:548,</span> in <span class="ni">run</span><span class="nt">(input, capture_output, timeout, check, *popenargs, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">545</span>     <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;stdout&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">PIPE</span>
-<span class="g g-Whitespace">    </span><span class="mi">546</span>     <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;stderr&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">PIPE</span>
-<span class="ne">--&gt; </span><span class="mi">548</span> <span class="k">with</span> <span class="n">Popen</span><span class="p">(</span><span class="o">*</span><span class="n">popenargs</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="k">as</span> <span class="n">process</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">549</span>     <span class="k">try</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">550</span>         <span class="n">stdout</span><span class="p">,</span> <span class="n">stderr</span> <span class="o">=</span> <span class="n">process</span><span class="o">.</span><span class="n">communicate</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
-
-<span class="nn">File /opt/conda/lib/python3.12/subprocess.py:1026,</span> in <span class="ni">Popen.__init__</span><span class="nt">(self, args, bufsize, executable, stdin, stdout, stderr, preexec_fn, close_fds, shell, cwd, env, universal_newlines, startupinfo, creationflags, restore_signals, start_new_session, pass_fds, user, group, extra_groups, encoding, errors, text, umask, pipesize, process_group)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1022</span>         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">text_mode</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1023</span>             <span class="bp">self</span><span class="o">.</span><span class="n">stderr</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">TextIOWrapper</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">stderr</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1024</span>                     <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="n">errors</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1026</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_execute_child</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">executable</span><span class="p">,</span> <span class="n">preexec_fn</span><span class="p">,</span> <span class="n">close_fds</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1027</span>                         <span class="n">pass_fds</span><span class="p">,</span> <span class="n">cwd</span><span class="p">,</span> <span class="n">env</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1028</span>                         <span class="n">startupinfo</span><span class="p">,</span> <span class="n">creationflags</span><span class="p">,</span> <span class="n">shell</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1029</span>                         <span class="n">p2cread</span><span class="p">,</span> <span class="n">p2cwrite</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1030</span>                         <span class="n">c2pread</span><span class="p">,</span> <span class="n">c2pwrite</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1031</span>                         <span class="n">errread</span><span class="p">,</span> <span class="n">errwrite</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1032</span>                         <span class="n">restore_signals</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1033</span>                         <span class="n">gid</span><span class="p">,</span> <span class="n">gids</span><span class="p">,</span> <span class="n">uid</span><span class="p">,</span> <span class="n">umask</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1034</span>                         <span class="n">start_new_session</span><span class="p">,</span> <span class="n">process_group</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1035</span> <span class="k">except</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1036</span>     <span class="c1"># Cleanup if the child failed starting.</span>
-<span class="g g-Whitespace">   </span><span class="mi">1037</span>     <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="nb">filter</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">stdin</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">stdout</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">stderr</span><span class="p">)):</span>
-
-<span class="nn">File /opt/conda/lib/python3.12/subprocess.py:1955,</span> in <span class="ni">Popen._execute_child</span><span class="nt">(self, args, executable, preexec_fn, close_fds, pass_fds, cwd, env, startupinfo, creationflags, shell, p2cread, p2cwrite, c2pread, c2pwrite, errread, errwrite, restore_signals, gid, gids, uid, umask, start_new_session, process_group)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1953</span>     <span class="n">err_msg</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">strerror</span><span class="p">(</span><span class="n">errno_num</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1954</span> <span class="k">if</span> <span class="n">err_filename</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1955</span>     <span class="k">raise</span> <span class="n">child_exception_type</span><span class="p">(</span><span class="n">errno_num</span><span class="p">,</span> <span class="n">err_msg</span><span class="p">,</span> <span class="n">err_filename</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1956</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1957</span>     <span class="k">raise</span> <span class="n">child_exception_type</span><span class="p">(</span><span class="n">errno_num</span><span class="p">,</span> <span class="n">err_msg</span><span class="p">)</span>
-
-<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;mrconvert&#39;
-</pre></div>
-</div>
+<img alt="_images/f97fd5793a22cda8ae8435c97bf103092191f032dcba335e3fd218d4e1270e27.png" src="_images/f97fd5793a22cda8ae8435c97bf103092191f032dcba335e3fd218d4e1270e27.png" />
 </div>
 </div>
 </section>
@@ -892,7 +828,7 @@ Also make sure that all modulefiles written in TCL start with the string
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dwi2fod: [100%] preloading data for &quot;MRtrix_preprocessed/sub-02_den_preproc_unbiased.mif&quot;[0K?7h?7l?7l?7l?7l?7l?7l?7l?7l?7l
-dwi2fod: [100%] performing MSMT CSD (4 shells, 3 tissues)[0K?7h?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l
+dwi2fod: [ 63%] performing MSMT CSD (4 shells, 3 tissues)...?7h?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l
 </pre></div>
 </div>
 </div>
@@ -905,10 +841,10 @@ dwi2fod: [100%] performing MSMT CSD (4 shells, 3 tissues)[0K?7h?7l?7l?7l?7l?7l?7
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mrconvert: [100%] copying from &quot;wmfod.mif&quot; to &quot;/tmp/mrtrix-tmp-u9mQjL.mif&quot;[0K?7h?7l?7l
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mrconvert: [100%] copying from &quot;wmfod.mif&quot; to &quot;/tmp/mrtrix-tmp-Mgr4TX.mif&quot;[0K?7h?7l?7l
 mrcat: [100%] concatenating &quot;csffod.mif&quot;[0K?7h?7l
-mrcat: [100%] concatenating &quot;gmfod.mif&quot;[0K?7h?7l?7l
-mrcat: [100%] concatenating &quot;/tmp/mrtrix-tmp-u9mQjL.mif&quot;[0K?7h?7l
+mrcat: [100%] concatenating &quot;gmfod.mif&quot;[0K?7h?7l
+mrcat: [100%] concatenating &quot;/tmp/mrtrix-tmp-Mgr4TX.mif&quot;[0K?7h?7l
 </pre></div>
 </div>
 </div>
@@ -922,6 +858,132 @@ mrcat: [100%] concatenating &quot;/tmp/mrtrix-tmp-u9mQjL.mif&quot;[0K?7h?7l
 </section>
 <section id="id4">
 <h3><a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<p>Now, we will use the python libraries <strong>DIPY</strong> and <strong>Matplotlib</strong> to visualize white matter FODs of an axial slice. However, we will also need to reconstruct the fiber orientation distribution function (fODF) with DIPY in two steps:</p>
+<ul class="simple">
+<li><p>Estimation of the fiber response function</p></li>
+<li><p>Use the response function to reconstruct the fODF</p></li>
+</ul>
+</section>
+<section id="reconstruction-with-constrained-spherical-deconvolution-with-dipy">
+<h3>Reconstruction with Constrained Spherical Deconvolution with DIPY<a class="headerlink" href="#reconstruction-with-constrained-spherical-deconvolution-with-dipy" title="Link to this heading">#</a></h3>
+<p>A straightforward method for estimating the fiber response function is to focus on regions of the brain known to contain single, coherent fiber populations. For instance, placing a region of interest (ROI) at the center of the brain can capture single fibers from the corpus callosum. The <code class="docutils literal notranslate"><span class="pre">auto_response_ssst</span></code> function computes the fractional anisotropy (FA) within a cuboidal ROI, defined by radii specified in roi_radii. It then derives the response function based on voxels with an FA value exceeding 0.7.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_path</span> <span class="o">=</span> <span class="n">convert_mif_to_nii</span><span class="p">(</span><span class="s1">&#39;sub-02_den_preproc_unbiased.mif&#39;</span><span class="p">)</span>
+
+<span class="c1"># Load the data</span>
+<span class="n">data</span><span class="p">,</span> <span class="n">affine</span> <span class="o">=</span> <span class="n">load_nifti</span><span class="p">(</span><span class="n">data_path</span><span class="p">)</span> 
+
+<span class="n">bvals_ap</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s1">&#39;sub-02_AP.bval&#39;</span><span class="p">)</span>
+<span class="n">bvecs_ap</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s1">&#39;sub-02_AP.bvec&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>  <span class="c1"># Make sure to transpose bvecs for correct shape</span>
+
+<span class="c1"># Create the gradient table</span>
+<span class="n">gtab_ap</span> <span class="o">=</span> <span class="n">gradient_table</span><span class="p">(</span><span class="n">bvals_ap</span><span class="p">,</span> <span class="n">bvecs_ap</span><span class="p">)</span>
+
+<span class="n">response</span><span class="p">,</span> <span class="n">ratio</span> <span class="o">=</span> <span class="n">auto_response_ssst</span><span class="p">(</span><span class="n">gtab_ap</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">roi_radii</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">fa_thr</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>To ensure the response function is accurate, we can visualize its orientation distribution function (ODF):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scene</span> <span class="o">=</span> <span class="n">window</span><span class="o">.</span><span class="n">Scene</span><span class="p">()</span>
+<span class="n">evals</span> <span class="o">=</span> <span class="n">response</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">evecs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span><span class="o">.</span><span class="n">T</span>
+
+<span class="n">response_odf</span> <span class="o">=</span> <span class="n">single_tensor_odf</span><span class="p">(</span><span class="n">default_sphere</span><span class="o">.</span><span class="n">vertices</span><span class="p">,</span> <span class="n">evals</span><span class="p">,</span> <span class="n">evecs</span><span class="p">)</span>
+<span class="c1"># transform our data from 1D to 4D</span>
+<span class="n">response_odf</span> <span class="o">=</span> <span class="n">response_odf</span><span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="p">:]</span>
+<span class="n">response_actor</span> <span class="o">=</span> <span class="n">actor</span><span class="o">.</span><span class="n">odf_slicer</span><span class="p">(</span><span class="n">response_odf</span><span class="p">,</span> <span class="n">sphere</span><span class="o">=</span><span class="n">default_sphere</span><span class="p">,</span>
+                                  <span class="n">colormap</span><span class="o">=</span><span class="s1">&#39;plasma&#39;</span><span class="p">)</span>
+<span class="n">scene</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">response_actor</span><span class="p">)</span>
+
+<span class="n">csd_response</span> <span class="o">=</span> <span class="n">window</span><span class="o">.</span><span class="n">snapshot</span><span class="p">(</span>
+    <span class="n">scene</span><span class="p">,</span> <span class="n">fname</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">(),</span> <span class="s1">&#39;csd_response.png&#39;</span><span class="p">),</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">),</span>
+    <span class="n">offscreen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">axes</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">csd_response</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;plasma&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/7ce194627ad1b9501df9aa386bf9f58c86978a980f001a8cd60f5cbf03b44de8.png" src="_images/7ce194627ad1b9501df9aa386bf9f58c86978a980f001a8cd60f5cbf03b44de8.png" />
+</div>
+</div>
+<p>After estimating the response function, we can begin the deconvolution process by fitting the CSD model to the data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set up the scene for visualization</span>
+<span class="n">scene</span> <span class="o">=</span> <span class="n">window</span><span class="o">.</span><span class="n">Scene</span><span class="p">()</span>
+
+<span class="c1"># Fit the CSD model to the data</span>
+<span class="n">csd_model</span> <span class="o">=</span> <span class="n">ConstrainedSphericalDeconvModel</span><span class="p">(</span><span class="n">gtab_ap</span><span class="p">,</span> <span class="n">response</span><span class="p">)</span>
+
+<span class="c1"># Fit on a smaller portion of the data (optional for faster computation)</span>
+<span class="n">data_small</span> <span class="o">=</span>  <span class="n">data</span><span class="p">[</span><span class="mi">30</span><span class="p">:</span><span class="mi">60</span><span class="p">,</span> <span class="mi">40</span><span class="p">:</span><span class="mi">70</span><span class="p">,</span> <span class="mi">29</span><span class="p">:</span><span class="mi">30</span><span class="p">]</span>    
+<span class="n">csd_fit</span> <span class="o">=</span> <span class="n">csd_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">data_small</span><span class="p">)</span> 
+<span class="n">csd_odf</span> <span class="o">=</span> <span class="n">csd_fit</span><span class="o">.</span><span class="n">odf</span><span class="p">(</span><span class="n">default_sphere</span><span class="p">)</span>
+
+<span class="n">fodf_spheres</span> <span class="o">=</span> <span class="n">actor</span><span class="o">.</span><span class="n">odf_slicer</span><span class="p">(</span><span class="n">csd_odf</span><span class="p">,</span> <span class="n">sphere</span><span class="o">=</span><span class="n">default_sphere</span><span class="p">,</span> 
+                              <span class="n">scale</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span> <span class="n">norm</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> 
+                              <span class="n">colormap</span><span class="o">=</span><span class="s1">&#39;plasma&#39;</span><span class="p">)</span>
+<span class="n">scene</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">fodf_spheres</span><span class="p">)</span>
+
+<span class="n">csd_odfs</span> <span class="o">=</span> <span class="n">window</span><span class="o">.</span><span class="n">snapshot</span><span class="p">(</span>
+    <span class="n">scene</span><span class="p">,</span> <span class="n">fname</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">(),</span> <span class="s1">&#39;csd_odfs.png&#39;</span><span class="p">),</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">600</span><span class="p">,</span> <span class="mi">600</span><span class="p">),</span>
+    <span class="n">offscreen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">7</span><span class="p">))</span>
+<span class="n">axes</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">csd_odfs</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;plasma&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 900/900 [00:00&lt;00:00, 3660.70it/s]
+</pre></div>
+</div>
+<img alt="_images/3e2da3f55014fc409f502f14aa46893d0d299db5b73cad37eb82d162c9a09590.png" src="_images/3e2da3f55014fc409f502f14aa46893d0d299db5b73cad37eb82d162c9a09590.png" />
+</div>
+</div>
+<p>Using DIPY’s <code class="docutils literal notranslate"><span class="pre">peaks_from_model</span></code>, we can identify the peak directions (maxima) of the ODFs. We will then visualize the ODFs and their corresponding peaks in the same space.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">csd_peaks</span> <span class="o">=</span> <span class="n">peaks_from_model</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="n">csd_model</span><span class="p">,</span>
+                             <span class="n">data</span><span class="o">=</span><span class="n">data_small</span><span class="p">,</span>
+                             <span class="n">sphere</span><span class="o">=</span><span class="n">default_sphere</span><span class="p">,</span>
+                             <span class="n">relative_peak_threshold</span><span class="o">=</span><span class="mf">.5</span><span class="p">,</span>
+                             <span class="n">min_separation_angle</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span>
+                             <span class="n">parallel</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                             <span class="n">num_processes</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="n">scene</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+<span class="n">fodf_peaks</span> <span class="o">=</span> <span class="n">actor</span><span class="o">.</span><span class="n">peak_slicer</span><span class="p">(</span><span class="n">csd_peaks</span><span class="o">.</span><span class="n">peak_dirs</span><span class="p">,</span> <span class="n">peaks_values</span><span class="o">=</span><span class="n">csd_peaks</span><span class="o">.</span><span class="n">peak_values</span><span class="p">)</span>
+<span class="n">scene</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">fodf_peaks</span><span class="p">)</span>
+
+<span class="n">fodf_spheres</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">()</span><span class="o">.</span><span class="n">SetOpacity</span><span class="p">(</span><span class="mf">0.6</span><span class="p">)</span>
+<span class="n">scene</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">fodf_spheres</span><span class="p">)</span>
+
+<span class="n">csd_both</span> <span class="o">=</span> <span class="n">window</span><span class="o">.</span><span class="n">snapshot</span><span class="p">(</span>
+    <span class="n">scene</span><span class="p">,</span> <span class="n">fname</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">(),</span> <span class="s1">&#39;csd_both.png&#39;</span><span class="p">),</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">600</span><span class="p">,</span> <span class="mi">600</span><span class="p">),</span>
+    <span class="n">offscreen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">7</span><span class="p">))</span>
+<span class="n">axes</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">csd_both</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;plasma&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/d1afdfdabdf9fc67d6d0a89e14414696da1ec48eeb5fbaab480059228f57c536.png" src="_images/d1afdfdabdf9fc67d6d0a89e14414696da1ec48eeb5fbaab480059228f57c536.png" />
+</div>
+</div>
 </section>
 </section>
 <section id="normalization">
@@ -968,8 +1030,8 @@ Pathological Tissue.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mrconvert: [100%] uncompressing image &quot;MRtrix_preprocessed/sub-CON02_ses-preop_T1w.nii.gz&quot;[0K?7h?7l?7l?7l?7l
-mrconvert: [100%] copying from &quot;MRtrix_pre...-CON02_ses-preop_T1w.nii.gz&quot; to &quot;T1.mif&quot;[0K?7h?7lx_pre...-CON02_ses-preop_T1w.nii.gz&quot; to &quot;T1.mif&quot;...?7h?7l
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mrconvert: [100%] uncompressing image &quot;MRtrix_preprocessed/sub-CON02_ses-preop_T1w.nii.gz&quot;[0K?7h?7l?7l?7l
+mrconvert: [100%] copying from &quot;MRtrix_pre...-CON02_ses-preop_T1w.nii.gz&quot; to &quot;T1.mif&quot;[0K?7h?7l
 </pre></div>
 </div>
 </div>
@@ -984,9 +1046,9 @@ mrconvert: [100%] copying from &quot;MRtrix_pre...-CON02_ses-preop_T1w.nii.gz&qu
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5ttgen: 
 5ttgen: <span class=" -Color -Color-Green">Note that this script makes use of commands / algorithms that have relevant articles for citation; INCLUDING FROM EXTERNAL SOFTWARE PACKAGES. Please consult the help page (-help option) for more information.</span>
 5ttgen: 
-5ttgen: <span class=" -Color -Color-Green">Generated scratch directory: /home/jovyan/Git_repositories/example-notebooks/books/diffusion_imaging/5ttgen-tmp-EXQQ6V/</span>
-<span class=" -Color -Color-Cyan">Command:</span>  mrconvert /home/jovyan/Git_repositories/example-notebooks/books/diffusion_imaging/T1.mif /home/jovyan/Git_repositories/example-notebooks/books/diffusion_imaging/5ttgen-tmp-EXQQ6V/input.mif
-5ttgen: <span class=" -Color -Color-Green">Changing to scratch directory (/home/jovyan/Git_repositories/example-notebooks/books/diffusion_imaging/5ttgen-tmp-EXQQ6V/)</span>
+5ttgen: <span class=" -Color -Color-Green">Generated scratch directory: /home/jovyan/Git_repositories/example-notebooks/books/diffusion_imaging/5ttgen-tmp-MWYNUJ/</span>
+<span class=" -Color -Color-Cyan">Command:</span>  mrconvert /home/jovyan/Git_repositories/example-notebooks/books/diffusion_imaging/T1.mif /home/jovyan/Git_repositories/example-notebooks/books/diffusion_imaging/5ttgen-tmp-MWYNUJ/input.mif
+5ttgen: <span class=" -Color -Color-Green">Changing to scratch directory (/home/jovyan/Git_repositories/example-notebooks/books/diffusion_imaging/5ttgen-tmp-MWYNUJ/)</span>
 <span class=" -Color -Color-Cyan">Command:</span>  mrconvert input.mif T1.nii -strides -1,+2,+3
 <span class=" -Color -Color-Cyan">Command:</span>  maskfilter /opt/fsl-6.0.5.1/data/standard/MNI152_T1_1mm_brain_mask_dil.nii.gz dilate mni_mask.nii -npass 4
 <span class=" -Color -Color-Cyan">Command:</span>  standard_space_roi T1.nii T1_preBET.nii.gz -maskMASK mni_mask.nii -roiFOV
@@ -1008,7 +1070,7 @@ mrconvert: [100%] copying from &quot;MRtrix_pre...-CON02_ses-preop_T1w.nii.gz&qu
 <span class=" -Color -Color-Cyan">Command:</span>  mrconvert result.mif /home/jovyan/Git_repositories/example-notebooks/books/diffusion_imaging/5tt_nocoreg.mif
 <span class=" -Color -Color-Cyan">Command:</span>  5ttcheck result.mif
 5ttgen: <span class=" -Color -Color-Green">Changing back to original directory (/home/jovyan/Git_repositories/example-notebooks/books/diffusion_imaging)</span>
-5ttgen: <span class=" -Color -Color-Green">Deleting scratch directory (/home/jovyan/Git_repositories/example-notebooks/books/diffusion_imaging/5ttgen-tmp-EXQQ6V/)</span>
+5ttgen: <span class=" -Color -Color-Green">Deleting scratch directory (/home/jovyan/Git_repositories/example-notebooks/books/diffusion_imaging/5ttgen-tmp-MWYNUJ/)</span>
 </pre></div>
 </div>
 </div>
@@ -1083,7 +1145,7 @@ mrconvert: [100%] copying from &quot;MRtrix_pre...-CON02_ses-preop_T1w.nii.gz&qu
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "1c187e75dbbe4979b80e2c9e16117efe", "version_major": 2, "version_minor": 0}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "019fe06af0b5401f86d087f1e42ceafa", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1107,6 +1169,48 @@ If the segmentation step fails, this may be due to insufficient contrast between
     </p>
 </div></section>
 </section>
+</section>
+<section id="dependencies-in-jupyter-python">
+<h3>Dependencies in Jupyter/Python<a class="headerlink" href="#dependencies-in-jupyter-python" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Using the package <a class="reference external" href="https://github.com/rasbt/watermark">watermark</a> to document system environment and software versions used in this notebook</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> watermark
+
+<span class="o">%</span><span class="k">watermark</span>
+<span class="o">%</span><span class="k">watermark</span> --iversions
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Last updated: 2025-11-06T22:43:21.260005+00:00
+
+Python implementation: CPython
+Python version       : 3.12.10
+IPython version      : 9.6.0
+
+Compiler    : GCC 13.3.0
+OS          : Linux
+Release     : 5.4.0-204-generic
+Machine     : x86_64
+Processor   : x86_64
+CPU cores   : 32
+Architecture: 64bit
+
+IPython   : 9.6.0
+fury      : 0.11.0
+nibabel   : 5.3.2
+dipy      : 1.9.0
+numpy     : 1.26.4
+ipywidgets: 8.1.7
+ipyniivue : 2.3.2
+matplotlib: 3.10.7
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 </section>
 </section>
@@ -1159,8 +1263,13 @@ If the segmentation step fails, this may be due to insufficient contrast between
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#constrained-spherical-deconvolution-and-tissue-estimation">Constrained Spherical Deconvolution and Tissue estimation</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#output-cpu-information">Output CPU information</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-python-modules">Import Python Modules</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#citation-and-resources">Citation and Resources:</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tools-included-in-this-workflow">Tools included in this workflow</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#educational-resources">Educational Resources</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset">Dataset</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-python-libraries">Import Python Libraries</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a><ul class="nav section-nav flex-column">
@@ -1178,6 +1287,7 @@ If the segmentation step fails, this may be due to insufficient contrast between
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fiber-orientation-density-fod">Fiber Orientation Density (FOD)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3"></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4"></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reconstruction-with-constrained-spherical-deconvolution-with-dipy">Reconstruction with Constrained Spherical Deconvolution with DIPY</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#normalization">Normalization</a></li>
@@ -1189,6 +1299,7 @@ If the segmentation step fails, this may be due to insufficient contrast between
 </li>
 </ul>
 </li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dependencies-in-jupyter-python">Dependencies in Jupyter/Python</a></li>
 </ul>
 </li>
 </ul>
