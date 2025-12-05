@@ -447,7 +447,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#of-a-jupyter-notebook">Of a Jupyter Notebook</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#of-a-jupyter-notebook">Of a Jupyter Notebook</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#citation-and-resources">Citation and Resources:</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-rise">Introduction to RISE</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-create-slideshows">1. How to create slideshows</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-slideshows-in-jupyterlab-on-neurodesk">2. Running slideshows in JupyterLab on Neurodesk</a></li>
@@ -457,6 +460,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#customize-rise">3. Customize RISE</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#settings-editor">Settings Editor</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#notebook-metadata">Notebook metadata</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#dependencies-in-jupyter-python">Dependencies in Jupyter/Python</a></li>
 </ul>
 </li>
 </ul>
@@ -476,14 +480,17 @@ document.write(`
 <h1>RISE Slideshow<a class="headerlink" href="#rise-slideshow" title="Link to this heading">#</a></h1>
 <section id="of-a-jupyter-notebook">
 <h2>Of a Jupyter Notebook<a class="headerlink" href="#of-a-jupyter-notebook" title="Link to this heading">#</a></h2>
-<p>Author: Monika Doerig</p>
-<p>Citation:</p>
+<p><strong>Author:</strong> Monika Doerig</p>
+<p><strong>Date:</strong> 13 June 2024</p>
+<section id="citation-and-resources">
+<h3>Citation and Resources:<a class="headerlink" href="#citation-and-resources" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p>Full documentation of the <a class="reference external" href="http://rise.readthedocs.io/">RISE notebook extension</a></p></li>
+<li><p>Full documentation of the <a class="reference external" href="http://rise.readthedocs.io/">RISE notebook extension</a> and <a class="reference external" href="https://github.com/jupyterlab-contrib/rise">RISE JupyterLab extension</a></p></li>
 </ul>
 <p>Press <code class="docutils literal notranslate"><span class="pre">Space</span></code> to proceed.</p>
 <p>In code cells you press <code class="docutils literal notranslate"><span class="pre">Shift-Enter</span></code> (as usual) to evaluate your code and directly move to the next cell if it is already displayed.
 Press <code class="docutils literal notranslate"><span class="pre">Ctrl-Enter</span></code> to run a command without direclty moving to the next cell.</p>
+</section>
 </section>
 <section id="introduction-to-rise">
 <h2>Introduction to RISE<a class="headerlink" href="#introduction-to-rise" title="Link to this heading">#</a></h2>
@@ -519,6 +526,14 @@ Press <code class="docutils literal notranslate"><span class="pre">Ctrl-Enter</s
 <section id="selection-and-evaluation">
 <h3>Selection and evaluation<a class="headerlink" href="#selection-and-evaluation" title="Link to this heading">#</a></h3>
 <p>To evaluate code, press <code class="docutils literal notranslate"><span class="pre">Shift-Enter</span></code> (as usual) to run it. This will move to the next cell if it is already displayed.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%capture</span>
+<span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="n">numpy</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This is where you press Shift-Enter</span>
@@ -604,6 +619,41 @@ Press <code class="docutils literal notranslate"><span class="pre">Ctrl-Enter</s
 </ol>
 <p><img alt="../images/change_metadata_notebook.png" src="_images/change_metadata_notebook.png" /></p>
 </section>
+<section id="dependencies-in-jupyter-python">
+<h4>Dependencies in Jupyter/Python<a class="headerlink" href="#dependencies-in-jupyter-python" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Using the package <a class="reference external" href="https://github.com/rasbt/watermark">watermark</a> to document system environment and software versions used in this notebook</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> watermark
+
+<span class="o">%</span><span class="k">watermark</span>
+<span class="o">%</span><span class="k">watermark</span> --iversions
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Last updated: 2025-12-05T00:05:35.320623+00:00
+
+Python implementation: CPython
+Python version       : 3.13.9
+IPython version      : 9.7.0
+
+Compiler    : GCC 14.3.0
+OS          : Linux
+Release     : 6.8.0-1041-azure
+Machine     : x86_64
+Processor   : x86_64
+CPU cores   : 4
+Architecture: 64bit
+
+numpy: 2.3.5
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 </section>
 </section>
 </section>
@@ -654,7 +704,10 @@ Press <code class="docutils literal notranslate"><span class="pre">Ctrl-Enter</s
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#of-a-jupyter-notebook">Of a Jupyter Notebook</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#of-a-jupyter-notebook">Of a Jupyter Notebook</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#citation-and-resources">Citation and Resources:</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-rise">Introduction to RISE</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-create-slideshows">1. How to create slideshows</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-slideshows-in-jupyterlab-on-neurodesk">2. Running slideshows in JupyterLab on Neurodesk</a></li>
@@ -664,6 +717,7 @@ Press <code class="docutils literal notranslate"><span class="pre">Ctrl-Enter</s
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#customize-rise">3. Customize RISE</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#settings-editor">Settings Editor</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#notebook-metadata">Notebook metadata</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#dependencies-in-jupyter-python">Dependencies in Jupyter/Python</a></li>
 </ul>
 </li>
 </ul>
